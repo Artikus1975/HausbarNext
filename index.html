@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#15110d">
+  <title>Hausbar Next v0.1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Hausbar Next</p>
+      <h1>Murats Hausbar</h1>
+    </div>
+    <span class="version">v0.1</span>
+  </header>
+
+  <main>
+    <section id="view-home" class="view active">
+      <div class="hero card">
+        <p class="eyebrow">Neustart ohne Altlasten</p>
+        <h2>Saubere Basis für Inventar, Rezepte und spätere Bar-Intelligenz.</h2>
+        <p>Diese Version ist bewusst klein: keine Runtime-Hooks, keine Wrapper, keine versteckten Migrationen während des Renderns.</p>
+      </div>
+      <div class="stats-grid" id="homeStats"></div>
+      <div class="card">
+        <h3>v0.1 Fokus</h3>
+        <ul class="clean-list">
+          <li>Zentrale Datenquelle</li>
+          <li>Self-Excluding-Facets für alle Inventarfilter</li>
+          <li>Flaschen-Detailansicht vorbereitet</li>
+          <li>Internetdaten-Felder vorbereitet, aber noch nicht automatisch befüllt</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="view-inventory" class="view">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Inventar</p>
+          <h2>Flaschen</h2>
+        </div>
+        <button id="resetFilters" class="ghost-button">Filter löschen</button>
+      </div>
+
+      <div class="filter-panel card">
+        <input id="searchInput" class="search" type="search" placeholder="Suche nach Flasche, Kategorie, Tag...">
+        <div class="filters">
+          <label>Kategorie<select id="categoryFilter"></select></label>
+          <label>Geschmack<select id="flavorFilter"></select></label>
+          <label>Nutzung<select id="usageFilter"></select></label>
+          <label>Stil<select id="styleFilter"></select></label>
+          <label>Herkunft<select id="originFilter"></select></label>
+        </div>
+      </div>
+
+      <p id="inventoryCount" class="count-line"></p>
+      <div id="inventoryGrid" class="grid"></div>
+    </section>
+
+    <section id="view-recipes" class="view">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Rezepte</p>
+          <h2>Grundbereich</h2>
+        </div>
+      </div>
+      <input id="recipeSearch" class="search card-search" type="search" placeholder="Rezept suchen...">
+      <p id="recipeCount" class="count-line"></p>
+      <div id="recipeGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Hauptnavigation">
+    <button data-view="home" class="active">Home</button>
+    <button data-view="inventory">Inventar</button>
+    <button data-view="recipes">Rezepte</button>
+  </nav>
+
+  <dialog id="itemDialog" class="detail-dialog">
+    <div class="dialog-header">
+      <div>
+        <p id="detailCategory" class="eyebrow"></p>
+        <h2 id="detailName"></h2>
+      </div>
+      <button id="closeDialog" class="ghost-button">Schließen</button>
+    </div>
+    <div id="detailBody"></div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
