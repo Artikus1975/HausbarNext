@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.8';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.9';
 
 const state = {
   view: 'home',
