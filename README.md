@@ -1,6 +1,6 @@
-# Hausbar Next v0.13
+# Hausbar Next v0.14
 
-Clean Public Detail Views fuer Murat's Hausbar.
+Home Heading Cleanup fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
@@ -39,3 +39,9 @@ Clean Public Detail Views fuer Murat's Hausbar.
 - app.js
 - data.js
 - README.md
+
+
+## v0.14
+- Home-Bereich Heute passend bereinigt.
+- Untertext Drei Drinks fuer den Abend entfernt.
+- Keine Logik- oder Datenänderungen.

@@ -855,3 +855,15 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+/* v0.14: Home heading cleanup */
+.today-menu-title{
+  margin:0;
+  font-size:clamp(2.05rem, 8vw, 3.25rem);
+  line-height:.96;
+  letter-spacing:-.055em;
+  color:var(--text-strong);
+}
+.today-menu-head{
+  align-items:center;
+}
