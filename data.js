@@ -1,6 +1,6 @@
-// Hausbar Next v0.9 - bottle detail polish
+// Hausbar Next v0.10 - recipe search filters and overflow repair
 const HB_DATA = {
-  "version": "v0.9",
+  "version": "v0.10",
   "inventory": [
     {
       "id": "csv-001-aperol",
@@ -7418,6 +7418,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "roter Vermouth"
+      ],
+      "season": [
+        "Sommer",
+        "Herbst"
       ]
     },
     {
@@ -7451,6 +7455,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frischer Zitronensaft"
+      ],
+      "season": [
+        "Winter",
+        "Sommer"
       ]
     },
     {
@@ -7485,6 +7493,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Crème de Violette"
+      ],
+      "season": [
+        "Sommer",
+        "Frühling"
       ]
     },
     {
@@ -7519,6 +7531,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Limettensaft"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -7552,6 +7567,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "roter Vermouth"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -7588,6 +7607,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Absinthe"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -7622,7 +7644,10 @@ const HB_DATA = {
         "bénédictine",
         "bitters"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Herbst"
+      ]
     },
     {
       "id": "pisco-sour",
@@ -7658,6 +7683,12 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Eiweiß"
+      ],
+      "season": [
+        "Winter",
+        "Sommer",
+        "Herbst",
+        "Frühling"
       ]
     },
     {
@@ -7689,6 +7720,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frische Limette"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -7721,6 +7755,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frische Limette"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -7749,7 +7786,10 @@ const HB_DATA = {
         "cointreau",
         "zitronensaft"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer"
+      ]
     },
     {
       "id": "espresso-martini-deluxe",
@@ -7786,6 +7826,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frischer Espresso"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -7819,6 +7862,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "großer Eiswürfel"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -7855,6 +7902,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Orange Zeste"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -7892,6 +7943,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frischer Espresso"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -7926,6 +7980,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Eiweiß optional"
+      ],
+      "season": [
+        "Winter",
+        "Sommer"
       ]
     },
     {
@@ -7955,6 +8013,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Dry Tonic"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -7988,6 +8049,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Soda"
+      ],
+      "season": [
+        "Sommer",
+        "Frühling"
       ]
     },
     {
@@ -8021,6 +8086,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Soda"
+      ],
+      "season": [
+        "Sommer",
+        "Herbst"
       ]
     },
     {
@@ -8053,6 +8122,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Sahne"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -8086,6 +8158,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Aromatic Bitters"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -8121,6 +8197,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Eiweiß optional"
+      ],
+      "season": [
+        "Sommer",
+        "Herbst"
       ]
     },
     {
@@ -8159,6 +8239,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Orangenzeste"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -8193,6 +8277,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frischer Espresso"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -8222,6 +8310,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Soda"
+      ],
+      "season": [
+        "Sommer",
+        "Herbst"
       ]
     },
     {
@@ -8255,6 +8347,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Soda"
+      ],
+      "season": [
+        "Sommer",
+        "Herbst"
       ]
     },
     {
@@ -8290,6 +8386,11 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Soda oder Ginger Beer"
+      ],
+      "season": [
+        "Winter",
+        "Sommer",
+        "Herbst"
       ]
     },
     {
@@ -8318,7 +8419,10 @@ const HB_DATA = {
         "campari",
         "noilly prat rouge"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Herbst"
+      ]
     },
     {
       "id": "bamboo",
@@ -8350,6 +8454,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "trockener Sherry"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -8382,6 +8490,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "trockener Sherry"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -8415,6 +8527,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Olive oder Zitronenzeste"
+      ],
+      "season": [
+        "Sommer",
+        "Herbst"
       ]
     },
     {
@@ -8445,6 +8561,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frische Limette"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -8478,6 +8597,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frischer Basilikum"
+      ],
+      "season": [
+        "Sommer",
+        "Frühling"
       ]
     },
     {
@@ -8511,6 +8634,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frische Minze"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -8544,7 +8670,11 @@ const HB_DATA = {
         "zucker",
         "champagner"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer",
+        "Frühling"
+      ]
     },
     {
       "id": "french-77",
@@ -8572,7 +8702,11 @@ const HB_DATA = {
         "zitronensaft",
         "champagner"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer",
+        "Frühling"
+      ]
     },
     {
       "id": "kir",
@@ -8595,7 +8729,10 @@ const HB_DATA = {
         "cassis",
         "weißwein"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Frühling"
+      ]
     },
     {
       "id": "kir-royale",
@@ -8618,7 +8755,10 @@ const HB_DATA = {
         "cassis",
         "champagner"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Frühling"
+      ]
     },
     {
       "id": "white-lady",
@@ -8645,7 +8785,10 @@ const HB_DATA = {
         "cointreau",
         "zitronensaft"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer"
+      ]
     },
     {
       "id": "brandy-alexander",
@@ -8676,6 +8819,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Sahne"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -8707,6 +8853,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Sahne"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -8737,6 +8886,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Orangensaft"
+      ],
+      "season": [
+        "Ganzjährig"
       ]
     },
     {
@@ -8775,6 +8927,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frischer Espresso"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -8807,6 +8962,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Sahne"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -8834,7 +8992,10 @@ const HB_DATA = {
         "vodka",
         "kahlúa"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Winter"
+      ]
     },
     {
       "id": "godfather",
@@ -8862,7 +9023,10 @@ const HB_DATA = {
         "whisky",
         "disaronno"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Winter"
+      ]
     },
     {
       "id": "godmother",
@@ -8889,7 +9053,10 @@ const HB_DATA = {
         "vodka",
         "disaronno"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Ganzjährig"
+      ]
     },
     {
       "id": "amaretto-sour",
@@ -8924,6 +9091,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Eiweiß optional"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -8955,7 +9125,11 @@ const HB_DATA = {
         "averna",
         "zitronensaft"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer",
+        "Herbst"
+      ]
     },
     {
       "id": "jungle-bird",
@@ -8991,6 +9165,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Ananassaft"
+      ],
+      "season": [
+        "Sommer",
+        "Herbst"
       ]
     },
     {
@@ -9019,7 +9197,10 @@ const HB_DATA = {
         "limettensaft",
         "zucker"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer"
+      ]
     },
     {
       "id": "rum-old-fashioned",
@@ -9050,6 +9231,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "großer Eiswürfel"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     },
     {
@@ -9078,7 +9263,10 @@ const HB_DATA = {
         "ginger beer",
         "limettensaft"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer"
+      ]
     },
     {
       "id": "moscow-mule",
@@ -9108,7 +9296,10 @@ const HB_DATA = {
         "limettensaft",
         "ginger beer"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer"
+      ]
     },
     {
       "id": "london-mule",
@@ -9136,7 +9327,10 @@ const HB_DATA = {
         "limettensaft",
         "ginger beer"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer"
+      ]
     },
     {
       "id": "tommy-s-margarita",
@@ -9166,6 +9360,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Agavensirup optional"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -9195,6 +9392,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Grapefruit Soda"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -9227,6 +9427,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Ananassaft"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -9258,7 +9461,11 @@ const HB_DATA = {
         "ginger beer",
         "bitters"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer",
+        "Herbst"
+      ]
     },
     {
       "id": "sazerac",
@@ -9292,6 +9499,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Peychaud’s Bitters ideal"
+      ],
+      "season": [
+        "Herbst"
       ]
     },
     {
@@ -9322,7 +9532,11 @@ const HB_DATA = {
         "bénédictine",
         "bitters"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Winter",
+        "Herbst"
+      ]
     },
     {
       "id": "bobby-burns",
@@ -9349,7 +9563,10 @@ const HB_DATA = {
         "noilly prat rouge",
         "bénédictine"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Ganzjährig"
+      ]
     },
     {
       "id": "rob-roy",
@@ -9378,7 +9595,10 @@ const HB_DATA = {
         "noilly prat rouge",
         "bitters"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Herbst"
+      ]
     },
     {
       "id": "rusty-nail",
@@ -9405,6 +9625,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Drambuie"
+      ],
+      "season": [
+        "Ganzjährig"
       ]
     },
     {
@@ -9437,6 +9660,9 @@ const HB_DATA = {
       "missingFallback": [
         "Honig-Ingwer-Sirup",
         "rauchiger Islay Scotch optional"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -9466,6 +9692,9 @@ const HB_DATA = {
       "missingFallback": [
         "Butter",
         "Gewürze"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -9502,6 +9731,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "frischer Espresso"
+      ],
+      "season": [
+        "Winter"
       ]
     },
     {
@@ -9534,6 +9766,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Eiweiß optional"
+      ],
+      "season": [
+        "Winter",
+        "Sommer"
       ]
     },
     {
@@ -9564,7 +9800,11 @@ const HB_DATA = {
         "px sherry",
         "bitters"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Winter",
+        "Herbst"
+      ]
     },
     {
       "id": "walnut-old-fashioned",
@@ -9594,7 +9834,11 @@ const HB_DATA = {
         "walnuss",
         "bitters"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Winter",
+        "Herbst"
+      ]
     },
     {
       "id": "noisetto-coffee-old-fashioned",
@@ -9628,7 +9872,11 @@ const HB_DATA = {
         "kaffee",
         "bitters"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Winter",
+        "Herbst"
+      ]
     },
     {
       "id": "limoncello-spritz",
@@ -9658,6 +9906,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Soda"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -9690,6 +9941,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Soda"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -9719,6 +9973,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Lemonade oder Soda"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -9747,6 +10004,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Orangensaft"
+      ],
+      "season": [
+        "Ganzjährig"
       ]
     },
     {
@@ -9776,6 +10036,9 @@ const HB_DATA = {
       "missingFallback": [
         "Cranberrysaft",
         "Orangensaft"
+      ],
+      "season": [
+        "Ganzjährig"
       ]
     },
     {
@@ -9802,6 +10065,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Orangensaft"
+      ],
+      "season": [
+        "Ganzjährig"
       ]
     },
     {
@@ -9831,7 +10097,11 @@ const HB_DATA = {
         "sour apple",
         "zitronensaft"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer",
+        "Herbst"
+      ]
     },
     {
       "id": "cherry-brandy-sour",
@@ -9860,7 +10130,11 @@ const HB_DATA = {
         "zitronensaft",
         "zucker"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer",
+        "Frühling"
+      ]
     },
     {
       "id": "apricot-sour",
@@ -9889,7 +10163,11 @@ const HB_DATA = {
         "zitronensaft",
         "zucker"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer",
+        "Frühling"
+      ]
     },
     {
       "id": "clover-club-style",
@@ -9920,6 +10198,11 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Eiweiß"
+      ],
+      "season": [
+        "Winter",
+        "Sommer",
+        "Frühling"
       ]
     },
     {
@@ -9949,6 +10232,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Soda optional"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -9975,7 +10261,11 @@ const HB_DATA = {
         "absinthe",
         "champagner"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Frühling",
+        "Sommer"
+      ]
     },
     {
       "id": "absinthe-frappe",
@@ -10002,6 +10292,9 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Crushed Ice"
+      ],
+      "season": [
+        "Sommer"
       ]
     },
     {
@@ -10028,7 +10321,10 @@ const HB_DATA = {
         "bénédictine",
         "brandy"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Ganzjährig"
+      ]
     },
     {
       "id": "port-old-fashioned",
@@ -10058,7 +10354,11 @@ const HB_DATA = {
         "port",
         "bitters"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Winter",
+        "Herbst"
+      ]
     },
     {
       "id": "port-tonic",
@@ -10086,7 +10386,12 @@ const HB_DATA = {
         "port",
         "tonic"
       ],
-      "missingFallback": []
+      "missingFallback": [],
+      "season": [
+        "Sommer",
+        "Herbst",
+        "Winter"
+      ]
     },
     {
       "id": "sherry-flip",
@@ -10120,6 +10425,10 @@ const HB_DATA = {
       ],
       "missingFallback": [
         "Ei"
+      ],
+      "season": [
+        "Winter",
+        "Herbst"
       ]
     }
   ],

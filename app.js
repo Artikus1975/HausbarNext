@@ -1,12 +1,13 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.9';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.10';
 
 const state = {
   view: 'home',
   search: '',
   filters: { category: '', flavor: '', usage: '', style: '', origin: '' },
-  recipeSearch: ''
+  recipeSearch: '',
+  recipeFilters: { season: '', style: '' }
 };
 
 const inventory = HB_DATA.inventory.map(normalizeItem);
@@ -46,6 +47,9 @@ function cacheElements(){
   els.inventoryCount = document.getElementById('inventoryCount');
   els.inventoryGrid = document.getElementById('inventoryGrid');
   els.recipeSearch = document.getElementById('recipeSearch');
+  els.recipeSeasonFilter = document.getElementById('recipeSeasonFilter');
+  els.recipeStyleFilter = document.getElementById('recipeStyleFilter');
+  els.resetRecipeFilters = document.getElementById('resetRecipeFilters');
   els.recipeCount = document.getElementById('recipeCount');
   els.recipeGrid = document.getElementById('recipeGrid');
   els.dialog = document.getElementById('itemDialog');
@@ -70,6 +74,9 @@ function bindEvents(){
   els.originFilter.addEventListener('change', e => setFilter('origin', e.target.value));
   els.resetFilters.addEventListener('click', resetFilters);
   els.recipeSearch.addEventListener('input', e => { state.recipeSearch = e.target.value.trim().toLowerCase(); renderRecipes(); });
+  els.recipeSeasonFilter.addEventListener('change', e => { state.recipeFilters.season = e.target.value; renderRecipes(); });
+  els.recipeStyleFilter.addEventListener('change', e => { state.recipeFilters.style = e.target.value; renderRecipes(); });
+  els.resetRecipeFilters.addEventListener('click', resetRecipeFilters);
   els.closeDialog.addEventListener('click', () => els.dialog.close());
   els.closeRecipeDialog.addEventListener('click', () => els.recipeDialog.close());
 }
@@ -385,24 +392,47 @@ function renderHome(){
 }
 
 function renderRecipes(){
+  populateRecipeFilters();
   const query = state.recipeSearch;
-  const list = recipes.filter(r => !query || recipeSearchText(r).includes(query));
+  const list = recipes.filter(recipe => {
+    if(query && !recipeSearchText(recipe).includes(query)) return false;
+    if(state.recipeFilters.season && !arrayOf(recipe.season).includes(state.recipeFilters.season)) return false;
+    if(state.recipeFilters.style && recipe.style !== state.recipeFilters.style) return false;
+    return true;
+  });
   els.recipeCount.textContent = `${list.length} von ${recipes.length} Rezepten`;
   els.recipeGrid.innerHTML = list.map(renderRecipeCard).join('') || '<p class="empty">Keine Rezepte gefunden.</p>';
   els.recipeGrid.querySelectorAll('[data-recipe-id]').forEach(btn => btn.addEventListener('click', () => openRecipe(btn.dataset.recipeId)));
 }
 
+function populateRecipeFilters(){
+  const seasons = uniqueSorted(recipes.flatMap(r => arrayOf(r.season)));
+  const styles = uniqueSorted(recipes.map(r => r.style).filter(Boolean));
+  populateSelect(els.recipeSeasonFilter, 'Alle Jahreszeiten', seasons, state.recipeFilters.season);
+  populateSelect(els.recipeStyleFilter, 'Alle Stilrichtungen', styles, state.recipeFilters.style);
+}
+
+function resetRecipeFilters(){
+  state.recipeSearch = '';
+  state.recipeFilters = { season: '', style: '' };
+  els.recipeSearch.value = '';
+  els.recipeSeasonFilter.value = '';
+  els.recipeStyleFilter.value = '';
+  renderRecipes();
+}
+
 function recipeSearchText(recipe){
   return [
     recipe.name, recipe.category, recipe.style, recipe.strength,
-    ...(recipe.ingredients || []), ...(recipe.instructions || []),
+    ...(recipe.season || []), ...(recipe.ingredients || []), ...(recipe.instructions || []),
     ...(recipe.flavorTags || []), ...(recipe.moodTags || []), ...(recipe.match || []), ...(recipe.missingFallback || [])
   ].filter(Boolean).join(' ').toLowerCase();
 }
 
 function renderRecipeCard(recipe){
-  const tags = [recipe.category, recipe.style, recipe.strength].filter(Boolean).slice(0,4);
-  const subtitle = [recipe.category, recipe.style, recipe.strength].filter(Boolean).join(' · ');
+  const seasonPreview = arrayOf(recipe.season).slice(0,1);
+  const tags = [recipe.category, recipe.style, ...seasonPreview, recipe.strength].filter(Boolean).slice(0,4);
+  const subtitle = [recipe.category, recipe.style, ...seasonPreview, recipe.strength].filter(Boolean).join(' · ');
   return `<button class="item-card recipe-card" data-recipe-id="${escapeHtml(recipe.id)}">
     <h3>${escapeHtml(recipe.name)}</h3>
     <p class="meta">${escapeHtml(subtitle || (recipe.ingredients || []).slice(0,3).join(' · '))}</p>
@@ -415,7 +445,7 @@ function openRecipe(id){
   const recipe = recipes.find(r => r.id === id);
   if(!recipe) return;
   els.recipeDetailName.textContent = recipe.name;
-  els.recipeDetailCategory.textContent = [recipe.category, recipe.style, recipe.strength].filter(Boolean).join(' · ');
+  els.recipeDetailCategory.textContent = [recipe.category, recipe.style, ...arrayOf(recipe.season).slice(0,2), recipe.strength].filter(Boolean).join(' · ');
   const ingredients = arrayOf(recipe.ingredients);
   const instructions = arrayOf(recipe.instructions);
   const serving = recipeServingMeta(recipe);
@@ -430,6 +460,7 @@ function openRecipe(id){
     <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list ingredient-list">${ingredients.map(i => `<li><span>${escapeHtml(i)}</span></li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
     <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list step-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
     <div class="detail-section"><h3>Servierhinweis</h3><p>${escapeHtml(serving.note)}</p></div>
+    ${detailTags('Jahreszeit', arrayOf(recipe.season))}
     ${detailTags('Geschmack', recipe.flavorTags || [])}
     ${detailTags('Stimmung', recipe.moodTags || [])}
     ${detailTags('Benötigte Bar-Zutaten', recipe.match || [])}
@@ -455,9 +486,11 @@ function recipeLongDescription(recipe){
   const strength = recipe.strength ? `Die Stärke ist als ${recipe.strength} eingeordnet.` : 'Die Stärke ist noch nicht eingeordnet.';
   const flavors = arrayOf(recipe.flavorTags);
   const moods = arrayOf(recipe.moodTags);
+  const seasons = arrayOf(recipe.season);
   const flavorText = flavors.length ? ` Geschmacklich wirkt der Drink ${joinHuman(flavors)}.` : '';
   const moodText = moods.length ? ` Besonders passend für ${joinHuman(moods)}.` : '';
-  return `${name} ist ein ${style}-Rezept aus Murats Hausbar. ${strength}${flavorText}${moodText}`;
+  const seasonText = seasons.length ? ` Saison: ${joinHuman(seasons)}.` : '';
+  return `${name} ist ein ${style}-Rezept aus Murats Hausbar. ${strength}${flavorText}${moodText}${seasonText}`;
 }
 
 function recipeServingMeta(recipe){

@@ -457,3 +457,78 @@ p{color:var(--text-body)}
   :root{--type-hero:1.68rem;--type-xl:1.38rem;--type-lg:1.14rem;--type-md:1.03rem;}
   .detail-section p,.bottle-description-card p,.ingredient-list li,.step-list li,.polished-list li{line-height:1.58}
 }
+
+/* v0.10 Recipe filters and overflow repair */
+.recipe-filter-panel{
+  margin-bottom:14px;
+}
+.recipe-filters{
+  grid-template-columns:1fr;
+}
+@media (min-width:720px){
+  .recipe-filters{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+.detail-dialog,
+.detail-dialog *,
+.item-card,
+.item-card *,
+.detail-section,
+.detail-section *,
+.bottle-hero-detail,
+.bottle-hero-detail *,
+.meta-tile,
+.snapshot-tile,
+.recipe-meta-tile,
+.tag{
+  box-sizing:border-box;
+  min-width:0;
+}
+#detailBody,#recipeDetailBody{
+  padding-bottom:calc(28px + env(safe-area-inset-bottom));
+  overflow-x:hidden;
+}
+.detail-section,
+.bottle-hero-detail,
+.bottle-description-card,
+.snapshot-tile,
+.meta-tile,
+.recipe-meta-tile,
+.item-card{
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+.detail-section p,
+.bottle-description-card p,
+.bottle-hero-detail p:not(.eyebrow),
+.snapshot-tile strong,
+.meta-tile strong,
+.recipe-meta-tile strong,
+.item-card h3,
+.item-card .meta,
+.recipe-preview{
+  overflow-wrap:anywhere;
+  hyphens:auto;
+}
+.tag-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  max-width:100%;
+}
+.tag{
+  max-width:100%;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.bottle-snapshot,
+.detail-grid,
+.recipe-meta-grid{
+  min-width:0;
+}
+@media (max-width:420px){
+  .detail-dialog{width:calc(100vw - 20px);}
+  .dialog-header{padding:18px 16px 14px;}
+  #detailBody,#recipeDetailBody{padding:16px 14px calc(30px + env(safe-area-inset-bottom));}
+  .bottle-hero-detail,.detail-section{padding:16px;}
+  .meta-tile,.snapshot-tile,.recipe-meta-tile{padding:13px;}
+}
