@@ -1,6 +1,6 @@
-// Hausbar Next v0.7 - bottle detail polish
+// Hausbar Next v0.8 - bottle detail polish
 const HB_DATA = {
-  "version": "v0.7",
+  "version": "v0.8",
   "inventory": [
     {
       "id": "csv-001-aperol",

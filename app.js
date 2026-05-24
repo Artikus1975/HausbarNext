@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.7';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.8';
 
 const state = {
   view: 'home',
@@ -226,14 +226,18 @@ function openItem(id){
   const desc = item.description || {};
   const originLabel = item.originTags.length ? item.originTags.join(' · ') : 'Herkunft offen';
   const profileText = bottleProfileText(item, desc);
+  const leadingTags = [...item.flavorTags.slice(0,2), ...item.styleTags.slice(0,1)].filter(Boolean).slice(0,3);
   els.detailBody.innerHTML = `
-    <div class="bottle-hero-detail">
-      <div>
+    <div class="bottle-hero-detail premium-bottle-hero">
+      <div class="bottle-hero-copy">
         <p class="eyebrow">Flaschenprofil</p>
         <h3>${escapeHtml(item.name)}</h3>
         <p>${escapeHtml(profileText)}</p>
+        <div class="signature-strip">
+          ${leadingTags.length ? leadingTags.map(tag => `<span>${escapeHtml(tag)}</span>`).join('') : '<span>Profil wird kuratiert</span>'}
+        </div>
       </div>
-      <div class="bottle-meta-grid">
+      <div class="bottle-meta-grid premium-meta-grid">
         ${metaTile('Kategorie', item.category)}
         ${metaTile('Unterkategorie', item.subcategory || 'Noch offen')}
         ${metaTile('Status', item.status || 'Nicht gepflegt')}
@@ -241,22 +245,28 @@ function openItem(id){
       </div>
     </div>
 
-    <div class="detail-grid two-col">
-      ${detailTags('Geschmack', item.flavorTags, 'Wofür die Flasche sensorisch steht.')}
-      ${detailTags('Nutzung', item.usageTags, 'Wo sie in Drinks oder pur am besten eingesetzt wird.')}
-      ${detailTags('Stil', item.styleTags, 'Rolle, Intensität und Charakter der Flasche.')}
-      ${detailTags('Herkunft', item.originTags, 'Regionale und stilistische Herkunft.')}
+    <div class="bottle-snapshot">
+      ${snapshotTile('Barrolle', bottleRole(item))}
+      ${snapshotTile('Profil', bottleMood(item))}
+      ${snapshotTile('Einsatz', bottleBestUse(item))}
     </div>
 
-    <div class="detail-section highlight-section">
+    <div class="detail-section highlight-section bottle-description-card">
       <h3>Beschreibung</h3>
-      <p>${escapeHtml(desc.short || 'Noch keine kuratierte Beschreibung vorhanden. Diese Sektion ist für spätere Hersteller-/Internetdaten und eigene Verkostungsnotizen vorbereitet.')}</p>
+      <p>${escapeHtml(desc.short || bottleCuratedPlaceholder(item))}</p>
+    </div>
+
+    <div class="detail-grid two-col">
+      ${detailTags('Geschmack', item.flavorTags, 'Aromen, sensorische Richtung und geschmackliche Wirkung.')}
+      ${detailTags('Nutzung', item.usageTags, 'Cocktail-Rollen, Einsatzbereiche und Bar-Kontext.')}
+      ${detailTags('Stil', item.styleTags, 'Intensität, Charakter und Position in deiner Bar.')}
+      ${detailTags('Herkunft', item.originTags, 'Land, Region oder stilistische Herkunft.')}
     </div>
 
     <div class="detail-grid two-col">
       <div class="detail-section">
         <h3>Beste Verwendung</h3>
-        ${item.usageTags.length ? `<ul class="clean-list compact-list">${item.usageTags.slice(0,5).map(tag => `<li>${escapeHtml(usageSentence(tag))}</li>`).join('')}</ul>` : '<p class="empty">Noch keine Nutzung gepflegt.</p>'}
+        ${item.usageTags.length ? `<ul class="clean-list compact-list polished-list">${item.usageTags.slice(0,5).map(tag => `<li>${escapeHtml(usageSentence(tag))}</li>`).join('')}</ul>` : '<p class="empty">Noch keine Nutzung gepflegt.</p>'}
       </div>
       <div class="detail-section">
         <h3>Servieren</h3>
@@ -264,9 +274,62 @@ function openItem(id){
       </div>
     </div>
 
+    <div class="detail-section curation-note">
+      <h3>Kuration</h3>
+      <p>${escapeHtml(bottleCurationStatus(item))}</p>
+    </div>
+
     ${item.notes ? `<div class="detail-section"><h3>Notizen</h3><p>${escapeHtml(item.notes)}</p></div>` : ''}
   `;
   els.dialog.showModal();
+}
+
+function snapshotTile(label, value){
+  return `<div class="snapshot-tile"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value || 'Noch offen')}</strong></div>`;
+}
+
+function bottleRole(item){
+  if(listContains(item.usageTags, 'sipping')) return 'Sipping / Pur';
+  if(listContains(item.usageTags, 'modifier')) return 'Modifier';
+  if(listContains(item.usageTags, 'aperitif')) return 'Aperitif';
+  if(listContains(item.usageTags, 'tiki')) return 'Tiki / Tropical';
+  if(listContains(item.usageTags, 'spritz')) return 'Spritz / Longdrink';
+  if(item.category) return item.category;
+  return 'Bar-Zutat';
+}
+
+function bottleMood(item){
+  const tags = [...item.flavorTags.slice(0,2), ...item.styleTags.slice(0,2)].filter(Boolean);
+  return tags.length ? tags.join(' · ') : 'Profil offen';
+}
+
+function bottleBestUse(item){
+  if(item.usageTags.length) return item.usageTags.slice(0,2).join(' · ');
+  if(item.category === 'Whisky') return 'Pur / Klassiker';
+  if(item.category === 'Gin') return 'Highball / Sour';
+  return 'Noch zu kuratieren';
+}
+
+function bottleCuratedPlaceholder(item){
+  const origin = item.originTags.length ? ` aus ${item.originTags.join(' / ')}` : '';
+  const flavor = item.flavorTags.slice(0,3).join(', ');
+  const style = item.styleTags.slice(0,2).join(', ');
+  const parts = [];
+  if(item.category) parts.push(`${item.category}${origin}`);
+  if(flavor) parts.push(`mit ${flavor}em Profil`);
+  if(style) parts.push(`im Stil ${style}`);
+  return parts.length
+    ? `${parts.join(' – ')}. Eine ausführliche, quellenbasierte Flaschenbeschreibung wird später in der Internet-/Kurationsphase ergänzt.`
+    : 'Noch keine kuratierte Beschreibung vorhanden. Diese Sektion ist für spätere Hersteller-/Internetdaten und eigene Verkostungsnotizen vorbereitet.';
+}
+
+function bottleCurationStatus(item){
+  const missing = [];
+  if(!item.originTags.length) missing.push('Herkunft');
+  if(!(item.description && (item.description.short || item.description.long))) missing.push('Beschreibung');
+  if(!item.guestTags.length) missing.push('Gästekontext');
+  if(!missing.length) return 'Die wichtigsten Kurationsfelder sind für diese Flasche bereits gepflegt.';
+  return `Noch offen für spätere Kuration: ${missing.join(', ')}.`;
 }
 
 function metaTile(label, value){
