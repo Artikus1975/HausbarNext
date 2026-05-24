@@ -458,7 +458,7 @@ p{color:var(--text-body)}
   .detail-section p,.bottle-description-card p,.ingredient-list li,.step-list li,.polished-list li{line-height:1.58}
 }
 
-/* v0.10 Recipe filters and overflow repair */
+/* v0.12 Recipe filters and overflow repair */
 .recipe-filter-panel{
   margin-bottom:14px;
 }
@@ -533,7 +533,7 @@ p{color:var(--text-body)}
   .meta-tile,.snapshot-tile,.recipe-meta-tile{padding:13px;}
 }
 
-/* v0.11 Home Daily Drink and Today Menu */
+/* v0.12 Home Daily Drink and Today Menu */
 .home-title{
   padding:8px 4px 12px;
 }
@@ -679,4 +679,142 @@ p{color:var(--text-body)}
   .today-menu-card{padding:18px;}
   .today-menu-head{display:block;}
   .today-menu-head .ghost-button{width:100%;margin-top:14px;}
+}
+
+
+/* v0.12 Calm Luxury Design - reduce glow, blur and orange gradients */
+:root{
+  --bg:#070706;
+  --bg2:#0d0c0a;
+  --panel:#11100e;
+  --card:#151310;
+  --card2:#1b1814;
+  --text:#f3eee7;
+  --muted:#b8afa4;
+  --soft:#8f867b;
+  --line:#2d2924;
+  --line2:rgba(255,255,255,.10);
+  --accent:#c9a56a;
+  --accent2:#d7bf8a;
+  --text-strong:#fbf7ef;
+  --text-body:#e4ddd3;
+  --text-muted:#b9b0a5;
+  --text-subtle:#8c8379;
+  --label:#d7bf8a;
+  --chip-text:#dfcfad;
+  --shadow:0 18px 42px rgba(0,0,0,.42);
+  --shadow-soft:0 10px 26px rgba(0,0,0,.26);
+}
+html{background:#070706;}
+body{
+  background:#070706;
+  color:var(--text-body);
+}
+.app-header,
+.bottom-nav{
+  background:rgba(7,7,6,.96);
+  border-color:rgba(255,255,255,.08);
+  box-shadow:none;
+}
+.card,
+.hero.card,
+.item-card,
+.detail-dialog,
+.detail-section,
+.snapshot-tile,
+.meta-tile,
+.recipe-meta-tile,
+.filter-panel,
+.today-menu-card,
+.home-menu-item{
+  background:linear-gradient(180deg,rgba(22,20,17,.98),rgba(13,12,10,.99));
+  border-color:rgba(255,255,255,.10);
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+}
+.hero.card,
+.daily-card,
+.bottle-hero-detail,
+.premium-bottle-hero,
+.highlight-section,
+.curation-note{
+  background:linear-gradient(180deg,rgba(25,23,20,.98),rgba(14,13,11,.99));
+  border-color:rgba(201,165,106,.22);
+}
+.premium-bottle-hero:before{
+  display:none;
+}
+.version,
+.ghost-button,
+.primary-pill{
+  background:rgba(255,255,255,.04);
+  color:var(--text-strong);
+  border-color:rgba(201,165,106,.34);
+  box-shadow:none;
+}
+.primary-pill{
+  background:rgba(201,165,106,.92);
+  color:#10100e;
+}
+.tag,
+.signature-strip span{
+  background:rgba(201,165,106,.08);
+  border-color:rgba(201,165,106,.28);
+  color:var(--chip-text);
+}
+.search,select{
+  background:#0e0d0b;
+  border-color:rgba(255,255,255,.11);
+}
+.search:focus,select:focus{
+  border-color:rgba(201,165,106,.54);
+  box-shadow:0 0 0 2px rgba(201,165,106,.10);
+}
+.compact-stats .stat,
+.stat{
+  background:rgba(255,255,255,.035);
+  border-color:rgba(255,255,255,.09);
+  box-shadow:none;
+}
+.compact-stats .stat strong{
+  color:var(--text-strong);
+}
+.bottom-nav button.active{
+  background:rgba(201,165,106,.11);
+  border-color:rgba(201,165,106,.32);
+  color:var(--text-strong);
+}
+.dialog-header{
+  background:linear-gradient(180deg,rgba(23,21,18,.98),rgba(14,13,11,.99));
+  border-bottom-color:rgba(255,255,255,.09);
+}
+.detail-dialog::backdrop{
+  background:rgba(0,0,0,.72);
+  backdrop-filter:none;
+}
+.eyebrow,
+.detail-section h3,
+.snapshot-tile span,
+.meta-tile span,
+.recipe-meta-tile span,
+.filters label,
+.home-menu-item span{
+  color:var(--label);
+  letter-spacing:.13em;
+}
+.bottle-description-card{
+  border-color:rgba(201,165,106,.20);
+}
+.bottle-hero-detail{
+  box-shadow:none;
+}
+.daily-card{
+  box-shadow:0 14px 32px rgba(0,0,0,.28);
+}
+.home-title h2{
+  color:var(--text-strong);
+}
+.detail-dialog,
+.card,
+.item-card{
+  backdrop-filter:none;
 }

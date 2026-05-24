@@ -1,6 +1,6 @@
-// Hausbar Next v0.11 - home daily drink and menu foundation
+// Hausbar Next v0.12 - home daily drink and menu foundation
 const HB_DATA = {
-  "version": "v0.11",
+  "version": "v0.12",
   "inventory": [
     {
       "id": "csv-001-aperol",

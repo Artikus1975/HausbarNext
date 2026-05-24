@@ -1,10 +1,10 @@
-# Hausbar Next v0.11
+# Hausbar Next v0.12
 
 Saubere Neubau-Basis fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
-- Basis bleibt: v0.10 korrigiert/stabil
+- Basis bleibt: v0.12 korrigiert/stabil
 - Home-Seite mit Tagescocktail ergaenzt
 - Tagescocktail ist deterministisch pro Berlin-Datum und damit geraeteuebergreifend gleich
 - Home-Seite mit dreiteiligem Abendmenue ergaenzt:
@@ -13,8 +13,8 @@ Saubere Neubau-Basis fuer Murat's Hausbar.
   - Digestif / Dessert
 - Button `Neu waehlen` erzeugt ein neues lokales Menue und behaelt es beim Navigieren/Zurueckkehren bei
 - Klick auf Tagescocktail oder Menue-Drink oeffnet direkt das jeweilige Rezept
-- Textueberlauf-Fix aus v0.10 bleibt erhalten
-- Rezeptsuche und Rezeptfilter aus v0.10 bleiben erhalten
+- Textueberlauf-Fix aus v0.12 bleibt erhalten
+- Rezeptsuche und Rezeptfilter aus v0.12 bleiben erhalten
 
 ## Nicht geaendert
 
@@ -32,3 +32,10 @@ Saubere Neubau-Basis fuer Murat's Hausbar.
 - app.js
 - data.js
 - README.md
+
+
+## v0.12
+
+- Calm Luxury Design: weniger Glow, keine orange-goldenen Blur-Verläufe, ruhigere dunkle Flächen.
+- Funktional unverändert gegenüber v0.11.
+- Tagescocktail, Heute-passend-Menü, Rezeptsuche und Rezeptfilter bleiben erhalten.
