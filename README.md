@@ -1,28 +1,18 @@
-# Hausbar Next v0.4
+# Hausbar Next v0.5
 
-Saubere Neubau-Basis fuer Murat's Hausbar.
+Recipe Detail Polish auf Basis von v0.4.
 
-## Zweck dieser Version
+## Inhalt
+- Inventar mit stabiler Self-Excluding-Filterlogik
+- Flaschen-Detailansicht
+- Rezeptliste
+- Rezept-Detailansicht mit besserer Darstellung
+- Rezeptbeschreibung wird aus vorhandenen Metadaten abgeleitet
+- Glas-, Garnish-, Eis- und Servierhinweise werden als strukturierte Empfehlungen vorbereitet
 
-- Rezeptbereich erweitert
-- Rezepte sind jetzt anklickbar
-- Rezept-Detailansicht zeigt vorhandene Daten
-- Zutaten und Zubereitung werden strukturiert angezeigt
-- Platzhalter fuer spaetere Beschreibung, Glas, Garnish und Servierempfehlung
-
-## Bewusst nicht geaendert
-
-- keine Aenderung an der Inventar-Filterlogik
-- keine Aenderung an der Rauchig-/Self-Excluding-Facet-Logik
-- keine neue Datenmigration
-- keine Runtime-Hooks
-- keine Wrapper
-- kein Service Worker
-
-## Testfokus
-
-1. Version zeigt v0.4
-2. Inventar laedt weiterhin
-3. Rauchig-Test bleibt ok
-4. Rezepte sind anklickbar
-5. Rezeptdetail oeffnet und schliesst
+## Nicht geändert
+- Keine Änderung an der Inventar-Filterlogik
+- Keine Änderung am Rauchig-Verhalten
+- Keine Datenmigration
+- Kein Service Worker
+- Keine Runtime-Hooks oder Wrapper

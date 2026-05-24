@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.4';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.5';
 
 const state = {
   view: 'home',
@@ -266,9 +266,11 @@ function recipeSearchText(recipe){
 
 function renderRecipeCard(recipe){
   const tags = [recipe.category, recipe.style, recipe.strength].filter(Boolean).slice(0,4);
-  return `<button class="item-card" data-recipe-id="${escapeHtml(recipe.id)}">
+  const subtitle = [recipe.category, recipe.style, recipe.strength].filter(Boolean).join(' · ');
+  return `<button class="item-card recipe-card" data-recipe-id="${escapeHtml(recipe.id)}">
     <h3>${escapeHtml(recipe.name)}</h3>
-    <p class="meta">${escapeHtml((recipe.ingredients || []).slice(0,4).join(' · '))}</p>
+    <p class="meta">${escapeHtml(subtitle || (recipe.ingredients || []).slice(0,3).join(' · '))}</p>
+    <p class="recipe-preview">${escapeHtml(recipeShortDescription(recipe))}</p>
     <div class="tag-row">${tags.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
   </button>`;
 }
@@ -280,16 +282,74 @@ function openRecipe(id){
   els.recipeDetailCategory.textContent = [recipe.category, recipe.style, recipe.strength].filter(Boolean).join(' · ');
   const ingredients = arrayOf(recipe.ingredients);
   const instructions = arrayOf(recipe.instructions);
+  const serving = recipeServingMeta(recipe);
   els.recipeDetailBody.innerHTML = `
-    <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list compact-list">${ingredients.map(i => `<li>${escapeHtml(i)}</li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
-    <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list compact-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
+    <div class="detail-section highlight-section"><h3>Beschreibung</h3><p>${escapeHtml(recipeLongDescription(recipe))}</p></div>
+    <div class="recipe-meta-grid">
+      ${recipeMetaTile('Stärke', recipe.strength || 'Nicht hinterlegt')}
+      ${recipeMetaTile('Glas', serving.glass)}
+      ${recipeMetaTile('Eis', serving.ice)}
+      ${recipeMetaTile('Garnish', serving.garnish)}
+    </div>
+    <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list ingredient-list">${ingredients.map(i => `<li><span>${escapeHtml(i)}</span></li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
+    <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list step-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
+    <div class="detail-section"><h3>Servierhinweis</h3><p>${escapeHtml(serving.note)}</p></div>
     ${detailTags('Geschmack', recipe.flavorTags || [])}
     ${detailTags('Stimmung', recipe.moodTags || [])}
     ${detailTags('Benötigte Bar-Zutaten', recipe.match || [])}
     ${detailTags('Fallback / mögliche fehlende Angabe', recipe.missingFallback || [])}
-    <div class="detail-section"><h3>Beschreibung</h3><p class="empty">Für spätere Rezeptbeschreibung, Glas, Garnish und Servierempfehlung vorbereitet.</p></div>
   `;
   els.recipeDialog.showModal();
+}
+
+function recipeMetaTile(label, value){
+  return `<div class="recipe-meta-tile"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`;
+}
+
+function recipeShortDescription(recipe){
+  const flavors = arrayOf(recipe.flavorTags).slice(0,2).join(' und ');
+  const style = recipe.style || recipe.category || 'Cocktail';
+  if(flavors) return `${style} mit ${flavors}em Profil.`;
+  return `${style} aus Murats Rezeptbestand.`;
+}
+
+function recipeLongDescription(recipe){
+  const name = recipe.name || 'Dieser Drink';
+  const style = recipe.style || recipe.category || 'Cocktail';
+  const strength = recipe.strength ? `Die Stärke ist als ${recipe.strength} eingeordnet.` : 'Die Stärke ist noch nicht eingeordnet.';
+  const flavors = arrayOf(recipe.flavorTags);
+  const moods = arrayOf(recipe.moodTags);
+  const flavorText = flavors.length ? ` Geschmacklich wirkt der Drink ${joinHuman(flavors)}.` : '';
+  const moodText = moods.length ? ` Besonders passend für ${joinHuman(moods)}.` : '';
+  return `${name} ist ein ${style}-Rezept aus Murats Hausbar. ${strength}${flavorText}${moodText}`;
+}
+
+function recipeServingMeta(recipe){
+  const text = recipeSearchText(recipe);
+  const name = String(recipe.name || '').toLowerCase();
+  const category = String(recipe.category || '').toLowerCase();
+  const style = String(recipe.style || '').toLowerCase();
+  let glass = 'Tumbler oder Coupette';
+  let ice = 'Je nach Rezept';
+  let garnish = 'Zitruszeste oder passende Garnitur';
+  let note = 'Kalt und frisch servieren. Die genaue Glas- und Garnish-Kuration wird später pro Rezept verfeinert.';
+
+  if(text.includes('spritz') || name.includes('spritz')) { glass = 'Weinglas'; ice = 'Viel Eis'; garnish = 'Orangenscheibe oder Zeste'; note = 'Locker auf Eis bauen und mit Schaumwein oder Soda frisch verlängern.'; }
+  else if(text.includes('martini') || name.includes('martini')) { glass = 'Martini- oder Coupetteglas'; ice = 'Ohne Eis im Glas'; garnish = 'Zeste oder Olive'; note = 'Sehr kalt rühren oder shaken und ohne Eis servieren.'; }
+  else if(text.includes('sour') || category.includes('sour')) { glass = 'Tumbler oder Coupette'; ice = 'Frisches Eis oder ohne Eis'; garnish = 'Zitruszeste'; note = 'Kräftig shaken. Bei Eiweiß zuerst dry shaken, dann mit Eis shaken.'; }
+  else if(text.includes('highball') || text.includes('soda') || text.includes('tonic')) { glass = 'Highballglas'; ice = 'Viel klares Eis'; garnish = 'Zitruszeste oder Fruchtscheibe'; note = 'Direkt im Glas auf Eis bauen und vorsichtig verrühren.'; }
+  else if(text.includes('negroni') || style.includes('aperitif') || category.includes('klassiker')) { glass = 'Tumbler'; ice = 'Großer Eiswürfel'; garnish = 'Orangenzeste'; note = 'Auf Eis rühren und mit aromatischer Zeste servieren.'; }
+  else if(text.includes('tiki') || text.includes('tropical') || text.includes('tropisch')) { glass = 'Tiki Mug oder großes Glas'; ice = 'Crushed Ice'; garnish = 'Minze, Zitrus oder Frucht'; note = 'Kräftig shaken oder swizzlen und üppig garnieren.'; }
+  else if(style.includes('dessert') || text.includes('cremig')) { glass = 'Coupette oder kleines Glas'; ice = 'Ohne Eis oder frisches Eis'; garnish = 'Muskat, Schokolade oder Zeste'; note = 'Cremig und sehr kalt servieren.'; }
+
+  return { glass, ice, garnish, note };
+}
+
+function joinHuman(values){
+  const list = arrayOf(values);
+  if(list.length <= 1) return list[0] || '';
+  if(list.length === 2) return `${list[0]} und ${list[1]}`;
+  return `${list.slice(0,-1).join(', ')} und ${list[list.length-1]}`;
 }
 
 function escapeHtml(value){

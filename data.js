@@ -1,6 +1,6 @@
-// Hausbar Next v0.4 - recipe detail foundation with canonical taxonomies
+// Hausbar Next v0.5 - recipe detail polish with canonical taxonomies
 const HB_DATA = {
-  "version": "v0.4",
+  "version": "v0.5",
   "inventory": [
     {
       "id": "csv-001-aperol",
