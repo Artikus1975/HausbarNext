@@ -818,3 +818,40 @@ body{
 .item-card{
   backdrop-filter:none;
 }
+
+/* v0.13 Clean Public Detail Views */
+.clean-public-hero{
+  margin-bottom:16px;
+}
+.clean-public-hero .bottle-hero-copy p,
+.detail-section p,
+.recipe-preview,
+.meta-tile strong,
+.recipe-meta-tile strong,
+.tag,
+.signature-strip span{
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+.clean-public-hero .signature-strip{
+  margin-top:14px;
+}
+#detailBody .detail-section,
+#recipeDetailBody .detail-section{
+  overflow:hidden;
+}
+#detailBody .tag-row,
+#recipeDetailBody .tag-row{
+  flex-wrap:wrap;
+  max-width:100%;
+}
+#detailBody .tag,
+#recipeDetailBody .tag{
+  max-width:100%;
+}
+@media (max-width:420px){
+  .bottle-meta-grid,
+  .recipe-meta-grid{
+    grid-template-columns:1fr;
+  }
+}

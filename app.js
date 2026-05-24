@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.12';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.13';
 
 const state = {
   view: 'home',
@@ -238,64 +238,42 @@ function openItem(id){
   els.detailName.textContent = item.name;
   els.detailCategory.textContent = [item.category, item.subcategory].filter(Boolean).join(' · ');
   const desc = item.description || {};
-  const originLabel = item.originTags.length ? item.originTags.join(' · ') : 'Herkunft offen';
-  const profileText = bottleProfileText(item, desc);
-  const leadingTags = [...item.flavorTags.slice(0,2), ...item.styleTags.slice(0,1)].filter(Boolean).slice(0,3);
+  const leadingTags = [...item.flavorTags.slice(0,3), ...item.usageTags.slice(0,2)].filter(Boolean).slice(0,5);
+  const visibleMeta = [
+    metaTile('Kategorie', item.category),
+    item.subcategory ? metaTile('Unterkategorie', item.subcategory) : '',
+    item.originTags.length ? metaTile('Herkunft', item.originTags.join(' · ')) : ''
+  ].filter(Boolean).join('');
+
   els.detailBody.innerHTML = `
-    <div class="bottle-hero-detail premium-bottle-hero">
+    <div class="bottle-hero-detail premium-bottle-hero clean-public-hero">
       <div class="bottle-hero-copy">
         <p class="eyebrow">Flaschenprofil</p>
         <h3>${escapeHtml(item.name)}</h3>
-        <p>${escapeHtml(profileText)}</p>
-        <div class="signature-strip">
-          ${leadingTags.length ? leadingTags.map(tag => `<span>${escapeHtml(tag)}</span>`).join('') : '<span>Profil wird kuratiert</span>'}
-        </div>
+        <p>${escapeHtml(desc.short || bottlePublicDescription(item))}</p>
+        ${leadingTags.length ? `<div class="signature-strip">${leadingTags.map(tag => `<span>${escapeHtml(tag)}</span>`).join('')}</div>` : ''}
       </div>
-      <div class="bottle-meta-grid premium-meta-grid">
-        ${metaTile('Kategorie', item.category)}
-        ${metaTile('Unterkategorie', item.subcategory || 'Noch offen')}
-        ${metaTile('Status', item.status || 'Nicht gepflegt')}
-        ${metaTile('Herkunft', originLabel)}
-      </div>
+      ${visibleMeta ? `<div class="bottle-meta-grid premium-meta-grid">${visibleMeta}</div>` : ''}
     </div>
 
-    <div class="bottle-snapshot">
-      ${snapshotTile('Barrolle', bottleRole(item))}
-      ${snapshotTile('Profil', bottleMood(item))}
-      ${snapshotTile('Einsatz', bottleBestUse(item))}
-    </div>
-
-    <div class="detail-section highlight-section bottle-description-card">
-      <h3>Beschreibung</h3>
-      <p>${escapeHtml(desc.short || bottleCuratedPlaceholder(item))}</p>
-    </div>
-
-    <div class="detail-grid two-col">
-      ${detailTags('Geschmack', item.flavorTags, 'Aromen, sensorische Richtung und geschmackliche Wirkung.')}
-      ${detailTags('Nutzung', item.usageTags, 'Cocktail-Rollen, Einsatzbereiche und Bar-Kontext.')}
-      ${detailTags('Stil', item.styleTags, 'Intensität, Charakter und Position in deiner Bar.')}
-      ${detailTags('Herkunft', item.originTags, 'Land, Region oder stilistische Herkunft.')}
-    </div>
-
-    <div class="detail-grid two-col">
-      <div class="detail-section">
-        <h3>Beste Verwendung</h3>
-        ${item.usageTags.length ? `<ul class="clean-list compact-list polished-list">${item.usageTags.slice(0,5).map(tag => `<li>${escapeHtml(usageSentence(tag))}</li>`).join('')}</ul>` : '<p class="empty">Noch keine Nutzung gepflegt.</p>'}
-      </div>
-      <div class="detail-section">
-        <h3>Servieren</h3>
-        <p>${escapeHtml(desc.serving || servingSuggestionFor(item))}</p>
-      </div>
-    </div>
-
-    <div class="detail-section curation-note">
-      <h3>Kuration</h3>
-      <p>${escapeHtml(bottleCurationStatus(item))}</p>
-    </div>
-
+    ${detailTags('Geschmack', item.flavorTags)}
+    ${detailTags('Beste Verwendung', item.usageTags)}
+    ${desc.serving || item.usageTags.length ? `<div class="detail-section"><h3>Servieren</h3><p>${escapeHtml(desc.serving || servingSuggestionFor(item))}</p></div>` : ''}
     ${item.notes ? `<div class="detail-section"><h3>Notizen</h3><p>${escapeHtml(item.notes)}</p></div>` : ''}
   `;
   els.dialog.showModal();
+}
+
+function bottlePublicDescription(item){
+  const origin = item.originTags.length ? `${item.originTags[0]}${item.originTags[1] ? ' / ' + item.originTags[1] : ''}` : '';
+  const flavors = item.flavorTags.slice(0,3).join(', ');
+  const uses = item.usageTags.slice(0,2).join(' und ');
+  const intro = [origin, item.category].filter(Boolean).join(' · ');
+  const parts = [];
+  if(intro) parts.push(intro);
+  if(flavors) parts.push(`mit ${flavors}em Profil`);
+  if(uses) parts.push(`besonders passend für ${uses}`);
+  return parts.length ? `${parts.join(' – ')}.` : 'Beschreibung wird später kuratiert ergänzt.';
 }
 
 function snapshotTile(label, value){
@@ -387,7 +365,9 @@ function servingSuggestionFor(item){
 }
 
 function detailTags(title, tags, helper = ''){
-  return `<div class="detail-section tag-section"><h3>${escapeHtml(title)}</h3>${helper ? `<p class="section-helper">${escapeHtml(helper)}</p>` : ''}<div class="tag-row">${tags.length ? tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('') : '<span class="empty">Noch leer</span>'}</div></div>`;
+  const values = arrayOf(tags);
+  if(!values.length) return '';
+  return `<div class="detail-section tag-section"><h3>${escapeHtml(title)}</h3>${helper ? `<p class="section-helper">${escapeHtml(helper)}</p>` : ''}<div class="tag-row">${values.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div></div>`;
 }
 
 function renderHome(){
@@ -569,7 +549,7 @@ function openRecipe(id){
   els.recipeDetailBody.innerHTML = `
     <div class="detail-section highlight-section"><h3>Beschreibung</h3><p>${escapeHtml(recipeLongDescription(recipe))}</p></div>
     <div class="recipe-meta-grid">
-      ${recipeMetaTile('Stärke', recipe.strength || 'Nicht hinterlegt')}
+      ${recipeMetaTile('Stärke', recipeStrengthLabel(recipe.strength))}
       ${recipeMetaTile('Glas', serving.glass)}
       ${recipeMetaTile('Eis', serving.ice)}
       ${recipeMetaTile('Garnish', serving.garnish)}
@@ -577,11 +557,8 @@ function openRecipe(id){
     <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list ingredient-list">${ingredients.map(i => `<li><span>${escapeHtml(i)}</span></li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
     <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list step-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
     <div class="detail-section"><h3>Servierhinweis</h3><p>${escapeHtml(serving.note)}</p></div>
-    ${detailTags('Jahreszeit', arrayOf(recipe.season))}
     ${detailTags('Geschmack', recipe.flavorTags || [])}
-    ${detailTags('Stimmung', recipe.moodTags || [])}
-    ${detailTags('Benötigte Bar-Zutaten', recipe.match || [])}
-    ${detailTags('Fallback / mögliche fehlende Angabe', recipe.missingFallback || [])}
+    ${recipe.style ? `<div class="detail-section"><h3>Stilrichtung</h3><div class="tag-row"><span class="tag">${escapeHtml(recipe.style)}</span></div></div>` : ''}
   `;
   els.recipeDialog.showModal();
 }
@@ -594,20 +571,30 @@ function recipeShortDescription(recipe){
   const flavors = arrayOf(recipe.flavorTags).slice(0,2).join(' und ');
   const style = recipe.style || recipe.category || 'Cocktail';
   if(flavors) return `${style} mit ${flavors}em Profil.`;
-  return `${style} aus Murats Rezeptbestand.`;
+  if(recipe.strength) return `${style}, ${recipeStrengthLabel(recipe.strength).toLowerCase()}.`;
+  return `${style} für die Hausbar.`;
 }
 
 function recipeLongDescription(recipe){
-  const name = recipe.name || 'Dieser Drink';
   const style = recipe.style || recipe.category || 'Cocktail';
-  const strength = recipe.strength ? `Die Stärke ist als ${recipe.strength} eingeordnet.` : 'Die Stärke ist noch nicht eingeordnet.';
+  const strength = recipeStrengthLabel(recipe.strength);
   const flavors = arrayOf(recipe.flavorTags);
-  const moods = arrayOf(recipe.moodTags);
-  const seasons = arrayOf(recipe.season);
-  const flavorText = flavors.length ? ` Geschmacklich wirkt der Drink ${joinHuman(flavors)}.` : '';
-  const moodText = moods.length ? ` Besonders passend für ${joinHuman(moods)}.` : '';
-  const seasonText = seasons.length ? ` Saison: ${joinHuman(seasons)}.` : '';
-  return `${name} ist ein ${style}-Rezept aus Murats Hausbar. ${strength}${flavorText}${moodText}${seasonText}`;
+  const ingredients = arrayOf(recipe.ingredients).slice(0,3);
+  const parts = [];
+  parts.push(`${style}${strength ? `, ${strength.toLowerCase()}` : ''}`);
+  if(flavors.length) parts.push(`mit ${joinHuman(flavors)}em Profil`);
+  if(ingredients.length) parts.push(`auf Basis von ${joinHuman(ingredients)}`);
+  return `${parts.join(' – ')}. Klar strukturiert, balanciert serviert und für die jeweilige Trink-Situation kuratiert.`;
+}
+
+function recipeStrengthLabel(value){
+  const clean = String(value || '').trim();
+  if(!clean) return 'Noch nicht eingeordnet';
+  const lower = clean.toLowerCase();
+  if(lower.includes('stark') || lower.includes('kräftig')) return 'kräftig';
+  if(lower.includes('mittel')) return 'mittelkräftig';
+  if(lower.includes('leicht')) return 'leicht';
+  return clean;
 }
 
 function recipeServingMeta(recipe){

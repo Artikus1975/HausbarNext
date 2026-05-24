@@ -1,29 +1,36 @@
-# Hausbar Next v0.12
+# Hausbar Next v0.13
 
-Saubere Neubau-Basis fuer Murat's Hausbar.
+Clean Public Detail Views fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
-- Basis bleibt: v0.12 korrigiert/stabil
-- Home-Seite mit Tagescocktail ergaenzt
-- Tagescocktail ist deterministisch pro Berlin-Datum und damit geraeteuebergreifend gleich
-- Home-Seite mit dreiteiligem Abendmenue ergaenzt:
-  - Aperitif
-  - Hauptdrink
-  - Digestif / Dessert
-- Button `Neu waehlen` erzeugt ein neues lokales Menue und behaelt es beim Navigieren/Zurueckkehren bei
-- Klick auf Tagescocktail oder Menue-Drink oeffnet direkt das jeweilige Rezept
-- Textueberlauf-Fix aus v0.12 bleibt erhalten
-- Rezeptsuche und Rezeptfilter aus v0.12 bleiben erhalten
+- Detailansichten fuer Flaschen und Rezepte ruhiger und nutzerfreundlicher machen
+- interne/technische Informationen im Hintergrund behalten, aber nicht mehr prominent anzeigen
+- doppelte Informationen reduzieren
+- leere Felder nicht anzeigen
+- keine Daten loeschen
+
+## Geaendert
+
+- Flaschendetail reduziert auf kuratierte Nutzerinformationen
+- Barrolle/Profil/Einsatz-Kacheln aus der normalen Frontendansicht entfernt
+- technische Hilfstexte aus Flaschendetails entfernt
+- Status wird nicht mehr angezeigt, wenn er keinen Mehrwert bietet
+- Rezeptdetail zeigt keine leeren Pflegefelder mehr
+- Fallback-/Audit-Informationen bleiben in den Daten, werden aber nicht mehr in der normalen Ansicht gezeigt
+- Rezeptbeschreibungen klingen weniger technisch und nicht mehr wie Datenbanktexte
 
 ## Nicht geaendert
 
-- keine Aenderung an Inventarfiltern
-- keine Aenderung am Rauchig-Verhalten
-- keine Datenmigration
-- kein Service Worker
+- Inventarfilter
+- Rauchig-/Self-Excluding-Facets
+- Rezeptsuche und Rezeptfilter
+- Tagescocktail
+- Heute-passend-Menue
+- Datenbestand
 - keine Runtime-Hooks
 - keine Wrapper
+- kein Service Worker
 
 ## Dateien
 
@@ -32,10 +39,3 @@ Saubere Neubau-Basis fuer Murat's Hausbar.
 - app.js
 - data.js
 - README.md
-
-
-## v0.12
-
-- Calm Luxury Design: weniger Glow, keine orange-goldenen Blur-Verläufe, ruhigere dunkle Flächen.
-- Funktional unverändert gegenüber v0.11.
-- Tagescocktail, Heute-passend-Menü, Rezeptsuche und Rezeptfilter bleiben erhalten.
