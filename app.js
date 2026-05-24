@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.3';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.4';
 
 const state = {
   view: 'home',
@@ -53,6 +53,11 @@ function cacheElements(){
   els.detailName = document.getElementById('detailName');
   els.detailCategory = document.getElementById('detailCategory');
   els.detailBody = document.getElementById('detailBody');
+  els.recipeDialog = document.getElementById('recipeDialog');
+  els.closeRecipeDialog = document.getElementById('closeRecipeDialog');
+  els.recipeDetailName = document.getElementById('recipeDetailName');
+  els.recipeDetailCategory = document.getElementById('recipeDetailCategory');
+  els.recipeDetailBody = document.getElementById('recipeDetailBody');
 }
 
 function bindEvents(){
@@ -66,6 +71,7 @@ function bindEvents(){
   els.resetFilters.addEventListener('click', resetFilters);
   els.recipeSearch.addEventListener('input', e => { state.recipeSearch = e.target.value.trim().toLowerCase(); renderRecipes(); });
   els.closeDialog.addEventListener('click', () => els.dialog.close());
+  els.closeRecipeDialog.addEventListener('click', () => els.recipeDialog.close());
 }
 
 function renderAll(){
@@ -244,14 +250,46 @@ function renderHome(){
 
 function renderRecipes(){
   const query = state.recipeSearch;
-  const list = recipes.filter(r => !query || [r.name, r.category, r.style, ...(r.ingredients||[])].join(' ').toLowerCase().includes(query));
+  const list = recipes.filter(r => !query || recipeSearchText(r).includes(query));
   els.recipeCount.textContent = `${list.length} von ${recipes.length} Rezepten`;
   els.recipeGrid.innerHTML = list.map(renderRecipeCard).join('') || '<p class="empty">Keine Rezepte gefunden.</p>';
+  els.recipeGrid.querySelectorAll('[data-recipe-id]').forEach(btn => btn.addEventListener('click', () => openRecipe(btn.dataset.recipeId)));
+}
+
+function recipeSearchText(recipe){
+  return [
+    recipe.name, recipe.category, recipe.style, recipe.strength,
+    ...(recipe.ingredients || []), ...(recipe.instructions || []),
+    ...(recipe.flavorTags || []), ...(recipe.moodTags || []), ...(recipe.match || []), ...(recipe.missingFallback || [])
+  ].filter(Boolean).join(' ').toLowerCase();
 }
 
 function renderRecipeCard(recipe){
   const tags = [recipe.category, recipe.style, recipe.strength].filter(Boolean).slice(0,4);
-  return `<article class="item-card"><h3>${escapeHtml(recipe.name)}</h3><p class="meta">${escapeHtml((recipe.ingredients || []).slice(0,4).join(' · '))}</p><div class="tag-row">${tags.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div></article>`;
+  return `<button class="item-card" data-recipe-id="${escapeHtml(recipe.id)}">
+    <h3>${escapeHtml(recipe.name)}</h3>
+    <p class="meta">${escapeHtml((recipe.ingredients || []).slice(0,4).join(' · '))}</p>
+    <div class="tag-row">${tags.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
+  </button>`;
+}
+
+function openRecipe(id){
+  const recipe = recipes.find(r => r.id === id);
+  if(!recipe) return;
+  els.recipeDetailName.textContent = recipe.name;
+  els.recipeDetailCategory.textContent = [recipe.category, recipe.style, recipe.strength].filter(Boolean).join(' · ');
+  const ingredients = arrayOf(recipe.ingredients);
+  const instructions = arrayOf(recipe.instructions);
+  els.recipeDetailBody.innerHTML = `
+    <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list compact-list">${ingredients.map(i => `<li>${escapeHtml(i)}</li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
+    <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list compact-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
+    ${detailTags('Geschmack', recipe.flavorTags || [])}
+    ${detailTags('Stimmung', recipe.moodTags || [])}
+    ${detailTags('Benötigte Bar-Zutaten', recipe.match || [])}
+    ${detailTags('Fallback / mögliche fehlende Angabe', recipe.missingFallback || [])}
+    <div class="detail-section"><h3>Beschreibung</h3><p class="empty">Für spätere Rezeptbeschreibung, Glas, Garnish und Servierempfehlung vorbereitet.</p></div>
+  `;
+  els.recipeDialog.showModal();
 }
 
 function escapeHtml(value){

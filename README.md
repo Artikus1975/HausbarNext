@@ -1,33 +1,28 @@
-# Hausbar Next v0.3
+# Hausbar Next v0.4
 
 Saubere Neubau-Basis fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
-- v0.2 funktional bestaetigt
-- Versionsanzeige zentralisiert ueber `HB_DATA.version` / `APP_VERSION`
-- Cache-Buster fuer `style.css`, `data.js` und `app.js` in `index.html` gesetzt
-- keine Aenderung an Filterlogik
-- keine Aenderung an Inventarlogik
-- keine neuen Features
+- Rezeptbereich erweitert
+- Rezepte sind jetzt anklickbar
+- Rezept-Detailansicht zeigt vorhandene Daten
+- Zutaten und Zubereitung werden strukturiert angezeigt
+- Platzhalter fuer spaetere Beschreibung, Glas, Garnish und Servierempfehlung
 
-## Upload zu GitHub Pages
+## Bewusst nicht geaendert
 
-Bitte immer alle fuenf Dateien im Root des Repositories ersetzen:
+- keine Aenderung an der Inventar-Filterlogik
+- keine Aenderung an der Rauchig-/Self-Excluding-Facet-Logik
+- keine neue Datenmigration
+- keine Runtime-Hooks
+- keine Wrapper
+- kein Service Worker
 
-- `index.html`
-- `style.css`
-- `app.js`
-- `data.js`
-- `README.md`
+## Testfokus
 
-Danach die Seite mit Cache-Buster oeffnen:
-
-`https://artikus1975.github.io/HausbarNext/?v=03`
-
-## Funktionaler Referenztest
-
-- Rauchig ist im Geschmacksfilter sichtbar
-- Nach Fruchtig-Auswahl bleibt Rauchig sichtbar
-- Kategorie, Nutzung, Stil und Herkunft funktionieren
-- Detailansicht oeffnet
+1. Version zeigt v0.4
+2. Inventar laedt weiterhin
+3. Rauchig-Test bleibt ok
+4. Rezepte sind anklickbar
+5. Rezeptdetail oeffnet und schliesst
