@@ -1,5 +1,7 @@
 'use strict';
 
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.3';
+
 const state = {
   view: 'home',
   search: '',
@@ -18,8 +20,17 @@ const els = {};
 document.addEventListener('DOMContentLoaded', () => {
   cacheElements();
   bindEvents();
+  renderAppVersion();
   renderAll();
 });
+
+
+function renderAppVersion(){
+  document.title = `Hausbar Next ${APP_VERSION}`;
+  document.querySelectorAll('[data-app-version]').forEach(el => {
+    el.textContent = APP_VERSION;
+  });
+}
 
 function cacheElements(){
   els.views = document.querySelectorAll('.view');
@@ -208,7 +219,7 @@ function openItem(id){
   els.detailCategory.textContent = [item.category, item.subcategory].filter(Boolean).join(' · ');
   const desc = item.description || {};
   els.detailBody.innerHTML = `
-    <div class="detail-section"><h3>Beschreibung</h3><p>${escapeHtml(desc.short || 'Noch keine kuratierte Beschreibung vorhanden. Das Feld ist für v0.2/v0.3 vorbereitet.')}</p></div>
+    <div class="detail-section"><h3>Beschreibung</h3><p>${escapeHtml(desc.short || 'Noch keine kuratierte Beschreibung vorhanden. Das Feld ist für spätere Kurationsdaten vorbereitet.')}</p></div>
     ${detailTags('Geschmack', item.flavorTags)}
     ${detailTags('Nutzung', item.usageTags)}
     ${detailTags('Stil', item.styleTags)}

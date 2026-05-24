@@ -1,19 +1,19 @@
-# Hausbar Next v0.2
+# Hausbar Next v0.3
 
 Saubere Neubau-Basis fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
-- Datenbasis aus v0.1 korrigiert
-- kanonische Taxonomie fuer Geschmacks- und Nutzungsfilter ergaenzt
-- `Rauchig` ist im Geschmacksfilter sichtbar, auch wenn die aktuelle Inventardatenbasis noch keine rauchige Flasche enthaelt
-- Self-Excluding-Facets bleiben erhalten
-- Keine Runtime-Hooks
-- Keine Wrapper
-- Kein Service Worker
-- Kein Cache-Zwang
+- v0.2 funktional bestaetigt
+- Versionsanzeige zentralisiert ueber `HB_DATA.version` / `APP_VERSION`
+- Cache-Buster fuer `style.css`, `data.js` und `app.js` in `index.html` gesetzt
+- keine Aenderung an Filterlogik
+- keine Aenderung an Inventarlogik
+- keine neuen Features
 
-## Dateien
+## Upload zu GitHub Pages
+
+Bitte immer alle fuenf Dateien im Root des Repositories ersetzen:
 
 - `index.html`
 - `style.css`
@@ -21,12 +21,13 @@ Saubere Neubau-Basis fuer Murat's Hausbar.
 - `data.js`
 - `README.md`
 
-## Testfokus
+Danach die Seite mit Cache-Buster oeffnen:
 
-1. Inventar oeffnen.
-2. Filter loeschen.
-3. Geschmacksfilter oeffnen: `Rauchig` muss sichtbar sein.
-4. `Fruchtig` auswaehlen.
-5. Geschmacksfilter erneut oeffnen: `Rauchig` muss weiterhin sichtbar sein.
-6. Kategorie, Stil, Nutzung und Herkunft einzeln testen.
-7. Eine Flasche antippen und Detailansicht pruefen.
+`https://artikus1975.github.io/HausbarNext/?v=03`
+
+## Funktionaler Referenztest
+
+- Rauchig ist im Geschmacksfilter sichtbar
+- Nach Fruchtig-Auswahl bleibt Rauchig sichtbar
+- Kategorie, Nutzung, Stil und Herkunft funktionieren
+- Detailansicht oeffnet
