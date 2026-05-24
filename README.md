@@ -1,7 +1,3 @@
-# Hausbar Next v0.6
+# Hausbar Next v0.7
 
-Visual Polish auf Basis von v0.5.
-
-Geändert wurde nur das Erscheinungsbild: bessere Abstände, einheitlichere Karten, elegantere Rezeptdetails und hochwertigere Dialoggestaltung.
-
-Nicht geändert: Inventarfilter, Rauchig-Logik, Datenmodell, Rezeptdaten oder Service-Worker.
+Bottle Detail Polish. Reiner UI-/Struktur-Schritt fuer die Flaschen-Detailansicht. Keine Aenderung an Filterlogik, Inventardaten oder Rezeptlogik.

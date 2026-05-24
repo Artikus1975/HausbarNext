@@ -1,6 +1,6 @@
-// Hausbar Next v0.6 - visual polish and recipe detail spacing
+// Hausbar Next v0.7 - bottle detail polish
 const HB_DATA = {
-  "version": "v0.6",
+  "version": "v0.7",
   "inventory": [
     {
       "id": "csv-001-aperol",

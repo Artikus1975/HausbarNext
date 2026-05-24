@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.6';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.7';
 
 const state = {
   view: 'home',
@@ -224,20 +224,93 @@ function openItem(id){
   els.detailName.textContent = item.name;
   els.detailCategory.textContent = [item.category, item.subcategory].filter(Boolean).join(' · ');
   const desc = item.description || {};
+  const originLabel = item.originTags.length ? item.originTags.join(' · ') : 'Herkunft offen';
+  const profileText = bottleProfileText(item, desc);
   els.detailBody.innerHTML = `
-    <div class="detail-section"><h3>Beschreibung</h3><p>${escapeHtml(desc.short || 'Noch keine kuratierte Beschreibung vorhanden. Das Feld ist für spätere Kurationsdaten vorbereitet.')}</p></div>
-    ${detailTags('Geschmack', item.flavorTags)}
-    ${detailTags('Nutzung', item.usageTags)}
-    ${detailTags('Stil', item.styleTags)}
-    ${detailTags('Herkunft', item.originTags)}
-    <div class="detail-section"><h3>Servieridee</h3><p class="empty">Für spätere Internet-/Kurationsdaten vorbereitet.</p></div>
+    <div class="bottle-hero-detail">
+      <div>
+        <p class="eyebrow">Flaschenprofil</p>
+        <h3>${escapeHtml(item.name)}</h3>
+        <p>${escapeHtml(profileText)}</p>
+      </div>
+      <div class="bottle-meta-grid">
+        ${metaTile('Kategorie', item.category)}
+        ${metaTile('Unterkategorie', item.subcategory || 'Noch offen')}
+        ${metaTile('Status', item.status || 'Nicht gepflegt')}
+        ${metaTile('Herkunft', originLabel)}
+      </div>
+    </div>
+
+    <div class="detail-grid two-col">
+      ${detailTags('Geschmack', item.flavorTags, 'Wofür die Flasche sensorisch steht.')}
+      ${detailTags('Nutzung', item.usageTags, 'Wo sie in Drinks oder pur am besten eingesetzt wird.')}
+      ${detailTags('Stil', item.styleTags, 'Rolle, Intensität und Charakter der Flasche.')}
+      ${detailTags('Herkunft', item.originTags, 'Regionale und stilistische Herkunft.')}
+    </div>
+
+    <div class="detail-section highlight-section">
+      <h3>Beschreibung</h3>
+      <p>${escapeHtml(desc.short || 'Noch keine kuratierte Beschreibung vorhanden. Diese Sektion ist für spätere Hersteller-/Internetdaten und eigene Verkostungsnotizen vorbereitet.')}</p>
+    </div>
+
+    <div class="detail-grid two-col">
+      <div class="detail-section">
+        <h3>Beste Verwendung</h3>
+        ${item.usageTags.length ? `<ul class="clean-list compact-list">${item.usageTags.slice(0,5).map(tag => `<li>${escapeHtml(usageSentence(tag))}</li>`).join('')}</ul>` : '<p class="empty">Noch keine Nutzung gepflegt.</p>'}
+      </div>
+      <div class="detail-section">
+        <h3>Servieren</h3>
+        <p>${escapeHtml(desc.serving || servingSuggestionFor(item))}</p>
+      </div>
+    </div>
+
     ${item.notes ? `<div class="detail-section"><h3>Notizen</h3><p>${escapeHtml(item.notes)}</p></div>` : ''}
   `;
   els.dialog.showModal();
 }
 
-function detailTags(title, tags){
-  return `<div class="detail-section"><h3>${escapeHtml(title)}</h3><div class="tag-row">${tags.length ? tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('') : '<span class="empty">Noch leer</span>'}</div></div>`;
+function metaTile(label, value){
+  return `<div class="meta-tile"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value || 'Noch offen')}</strong></div>`;
+}
+
+function bottleProfileText(item, desc){
+  if(desc.long) return desc.long;
+  if(desc.short) return desc.short;
+  const flavors = item.flavorTags.slice(0,3).join(', ');
+  const styles = item.styleTags.slice(0,2).join(', ');
+  const parts = [];
+  if(flavors) parts.push(`Profil: ${flavors}`);
+  if(styles) parts.push(`Stil: ${styles}`);
+  if(item.category) parts.push(`Kategorie: ${item.category}`);
+  return parts.join(' · ') || 'Profil für spätere Kurationsdaten vorbereitet.';
+}
+
+function usageSentence(tag){
+  const clean = String(tag || '').trim();
+  if(!clean) return 'Als flexible Bar-Zutat einsetzbar.';
+  const map = {
+    'sipping': 'Pur oder mit wenig Wasser genießen.',
+    'highball': 'Gut für Highballs und längere Drinks.',
+    'sour': 'Geeignet für Sours und frische Drinks.',
+    'spritz': 'Passend für Spritz- und Aperitif-Drinks.',
+    'negroni': 'Ideal für Negroni-Varianten.',
+    'old-fashioned': 'Geeignet für Old-Fashioned- und Stirred-Drinks.',
+    'tiki': 'Passend für Tiki- und Tropical-Drinks.',
+    'modifier': 'Als Modifier für Balance, Tiefe oder Akzent.'
+  };
+  return map[clean.toLowerCase()] || `Einsatz: ${clean}.`;
+}
+
+function servingSuggestionFor(item){
+  if(listContains(item.usageTags, 'sipping')) return 'Pur, leicht gekühlt oder mit wenigen Tropfen Wasser servieren.';
+  if(listContains(item.usageTags, 'spritz')) return 'Gekühlt mit viel Eis, Soda oder Schaumwein als Aperitif servieren.';
+  if(listContains(item.usageTags, 'highball')) return 'Auf Eis im Highballglas mit passendem Filler servieren.';
+  if(listContains(item.usageTags, 'tiki')) return 'Auf Crushed Ice oder mit tropischer Garnitur einsetzen.';
+  return 'Servierempfehlung ist vorbereitet und wird später kuratiert ergänzt.';
+}
+
+function detailTags(title, tags, helper = ''){
+  return `<div class="detail-section tag-section"><h3>${escapeHtml(title)}</h3>${helper ? `<p class="section-helper">${escapeHtml(helper)}</p>` : ''}<div class="tag-row">${tags.length ? tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('') : '<span class="empty">Noch leer</span>'}</div></div>`;
 }
 
 function renderHome(){
