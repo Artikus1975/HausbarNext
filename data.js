@@ -1,6 +1,6 @@
-// Hausbar Next v0.5 - recipe detail polish with canonical taxonomies
+// Hausbar Next v0.6 - visual polish and recipe detail spacing
 const HB_DATA = {
-  "version": "v0.5",
+  "version": "v0.6",
   "inventory": [
     {
       "id": "csv-001-aperol",

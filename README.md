@@ -1,18 +1,7 @@
-# Hausbar Next v0.5
+# Hausbar Next v0.6
 
-Recipe Detail Polish auf Basis von v0.4.
+Visual Polish auf Basis von v0.5.
 
-## Inhalt
-- Inventar mit stabiler Self-Excluding-Filterlogik
-- Flaschen-Detailansicht
-- Rezeptliste
-- Rezept-Detailansicht mit besserer Darstellung
-- Rezeptbeschreibung wird aus vorhandenen Metadaten abgeleitet
-- Glas-, Garnish-, Eis- und Servierhinweise werden als strukturierte Empfehlungen vorbereitet
+Geändert wurde nur das Erscheinungsbild: bessere Abstände, einheitlichere Karten, elegantere Rezeptdetails und hochwertigere Dialoggestaltung.
 
-## Nicht geändert
-- Keine Änderung an der Inventar-Filterlogik
-- Keine Änderung am Rauchig-Verhalten
-- Keine Datenmigration
-- Kein Service Worker
-- Keine Runtime-Hooks oder Wrapper
+Nicht geändert: Inventarfilter, Rauchig-Logik, Datenmodell, Rezeptdaten oder Service-Worker.
