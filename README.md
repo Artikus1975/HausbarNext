@@ -1,38 +1,34 @@
-# Hausbar Next v0.10
+# Hausbar Next v0.11
 
 Saubere Neubau-Basis fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
-- Basis: bestaetigte stabile v0.9
-- Textueberlauf in Flaschen-/Detailansichten abgesichert
-- Rezeptsuche ergaenzt
-- Rezeptfilter ergaenzt:
-  - Jahreszeiten
-  - Stilrichtungen
-- Jahreszeiten aus der alten Rezept-Kurationsbasis sauber uebernommen
-- Stilrichtungen aus echten Rezeptdaten erzeugt
-- Keine Fake-Signature-Funktion aktiviert
+- Basis bleibt: v0.10 korrigiert/stabil
+- Home-Seite mit Tagescocktail ergaenzt
+- Tagescocktail ist deterministisch pro Berlin-Datum und damit geraeteuebergreifend gleich
+- Home-Seite mit dreiteiligem Abendmenue ergaenzt:
+  - Aperitif
+  - Hauptdrink
+  - Digestif / Dessert
+- Button `Neu waehlen` erzeugt ein neues lokales Menue und behaelt es beim Navigieren/Zurueckkehren bei
+- Klick auf Tagescocktail oder Menue-Drink oeffnet direkt das jeweilige Rezept
+- Textueberlauf-Fix aus v0.10 bleibt erhalten
+- Rezeptsuche und Rezeptfilter aus v0.10 bleiben erhalten
 
 ## Nicht geaendert
 
-- Keine Aenderung an der Inventar-Filterlogik
-- Keine Aenderung am Rauchig-Verhalten
-- Keine Runtime-Hooks
-- Keine Wrapper
-- Kein Service Worker
-- Keine automatische Internet-Anreicherung
+- keine Aenderung an Inventarfiltern
+- keine Aenderung am Rauchig-Verhalten
+- keine Datenmigration
+- kein Service Worker
+- keine Runtime-Hooks
+- keine Wrapper
 
-## Upload
+## Dateien
 
-Diese fuenf Dateien in GitHub ersetzen und direkt auf `main` committen:
-
-- `index.html`
-- `style.css`
-- `app.js`
-- `data.js`
-- `README.md`
-
-Test-URL:
-
-`https://artikus1975.github.io/HausbarNext/?v=010`
+- index.html
+- style.css
+- app.js
+- data.js
+- README.md

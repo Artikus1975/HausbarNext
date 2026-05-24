@@ -1,6 +1,6 @@
-// Hausbar Next v0.10 - recipe search filters and overflow repair
+// Hausbar Next v0.11 - home daily drink and menu foundation
 const HB_DATA = {
-  "version": "v0.10",
+  "version": "v0.11",
   "inventory": [
     {
       "id": "csv-001-aperol",

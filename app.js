@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.10';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.11';
 
 const state = {
   view: 'home',
@@ -37,6 +37,11 @@ function cacheElements(){
   els.views = document.querySelectorAll('.view');
   els.navButtons = document.querySelectorAll('.bottom-nav button');
   els.homeStats = document.getElementById('homeStats');
+  els.dailyDrinkCard = document.getElementById('dailyDrinkCard');
+  els.dailyDrinkName = document.getElementById('dailyDrinkName');
+  els.dailyDrinkStyle = document.getElementById('dailyDrinkStyle');
+  els.rerollTodayMenu = document.getElementById('rerollTodayMenu');
+  els.todayMenuGrid = document.getElementById('todayMenuGrid');
   els.searchInput = document.getElementById('searchInput');
   els.categoryFilter = document.getElementById('categoryFilter');
   els.flavorFilter = document.getElementById('flavorFilter');
@@ -66,6 +71,8 @@ function cacheElements(){
 
 function bindEvents(){
   els.navButtons.forEach(btn => btn.addEventListener('click', () => setView(btn.dataset.view)));
+  if(els.dailyDrinkCard) els.dailyDrinkCard.addEventListener('click', () => { const drink = getDailyDrink(); if(drink) openRecipe(drink.id); });
+  if(els.rerollTodayMenu) els.rerollTodayMenu.addEventListener('click', () => { saveTodayMenu(generateTodayMenu({ reroll: true })); renderHome(); });
   els.searchInput.addEventListener('input', e => { state.search = e.target.value.trim().toLowerCase(); renderInventory(); });
   els.categoryFilter.addEventListener('change', e => setFilter('category', e.target.value));
   els.flavorFilter.addEventListener('change', e => setFilter('flavor', e.target.value));
@@ -387,8 +394,118 @@ function renderHome(){
   const categories = new Set(inventory.map(i => i.category));
   const origins = new Set(inventory.flatMap(i => i.originTags));
   els.homeStats.innerHTML = [
-    ['Flaschen', inventory.length], ['Rezepte', recipes.length], ['Kategorien', categories.size], ['Herkünfte', origins.size]
+    ['Flaschen', inventory.length], ['Rezepte', recipes.length], ['Kategorien', categories.size]
   ].map(([label,value]) => `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`).join('');
+
+  const daily = getDailyDrink();
+  if(daily){
+    els.dailyDrinkName.textContent = daily.name;
+    els.dailyDrinkStyle.textContent = [daily.style, ...arrayOf(daily.season).slice(0,1)].filter(Boolean).join(' · ');
+  }
+  const menu = getTodayMenu();
+  els.todayMenuGrid.innerHTML = menu.map(renderHomeMenuItem).join('') || '<p class="empty">Noch keine Empfehlungen vorhanden.</p>';
+  els.todayMenuGrid.querySelectorAll('[data-home-recipe-id]').forEach(btn => btn.addEventListener('click', () => openRecipe(btn.dataset.homeRecipeId)));
+}
+
+function berlinDateKey(){
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Berlin', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).formatToParts(new Date()).reduce((acc, part) => { acc[part.type] = part.value; return acc; }, {});
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+function hashString(value){
+  let hash = 2166136261;
+  for(const ch of String(value)){
+    hash ^= ch.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function seededIndex(length, seed){
+  if(!length) return 0;
+  return hashString(seed) % length;
+}
+
+function sortedRecipes(){
+  return [...recipes].sort((a,b) => String(a.name).localeCompare(String(b.name), 'de', { sensitivity: 'base' }));
+}
+
+function getDailyDrink(){
+  const list = sortedRecipes();
+  if(!list.length) return null;
+  return list[seededIndex(list.length, `daily-${berlinDateKey()}`)];
+}
+
+function recipeMatchesStyle(recipe, styles){
+  const wanted = arrayOf(styles).map(v => v.toLowerCase());
+  const hay = [recipe.style, recipe.category, ...(recipe.flavorTags || []), ...(recipe.moodTags || [])].filter(Boolean).join(' ').toLowerCase();
+  return wanted.some(value => hay.includes(value));
+}
+
+function pickRecipe(candidates, seed, usedIds){
+  const clean = candidates.filter(recipe => !usedIds.has(recipe.id));
+  if(!clean.length) return null;
+  return clean[seededIndex(clean.length, seed)];
+}
+
+function generateTodayMenu(options = {}){
+  const dateKey = berlinDateKey();
+  const seedSuffix = options.reroll ? `${Date.now()}-${Math.random()}` : dateKey;
+  const source = sortedRecipes();
+  const used = new Set();
+  const aperitifCandidates = source.filter(recipe => recipeMatchesStyle(recipe, ['Aperitif']));
+  const mainCandidates = source.filter(recipe => recipeMatchesStyle(recipe, ['Frisch & Sour', 'Longdrink & Highball', 'Kräftig & Spirituosig']));
+  const dessertCandidates = source.filter(recipe => recipeMatchesStyle(recipe, ['Digestif', 'Cremig & Dessert', 'Dessert']));
+
+  const aperitif = pickRecipe(aperitifCandidates, `aperitif-${seedSuffix}`, used);
+  if(aperitif) used.add(aperitif.id);
+  const main = pickRecipe(mainCandidates, `main-${seedSuffix}`, used) || pickRecipe(source, `main-fallback-${seedSuffix}`, used);
+  if(main) used.add(main.id);
+  const dessert = pickRecipe(dessertCandidates, `dessert-${seedSuffix}`, used) || pickRecipe(source, `dessert-fallback-${seedSuffix}`, used);
+  if(dessert) used.add(dessert.id);
+
+  return [
+    { slot: 'Aperitif', recipe: aperitif },
+    { slot: 'Hauptdrink', recipe: main },
+    { slot: 'Digestif / Dessert', recipe: dessert }
+  ].filter(entry => entry.recipe);
+}
+
+function todayMenuStorageKey(){
+  return `hausbar-next-today-menu-${berlinDateKey()}`;
+}
+
+function saveTodayMenu(menu){
+  try {
+    localStorage.setItem(todayMenuStorageKey(), JSON.stringify(menu.map(entry => ({ slot: entry.slot, id: entry.recipe.id }))));
+  } catch (_) {}
+}
+
+function getTodayMenu(){
+  const key = todayMenuStorageKey();
+  try {
+    const raw = localStorage.getItem(key);
+    if(raw){
+      const saved = JSON.parse(raw);
+      const hydrated = saved.map(entry => ({ slot: entry.slot, recipe: recipes.find(recipe => recipe.id === entry.id) })).filter(entry => entry.recipe);
+      if(hydrated.length === 3) return hydrated;
+    }
+  } catch (_) {}
+  const menu = generateTodayMenu();
+  saveTodayMenu(menu);
+  return menu;
+}
+
+function renderHomeMenuItem(entry){
+  const recipe = entry.recipe;
+  const subtitle = [recipe.style, ...arrayOf(recipe.season).slice(0,1)].filter(Boolean).join(' · ');
+  return `<button class="home-menu-item" data-home-recipe-id="${escapeHtml(recipe.id)}" type="button">
+    <span>${escapeHtml(entry.slot)}</span>
+    <strong>${escapeHtml(recipe.name)}</strong>
+    <small>${escapeHtml(subtitle || recipe.category || 'Rezept')}</small>
+  </button>`;
 }
 
 function renderRecipes(){

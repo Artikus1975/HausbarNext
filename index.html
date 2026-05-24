@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#15110d">
-  <title>Hausbar Next v0.10</title>
-  <link rel="stylesheet" href="style.css?v=0.10">
+  <title>Hausbar Next v0.11</title>
+  <link rel="stylesheet" href="style.css?v=0.11">
 </head>
 <body>
   <header class="app-header">
@@ -13,25 +13,35 @@
       <p class="eyebrow">Hausbar Next</p>
       <h1>Murats Hausbar</h1>
     </div>
-    <span class="version" data-app-version>v0.10</span>
+    <span class="version" data-app-version>v0.11</span>
   </header>
 
   <main>
     <section id="view-home" class="view active">
-      <div class="hero card">
-        <p class="eyebrow">Neustart ohne Altlasten</p>
-        <h2>Saubere Basis für Inventar, Rezepte und spätere Bar-Intelligenz.</h2>
-        <p>Diese Version ist bewusst klein: keine Runtime-Hooks, keine Wrapper, keine versteckten Migrationen während des Renderns.</p>
+      <div class="home-title">
+        <p class="eyebrow">Private Cocktailbibliothek</p>
+        <h2>Murat's Hausbar</h2>
       </div>
-      <div class="stats-grid" id="homeStats"></div>
-      <div class="card">
-        <h3><span data-app-version>v0.10</span> Fokus</h3>
-        <ul class="clean-list">
-          <li>Zentrale Datenquelle</li>
-          <li>Self-Excluding-Facets für alle Inventarfilter</li>
-          <li>Flaschen-Detailansicht vorbereitet</li>
-          <li>Internetdaten-Felder vorbereitet, aber noch nicht automatisch befüllt</li>
-        </ul>
+
+      <button id="dailyDrinkCard" class="daily-card card" type="button">
+        <p class="eyebrow">Tagescocktail</p>
+        <h3 id="dailyDrinkName">Wird geladen...</h3>
+        <p id="dailyDrinkStyle" class="daily-style"></p>
+        <span class="primary-pill">Rezept öffnen</span>
+      </button>
+
+      <div class="stats-grid compact-stats" id="homeStats"></div>
+
+      <div class="card today-menu-card">
+        <div class="today-menu-head">
+          <div>
+            <p class="eyebrow">Heute passend</p>
+            <h3>Drei Drinks für den Abend</h3>
+          </div>
+          <button id="rerollTodayMenu" class="ghost-button" type="button">Neu wählen</button>
+        </div>
+        <p class="home-helper">Aperitif, Hauptdrink und Digestif/Dessert bleiben beim Zurückwechseln erhalten. Neu gewählt wird nur über diese Taste.</p>
+        <div id="todayMenuGrid" class="todayMenuGrid today-menu-grid"></div>
       </div>
     </section>
 
@@ -111,7 +121,7 @@
     <div id="recipeDetailBody"></div>
   </dialog>
 
-  <script src="data.js?v=0.10"></script>
-  <script src="app.js?v=0.10"></script>
+  <script src="data.js?v=0.11"></script>
+  <script src="app.js?v=0.11"></script>
 </body>
 </html>
