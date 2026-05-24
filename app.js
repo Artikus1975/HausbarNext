@@ -9,6 +9,9 @@ const state = {
 
 const inventory = HB_DATA.inventory.map(normalizeItem);
 const recipes = HB_DATA.recipes || [];
+const taxonomy = HB_DATA.taxonomies || {};
+const CANONICAL_FLAVORS = arrayOf(taxonomy.flavorTags);
+const CANONICAL_USAGES = arrayOf(taxonomy.usageTags);
 
 const els = {};
 
@@ -101,13 +104,22 @@ function resetFilters(){
   renderInventory();
 }
 
+function sameValue(a, b){
+  return String(a || '').trim().toLowerCase() === String(b || '').trim().toLowerCase();
+}
+
+function listContains(list, selected){
+  if(!selected) return true;
+  return arrayOf(list).some(value => sameValue(value, selected));
+}
+
 function itemMatches(item, filters, search){
   if(search && !item.searchText.includes(search)) return false;
-  if(filters.category && item.category !== filters.category) return false;
-  if(filters.flavor && !item.flavorTags.includes(filters.flavor)) return false;
-  if(filters.usage && !item.usageTags.includes(filters.usage)) return false;
-  if(filters.style && !item.styleTags.includes(filters.style)) return false;
-  if(filters.origin && !item.originTags.includes(filters.origin)) return false;
+  if(filters.category && !sameValue(item.category, filters.category)) return false;
+  if(filters.flavor && !listContains(item.flavorTags, filters.flavor)) return false;
+  if(filters.usage && !listContains(item.usageTags, filters.usage)) return false;
+  if(filters.style && !listContains(item.styleTags, filters.style)) return false;
+  if(filters.origin && !listContains(item.originTags, filters.origin)) return false;
   return true;
 }
 
@@ -133,24 +145,44 @@ function populateAllFilters(){
   populateSelect(els.originFilter, 'Alle Herkünfte', optionsFor('origin'), state.filters.origin);
 }
 
+function hasExternalFacetContext(filterName){
+  if(state.search) return true;
+  return Object.entries(state.filters).some(([key, value]) => key !== filterName && Boolean(value));
+}
+
 function optionsFor(filterName){
   const source = filteredInventory(filterName);
   let values = [];
   if(filterName === 'category') values = source.map(i => i.category);
-  if(filterName === 'flavor') values = source.flatMap(i => i.flavorTags);
-  if(filterName === 'usage') values = source.flatMap(i => i.usageTags);
+  if(filterName === 'flavor') {
+    values = source.flatMap(i => i.flavorTags);
+    if(!hasExternalFacetContext('flavor')) values = [...CANONICAL_FLAVORS, ...values];
+  }
+  if(filterName === 'usage') {
+    values = source.flatMap(i => i.usageTags);
+    if(!hasExternalFacetContext('usage')) values = [...CANONICAL_USAGES, ...values];
+  }
   if(filterName === 'style') values = source.flatMap(i => i.styleTags);
   if(filterName === 'origin') values = source.flatMap(i => i.originTags);
-  return [...new Set(values.filter(Boolean))].sort((a,b) => a.localeCompare(b, 'de'));
+  return uniqueSorted(values);
+}
+
+function uniqueSorted(values){
+  const map = new Map();
+  arrayOf(values).forEach(value => {
+    const key = String(value).trim().toLowerCase();
+    if(key && !map.has(key)) map.set(key, value);
+  });
+  return Array.from(map.values()).sort((a,b) => a.localeCompare(b, 'de', { sensitivity: 'base' }));
 }
 
 function populateSelect(select, label, options, value){
-  const exists = !value || options.includes(value);
+  const safeOptions = uniqueSorted(options);
+  const exists = !value || safeOptions.some(opt => sameValue(opt, value));
   const finalValue = exists ? value : '';
-  const html = [`<option value="">${escapeHtml(label)}</option>`, ...options.map(opt => `<option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>`)].join('');
+  const html = [`<option value="">${escapeHtml(label)}</option>`, ...safeOptions.map(opt => `<option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>`)].join('');
   select.innerHTML = html;
   select.value = finalValue;
-  const stateName = select.id.replace('Filter','').replace('category','category').replace('flavor','flavor').replace('usage','usage').replace('style','style').replace('origin','origin');
   if(!exists){
     if(select === els.categoryFilter) state.filters.category = '';
     if(select === els.flavorFilter) state.filters.flavor = '';
@@ -208,7 +240,7 @@ function renderRecipes(){
 
 function renderRecipeCard(recipe){
   const tags = [recipe.category, recipe.style, recipe.strength].filter(Boolean).slice(0,4);
-  return `<article class="item-card"><h3>${escapeHtml(recipe.name)}</h3><p class="meta">${escapeHtml(recipe.ingredients.slice(0,4).join(' · '))}</p><div class="tag-row">${tags.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div></article>`;
+  return `<article class="item-card"><h3>${escapeHtml(recipe.name)}</h3><p class="meta">${escapeHtml((recipe.ingredients || []).slice(0,4).join(' · '))}</p><div class="tag-row">${tags.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div></article>`;
 }
 
 function escapeHtml(value){

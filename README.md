@@ -1,28 +1,17 @@
-# Hausbar Next v0.1
+# Hausbar Next v0.2
 
-Neubau der Hausbar-App als saubere Basis.
+Saubere Neubau-Basis fuer Murat's Hausbar.
 
-## Grundsätze
+## Zweck dieser Version
 
+- Datenbasis aus v0.1 korrigiert
+- kanonische Taxonomie fuer Geschmacks- und Nutzungsfilter ergaenzt
+- `Rauchig` ist im Geschmacksfilter sichtbar, auch wenn die aktuelle Inventardatenbasis noch keine rauchige Flasche enthaelt
+- Self-Excluding-Facets bleiben erhalten
 - Keine Runtime-Hooks
 - Keine Wrapper
-- Keine versteckten Datenmigrationen beim Rendern
-- Self-Excluding-Facets für Inventarfilter
-- `Whisky` als einzige Hauptkategorie für Whisky/Whiskey
-- `tags` wird nicht als primäres Logikfeld verwendet
-- Flaschen-Detailstruktur für spätere Internetdaten vorbereitet
-
-## Testplan
-
-1. `index.html` öffnen.
-2. Inventar öffnen.
-3. `Filter löschen` drücken.
-4. Prüfen, ob `Rauchig` im Geschmacksfilter sichtbar ist.
-5. `Fruchtig` auswählen.
-6. Geschmacksfilter sofort wieder öffnen.
-7. `Rauchig` muss weiterhin sichtbar sein.
-8. Kategorie-, Stil-, Nutzungs- und Herkunftsfilter testen.
-9. Flasche antippen und Detailansicht prüfen.
+- Kein Service Worker
+- Kein Cache-Zwang
 
 ## Dateien
 
@@ -30,5 +19,14 @@ Neubau der Hausbar-App als saubere Basis.
 - `style.css`
 - `app.js`
 - `data.js`
+- `README.md`
 
-Bewusst kein Service Worker in v0.1, um Cache-Probleme beim Testen zu vermeiden.
+## Testfokus
+
+1. Inventar oeffnen.
+2. Filter loeschen.
+3. Geschmacksfilter oeffnen: `Rauchig` muss sichtbar sein.
+4. `Fruchtig` auswaehlen.
+5. Geschmacksfilter erneut oeffnen: `Rauchig` muss weiterhin sichtbar sein.
+6. Kategorie, Stil, Nutzung und Herkunft einzeln testen.
+7. Eine Flasche antippen und Detailansicht pruefen.
