@@ -1,6 +1,6 @@
-// Hausbar Next v0.18 - Bottle Enrichment Batch 2: Gin
+// Hausbar Next v0.20 - Controlled Filter Facets
 const HB_DATA = {
-  "version": "v0.18",
+  "version": "v0.20",
   "inventory": [
     {
       "id": "csv-001-aperol",

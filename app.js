@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.18';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.20';
 
 const state = {
   view: 'home',
@@ -10,11 +10,56 @@ const state = {
   recipeFilters: { season: '', style: '' }
 };
 
+const CATEGORY_FACETS = [
+  'Aperitif / Bitter','Bitters','Brandy','Cognac','Edelbrand / Geist','Garnish','Gin','Likör','Pisco','Rakı / Anis','Rum / Cachaça','Saft','Sirup / Mixer','Tequila','Vermouth / Fortified Wine','Wein / Champagner','Vodka','Whisky'
+];
+
+const FILTER_FACETS = {
+  category: CATEGORY_FACETS,
+  flavor: ['Bitter','Fruchtig','Kräuterig','Floral','Rauchig','Süß','Trocken','Zitrisch','Nussig','Kaffee'],
+  usage: ['Aperitif','Cocktailbasis','Digestif','Frisch & Sour','Longdrink & Highball','Modifier','Pur','Spirit-Forward','Spritz','Tiki & Tropical'],
+  style: ['Klassisch','Modern','Elegant','Kräftig','Leicht','Komplex','Frisch','Herb','Süßlich','Tropisch','Würzig','Dessert','Premium / Sipping']
+};
+
+const COUNTRY_FACETS = [
+  'Barbados','Brasilien','Deutschland','England','Finnland','Frankreich','Italien','Jamaika','Japan','Kanada','Niederlande','Peru','Portugal','Schottland','Spanien','Trinidad und Tobago','Türkei','USA'
+];
+
+const FACET_ALIASES = {
+  flavor: {
+    'orange':['Zitrisch','Fruchtig'],'zitrone':'Zitrisch','zitronig':'Zitrisch','limette':'Zitrisch','mandarine':['Zitrisch','Fruchtig'],'grapefruit':['Zitrisch','Bitter'],'yuzu':'Zitrisch','bergamotte':'Zitrisch','zitrus':'Zitrisch',
+    'birne':'Fruchtig','apfel':'Fruchtig','beere':'Fruchtig','beeren':'Fruchtig','kirsche':'Fruchtig','pflaume':'Fruchtig','pfirsich':'Fruchtig','steinfrucht':'Fruchtig','tropisch':'Fruchtig','sakura':'Floral','rose':'Floral',
+    'anis':'Kräuterig','wacholder':'Kräuterig','kräuter':'Kräuterig','kraeuter':'Kräuterig','botanicals':'Kräuterig','minze':'Kräuterig','wermut':'Kräuterig','aromatisch':'Kräuterig','harzig':'Kräuterig','vegetal':'Kräuterig','gurke':'Kräuterig','frisch':'Zitrisch',
+    'rauch':'Rauchig','torf':'Rauchig','torfig':'Rauchig',
+    'schokolade':'Süß','kakao':'Süß','vanille':'Süß','karamell':'Süß','honig':'Süß','warm':'Süß','scharf':'Kräuterig',
+    'mandel':'Nussig','nuss':'Nussig','nussig':'Nussig','kaffee':'Kaffee','espresso':'Kaffee','trocken':'Trocken','herb':'Bitter','dunkel':'Bitter','erdig':'Kräuterig','pfeffer':'Kräuterig','pfeffrig':'Kräuterig','zimt':'Kräuterig','nelke':'Kräuterig','ingwer':'Kräuterig','gewürz':'Kräuterig','gewuerz':'Kräuterig','würzig':'Kräuterig'
+  },
+  usage: {
+    'aperitif':'Aperitif','amaro-cocktails':'Aperitif','americano':'Aperitif','anis-serve':'Aperitif','bloody mary':'Cocktailbasis','brandy cocktail':'Cocktailbasis','cocktail-klassiker':'Cocktailbasis','cocktailbasis':'Cocktailbasis','gin-cocktails':'Cocktailbasis','rum-drinks':'Cocktailbasis','vermouth-cocktails':'Cocktailbasis','champagner-cocktails':'Cocktailbasis','port-cocktails':'Cocktailbasis','sherry-cocktails':'Cocktailbasis',
+    'digestif':'Digestif','dessert':'Digestif','dessertdrink':'Digestif','sour':'Frisch & Sour','frisch & sour':'Frisch & Sour','daiquiri':'Frisch & Sour','margarita':'Frisch & Sour','gimlet':'Frisch & Sour','white lady':'Frisch & Sour','collins':'Longdrink & Highball','fizz':'Longdrink & Highball','gin & tonic':'Longdrink & Highball','gin tonic':'Longdrink & Highball','highball':'Longdrink & Highball','longdrink':'Longdrink & Highball','tonic':'Longdrink & Highball','mule':'Longdrink & Highball','filler':'Longdrink & Highball','highball-akzent':'Longdrink & Highball','hugo-twist':'Longdrink & Highball','french 75':'Longdrink & Highball',
+    'modifier':'Modifier','martini-twist':'Modifier','old fashioned':'Spirit-Forward','manhattan':'Spirit-Forward','martini':'Spirit-Forward','negroni':'Spirit-Forward','spirit-forward':'Spirit-Forward','pur':'Pur','sipping':'Pur','spritz':'Spritz','tiki':'Tiki & Tropical','tropical':'Tiki & Tropical','tiki & tropical':'Tiki & Tropical'
+  },
+  style: {
+    'klassisch':'Klassisch','classic':'Klassisch','london dry':'Klassisch','dry gin':'Klassisch','dry vermouth':'Klassisch','rye whiskey':'Klassisch','scotch':'Klassisch','bourbon':'Klassisch','white rum':'Klassisch','dark rum':'Klassisch','cognac':'Klassisch','brandy':'Klassisch','vodka':'Klassisch','tequila':'Klassisch','pisco puro':'Klassisch','queebranta':'Klassisch','quebranta':'Klassisch',
+    'modern':'Modern','new western':'Modern','japanese gin':'Modern','nordic gin':'Modern','canadian gin':'Modern','botanical gin':'Modern','fruit-forward gin':'Modern','citrus gin':'Modern','herbal gin':'Modern','rye gin':'Modern','premium gin':'Modern','japanese whisky':'Modern',
+    'elegant':'Elegant','französisch':'Elegant','mediterran':'Elegant','floral':'Elegant','fruchtig-floral':'Elegant','moscatel':'Elegant','wine':'Elegant','fortified wine':'Elegant','tawny port':'Elegant','px sherry':'Dessert','red vermouth':'Elegant',
+    'kräftig':'Kräftig','kraeftig':'Kräftig','intensiv':'Kräftig','creole':'Kräftig','aromatic bitters':'Kräftig','cocktail bitters':'Kräftig','bitter aperitif':'Herb','amaro':'Herb','absinthe':'Herb','pastis':'Herb','anis aperitif':'Herb','savory':'Herb','trocken':'Herb','aromatisch':'Herb','herb':'Herb',
+    'leicht':'Leicht','sommerlich':'Frisch','frisch':'Frisch','zitrisch':'Frisch','zitronenlikör':'Frisch','juice':'Frisch','mixer':'Frisch','ginger beer':'Frisch','universal':'Frisch',
+    'komplex':'Komplex','rund':'Komplex','aromatic':'Komplex','single malt':'Komplex','premium rum':'Premium / Sipping','sipping':'Premium / Sipping','tropisch':'Tropisch','tropical modifier':'Tropisch','cachaça':'Tropisch','sugarcane spirit':'Tropisch','rum':'Tropisch',
+    'würzig':'Würzig','wuerzig':'Würzig','süßlich':'Süßlich','suesslich':'Süßlich','likör':'Süßlich','liqueur':'Süßlich','orange liqueur':'Süßlich','nut liqueur':'Süßlich','chocolate liqueur':'Dessert','cream liqueur':'Dessert','coffee liqueur':'Dessert','dessert':'Dessert','digestif':'Dessert'
+  },
+  origin: {
+    'bayern':'Deutschland','schwarzwald':'Deutschland','deutschland':'Deutschland',
+    'chiba':'Japan','japan':'Japan','douro':'Portugal','portugal':'Portugal','jerez':'Spanien','murcia':'Spanien','spanien':'Spanien','katalonien':'Spanien',
+    'london':'England','england':'England','finnland':'Finnland','frankreich':'Frankreich','marseillan':'Frankreich','cognac':'Frankreich','bordeaux':'Frankreich',
+    'italien':'Italien','padua':'Italien','mailand':'Italien','sizilien':'Italien','kanada':'Kanada','québec':'Kanada','quebec':'Kanada',
+    'niederlande':'Niederlande','peru':'Peru','barbados':'Barbados','brasilien':'Brasilien','jamaika':'Jamaika','schottland':'Schottland','islay':'Schottland','speyside':'Schottland','trinidad und tobago':'Trinidad und Tobago','türkei':'Türkei','tuerkei':'Türkei','usa':'USA','kentucky':'USA'
+  }
+};
 const inventory = HB_DATA.inventory.map(normalizeItem);
 const recipes = HB_DATA.recipes || [];
 const taxonomy = HB_DATA.taxonomies || {};
-const CANONICAL_FLAVORS = arrayOf(taxonomy.flavorTags);
-const CANONICAL_USAGES = arrayOf(taxonomy.usageTags);
+
 
 const els = {};
 
@@ -103,7 +148,7 @@ function setView(view){
 
 function normalizeItem(item){
   const normalized = { ...item };
-  normalized.category = normalized.category === 'Whiskey' ? 'Whisky' : (normalized.category || 'Unkategorisiert');
+  normalized.category = canonicalCategory(normalized);
   normalized.flavorTags = arrayOf(normalized.flavorTags);
   normalized.usageTags = arrayOf(normalized.usageTags);
   normalized.styleTags = arrayOf(normalized.styleTags);
@@ -147,10 +192,10 @@ function listContains(list, selected){
 function itemMatches(item, filters, search){
   if(search && !item.searchText.includes(search)) return false;
   if(filters.category && !sameValue(item.category, filters.category)) return false;
-  if(filters.flavor && !listContains(item.flavorTags, filters.flavor)) return false;
-  if(filters.usage && !listContains(item.usageTags, filters.usage)) return false;
-  if(filters.style && !listContains(item.styleTags, filters.style)) return false;
-  if(filters.origin && !listContains(item.originTags, filters.origin)) return false;
+  if(filters.flavor && !facetContains(item, 'flavor', filters.flavor)) return false;
+  if(filters.usage && !facetContains(item, 'usage', filters.usage)) return false;
+  if(filters.style && !facetContains(item, 'style', filters.style)) return false;
+  if(filters.origin && !facetContains(item, 'origin', filters.origin)) return false;
   return true;
 }
 
@@ -183,19 +228,69 @@ function hasExternalFacetContext(filterName){
 
 function optionsFor(filterName){
   const source = filteredInventory(filterName);
-  let values = [];
-  if(filterName === 'category') values = source.map(i => i.category);
-  if(filterName === 'flavor') {
-    values = source.flatMap(i => i.flavorTags);
-    if(!hasExternalFacetContext('flavor')) values = [...CANONICAL_FLAVORS, ...values];
+  if(filterName === 'category') return CATEGORY_FACETS;
+  if(filterName === 'origin') return uniqueSorted(source.map(countryFacet).filter(Boolean));
+  if(FILTER_FACETS[filterName]) return FILTER_FACETS[filterName];
+  return [];
+}
+
+function canonicalCategory(item){
+  const category = String(item.category || '').trim();
+  const subcategory = String(item.subcategory || '').trim();
+  const name = String(item.name || '').trim();
+  const lower = `${category} ${subcategory} ${name}`.toLowerCase();
+  if(category === 'Whiskey') return 'Whisky';
+  if(category === 'Rum' || category === 'Cachaça') return 'Rum / Cachaça';
+  if(category === 'Cognac / Brandy') {
+    const detail = `${subcategory} ${name}`.toLowerCase();
+    return detail.includes('cognac') ? 'Cognac' : 'Brandy';
   }
-  if(filterName === 'usage') {
-    values = source.flatMap(i => i.usageTags);
-    if(!hasExternalFacetContext('usage')) values = [...CANONICAL_USAGES, ...values];
+  if(category === 'Vermouth / Fortified Wine') return 'Vermouth / Fortified Wine';
+  if(category === 'Wein' || category === 'Wine') return 'Wein / Champagner';
+  if(category === 'Tequila / Mezcal') return 'Tequila';
+  if(CATEGORY_FACETS.some(value => sameValue(value, category))) return CATEGORY_FACETS.find(value => sameValue(value, category));
+  return category || 'Unkategorisiert';
+}
+
+function countryFromOriginTag(value){
+  const raw = String(value || '').trim();
+  if(!raw) return '';
+  const direct = COUNTRY_FACETS.find(country => sameValue(country, raw));
+  if(direct) return direct;
+  return FACET_ALIASES.origin?.[raw.toLowerCase()] || '';
+}
+
+function countryFacet(item){
+  for(const value of arrayOf(item.originTags)){
+    const country = countryFromOriginTag(value);
+    if(country) return country;
   }
-  if(filterName === 'style') values = source.flatMap(i => i.styleTags);
-  if(filterName === 'origin') values = source.flatMap(i => i.originTags);
-  return uniqueSorted(values);
+  return '';
+}
+
+function facetContains(item, filterName, selected){
+  if(!selected) return true;
+  return displayFacetValues(item, filterName).some(value => sameValue(value, selected));
+}
+
+function displayFacetValues(item, filterName){
+  if(filterName === 'origin') return countryFacet(item) ? [countryFacet(item)] : [];
+  const canonical = FILTER_FACETS[filterName] || [];
+  let raw = [];
+  if(filterName === 'flavor') raw = item.flavorTags;
+  if(filterName === 'usage') raw = item.usageTags;
+  if(filterName === 'style') raw = [...item.styleTags, item.category, item.subcategory];
+  const result = new Set();
+  arrayOf(raw).forEach(value => {
+    const direct = canonical.find(c => sameValue(c, value));
+    if(direct) result.add(direct);
+    const key = String(value || '').toLowerCase().trim();
+    const aliases = arrayOf(FACET_ALIASES[filterName]?.[key]);
+    aliases.forEach(alias => {
+      if(alias && canonical.some(c => sameValue(c, alias))) result.add(alias);
+    });
+  });
+  return canonical.filter(v => result.has(v));
 }
 
 function uniqueSorted(values){
@@ -208,7 +303,7 @@ function uniqueSorted(values){
 }
 
 function populateSelect(select, label, options, value){
-  const safeOptions = uniqueSorted(options);
+  const safeOptions = arrayOf(options);
   const exists = !value || safeOptions.some(opt => sameValue(opt, value));
   const finalValue = exists ? value : '';
   const html = [`<option value="">${escapeHtml(label)}</option>`, ...safeOptions.map(opt => `<option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>`)].join('');
@@ -224,7 +319,7 @@ function populateSelect(select, label, options, value){
 }
 
 function renderItemCard(item){
-  const tags = [...item.flavorTags.slice(0,3), ...item.usageTags.slice(0,2)].slice(0,5);
+  const tags = [...displayFacetValues(item, 'flavor').slice(0,3), ...displayFacetValues(item, 'usage').slice(0,2)].slice(0,5);
   return `<button class="item-card" data-item-id="${escapeHtml(item.id)}">
     <h3>${escapeHtml(item.name)}</h3>
     <p class="meta">${escapeHtml([item.category, item.subcategory].filter(Boolean).join(' · '))}</p>
@@ -239,8 +334,8 @@ function openItem(id){
   els.detailCategory.textContent = item.category || ''; // reduzierte Kopfzeile: keine doppelte Unterkategorie im Hero
   const desc = item.description || {};
   const descriptionText = cleanBottleDisplayText(desc.short || desc.long || bottlePublicDescription(item));
-  const leadingTags = uniqueList([...item.flavorTags.slice(0,4), ...item.usageTags.slice(0,2)]).filter(Boolean).slice(0,6);
-  const originText = item.originTags.length ? item.originTags.join(' · ') : '';
+  const leadingTags = uniqueList([...displayFacetValues(item, 'flavor').slice(0,4), ...displayFacetValues(item, 'usage').slice(0,2)]).filter(Boolean).slice(0,6);
+  const originText = countryFacet(item);
   const servingText = cleanBottleDisplayText(desc.serving || servingSuggestionFor(item));
 
   els.detailBody.innerHTML = `
@@ -289,7 +384,7 @@ function uniqueList(values){
 }
 
 function bottlePublicDescription(item){
-  const origin = item.originTags.length ? `${item.originTags[0]}${item.originTags[1] ? ' / ' + item.originTags[1] : ''}` : '';
+  const origin = countryFacet(item);
   const flavors = item.flavorTags.slice(0,3).join(', ');
   const uses = item.usageTags.slice(0,2).join(' und ');
   const intro = [origin, item.category].filter(Boolean).join(' · ');
@@ -327,7 +422,7 @@ function bottleBestUse(item){
 }
 
 function bottleCuratedPlaceholder(item){
-  const origin = item.originTags.length ? ` aus ${item.originTags.join(' / ')}` : '';
+  const origin = countryFacet(item) ? ` aus ${countryFacet(item)}` : '';
   const flavor = item.flavorTags.slice(0,3).join(', ');
   const style = item.styleTags.slice(0,2).join(', ');
   const parts = [];

@@ -1,22 +1,38 @@
-# Hausbar Next v0.18
+# Hausbar Next v0.20
 
-Stabiler Stand nach Bottle Enrichment Batch 2: Gin.
+Korrektur nach v0.18: Die Datenanreicherung bleibt erhalten, aber die sichtbaren Inventar-Filter werden wieder auf kontrollierte, nutzerfreundliche Facetten begrenzt.
 
-## v0.18 Änderungen
+## Zweck dieser Version
 
-- Gin-Batch kuratiert und fachlich verbessert.
-- 15 echte Gin-Flaschen mit besseren Beschreibungen, Herkunft, Profil und Servierempfehlungen ergänzt.
-- Zwei offensichtliche Fehlklassifikationen korrigiert: Licellino Limoncello und Ginger Beer waren fälschlich als Gin geführt.
-- Keine UI-Änderung, keine Filterlogik-Änderung, keine Rezeptlogik-Änderung.
-- v0.17 Audit-/Report-Dateien bleiben enthalten; v0.18 Reports ergänzt.
+- keine ausufernden Geschmacksfilter wie einzelne Botanicals, Früchte oder Detailnoten
+- keine ausufernden Nutzungs- und Stilfilter
+- Herkunftsfilter zeigt nur noch die Haupt-Herkunft, nicht Regionen/Orte/Dörfer
+- detaillierte Tags bleiben intern für Suche, Beschreibung und spätere Intelligenz erhalten
+- Inventar bleibt übersichtlich für den Nutzer
+
+## Nicht geändert
+
+- keine Änderung an der Grundlogik der App
+- keine Änderung am Rauchig-Prinzip
+- keine UI-Experimente
+- keine neuen Daten-Enrichment-Batches
+- keine Runtime-Hooks, keine Wrapper, kein Service Worker
 
 ## Upload
 
-Für GitHub Pages die Dateien aus dieser ZIP direkt in den Repository-Root hochladen und auf main committen.
+Die fünf App-Dateien ersetzen:
 
-## Enthaltene Prüfberichte
+- index.html
+- style.css
+- app.js
+- data.js
+- README.md
 
-- `DATA_QUALITY_AUDIT_v0.18.md`
-- `DATA_QUALITY_AUDIT_v0.18.json`
-- `ENRICHMENT_REPORT_v0.18.md`
-- `ENRICHMENT_REPORT_v0.18.json`
+Testlink:
+
+https://artikus1975.github.io/HausbarNext/?v=019
+
+
+## v0.20
+
+Controlled Inventory Filter Taxonomy: sichtbare Inventarfilter sind auf kuratierte Hauptwerte begrenzt. Interne Detailtags bleiben erhalten, erscheinen aber nicht als Filteroptionen. Herkunftsfilter zeigt nur Länder.
