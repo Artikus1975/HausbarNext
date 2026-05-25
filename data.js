@@ -1,6 +1,6 @@
-// Hausbar Next v0.17 - bottle enrichment batch 1
+// Hausbar Next v0.18 - Bottle Enrichment Batch 2: Gin
 const HB_DATA = {
-  "version": "v0.17",
+  "version": "v0.18",
   "inventory": [
     {
       "id": "csv-001-aperol",
@@ -1986,35 +1986,55 @@ const HB_DATA = {
     {
       "id": "csv-030-sapphire-premier-cru",
       "name": "Sapphire Premier Cru",
-      "producer": "Bombay Spirits",
+      "producer": "Bombay Sapphire",
       "category": "Gin",
-      "subcategory": "Citrus Gin",
+      "subcategory": "Citrus London Dry Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
-        "Kräuterig",
-        "Zitrisch"
+        "Zitrisch",
+        "Wacholder",
+        "Fruchtig",
+        "Kräuterig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Martini",
+        "French 75",
+        "Highball",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "London Dry",
+        "Citrus Gin"
       ],
       "guestTags": [],
-      "originTags": [],
+      "originTags": [
+        "England",
+        "Murcia"
+      ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Zitrusbetonter London Dry Gin mit Murcian-Zitrone, Mandarine und süßer Orange. Frisch, klar und elegant für Gin & Tonic, Martini-Varianten oder einen French 75.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Zitrisch",
+          "Wacholder",
+          "Fruchtig",
+          "Kräuterig"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Martini",
+          "French 75",
+          "Highball",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit viel Eis und einem trockenen Tonic servieren; für Cocktails besonders schön in Martini-Varianten oder einem French 75.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2026,52 +2046,91 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Wacholder",
+        "Fruchtig",
+        "Gin & Tonic",
+        "Martini",
+        "French 75",
+        "Highball",
+        "London Dry",
+        "Citrus Gin",
+        "England",
+        "Murcia"
       ],
-      "searchText": "sapphire premier cru bombay spirits gin citrus gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "sapphire premier cru bombay sapphire gin citrus london dry gin trocken zitrisch wacholder fruchtig kräuterig gin & tonic martini french 75 highball cocktailbasis gin london dry citrus gin england murcia zitrusbetonter london dry gin mit murcian-zitrone, mandarine und süßer orange. frisch, klar und elegant für gin & tonic, martini-varianten oder einen french 75. mit viel eis und einem trockenen tonic servieren; für cocktails besonders schön in martini-varianten oder einem french 75.",
       "tags": [
         "Trocken",
-        "Kräuterig",
         "Zitrisch",
+        "Wacholder",
+        "Fruchtig",
+        "Kräuterig",
+        "Gin & Tonic",
+        "Martini",
+        "French 75",
+        "Highball",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
+        "Gin",
+        "London Dry",
+        "Citrus Gin",
+        "England",
+        "Murcia"
+      ],
+      "servingSuggestion": "Mit viel Eis und einem trockenen Tonic servieren; für Cocktails besonders schön in Martini-Varianten oder einem French 75.",
+      "sourceNotes": [
+        "Bombay Sapphire official Premier Cru: Murcian lemons, mandarins, sweet navel oranges; Martini/French 75"
       ]
     },
     {
       "id": "csv-031-fifty-pounds-gin",
       "name": "Fifty Pounds Gin",
-      "producer": "Thames Distillers",
+      "producer": "Fifty Pounds Gin",
       "category": "Gin",
-      "subcategory": "London Dry",
+      "subcategory": "London Dry Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
+        "Wacholder",
         "Kräuterig",
-        "Zitrisch"
+        "Zitrisch",
+        "Würzig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "London Dry",
+        "Klassisch"
       ],
       "guestTags": [],
-      "originTags": [],
+      "originTags": [
+        "England",
+        "London"
+      ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Klassischer London Dry Gin mit trockenem Wacholderprofil, Zitrus und feiner Würze. Eine geradlinige, elegante Basis für Gin & Tonic, Martini und Negroni.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Wacholder",
+          "Kräuterig",
+          "Zitrisch",
+          "Würzig"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Martini",
+          "Negroni",
+          "Cocktailbasis"
+        ],
+        "serving": "Sehr gut mit trockenem Tonic und Zitronenzeste; für klassische Drinks wie Martini oder Negroni verwenden.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2083,18 +2142,37 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Wacholder",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
+        "London Dry",
+        "Klassisch",
+        "England",
+        "London"
       ],
-      "searchText": "fifty pounds gin thames distillers gin london dry trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "fifty pounds gin fifty pounds gin gin london dry gin trocken wacholder kräuterig zitrisch würzig gin & tonic martini negroni cocktailbasis gin london dry klassisch england london klassischer london dry gin mit trockenem wacholderprofil, zitrus und feiner würze. eine geradlinige, elegante basis für gin & tonic, martini und negroni. sehr gut mit trockenem tonic und zitronenzeste; für klassische drinks wie martini oder negroni verwenden.",
       "tags": [
         "Trocken",
+        "Wacholder",
         "Kräuterig",
         "Zitrisch",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
+        "Gin",
+        "London Dry",
+        "Klassisch",
+        "England",
+        "London"
+      ],
+      "servingSuggestion": "Sehr gut mit trockenem Tonic und Zitronenzeste; für klassische Drinks wie Martini oder Negroni verwenden.",
+      "sourceNotes": [
+        "Fifty Pounds official: small-batch classic London Dry; London gin history"
       ]
     },
     {
@@ -2102,36 +2180,52 @@ const HB_DATA = {
       "name": "Hendrick’s Gin",
       "producer": "Hendrick's",
       "category": "Gin",
-      "subcategory": "Botanical Gin",
+      "subcategory": "Scottish Botanical Gin",
       "amount": "1 Flasche",
       "status": "Geöffnet",
       "fillLevel": "100%",
       "flavorTags": [
-        "Trocken",
-        "Kräuterig",
         "Floral",
-        "Zitrisch"
+        "Gurke",
+        "Rose",
+        "Wacholder",
+        "Zitrisch",
+        "Kräuterig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour"
+        "Gin & Tonic",
+        "Collins",
+        "Highball",
+        "Cocktailbasis"
       ],
       "styleTags": [
         "Gin",
-        "Botanical Gin"
+        "Botanical Gin",
+        "Floral"
       ],
       "guestTags": [],
       "originTags": [
         "Schottland"
       ],
       "description": {
-        "short": "Floraler Botanical Gin mit Gurken-/Rosen-Anmutung. Sehr gut für Highballs, Collins-Varianten und frische Gin-Drinks.",
+        "short": "Floraler schottischer Gin mit der typischen Hendrick’s-Signatur aus Gurke und Rose. Weich, frisch und besonders charmant in Gin & Tonic oder Collins-Drinks.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Floral",
+          "Gurke",
+          "Rose",
+          "Wacholder",
+          "Zitrisch",
+          "Kräuterig"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Collins",
+          "Highball",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit Tonic, viel Eis und Gurkenscheibe servieren; auch passend für leichte Collins-Varianten.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2145,20 +2239,33 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Schottland",
-        "bottle"
+        "bottle",
+        "Gurke",
+        "Rose",
+        "Wacholder",
+        "Gin & Tonic",
+        "Collins",
+        "Highball"
       ],
-      "searchText": "hendrick’s gin hendrick's gin botanical gin trocken kräuterig floral zitrisch cocktailbasis longdrink & highball frisch & sour gin botanical gin schottland floraler botanical gin mit gurken-/rosen-anmutung. sehr gut für highballs, collins-varianten und frische gin-drinks. ",
+      "searchText": "hendrick’s gin hendrick's gin scottish botanical gin floral gurke rose wacholder zitrisch kräuterig gin & tonic collins highball cocktailbasis gin botanical gin floral schottland floraler schottischer gin mit der typischen hendrick’s-signatur aus gurke und rose. weich, frisch und besonders charmant in gin & tonic oder collins-drinks. mit tonic, viel eis und gurkenscheibe servieren; auch passend für leichte collins-varianten.",
       "tags": [
-        "Trocken",
-        "Kräuterig",
         "Floral",
+        "Gurke",
+        "Rose",
+        "Wacholder",
         "Zitrisch",
+        "Kräuterig",
+        "Gin & Tonic",
+        "Collins",
+        "Highball",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
         "Gin",
         "Botanical Gin",
         "Schottland"
+      ],
+      "servingSuggestion": "Mit Tonic, viel Eis und Gurkenscheibe servieren; auch passend für leichte Collins-Varianten.",
+      "sourceNotes": [
+        "Hendrick’s official: distilled in Scotland; cucumber and rose infusions"
       ]
     },
     {
@@ -2166,33 +2273,48 @@ const HB_DATA = {
       "name": "Kyrö Gin",
       "producer": "Kyrö Distillery",
       "category": "Gin",
-      "subcategory": "Nordic Gin",
+      "subcategory": "Finnish Rye Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
         "Kräuterig",
-        "Zitrisch"
+        "Würzig",
+        "Zitrisch",
+        "Wacholder"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Highball",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Nordic Gin",
+        "Rye Gin"
       ],
       "guestTags": [],
-      "originTags": [],
+      "originTags": [
+        "Finnland"
+      ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Finnischer Rye Gin mit Roggenbasis und nordischen Wildkräutern. Kräuterig, frisch und leicht würzig – sehr schön für aromatische Gin & Tonics.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Kräuterig",
+          "Würzig",
+          "Zitrisch",
+          "Wacholder"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Highball",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit trockenem Tonic, viel Eis, Cranberries und einem Zweig Rosmarin servieren.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2204,18 +2326,33 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Würzig",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Nordic Gin",
+        "Rye Gin",
+        "Finnland"
       ],
-      "searchText": "kyrö gin kyrö distillery gin nordic gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "kyrö gin kyrö distillery gin finnish rye gin trocken kräuterig würzig zitrisch wacholder gin & tonic highball cocktailbasis gin nordic gin rye gin finnland finnischer rye gin mit roggenbasis und nordischen wildkräutern. kräuterig, frisch und leicht würzig – sehr schön für aromatische gin & tonics. mit trockenem tonic, viel eis, cranberries und einem zweig rosmarin servieren.",
       "tags": [
         "Trocken",
         "Kräuterig",
+        "Würzig",
         "Zitrisch",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
+        "Gin",
+        "Nordic Gin",
+        "Rye Gin",
+        "Finnland"
+      ],
+      "servingSuggestion": "Mit trockenem Tonic, viel Eis, Cranberries und einem Zweig Rosmarin servieren.",
+      "sourceNotes": [
+        "Kyrö official: 100% rye; Finnish wild botanicals incl. birch leaves and meadowsweet; G&T with cranberries and rosemary"
       ]
     },
     {
@@ -2223,33 +2360,50 @@ const HB_DATA = {
       "name": "Le Tribute Gin",
       "producer": "MG Destilerías",
       "category": "Gin",
-      "subcategory": "Mediterraner Gin",
+      "subcategory": "Mediterranean Citrus Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
-        "Kräuterig",
-        "Zitrisch"
+        "Zitrisch",
+        "Wacholder",
+        "Frisch",
+        "Kräuterig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Mediterran",
+        "Citrus Gin"
       ],
       "guestTags": [],
-      "originTags": [],
+      "originTags": [
+        "Spanien"
+      ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Mediterraner Gin mit markanter Zitrusfrische, Lemongrass, Wacholder und mediterranen Früchten. Klar, trocken und ideal für elegante Gin & Tonics.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Zitrisch",
+          "Wacholder",
+          "Frisch",
+          "Kräuterig"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Highball",
+          "Fizz",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit Premium-Tonic, viel Eis und einer Zitruszeste servieren; auch passend für frische Fizz-Varianten.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2261,52 +2415,85 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Wacholder",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Mediterran",
+        "Citrus Gin",
+        "Spanien"
       ],
-      "searchText": "le tribute gin mg destilerías gin mediterraner gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "le tribute gin mg destilerías gin mediterranean citrus gin trocken zitrisch wacholder frisch kräuterig gin & tonic highball fizz cocktailbasis gin mediterran citrus gin spanien mediterraner gin mit markanter zitrusfrische, lemongrass, wacholder und mediterranen früchten. klar, trocken und ideal für elegante gin & tonics. mit premium-tonic, viel eis und einer zitruszeste servieren; auch passend für frische fizz-varianten.",
       "tags": [
         "Trocken",
-        "Kräuterig",
         "Zitrisch",
+        "Wacholder",
+        "Frisch",
+        "Kräuterig",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
+        "Gin",
+        "Mediterran",
+        "Citrus Gin",
+        "Spanien"
+      ],
+      "servingSuggestion": "Mit Premium-Tonic, viel Eis und einer Zitruszeste servieren; auch passend für frische Fizz-Varianten.",
+      "sourceNotes": [
+        "Le Tribute official: distilled in Spain; 11 citrus botanicals, lemongrass, juniper, Mediterranean fruits"
       ]
     },
     {
       "id": "csv-035-needle-gin",
       "name": "Needle Gin",
-      "producer": "Black Forest Distillers",
+      "producer": "Bimmerle / Needle",
       "category": "Gin",
-      "subcategory": "Herbal Gin",
+      "subcategory": "Black Forest Dry Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
+        "Wacholder",
         "Kräuterig",
-        "Zitrisch"
+        "Harzig",
+        "Würzig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Highball",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Dry Gin",
+        "Herbal Gin"
       ],
       "guestTags": [],
-      "originTags": [],
+      "originTags": [
+        "Deutschland",
+        "Schwarzwald"
+      ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Schwarzwald Dry Gin mit Wacholder und Fichtennadeln. Trocken, kräuterig und harzig-frisch – ein guter Kandidat für herbe Gin & Tonics.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Wacholder",
+          "Kräuterig",
+          "Harzig",
+          "Würzig"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Highball",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit trockenem Tonic und Grapefruit- oder Zitronenzeste servieren.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2318,18 +2505,36 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Wacholder",
+        "Harzig",
+        "Würzig",
+        "Gin & Tonic",
+        "Highball",
+        "Dry Gin",
+        "Herbal Gin",
+        "Deutschland",
+        "Schwarzwald"
       ],
-      "searchText": "needle gin black forest distillers gin herbal gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "needle gin bimmerle / needle gin black forest dry gin trocken wacholder kräuterig harzig würzig gin & tonic highball cocktailbasis gin dry gin herbal gin deutschland schwarzwald schwarzwald dry gin mit wacholder und fichtennadeln. trocken, kräuterig und harzig-frisch – ein guter kandidat für herbe gin & tonics. mit trockenem tonic und grapefruit- oder zitronenzeste servieren.",
       "tags": [
         "Trocken",
+        "Wacholder",
         "Kräuterig",
-        "Zitrisch",
+        "Harzig",
+        "Würzig",
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
+        "Gin",
+        "Dry Gin",
+        "Herbal Gin",
+        "Deutschland",
+        "Schwarzwald"
+      ],
+      "servingSuggestion": "Mit trockenem Tonic und Grapefruit- oder Zitronenzeste servieren.",
+      "sourceNotes": [
+        "Needle/Bimmerle official: Black Forest gin with juniper and hand-picked spruce needles"
       ]
     },
     {
@@ -2337,33 +2542,51 @@ const HB_DATA = {
       "name": "No.3 London Dry Gin",
       "producer": "Berry Bros. & Rudd",
       "category": "Gin",
-      "subcategory": "London Dry",
+      "subcategory": "London Dry Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
-        "Kräuterig",
-        "Zitrisch"
+        "Wacholder",
+        "Zitrisch",
+        "Würzig",
+        "Kräuterig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Martini",
+        "Gin & Tonic",
+        "Negroni",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "London Dry",
+        "Klassisch"
       ],
       "guestTags": [],
-      "originTags": [],
+      "originTags": [
+        "England",
+        "Niederlande"
+      ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Geradliniger London Dry Gin mit Wacholder, Zitrus und Gewürzstruktur. Präzise, trocken und besonders stark in Martini, Gin & Tonic und klassischen Gin-Cocktails.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Wacholder",
+          "Zitrisch",
+          "Würzig",
+          "Kräuterig"
+        ],
+        "bestUse": [
+          "Martini",
+          "Gin & Tonic",
+          "Negroni",
+          "Cocktailbasis"
+        ],
+        "serving": "Für einen klaren Martini gut kühlen; im Gin & Tonic mit neutralem Tonic und Zitronenzeste servieren.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2375,54 +2598,90 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Wacholder",
+        "Würzig",
+        "Martini",
+        "Gin & Tonic",
+        "Negroni",
+        "London Dry",
+        "Klassisch",
+        "England",
+        "Niederlande"
       ],
-      "searchText": "no.3 london dry gin berry bros. & rudd gin london dry trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "no.3 london dry gin berry bros. & rudd gin london dry gin trocken wacholder zitrisch würzig kräuterig martini gin & tonic negroni cocktailbasis gin london dry klassisch england niederlande geradliniger london dry gin mit wacholder, zitrus und gewürzstruktur. präzise, trocken und besonders stark in martini, gin & tonic und klassischen gin-cocktails. für einen klaren martini gut kühlen; im gin & tonic mit neutralem tonic und zitronenzeste servieren.",
       "tags": [
         "Trocken",
-        "Kräuterig",
+        "Wacholder",
         "Zitrisch",
+        "Würzig",
+        "Kräuterig",
+        "Martini",
+        "Gin & Tonic",
+        "Negroni",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
+        "Gin",
+        "London Dry",
+        "Klassisch",
+        "England",
+        "Niederlande"
+      ],
+      "servingSuggestion": "Für einen klaren Martini gut kühlen; im Gin & Tonic mit neutralem Tonic und Zitronenzeste servieren.",
+      "sourceNotes": [
+        "Berry Bros. & Rudd: six botanicals; distilled in Holland; balanced London Dry"
       ]
     },
     {
       "id": "csv-037-roku-japanese-craft-gin",
       "name": "Roku Japanese Craft Gin",
-      "producer": "Suntory",
+      "producer": "House of Suntory",
       "category": "Gin",
-      "subcategory": "Japanese Gin",
+      "subcategory": "Japanese Craft Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
-        "Kräuterig",
-        "Zitrisch"
+        "Zitrisch",
+        "Floral",
+        "Tee",
+        "Würzig",
+        "Wacholder"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Japanese Gin",
+        "Botanical Gin"
       ],
       "guestTags": [],
       "originTags": [
         "Japan"
       ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Japanischer Craft Gin mit sechs japanischen Botanicals wie Sakura, Tee, Sansho und Yuzu. Ausbalanciert, feinwürzig und elegant frisch.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Zitrisch",
+          "Floral",
+          "Tee",
+          "Würzig",
+          "Wacholder"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Highball",
+          "Fizz",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit Tonic und einer dünnen Ingwer- oder Zitruszeste servieren; auch schön in leichten Highballs.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2435,53 +2694,89 @@ const HB_DATA = {
         "Frisch & Sour",
         "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Floral",
+        "Tee",
+        "Würzig",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Japanese Gin",
+        "Botanical Gin"
       ],
-      "searchText": "roku japanese craft gin suntory gin japanese gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin japan kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "roku japanese craft gin house of suntory gin japanese craft gin trocken zitrisch floral tee würzig wacholder gin & tonic highball fizz cocktailbasis gin japanese gin botanical gin japan japanischer craft gin mit sechs japanischen botanicals wie sakura, tee, sansho und yuzu. ausbalanciert, feinwürzig und elegant frisch. mit tonic und einer dünnen ingwer- oder zitruszeste servieren; auch schön in leichten highballs.",
       "tags": [
         "Trocken",
-        "Kräuterig",
         "Zitrisch",
+        "Floral",
+        "Tee",
+        "Würzig",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
         "Gin",
+        "Japanese Gin",
+        "Botanical Gin",
         "Japan"
+      ],
+      "servingSuggestion": "Mit Tonic und einer dünnen Ingwer- oder Zitruszeste servieren; auch schön in leichten Highballs.",
+      "sourceNotes": [
+        "House of Suntory: six Japanese botanicals representing the seasons"
       ]
     },
     {
       "id": "csv-038-tanqueray-london-dry-gin",
       "name": "Tanqueray London Dry Gin",
-      "producer": "Diageo",
+      "producer": "Tanqueray",
       "category": "Gin",
-      "subcategory": "London Dry",
+      "subcategory": "London Dry Gin",
       "amount": "2 Flaschen",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
+        "Wacholder",
+        "Zitrisch",
         "Kräuterig",
-        "Zitrisch"
+        "Würzig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "London Dry",
+        "Klassisch"
       ],
       "guestTags": [],
-      "originTags": [],
+      "originTags": [
+        "Schottland",
+        "England"
+      ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Klassischer London Dry Gin mit trockenem Wacholder, leichter Zitrusfrische und klarer Struktur. Vielseitig für Gin & Tonic, Martini und Negroni.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Wacholder",
+          "Zitrisch",
+          "Kräuterig",
+          "Würzig"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Martini",
+          "Negroni",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit trockenem Tonic, viel Eis und Limettenspalte servieren; für klassische Gin-Cocktails universell einsetzbar.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2493,18 +2788,37 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Wacholder",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
+        "London Dry",
+        "Klassisch",
+        "Schottland",
+        "England"
       ],
-      "searchText": "tanqueray london dry gin diageo gin london dry trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "tanqueray london dry gin tanqueray gin london dry gin trocken wacholder zitrisch kräuterig würzig gin & tonic martini negroni cocktailbasis gin london dry klassisch schottland england klassischer london dry gin mit trockenem wacholder, leichter zitrusfrische und klarer struktur. vielseitig für gin & tonic, martini und negroni. mit trockenem tonic, viel eis und limettenspalte servieren; für klassische gin-cocktails universell einsetzbar.",
       "tags": [
         "Trocken",
-        "Kräuterig",
+        "Wacholder",
         "Zitrisch",
+        "Kräuterig",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
+        "Gin",
+        "London Dry",
+        "Klassisch",
+        "Schottland",
+        "England"
+      ],
+      "servingSuggestion": "Mit trockenem Tonic, viel Eis und Limettenspalte servieren; für klassische Gin-Cocktails universell einsetzbar.",
+      "sourceNotes": [
+        "Diageo Bar Academy: piney juniper and light lemon; best in Tanqueray & Tonic with lime"
       ]
     },
     {
@@ -2519,29 +2833,46 @@ const HB_DATA = {
       "flavorTags": [
         "Trocken",
         "Zitrisch",
-        "Kräuterig"
+        "Grapefruit",
+        "Wacholder",
+        "Floral"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Spirit-Forward",
-        "Longdrink & Highball",
-        "Frisch & Sour"
+        "Martini",
+        "Gin & Tonic",
+        "White Lady",
+        "Gimlet",
+        "Cocktailbasis"
       ],
       "styleTags": [
         "Gin",
-        "Citrus-forward Gin"
+        "Citrus Gin",
+        "Premium Gin"
       ],
       "guestTags": [],
       "originTags": [
+        "Schottland",
         "England"
       ],
       "description": {
-        "short": "Zitrusbetonter Premium-Gin für Martini, Gin & Tonic, White Lady, Gimlet und frische Gin-Sours.",
+        "short": "Zitrusbetonter Premium-Gin mit Grapefruit, Orange, Limette, Wacholder und Kamille. Sehr elegant für Martini, Gimlet, White Lady und feine Gin & Tonics.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Zitrisch",
+          "Grapefruit",
+          "Wacholder",
+          "Floral"
+        ],
+        "bestUse": [
+          "Martini",
+          "Gin & Tonic",
+          "White Lady",
+          "Gimlet",
+          "Cocktailbasis"
+        ],
+        "serving": "Gut gekühlt in Martinis oder mit trockenem Tonic und Grapefruitzeste servieren.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2555,20 +2886,39 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "England",
-        "bottle"
+        "bottle",
+        "Grapefruit",
+        "Wacholder",
+        "Floral",
+        "Martini",
+        "Gin & Tonic",
+        "White Lady",
+        "Gimlet",
+        "Citrus Gin",
+        "Premium Gin",
+        "Schottland"
       ],
-      "searchText": "tanqueray no. ten tanqueray gin citrus gin trocken zitrisch kräuterig cocktailbasis spirit-forward longdrink & highball frisch & sour gin citrus-forward gin england zitrusbetonter premium-gin für martini, gin & tonic, white lady, gimlet und frische gin-sours. ",
+      "searchText": "tanqueray no. ten tanqueray gin citrus gin trocken zitrisch grapefruit wacholder floral martini gin & tonic white lady gimlet cocktailbasis gin citrus gin premium gin schottland england zitrusbetonter premium-gin mit grapefruit, orange, limette, wacholder und kamille. sehr elegant für martini, gimlet, white lady und feine gin & tonics. gut gekühlt in martinis oder mit trockenem tonic und grapefruitzeste servieren.",
       "tags": [
         "Trocken",
         "Zitrisch",
-        "Kräuterig",
+        "Grapefruit",
+        "Wacholder",
+        "Floral",
+        "Martini",
+        "Gin & Tonic",
+        "White Lady",
+        "Gimlet",
         "Cocktailbasis",
-        "Spirit-Forward",
-        "Longdrink & Highball",
-        "Frisch & Sour",
         "Gin",
-        "Citrus-forward Gin",
+        "Citrus Gin",
+        "Premium Gin",
+        "Schottland",
         "England"
+      ],
+      "servingSuggestion": "Gut gekühlt in Martinis oder mit trockenem Tonic und Grapefruitzeste servieren.",
+      "sourceNotes": [
+        "Tanqueray official/Diageo Bar Academy: whole citrus fruits, grapefruit/citrus, juniper, chamomile; cocktail artistry"
       ]
     },
     {
@@ -2576,35 +2926,50 @@ const HB_DATA = {
       "name": "Ukiyo Blossom Gin",
       "producer": "Ukiyo Spirits",
       "category": "Gin",
-      "subcategory": "Japanese Gin",
+      "subcategory": "Japanese Blossom Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Trocken",
-        "Kräuterig",
-        "Zitrisch"
+        "Floral",
+        "Sakura",
+        "Zitrisch",
+        "Wacholder",
+        "Frisch"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Highball",
+        "Spritz",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Japanese Gin",
+        "Floral"
       ],
       "guestTags": [],
       "originTags": [
         "Japan"
       ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Floraler japanischer Gin mit Sakura-Blüte und Sakura-Blatt. Zart, frisch und leicht parfümiert – schön für elegante Gin & Tonics und leichte Highballs.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Floral",
+          "Sakura",
+          "Zitrisch",
+          "Wacholder",
+          "Frisch"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Highball",
+          "Spritz",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit Premium-Tonic und einer dezenten Zitruszeste servieren; nicht zu stark übergarnieren.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2617,19 +2982,34 @@ const HB_DATA = {
         "Frisch & Sour",
         "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Floral",
+        "Sakura",
+        "Wacholder",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Spritz",
+        "Japanese Gin"
       ],
-      "searchText": "ukiyo blossom gin ukiyo spirits gin japanese gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin japan kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "ukiyo blossom gin ukiyo spirits gin japanese blossom gin floral sakura zitrisch wacholder frisch gin & tonic highball spritz cocktailbasis gin japanese gin floral japan floraler japanischer gin mit sakura-blüte und sakura-blatt. zart, frisch und leicht parfümiert – schön für elegante gin & tonics und leichte highballs. mit premium-tonic und einer dezenten zitruszeste servieren; nicht zu stark übergarnieren.",
       "tags": [
-        "Trocken",
-        "Kräuterig",
+        "Floral",
+        "Sakura",
         "Zitrisch",
+        "Wacholder",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Spritz",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
         "Gin",
+        "Japanese Gin",
         "Japan"
+      ],
+      "servingSuggestion": "Mit Premium-Tonic und einer dezenten Zitruszeste servieren; nicht zu stark übergarnieren.",
+      "sourceNotes": [
+        "Ukiyo official: 11 botanicals incl. sakura flower and leaf; delicate blossom aromas; premium tonic"
       ]
     },
     {
@@ -2637,35 +3017,50 @@ const HB_DATA = {
       "name": "Ukiyo Nashi Pear Gin",
       "producer": "Ukiyo Spirits",
       "category": "Gin",
-      "subcategory": "Japanese Gin",
+      "subcategory": "Japanese Nashi Pear Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Trocken",
-        "Kräuterig",
-        "Zitrisch"
+        "Fruchtig",
+        "Birne",
+        "Zitrisch",
+        "Floral",
+        "Wacholder"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Japanese Gin",
+        "Fruit-forward Gin"
       ],
       "guestTags": [],
       "originTags": [
         "Japan"
       ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Japanischer Gin mit frischer Nashi-Birne, feiner Frucht und leichter floraler Frische. Zugänglich, saftig und gut für helle, frische Highballs.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Fruchtig",
+          "Birne",
+          "Zitrisch",
+          "Floral",
+          "Wacholder"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Highball",
+          "Fizz",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit Tonic oder Soda und einer Birnen- oder Zitronenzeste servieren; auch passend für fruchtige Gin-Fizzes.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2678,19 +3073,36 @@ const HB_DATA = {
         "Frisch & Sour",
         "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Fruchtig",
+        "Birne",
+        "Floral",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Japanese Gin",
+        "Fruit-forward Gin"
       ],
-      "searchText": "ukiyo nashi pear gin ukiyo spirits gin japanese gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin japan kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "ukiyo nashi pear gin ukiyo spirits gin japanese nashi pear gin fruchtig birne zitrisch floral wacholder gin & tonic highball fizz cocktailbasis gin japanese gin fruit-forward gin japan japanischer gin mit frischer nashi-birne, feiner frucht und leichter floraler frische. zugänglich, saftig und gut für helle, frische highballs. mit tonic oder soda und einer birnen- oder zitronenzeste servieren; auch passend für fruchtige gin-fizzes.",
       "tags": [
-        "Trocken",
-        "Kräuterig",
+        "Fruchtig",
+        "Birne",
         "Zitrisch",
+        "Floral",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
         "Gin",
+        "Japanese Gin",
+        "Fruit-forward Gin",
         "Japan"
+      ],
+      "servingSuggestion": "Mit Tonic oder Soda und einer Birnen- oder Zitronenzeste servieren; auch passend für fruchtige Gin-Fizzes.",
+      "sourceNotes": [
+        "Retail/fach info: Japanese gin with fresh Nashi pear; light, floral, suited to G&T/cocktails"
       ]
     },
     {
@@ -2698,35 +3110,51 @@ const HB_DATA = {
       "name": "Ukiyo Tokyo Dry Gin",
       "producer": "Ukiyo Spirits",
       "category": "Gin",
-      "subcategory": "Japanese Gin",
+      "subcategory": "Tokyo Dry Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
+        "Wacholder",
+        "Zitrisch",
         "Kräuterig",
-        "Zitrisch"
+        "Würzig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Martini",
+        "Highball",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Japanese Gin",
+        "Dry Gin"
       ],
       "guestTags": [],
       "originTags": [
-        "Japan"
+        "Japan",
+        "Chiba"
       ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Trockener japanischer Gin mit Yuzu, Mikan, Sakura und Sansho. Klar, würzig und zitrisch – eine gute japanische Basis für G&T, Martini und Highballs.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Trocken",
+          "Wacholder",
+          "Zitrisch",
+          "Kräuterig",
+          "Würzig"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Martini",
+          "Highball",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit trockenem Tonic und Yuzu- oder Zitronenzeste servieren; für einen trockenen Martini gut kühlen.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2739,19 +3167,36 @@ const HB_DATA = {
         "Frisch & Sour",
         "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Wacholder",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Highball",
+        "Japanese Gin",
+        "Dry Gin",
+        "Chiba"
       ],
-      "searchText": "ukiyo tokyo dry gin ukiyo spirits gin japanese gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin japan kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "ukiyo tokyo dry gin ukiyo spirits gin tokyo dry gin trocken wacholder zitrisch kräuterig würzig gin & tonic martini highball cocktailbasis gin japanese gin dry gin japan chiba trockener japanischer gin mit yuzu, mikan, sakura und sansho. klar, würzig und zitrisch – eine gute japanische basis für g&t, martini und highballs. mit trockenem tonic und yuzu- oder zitronenzeste servieren; für einen trockenen martini gut kühlen.",
       "tags": [
         "Trocken",
-        "Kräuterig",
+        "Wacholder",
         "Zitrisch",
+        "Kräuterig",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Highball",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
         "Gin",
-        "Japan"
+        "Japanese Gin",
+        "Dry Gin",
+        "Japan",
+        "Chiba"
+      ],
+      "servingSuggestion": "Mit trockenem Tonic und Yuzu- oder Zitronenzeste servieren; für einen trockenen Martini gut kühlen.",
+      "sourceNotes": [
+        "Fach info: Tokyo Dry Gin with Japanese botanicals incl. yuzu, mikan, sakura, sansho"
       ]
     },
     {
@@ -2759,35 +3204,50 @@ const HB_DATA = {
       "name": "Ukiyo Yuzu Gin",
       "producer": "Ukiyo Spirits",
       "category": "Gin",
-      "subcategory": "Japanese Gin",
+      "subcategory": "Japanese Yuzu Gin",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Trocken",
+        "Zitrisch",
+        "Yuzu",
+        "Wacholder",
         "Kräuterig",
-        "Zitrisch"
+        "Frisch"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Japanese Gin",
+        "Citrus Gin"
       ],
       "guestTags": [],
       "originTags": [
         "Japan"
       ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Japanischer Yuzu Gin mit klarer Zitrusfrische, feiner Bitterkeit und kräuterigen Noten. Hell, lebendig und ideal für erfrischende Highballs.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Zitrisch",
+          "Yuzu",
+          "Wacholder",
+          "Kräuterig",
+          "Frisch"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Highball",
+          "Fizz",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit Tonic oder Soda, viel Eis und einer Zitruszeste servieren; sehr passend für spritzige Sommerdrinks.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2800,19 +3260,35 @@ const HB_DATA = {
         "Frisch & Sour",
         "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Yuzu",
+        "Wacholder",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Japanese Gin",
+        "Citrus Gin"
       ],
-      "searchText": "ukiyo yuzu gin ukiyo spirits gin japanese gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin japan kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "ukiyo yuzu gin ukiyo spirits gin japanese yuzu gin zitrisch yuzu wacholder kräuterig frisch gin & tonic highball fizz cocktailbasis gin japanese gin citrus gin japan japanischer yuzu gin mit klarer zitrusfrische, feiner bitterkeit und kräuterigen noten. hell, lebendig und ideal für erfrischende highballs. mit tonic oder soda, viel eis und einer zitruszeste servieren; sehr passend für spritzige sommerdrinks.",
       "tags": [
-        "Trocken",
-        "Kräuterig",
         "Zitrisch",
+        "Yuzu",
+        "Wacholder",
+        "Kräuterig",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
         "Gin",
+        "Japanese Gin",
+        "Citrus Gin",
         "Japan"
+      ],
+      "servingSuggestion": "Mit Tonic oder Soda, viel Eis und einer Zitruszeste servieren; sehr passend für spritzige Sommerdrinks.",
+      "sourceNotes": [
+        "Ukiyo official and fach info: yuzu citrus character; herbal notes, mild bitterness"
       ]
     },
     {
@@ -2820,33 +3296,49 @@ const HB_DATA = {
       "name": "Ungava Canadian Premium Gin",
       "producer": "Ungava Spirits",
       "category": "Gin",
-      "subcategory": "Canadian Gin",
+      "subcategory": "Canadian Arctic Gin",
       "amount": "1 Flasche",
       "status": "Geöffnet",
       "fillLevel": "100%",
       "flavorTags": [
-        "Trocken",
         "Kräuterig",
-        "Zitrisch"
+        "Wacholder",
+        "Fruchtig",
+        "Floral",
+        "Würzig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Gin & Tonic",
+        "Highball",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Gin"
+        "Gin",
+        "Canadian Gin",
+        "Botanical Gin"
       ],
       "guestTags": [],
-      "originTags": [],
+      "originTags": [
+        "Kanada",
+        "Québec"
+      ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Kanadischer Gin mit arktischen Botanicals aus Nord-Québec. Kräuterig, wildfruchtig und floral mit markanter natürlicher Farbe und eigenständigem Charakter.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Kräuterig",
+          "Wacholder",
+          "Fruchtig",
+          "Floral",
+          "Würzig"
+        ],
+        "bestUse": [
+          "Gin & Tonic",
+          "Highball",
+          "Cocktailbasis"
+        ],
+        "serving": "Mit trockenem Tonic und einer Grapefruit- oder Zitronenzeste servieren; für einfache Highballs bewusst schlank halten.",
+        "sourceStatus": "internet-informed-curated"
       },
       "notes": "",
       "legacyTags": [
@@ -2858,18 +3350,37 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Wacholder",
+        "Fruchtig",
+        "Floral",
+        "Würzig",
+        "Gin & Tonic",
+        "Highball",
+        "Canadian Gin",
+        "Botanical Gin",
+        "Kanada",
+        "Québec"
       ],
-      "searchText": "ungava canadian premium gin ungava spirits gin canadian gin trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "ungava canadian premium gin ungava spirits gin canadian arctic gin kräuterig wacholder fruchtig floral würzig gin & tonic highball cocktailbasis gin canadian gin botanical gin kanada québec kanadischer gin mit arktischen botanicals aus nord-québec. kräuterig, wildfruchtig und floral mit markanter natürlicher farbe und eigenständigem charakter. mit trockenem tonic und einer grapefruit- oder zitronenzeste servieren; für einfache highballs bewusst schlank halten.",
       "tags": [
-        "Trocken",
         "Kräuterig",
-        "Zitrisch",
+        "Wacholder",
+        "Fruchtig",
+        "Floral",
+        "Würzig",
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
+        "Gin",
+        "Canadian Gin",
+        "Botanical Gin",
+        "Kanada",
+        "Québec"
+      ],
+      "servingSuggestion": "Mit trockenem Tonic und einer Grapefruit- oder Zitronenzeste servieren; für einfache Highballs bewusst schlank halten.",
+      "sourceNotes": [
+        "Ungava official/Pernod Ricard: six Arctic botanicals from northern Quebec; cloudberry, crowberry, Labrador tea, Nordic juniper, wild rose hips"
       ]
     },
     {
@@ -4257,36 +4768,46 @@ const HB_DATA = {
       "id": "csv-072-licellino-limoncello",
       "name": "Licellino Limoncello",
       "producer": "Ricetta Originale",
-      "category": "Gin",
+      "category": "Likör",
       "subcategory": "Zitronenlikör",
       "amount": "1 Flasche",
       "status": "Geöffnet",
       "fillLevel": "100%",
       "flavorTags": [
-        "Trocken",
-        "Kräuterig",
-        "Zitrisch"
+        "Süß",
+        "Zitrisch",
+        "Fruchtig"
       ],
       "usageTags": [
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Digestif",
+        "Spritz",
+        "Dessertdrink",
+        "Modifier"
       ],
       "styleTags": [
-        "Gin"
+        "Likör",
+        "Zitronenlikör"
       ],
       "guestTags": [],
       "originTags": [
         "Italien"
       ],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Italienisch inspirierter Zitronenlikör mit heller Zitrusfrische und süßer Likörstruktur. Geeignet als Digestif, für Spritz-Varianten oder als zitrischer Akzent in Dessertdrinks.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Süß",
+          "Zitrisch",
+          "Fruchtig"
+        ],
+        "bestUse": [
+          "Digestif",
+          "Spritz",
+          "Dessertdrink",
+          "Modifier"
+        ],
+        "serving": "Gut gekühlt pur, auf Eis oder mit Prosecco/Soda als leichter Spritz servieren.",
+        "sourceStatus": "curated-correction"
       },
       "notes": "",
       "legacyTags": [
@@ -4299,20 +4820,30 @@ const HB_DATA = {
         "Frisch & Sour",
         "Spirit-Forward",
         "Italien",
-        "bottle"
+        "bottle",
+        "Süß",
+        "Fruchtig",
+        "Digestif",
+        "Spritz",
+        "Dessertdrink",
+        "Modifier",
+        "Likör",
+        "Zitronenlikör"
       ],
-      "searchText": "licellino limoncello ricetta originale gin zitronenlikör trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin italien kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "licellino limoncello ricetta originale likör zitronenlikör süß zitrisch fruchtig digestif spritz dessertdrink modifier likör zitronenlikör italien italienisch inspirierter zitronenlikör mit heller zitrusfrische und süßer likörstruktur. geeignet als digestif, für spritz-varianten oder als zitrischer akzent in dessertdrinks. gut gekühlt pur, auf eis oder mit prosecco/soda als leichter spritz servieren.",
       "tags": [
-        "Trocken",
-        "Kräuterig",
+        "Süß",
         "Zitrisch",
-        "Cocktailbasis",
-        "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin",
+        "Fruchtig",
+        "Digestif",
+        "Spritz",
+        "Dessertdrink",
+        "Modifier",
+        "Likör",
+        "Zitronenlikör",
         "Italien"
-      ]
+      ],
+      "servingSuggestion": "Gut gekühlt pur, auf Eis oder mit Prosecco/Soda als leichter Spritz servieren."
     },
     {
       "id": "csv-073-salmari",
@@ -5534,34 +6065,46 @@ const HB_DATA = {
       "id": "csv-097-ginger-beer",
       "name": "Ginger Beer",
       "producer": "Rewe",
-      "category": "Gin",
+      "category": "Sirup / Mixer",
       "subcategory": "Filler",
       "amount": "1 Flasche",
       "status": "Ungeöffnet",
       "fillLevel": "100%",
       "flavorTags": [
-        "Trocken",
-        "Kräuterig",
-        "Zitrisch"
+        "Scharf",
+        "Würzig",
+        "Ingwer",
+        "Süß"
       ],
       "usageTags": [
-        "Cocktailbasis",
+        "Filler",
         "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward"
+        "Mule",
+        "Tiki"
       ],
       "styleTags": [
-        "Gin"
+        "Mixer",
+        "Ginger Beer"
       ],
       "guestTags": [],
       "originTags": [],
       "description": {
-        "short": "Kuratierter Gin-Eintrag: trockene, kräuterig-zitrische Cocktailbasis für Highballs, Sours und Spirit-Forward-Drinks.",
+        "short": "Würziger Ingwer-Filler für Highballs, Mules und Tiki-Drinks. Bringt Schärfe, Frische und Süße in lange Drinks.",
         "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "curated-existing"
+        "tastingNotes": [
+          "Scharf",
+          "Würzig",
+          "Ingwer",
+          "Süß"
+        ],
+        "bestUse": [
+          "Filler",
+          "Longdrink & Highball",
+          "Mule",
+          "Tiki"
+        ],
+        "serving": "Gut gekühlt als Filler verwenden; besonders passend für Moscow Mule, Dark & Stormy und frische Highballs.",
+        "sourceStatus": "curated-correction"
       },
       "notes": "",
       "legacyTags": [
@@ -5573,19 +6116,31 @@ const HB_DATA = {
         "Longdrink & Highball",
         "Frisch & Sour",
         "Spirit-Forward",
-        "bottle"
+        "bottle",
+        "Scharf",
+        "Würzig",
+        "Ingwer",
+        "Süß",
+        "Filler",
+        "Mule",
+        "Tiki",
+        "Mixer",
+        "Ginger Beer"
       ],
-      "searchText": "ginger beer rewe gin filler trocken kräuterig zitrisch cocktailbasis longdrink & highball frisch & sour spirit-forward gin kuratierter gin-eintrag: trockene, kräuterig-zitrische cocktailbasis für highballs, sours und spirit-forward-drinks. ",
+      "searchText": "ginger beer rewe sirup / mixer filler scharf würzig ingwer süß filler longdrink & highball mule tiki mixer ginger beer würziger ingwer-filler für highballs, mules und tiki-drinks. bringt schärfe, frische und süße in lange drinks. gut gekühlt als filler verwenden; besonders passend für moscow mule, dark & stormy und frische highballs.",
       "tags": [
-        "Trocken",
-        "Kräuterig",
-        "Zitrisch",
-        "Cocktailbasis",
+        "Scharf",
+        "Würzig",
+        "Ingwer",
+        "Süß",
+        "Filler",
         "Longdrink & Highball",
-        "Frisch & Sour",
-        "Spirit-Forward",
-        "Gin"
-      ]
+        "Mule",
+        "Tiki",
+        "Mixer",
+        "Ginger Beer"
+      ],
+      "servingSuggestion": "Gut gekühlt als Filler verwenden; besonders passend für Moscow Mule, Dark & Stormy und frische Highballs."
     },
     {
       "id": "csv-098-limettensaft",

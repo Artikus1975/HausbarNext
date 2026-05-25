@@ -1,36 +1,22 @@
-# Hausbar Next v0.17
+# Hausbar Next v0.18
 
-Bottle Enrichment Batch 1.
+Stabiler Stand nach Bottle Enrichment Batch 2: Gin.
 
-Basis: v0.16. Funktionale App-Logik bleibt unverändert.
+## v0.18 Änderungen
 
-## Inhalt
+- Gin-Batch kuratiert und fachlich verbessert.
+- 15 echte Gin-Flaschen mit besseren Beschreibungen, Herkunft, Profil und Servierempfehlungen ergänzt.
+- Zwei offensichtliche Fehlklassifikationen korrigiert: Licellino Limoncello und Ginger Beer waren fälschlich als Gin geführt.
+- Keine UI-Änderung, keine Filterlogik-Änderung, keine Rezeptlogik-Änderung.
+- v0.17 Audit-/Report-Dateien bleiben enthalten; v0.18 Reports ergänzt.
 
-- Home mit Tagescocktail und „Heute passend“
-- Inventar mit stabilen Self-Excluding-Filtern
-- Rezeptsuche und Rezeptfilter
-- Rezeptdetails
-- Flaschendetails
-- Datenqualitäts-Audit aus v0.16 bleibt enthalten
-- Erster Daten-Enrichment-Batch für Aperitif / Bitter / Vermouth / Fortified Wine / Anis-Aperitif
+## Upload
 
-## v0.17 Änderungen
+Für GitHub Pages die Dateien aus dieser ZIP direkt in den Repository-Root hochladen und auf main committen.
 
-- 19 Flaschen fachlich kuratiert
-- technische Beschreibungen durch hochwertigere Endnutzertexte ersetzt
-- Herkunftsfelder für Batch-Produkte ergänzt
-- Servierempfehlungen ergänzt
-- Beschreibungen, Geschmack und Einsatz intern verbessert
-- keine Änderung an Inventarfiltern
-- keine Änderung am Rauchig-Verhalten
-- keine Änderung an Rezeptlogik
-- kein Service Worker
-- keine Runtime-Hooks
-- keine Wrapper
+## Enthaltene Prüfberichte
 
-## Audit-Dateien
-
-- `DATA_QUALITY_AUDIT_v0.16.md`
-- `DATA_QUALITY_AUDIT_v0.16.json`
-- `ENRICHMENT_REPORT_v0.17.md`
-- `ENRICHMENT_REPORT_v0.17.json`
+- `DATA_QUALITY_AUDIT_v0.18.md`
+- `DATA_QUALITY_AUDIT_v0.18.json`
+- `ENRICHMENT_REPORT_v0.18.md`
+- `ENRICHMENT_REPORT_v0.18.json`
