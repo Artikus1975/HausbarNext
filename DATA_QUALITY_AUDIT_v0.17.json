@@ -1,0 +1,376 @@
+{
+  "version": "v0.17",
+  "inventory": 141,
+  "recipes": 88,
+  "missingOrigin": 79,
+  "unknownStatus": 84,
+  "missingBottleServing": 122,
+  "technicalDescriptions": [
+    {
+      "id": "csv-017-kastaniengeist",
+      "name": "Kastaniengeist",
+      "description": "Kastaniengeist ist als Edelbrand / Geist / Geist eingeordnet. Geschmack: Nussig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-018-edles-fass-nussler-aus-wallnussen",
+      "name": "Edles Fass Nussler aus Wallnüssen",
+      "description": "Edles Fass Nussler aus Wallnüssen ist als Edelbrand / Geist / Geist eingeordnet. Geschmack: Nussig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-019-walnussgeist",
+      "name": "Walnussgeist",
+      "description": "Walnussgeist ist als Edelbrand / Geist / Geist eingeordnet. Geschmack: Nussig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-020-pistaziengeist",
+      "name": "Pistaziengeist",
+      "description": "Pistaziengeist ist als Edelbrand / Geist / Geist eingeordnet. Geschmack: Nussig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-021-haselnuss",
+      "name": "Haselnuss",
+      "description": "Haselnuss ist als Edelbrand / Geist / Prinz Alte Sorte eingeordnet. Geschmack: Nussig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-022-hauszwetschke",
+      "name": "Hauszwetschke",
+      "description": "Hauszwetschke ist als Edelbrand / Geist / Prinz Alte Sorte eingeordnet. Geschmack: Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-023-kirsche",
+      "name": "Kirsche",
+      "description": "Kirsche ist als Edelbrand / Geist / Prinz Alte Sorte eingeordnet. Geschmack: Fruchtig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-024-marille",
+      "name": "Marille",
+      "description": "Marille ist als Edelbrand / Geist / Prinz Alte Sorte eingeordnet. Geschmack: Fruchtig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-025-alte-waldhimbeere",
+      "name": "Alte Waldhimbeere",
+      "description": "Alte Waldhimbeere ist als Edelbrand / Geist / Prinz Alte Sorte eingeordnet. Geschmack: Fruchtig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-026-alte-williams-christ-birne",
+      "name": "Alte Williams-Christ-Birne",
+      "description": "Alte Williams-Christ-Birne ist als Edelbrand / Geist / Prinz Alte Sorte eingeordnet. Geschmack: Fruchtig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-027-alter-bodensee-apfel",
+      "name": "Alter Bodensee-Apfel",
+      "description": "Alter Bodensee-Apfel ist als Edelbrand / Geist / Prinz Alte Sorte eingeordnet. Geschmack: Fruchtig, Trocken. Nutzung: Digestif."
+    },
+    {
+      "id": "csv-029-maraschino-cherries",
+      "name": "Maraschino Cherries",
+      "description": "Maraschino Cherries ist als Garnish / Cocktailkirschen eingeordnet. Geschmack: Süß, Fruchtig. Nutzung: Modifier."
+    },
+    {
+      "id": "csv-045-amarula",
+      "name": "Amarula",
+      "description": "Amarula ist als Likör / Cream Liqueur eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-046-baileys",
+      "name": "Baileys",
+      "description": "Baileys ist als Likör / Cream Liqueur eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-047-batida-de-coco",
+      "name": "Batida de Coco",
+      "description": "Batida de Coco ist als Likör / Kokos eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif, Tiki & Tropical."
+    },
+    {
+      "id": "csv-050-creme-de-cacao-brown",
+      "name": "Crème de Cacao Brown",
+      "description": "Crème de Cacao Brown ist als Likör / Kakao eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-051-creme-de-cacao-white",
+      "name": "Crème de Cacao White",
+      "description": "Crème de Cacao White ist als Likör / Kakao eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-052-maraschino",
+      "name": "Maraschino",
+      "description": "Maraschino ist als Likör / Maraschino eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-053-peach",
+      "name": "Peach",
+      "description": "Peach ist als Likör / Fruchtlikör eingeordnet. Geschmack: Süß, Fruchtig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-054-sour-apple",
+      "name": "Sour Apple",
+      "description": "Sour Apple ist als Likör / Fruchtlikör eingeordnet. Geschmack: Süß, Fruchtig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-055-triple-sec",
+      "name": "Triple Sec",
+      "description": "Triple Sec ist als Likör / Triple Sec eingeordnet. Geschmack: Süß, Zitrisch, Fruchtig, Trocken. Nutzung: Modifier, Digestif, Frisch & Sour."
+    },
+    {
+      "id": "csv-056-chartreuse-verte",
+      "name": "Chartreuse Verte",
+      "description": "Chartreuse Verte ist als Likör / Kräuterlikör eingeordnet. Geschmack: Süß, Kräuterig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-057-cointreau",
+      "name": "Cointreau",
+      "description": "Cointreau ist als Likör / Orange Liqueur eingeordnet. Geschmack: Süß, Zitrisch, Fruchtig. Nutzung: Modifier, Digestif, Frisch & Sour."
+    },
+    {
+      "id": "csv-058-mandellikor",
+      "name": "Mandellikör",
+      "description": "Mandellikör ist als Likör / Amaretto eingeordnet. Geschmack: Süß, Nussig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-059-dom-benedictine",
+      "name": "DOM Bénédictine",
+      "description": "DOM Bénédictine ist als Likör / Kräuterlikör eingeordnet. Geschmack: Süß, Kräuterig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-060-galliano-l-autentico",
+      "name": "Galliano L’Autentico",
+      "description": "Galliano L’Autentico ist als Likör / Kräuterlikör eingeordnet. Geschmack: Süß, Kräuterig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-061-galliano-vanilla",
+      "name": "Galliano Vanilla",
+      "description": "Galliano Vanilla ist als Likör / Kräuter/Vanille eingeordnet. Geschmack: Süß, Kräuterig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-062-creme-de-violette",
+      "name": "Crème de Violette",
+      "description": "Crème de Violette ist als Likör / Floral eingeordnet. Geschmack: Süß, Floral. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-064-kahlua",
+      "name": "Kahlúa",
+      "description": "Kahlúa ist als Likör / Kaffee eingeordnet. Geschmack: Süß, Kräuterig, Kaffee. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-065-kaffee-likor",
+      "name": "Kaffee Likör",
+      "description": "Kaffee Likör ist als Likör / Kaffee eingeordnet. Geschmack: Süß, Kaffee. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-066-walnusslikor",
+      "name": "Walnusslikör",
+      "description": "Walnusslikör ist als Likör / Nusslikör eingeordnet. Geschmack: Süß, Nussig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-067-licor-43",
+      "name": "Licor 43",
+      "description": "Licor 43 ist als Likör / Vanillelikör eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-068-maraschino",
+      "name": "Maraschino",
+      "description": "Maraschino ist als Likör / Maraschino eingeordnet. Geschmack: Süß, Floral. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-069-marcati-limoncello",
+      "name": "Marcati Limoncello",
+      "description": "Marcati Limoncello ist als Likör / Zitronenlikör eingeordnet. Geschmack: Süß, Zitrisch. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-070-molinari-caffe",
+      "name": "Molinari Caffè",
+      "description": "Molinari Caffè ist als Likör / Kaffee / Sambuca eingeordnet. Geschmack: Süß, Kaffee. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-071-pistazienlikor",
+      "name": "Pistazienlikör",
+      "description": "Pistazienlikör ist als Likör / Nusslikör eingeordnet. Geschmack: Süß, Nussig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-073-salmari",
+      "name": "Salmari",
+      "description": "Salmari ist als Likör / Salmiak/Lakritz eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-074-kastanienlikor",
+      "name": "Kastanienlikör",
+      "description": "Kastanienlikör ist als Likör / Nuss/Spezialität eingeordnet. Geschmack: Süß, Nussig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-075-creme-de-cassis",
+      "name": "Crème de Cassis",
+      "description": "Crème de Cassis ist als Likör / Beerenlikör eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-076-bombardino",
+      "name": "Bombardino",
+      "description": "Bombardino ist als Likör / Eierlikör/Creme eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-077-cappuccino",
+      "name": "Cappuccino",
+      "description": "Cappuccino ist als Likör / Kaffee/Creme eingeordnet. Geschmack: Süß, Kaffee. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-078-noisetto",
+      "name": "Noisetto",
+      "description": "Noisetto ist als Likör / Haselnuss/Rum eingeordnet. Geschmack: Süß, Nussig. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-079-tartuffetto",
+      "name": "Tartuffetto",
+      "description": "Tartuffetto ist als Likör / Kakao/Rum eingeordnet. Geschmack: Süß. Nutzung: Modifier, Digestif."
+    },
+    {
+      "id": "csv-080-moscatel-pisco",
+      "name": "Moscatel Pisco",
+      "description": "Moscatel Pisco ist als Pisco / Moscatel eingeordnet. Geschmack: Trocken. Nutzung: Cocktailbasis, Pur, Frisch & Sour."
+    },
+    {
+      "id": "csv-081-quebranta-pisco",
+      "name": "Quebranta Pisco",
+      "description": "Quebranta Pisco ist als Pisco / Quebranta eingeordnet. Geschmack: Trocken. Nutzung: Cocktailbasis, Pur, Frisch & Sour."
+    },
+    {
+      "id": "csv-082-pisco-puro-2021",
+      "name": "Pisco Puro 2021",
+      "description": "Pisco Puro 2021 ist als Pisco / Pisco Puro eingeordnet. Geschmack: Trocken. Nutzung: Cocktailbasis, Pur, Frisch & Sour."
+    },
+    {
+      "id": "csv-083-absinthe",
+      "name": "Absinthe",
+      "description": "Absinthe ist als Rak? / Anis / Absinthe eingeordnet. Geschmack: Kräuterig. Nutzung: Pur."
+    },
+    {
+      "id": "csv-085-pastis-of-marseille",
+      "name": "Pastis of Marseille",
+      "description": "Pastis of Marseille ist als Rak? / Anis / Pastis eingeordnet. Geschmack: Kräuterig. Nutzung: Pur."
+    },
+    {
+      "id": "csv-086-sambuca",
+      "name": "Sambuca",
+      "description": "Sambuca ist als Rak? / Anis / Sambuca eingeordnet. Geschmack: Kräuterig. Nutzung: Pur."
+    },
+    {
+      "id": "csv-087-tekirda-no-10-rak",
+      "name": "Tekirda? No.10 Rak?",
+      "description": "Tekirda? No.10 Rak? ist als Rak? / Anis / Rak? eingeordnet. Geschmack: Kräuterig. Nutzung: Pur."
+    },
+    {
+      "id": "csv-088-yeni-rak-ala",
+      "name": "Yeni Rak? Ala",
+      "description": "Yeni Rak? Ala ist als Rak? / Anis / Rak? eingeordnet. Geschmack: Kräuterig. Nutzung: Pur."
+    },
+    {
+      "id": "csv-095-grenadine",
+      "name": "Grenadine",
+      "description": "Grenadine ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß, Fruchtig. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-096-rohrzucker-sirup",
+      "name": "Rohrzucker Sirup",
+      "description": "Rohrzucker Sirup ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-098-limettensaft",
+      "name": "Limettensaft",
+      "description": "Limettensaft ist als Saft / Saft eingeordnet. Geschmack: Zitrisch, Trocken. Nutzung: Modifier, Frisch & Sour."
+    },
+    {
+      "id": "csv-099-blue-curacao",
+      "name": "Blue Curaçao",
+      "description": "Blue Curaçao ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß, Zitrisch. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-100-creme-de-menthe-verte",
+      "name": "Crème de Menthe Verte",
+      "description": "Crème de Menthe Verte ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß, Kräuterig. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-101-gomme-syrup",
+      "name": "Gomme Syrup",
+      "description": "Gomme Syrup ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-102-rohrzucker-sirup",
+      "name": "Rohrzucker Sirup",
+      "description": "Rohrzucker Sirup ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-103-weisserrohrzucker-sirup",
+      "name": "Weißerrohrzucker Sirup",
+      "description": "Weißerrohrzucker Sirup ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-105-mandelsirup",
+      "name": "Mandelsirup",
+      "description": "Mandelsirup ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß. Nutzung: Longdrink & Highball, Modifier, Tiki & Tropical."
+    },
+    {
+      "id": "csv-106-tonic-water",
+      "name": "Tonic Water",
+      "description": "Tonic Water ist als Sirup / Mixer / Filler eingeordnet. Geschmack: Bitter, Zitrisch, Trocken, Süß. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-107-vanillesirup",
+      "name": "Vanillesirup",
+      "description": "Vanillesirup ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß. Nutzung: Longdrink & Highball, Modifier."
+    },
+    {
+      "id": "csv-108-zitronensaft",
+      "name": "Zitronensaft",
+      "description": "Zitronensaft ist als Saft / Saft eingeordnet. Geschmack: Zitrisch, Trocken. Nutzung: Modifier, Frisch & Sour."
+    },
+    {
+      "id": "csv-109-especial-reposado",
+      "name": "Especial Reposado",
+      "description": "Especial Reposado ist als Tequila / Reposado eingeordnet. Geschmack: Trocken. Nutzung: Cocktailbasis, Pur, Spirit-Forward, Frisch & Sour."
+    },
+    {
+      "id": "csv-110-cuervo-silver",
+      "name": "Cuervo Silver",
+      "description": "Cuervo Silver ist als Tequila / Blanco/Silver eingeordnet. Geschmack: Trocken. Nutzung: Cocktailbasis, Pur, Spirit-Forward, Frisch & Sour."
+    },
+    {
+      "id": "csv-111-patron-anejo",
+      "name": "Patrón Añejo",
+      "description": "Patrón Añejo ist als Tequila / Añejo eingeordnet. Geschmack: Trocken. Nutzung: Cocktailbasis, Pur, Spirit-Forward, Frisch & Sour."
+    },
+    {
+      "id": "csv-119-beyerskloof-synergy-cape-blend",
+      "name": "Beyerskloof Synergy Cape Blend",
+      "description": "Beyerskloof Synergy Cape Blend ist als Wein / Rotwein Südafrika eingeordnet. Geschmack: Trocken, Fruchtig. Nutzung: Pur, Digestif."
+    },
+    {
+      "id": "csv-120-les-grandes-des-domains-edmond-de-rothsc",
+      "name": "Les Grandes Des Domains Edmond de Rothschild 2014",
+      "description": "Les Grandes Des Domains Edmond de Rothschild 2014 ist als Wein / Rotwein Bordeaux eingeordnet. Geschmack: Trocken, Fruchtig. Nutzung: Pur, Digestif."
+    },
+    {
+      "id": "csv-121-chateau-bonalgue-pomerol-2018",
+      "name": "Château Bonalgue Pomerol 2018",
+      "description": "Château Bonalgue Pomerol 2018 ist als Wein / Rotwein Bordeaux eingeordnet. Geschmack: Trocken, Fruchtig. Nutzung: Pur, Digestif."
+    },
+    {
+      "id": "csv-122-la-monetta-gavi-2023",
+      "name": "La Monetta Gavi 2023",
+      "description": "La Monetta Gavi 2023 ist als Wein / Weißwein eingeordnet. Geschmack: Trocken, Zitrisch, Fruchtig, Floral. Nutzung: Pur, Aperitif."
+    },
+    {
+      "id": "csv-123-silvaner-juliusspital-iphofer-julius-ech",
+      "name": "Silvaner Juliusspital Iphöfer Julius-Echter-Berg 2022",
+      "description": "Silvaner Juliusspital Iphöfer Julius-Echter-Berg 2022 ist als Wein / Weißwein eingeordnet. Geschmack: Trocken, Zitrisch, Fruchtig. Nutzung: Pur, Aperitif."
+    },
+    {
+      "id": "csv-124-veuve-monsigny-brut-reserve-champagner",
+      "name": "Veuve ?Monsigny Brut Réserve Champagner",
+      "description": "Veuve ?Monsigny Brut Réserve Champagner ist als Wein / Champagner eingeordnet. Geschmack: Trocken, Zitrisch, Fruchtig. Nutzung: Pur, Aperitif."
+    }
+  ],
+  "recipesWithoutDescription": 88,
+  "recipesWithoutGlass": 88,
+  "recipesWithoutGarnish": 88,
+  "recipesWithoutIce": 88,
+  "recipesWithoutSeason": 0,
+  "recipesWithoutStyle": 0
+}
