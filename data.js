@@ -1,6 +1,6 @@
-// Hausbar Next v0.15 - clean bottle detail view
+// Hausbar Next v0.16 - clean bottle detail view
 const HB_DATA = {
-  "version": "v0.15",
+  "version": "v0.16",
   "inventory": [
     {
       "id": "csv-001-aperol",

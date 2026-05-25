@@ -1,0 +1,1425 @@
+{
+  "version": "v0.16",
+  "sourceVersion": "v0.16",
+  "generatedAt": "2026-05-25T01:14:13.189Z",
+  "inventory": {
+    "stats": {
+      "total": 141,
+      "missing": {
+        "id": 0,
+        "name": 0,
+        "producer": 0,
+        "category": 0,
+        "subcategory": 0,
+        "amount": 0,
+        "status": 0,
+        "flavorTags": 0,
+        "usageTags": 0,
+        "styleTags": 0,
+        "guestTags": 0,
+        "originTags": 0,
+        "description": 0
+      },
+      "empty": {
+        "id": 0,
+        "name": 0,
+        "producer": 2,
+        "category": 0,
+        "subcategory": 0,
+        "amount": 0,
+        "status": 0,
+        "flavorTags": 0,
+        "usageTags": 0,
+        "styleTags": 0,
+        "guestTags": 141,
+        "originTags": 90,
+        "description": 0
+      },
+      "techDescription": 1,
+      "noDescription": 0,
+      "noOrigin": 90,
+      "unknownStatus": 84,
+      "noProducer": 2,
+      "noServing": 141,
+      "noDescriptionObject": 0
+    },
+    "categories": [
+      "Aperitif / Bitter",
+      "Bitters",
+      "Cachaça",
+      "Cognac / Brandy",
+      "Edelbrand / Geist",
+      "Garnish",
+      "Gin",
+      "Likör",
+      "Pisco",
+      "Rak? / Anis",
+      "Rum",
+      "Saft",
+      "Sirup / Mixer",
+      "Tequila",
+      "Vermouth / Fortified Wine",
+      "Vodka",
+      "Wein",
+      "Whisky"
+    ],
+    "origins": [
+      "Barbados",
+      "Brasilien",
+      "Deutschland",
+      "England",
+      "Frankreich",
+      "Italien",
+      "Jamaika",
+      "Japan",
+      "Peru",
+      "Schottland",
+      "Spanien",
+      "Türkei",
+      "USA"
+    ],
+    "flavors": [
+      "Bitter",
+      "Floral",
+      "Fruchtig",
+      "Kaffee",
+      "Kräuterig",
+      "Nussig",
+      "Süß",
+      "Trocken",
+      "Zitrisch"
+    ],
+    "usages": [
+      "Aperitif",
+      "Cocktailbasis",
+      "Digestif",
+      "Frisch & Sour",
+      "Longdrink & Highball",
+      "Modifier",
+      "Pur",
+      "Spirit-Forward",
+      "Spritz",
+      "Tiki & Tropical"
+    ],
+    "duplicateNames": [
+      {
+        "name": "Maraschino",
+        "count": 2
+      },
+      {
+        "name": "Rohrzucker Sirup",
+        "count": 2
+      }
+    ],
+    "issues": [
+      {
+        "id": "csv-001-aperol",
+        "name": "Aperol",
+        "category": "Aperitif / Bitter",
+        "subcategory": "Aperitif",
+        "issues": [
+          "technical-or-user-unfriendly-description",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-004-aperitivo-bavarese",
+        "name": "Aperitivo Bavarese",
+        "category": "Aperitif / Bitter",
+        "subcategory": "Aperitif",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-006-ramazzotti",
+        "name": "Ramazzotti",
+        "category": "Aperitif / Bitter",
+        "subcategory": "Amaro",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-008-celery-bitters",
+        "name": "Celery Bitters",
+        "category": "Bitters",
+        "subcategory": "Bitters",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-009-creole-bitters",
+        "name": "Creole Bitters",
+        "category": "Bitters",
+        "subcategory": "Bitters",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-010-peach-bitters",
+        "name": "Peach Bitters",
+        "category": "Bitters",
+        "subcategory": "Fruit Bitters",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-011-old-town-decanter-bitters",
+        "name": "Old Town Decanter Bitters",
+        "category": "Bitters",
+        "subcategory": "Bitters",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-012-old-time-aromatic-bitters",
+        "name": "Old Time Aromatic Bitters",
+        "category": "Bitters",
+        "subcategory": "Bitters",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-013-orange-bitters",
+        "name": "Orange Bitters",
+        "category": "Bitters",
+        "subcategory": "Bitters",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-014-angobitter",
+        "name": "Angobitter",
+        "category": "Bitters",
+        "subcategory": "Aromatic Bitters",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-015-1866-brandy-de-jerez-solero-grand-reserv",
+        "name": "1866 Brandy De Jerez Solero Grand Reserva",
+        "category": "Cognac / Brandy",
+        "subcategory": "Brandy",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-017-kastaniengeist",
+        "name": "Kastaniengeist",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Geist",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-018-edles-fass-nussler-aus-wallnussen",
+        "name": "Edles Fass Nussler aus Wallnüssen",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Geist",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-019-walnussgeist",
+        "name": "Walnussgeist",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Geist",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-020-pistaziengeist",
+        "name": "Pistaziengeist",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Geist",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-021-haselnuss",
+        "name": "Haselnuss",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Prinz Alte Sorte",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-022-hauszwetschke",
+        "name": "Hauszwetschke",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Prinz Alte Sorte",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-023-kirsche",
+        "name": "Kirsche",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Prinz Alte Sorte",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-024-marille",
+        "name": "Marille",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Prinz Alte Sorte",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-025-alte-waldhimbeere",
+        "name": "Alte Waldhimbeere",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Prinz Alte Sorte",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-026-alte-williams-christ-birne",
+        "name": "Alte Williams-Christ-Birne",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Prinz Alte Sorte",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-027-alter-bodensee-apfel",
+        "name": "Alter Bodensee-Apfel",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Prinz Alte Sorte",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-028-spatburgunder-trester",
+        "name": "Spätburgunder Trester",
+        "category": "Edelbrand / Geist",
+        "subcategory": "Grappa",
+        "issues": [
+          "empty:producer",
+          "empty:originTags",
+          "originTags missing",
+          "producer missing"
+        ]
+      },
+      {
+        "id": "csv-029-maraschino-cherries",
+        "name": "Maraschino Cherries",
+        "category": "Garnish",
+        "subcategory": "Cocktailkirschen",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-030-sapphire-premier-cru",
+        "name": "Sapphire Premier Cru",
+        "category": "Gin",
+        "subcategory": "Citrus Gin",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-031-fifty-pounds-gin",
+        "name": "Fifty Pounds Gin",
+        "category": "Gin",
+        "subcategory": "London Dry",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-033-kyro-gin",
+        "name": "Kyrö Gin",
+        "category": "Gin",
+        "subcategory": "Nordic Gin",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-034-le-tribute-gin",
+        "name": "Le Tribute Gin",
+        "category": "Gin",
+        "subcategory": "Mediterraner Gin",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-035-needle-gin",
+        "name": "Needle Gin",
+        "category": "Gin",
+        "subcategory": "Herbal Gin",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-036-no-3-london-dry-gin",
+        "name": "No.3 London Dry Gin",
+        "category": "Gin",
+        "subcategory": "London Dry",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-037-roku-japanese-craft-gin",
+        "name": "Roku Japanese Craft Gin",
+        "category": "Gin",
+        "subcategory": "Japanese Gin",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-038-tanqueray-london-dry-gin",
+        "name": "Tanqueray London Dry Gin",
+        "category": "Gin",
+        "subcategory": "London Dry",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-039-tanqueray-no-ten",
+        "name": "Tanqueray No. Ten",
+        "category": "Gin",
+        "subcategory": "Citrus Gin",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-040-ukiyo-blossom-gin",
+        "name": "Ukiyo Blossom Gin",
+        "category": "Gin",
+        "subcategory": "Japanese Gin",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-041-ukiyo-nashi-pear-gin",
+        "name": "Ukiyo Nashi Pear Gin",
+        "category": "Gin",
+        "subcategory": "Japanese Gin",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-042-ukiyo-tokyo-dry-gin",
+        "name": "Ukiyo Tokyo Dry Gin",
+        "category": "Gin",
+        "subcategory": "Japanese Gin",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-043-ukiyo-yuzu-gin",
+        "name": "Ukiyo Yuzu Gin",
+        "category": "Gin",
+        "subcategory": "Japanese Gin",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-044-ungava-canadian-premium-gin",
+        "name": "Ungava Canadian Premium Gin",
+        "category": "Gin",
+        "subcategory": "Canadian Gin",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-045-amarula",
+        "name": "Amarula",
+        "category": "Likör",
+        "subcategory": "Cream Liqueur",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-046-baileys",
+        "name": "Baileys",
+        "category": "Likör",
+        "subcategory": "Cream Liqueur",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-047-batida-de-coco",
+        "name": "Batida de Coco",
+        "category": "Likör",
+        "subcategory": "Kokos",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-048-apricot-brandy",
+        "name": "Apricot Brandy",
+        "category": "Cognac / Brandy",
+        "subcategory": "Brandy",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-049-cherry-brandy",
+        "name": "Cherry Brandy",
+        "category": "Cognac / Brandy",
+        "subcategory": "Brandy",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-050-creme-de-cacao-brown",
+        "name": "Crème de Cacao Brown",
+        "category": "Likör",
+        "subcategory": "Kakao",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-051-creme-de-cacao-white",
+        "name": "Crème de Cacao White",
+        "category": "Likör",
+        "subcategory": "Kakao",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-052-maraschino",
+        "name": "Maraschino",
+        "category": "Likör",
+        "subcategory": "Maraschino",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-053-peach",
+        "name": "Peach",
+        "category": "Likör",
+        "subcategory": "Fruchtlikör",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-054-sour-apple",
+        "name": "Sour Apple",
+        "category": "Likör",
+        "subcategory": "Fruchtlikör",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-055-triple-sec",
+        "name": "Triple Sec",
+        "category": "Likör",
+        "subcategory": "Triple Sec",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-056-chartreuse-verte",
+        "name": "Chartreuse Verte",
+        "category": "Likör",
+        "subcategory": "Kräuterlikör",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-057-cointreau",
+        "name": "Cointreau",
+        "category": "Likör",
+        "subcategory": "Orange Liqueur",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-058-mandellikor",
+        "name": "Mandellikör",
+        "category": "Likör",
+        "subcategory": "Amaretto",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-059-dom-benedictine",
+        "name": "DOM Bénédictine",
+        "category": "Likör",
+        "subcategory": "Kräuterlikör",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-060-galliano-l-autentico",
+        "name": "Galliano L’Autentico",
+        "category": "Likör",
+        "subcategory": "Kräuterlikör",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-061-galliano-vanilla",
+        "name": "Galliano Vanilla",
+        "category": "Likör",
+        "subcategory": "Kräuter/Vanille",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-062-creme-de-violette",
+        "name": "Crème de Violette",
+        "category": "Likör",
+        "subcategory": "Floral",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-063-grand-marnier",
+        "name": "Grand Marnier",
+        "category": "Cognac / Brandy",
+        "subcategory": "Cognac",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-064-kahlua",
+        "name": "Kahlúa",
+        "category": "Likör",
+        "subcategory": "Kaffee",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-065-kaffee-likor",
+        "name": "Kaffee Likör",
+        "category": "Likör",
+        "subcategory": "Kaffee",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-066-walnusslikor",
+        "name": "Walnusslikör",
+        "category": "Likör",
+        "subcategory": "Nusslikör",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-068-maraschino",
+        "name": "Maraschino",
+        "category": "Likör",
+        "subcategory": "Maraschino",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-070-molinari-caffe",
+        "name": "Molinari Caffè",
+        "category": "Likör",
+        "subcategory": "Kaffee / Sambuca",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-071-pistazienlikor",
+        "name": "Pistazienlikör",
+        "category": "Likör",
+        "subcategory": "Nusslikör",
+        "issues": [
+          "empty:producer",
+          "empty:originTags",
+          "originTags missing",
+          "producer missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-073-salmari",
+        "name": "Salmari",
+        "category": "Likör",
+        "subcategory": "Salmiak/Lakritz",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-074-kastanienlikor",
+        "name": "Kastanienlikör",
+        "category": "Likör",
+        "subcategory": "Nuss/Spezialität",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-075-creme-de-cassis",
+        "name": "Crème de Cassis",
+        "category": "Likör",
+        "subcategory": "Beerenlikör",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-076-bombardino",
+        "name": "Bombardino",
+        "category": "Likör",
+        "subcategory": "Eierlikör/Creme",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-077-cappuccino",
+        "name": "Cappuccino",
+        "category": "Likör",
+        "subcategory": "Kaffee/Creme",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-078-noisetto",
+        "name": "Noisetto",
+        "category": "Likör",
+        "subcategory": "Haselnuss/Rum",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-079-tartuffetto",
+        "name": "Tartuffetto",
+        "category": "Likör",
+        "subcategory": "Kakao/Rum",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-080-moscatel-pisco",
+        "name": "Moscatel Pisco",
+        "category": "Pisco",
+        "subcategory": "Moscatel",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-081-quebranta-pisco",
+        "name": "Quebranta Pisco",
+        "category": "Pisco",
+        "subcategory": "Quebranta",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-083-absinthe",
+        "name": "Absinthe",
+        "category": "Rak? / Anis",
+        "subcategory": "Absinthe",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-084-pernod",
+        "name": "Pernod",
+        "category": "Rak? / Anis",
+        "subcategory": "Anis Aperitif",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-085-pastis-of-marseille",
+        "name": "Pastis of Marseille",
+        "category": "Rak? / Anis",
+        "subcategory": "Pastis",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-090-el-dorado-3-years",
+        "name": "El Dorado 3 Years",
+        "category": "Rum",
+        "subcategory": "White Rum",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-091-lebkuchen-rum",
+        "name": "Lebkuchen-Rum",
+        "category": "Rum",
+        "subcategory": "Homemade Infusion",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-093-plantation-xo-20th-anniversary",
+        "name": "Plantation XO 20th Anniversary",
+        "category": "Rum",
+        "subcategory": "Premium Rum",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-095-grenadine",
+        "name": "Grenadine",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-096-rohrzucker-sirup",
+        "name": "Rohrzucker Sirup",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-097-ginger-beer",
+        "name": "Ginger Beer",
+        "category": "Gin",
+        "subcategory": "Filler",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-098-limettensaft",
+        "name": "Limettensaft",
+        "category": "Saft",
+        "subcategory": "Saft",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-099-blue-curacao",
+        "name": "Blue Curaçao",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-100-creme-de-menthe-verte",
+        "name": "Crème de Menthe Verte",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-101-gomme-syrup",
+        "name": "Gomme Syrup",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-102-rohrzucker-sirup",
+        "name": "Rohrzucker Sirup",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-103-weisserrohrzucker-sirup",
+        "name": "Weißerrohrzucker Sirup",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-104-pircher-holunderblutensirup",
+        "name": "Pircher Holunderblütensirup",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-105-mandelsirup",
+        "name": "Mandelsirup",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-106-tonic-water",
+        "name": "Tonic Water",
+        "category": "Sirup / Mixer",
+        "subcategory": "Filler",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-107-vanillesirup",
+        "name": "Vanillesirup",
+        "category": "Sirup / Mixer",
+        "subcategory": "Sirup",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-108-zitronensaft",
+        "name": "Zitronensaft",
+        "category": "Saft",
+        "subcategory": "Saft",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-109-especial-reposado",
+        "name": "Especial Reposado",
+        "category": "Tequila",
+        "subcategory": "Reposado",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-110-cuervo-silver",
+        "name": "Cuervo Silver",
+        "category": "Tequila",
+        "subcategory": "Blanco/Silver",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-111-patron-anejo",
+        "name": "Patrón Añejo",
+        "category": "Tequila",
+        "subcategory": "Añejo",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-112-graham-s-20-year-tawny-port",
+        "name": "Graham’s 20 Year Tawny Port",
+        "category": "Vermouth / Fortified Wine",
+        "subcategory": "Port",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-113-px-sherry",
+        "name": "PX Sherry",
+        "category": "Vermouth / Fortified Wine",
+        "subcategory": "PX Sherry",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-114-noilly-prat-dry",
+        "name": "Noilly Prat Dry",
+        "category": "Vermouth / Fortified Wine",
+        "subcategory": "Dry Vermouth",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-115-noilly-prat-rouge",
+        "name": "Noilly Prat Rouge",
+        "category": "Vermouth / Fortified Wine",
+        "subcategory": "Red Vermouth",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-116-absolut-100",
+        "name": "Absolut 100",
+        "category": "Vodka",
+        "subcategory": "Vodka",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-117-absolut-elyx",
+        "name": "Absolut Elyx",
+        "category": "Vodka",
+        "subcategory": "Vodka",
+        "issues": [
+          "empty:originTags",
+          "originTags missing",
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-118-ukiyo-rice-vodka",
+        "name": "Ukiyo Rice Vodka",
+        "category": "Vodka",
+        "subcategory": "Vodka",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-119-beyerskloof-synergy-cape-blend",
+        "name": "Beyerskloof Synergy Cape Blend",
+        "category": "Wein",
+        "subcategory": "Rotwein Südafrika",
+        "issues": [
+          "empty:originTags",
+          "originTags missing"
+        ]
+      },
+      {
+        "id": "csv-122-la-monetta-gavi-2023",
+        "name": "La Monetta Gavi 2023",
+        "category": "Wein",
+        "subcategory": "Weißwein",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-127-glenfiddich-15-solera-reserve",
+        "name": "Glenfiddich 15 Solera Reserve",
+        "category": "Whisky",
+        "subcategory": "Scotch",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-128-glenmorangie-quinta-ruban-14",
+        "name": "Glenmorangie Quinta Ruban 14",
+        "category": "Whisky",
+        "subcategory": "Highland Single Malt",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-129-jack-daniel-s-honey",
+        "name": "Jack Daniel’s Honey",
+        "category": "Whisky",
+        "subcategory": "Whiskey",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-130-jack-daniel-s-tennessee-apple",
+        "name": "Jack Daniel’s Tennessee Apple",
+        "category": "Whisky",
+        "subcategory": "Whiskey",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-131-johnnie-walker-18-years",
+        "name": "Johnnie Walker 18 Years",
+        "category": "Whisky",
+        "subcategory": "Scotch",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-132-johnnie-walker-blue-label",
+        "name": "Johnnie Walker Blue Label",
+        "category": "Whisky",
+        "subcategory": "Scotch",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-133-johnnie-walker-gold-label-reserve",
+        "name": "Johnnie Walker Gold Label Reserve",
+        "category": "Whisky",
+        "subcategory": "Scotch",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-134-knob-creek-9",
+        "name": "Knob Creek 9",
+        "category": "Whisky",
+        "subcategory": "Japanese Whisky",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-136-maker-s-mark-46",
+        "name": "Maker’s Mark 46",
+        "category": "Whisky",
+        "subcategory": "Bourbon",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-137-nikka-from-the-barrel",
+        "name": "Nikka From The Barrel",
+        "category": "Whisky",
+        "subcategory": "Japanese Whisky",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-138-nikka-miyagikyo-single-malt",
+        "name": "Nikka Miyagikyo Single Malt",
+        "category": "Whisky",
+        "subcategory": "Japanese Whisky",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-139-the-balvenie-caribbean-cask-14",
+        "name": "The Balvenie Caribbean Cask 14",
+        "category": "Whisky",
+        "subcategory": "Scotch",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-140-the-dalmore-port-wood-reserve",
+        "name": "The Dalmore Port Wood Reserve",
+        "category": "Whisky",
+        "subcategory": "Scotch",
+        "issues": [
+          "status unknown"
+        ]
+      },
+      {
+        "id": "csv-141-woodford-reserve",
+        "name": "Woodford Reserve",
+        "category": "Whisky",
+        "subcategory": "Bourbon",
+        "issues": [
+          "status unknown"
+        ]
+      }
+    ]
+  },
+  "recipes": {
+    "stats": {
+      "total": 88,
+      "missing": {
+        "id": 0,
+        "name": 0,
+        "category": 0,
+        "style": 0,
+        "season": 0,
+        "strength": 0,
+        "ingredients": 0,
+        "instructions": 0,
+        "flavorTags": 0,
+        "moodTags": 0
+      },
+      "empty": {
+        "id": 0,
+        "name": 0,
+        "category": 0,
+        "style": 0,
+        "season": 0,
+        "strength": 0,
+        "ingredients": 0,
+        "instructions": 0,
+        "flavorTags": 2,
+        "moodTags": 42
+      },
+      "techDescription": 0,
+      "noDescription": 88,
+      "noGlass": 88,
+      "noGarnish": 88,
+      "noIce": 88,
+      "noSeason": 0,
+      "noStyle": 0,
+      "noStrength": 0,
+      "noIngredients": 0,
+      "noSteps": 0
+    },
+    "styles": [
+      "Aperitif",
+      "Cremig & Dessert",
+      "Digestif",
+      "Frisch & Sour",
+      "Kräftig & Spirituosig",
+      "Longdrink & Highball"
+    ],
+    "seasons": [
+      "Frühling",
+      "Ganzjährig",
+      "Herbst",
+      "Sommer",
+      "Winter"
+    ],
+    "issues": [
+      {
+        "id": "kir",
+        "name": "Kir",
+        "style": "Cremig & Dessert",
+        "season": [
+          "Frühling"
+        ],
+        "issues": [
+          "empty:flavorTags"
+        ]
+      },
+      {
+        "id": "kir-royale",
+        "name": "Kir Royale",
+        "style": "Cremig & Dessert",
+        "season": [
+          "Frühling"
+        ],
+        "issues": [
+          "empty:flavorTags"
+        ]
+      }
+    ]
+  },
+  "recommendedNextBatches": [
+    {
+      "version": "v0.17",
+      "topic": "Bottle enrichment batch 1: Aperitif / Bitter / Vermouth",
+      "scope": "high-quality descriptions, origin, serving, usage cleanup"
+    },
+    {
+      "version": "v0.18",
+      "topic": "Recipe enrichment batch 1: core classics",
+      "scope": "description, glass, garnish, ice, strength, season/style validation"
+    },
+    {
+      "version": "v0.19",
+      "topic": "Clean frontend/detail display rules",
+      "scope": "hide admin/audit fields, keep tags internal"
+    }
+  ]
+}

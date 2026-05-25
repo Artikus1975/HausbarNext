@@ -1,23 +1,31 @@
-# Hausbar Next v0.15
+# Hausbar Next v0.16
 
-Saubere Neubau-Basis fuer Murat's Hausbar.
+Datenqualitäts-Audit als Grundlage für die nächsten Enrichment-Schritte.
 
 ## Zweck dieser Version
 
-- Flaschendetailansicht weiter reduziert
-- Doppelte sichtbare Informationen entfernt
-- Technische Systemformulierungen werden im Frontend ausgeblendet
-- Geschmack und Verwendung bleiben als kompakte Profil-Chips erhalten
-- Herkunft und Servieren bleiben sichtbar
-- Interne Daten bleiben erhalten
+- Keine neue UI-Funktion
+- Keine Änderung an Inventarfiltern
+- Keine Änderung am Rauchig-Verhalten
+- Keine Datenlöschung
+- Audit der vorhandenen Flaschen- und Rezeptdaten
+- Vorbereitung für spätere internetgestützte Kuration
 
-## Nicht geaendert
+## Enthaltene Audit-Dateien
 
-- Inventarfilter
-- Rauchig-Logik
-- Rezeptdaten und Rezeptlogik
-- Tagescocktail
-- Heute-passend-Menue
-- Keine Runtime-Hooks
-- Keine Wrapper
-- Kein Service Worker
+- `DATA_QUALITY_AUDIT_v0.16.md`
+- `DATA_QUALITY_AUDIT_v0.16.json`
+
+## Wichtigste Erkenntnisse
+
+- Inventar: 141 Flaschen
+- Rezepte: 88
+- Flaschen ohne Herkunft: 90
+- Flaschen mit Status "Unbekannt": 84
+- Rezepte ohne hochwertige Beschreibung: 88
+- Rezepte ohne Glas/Garnish/Eis: 88
+- Jahreszeiten und Stilrichtungen sind bei Rezepten vorhanden
+
+## Nächster empfohlener Schritt
+
+v0.17 sollte nicht UI-lastig sein, sondern mit einer kleinen, kontrollierten Datenkuration beginnen, z. B. Aperitif / Bitter / Vermouth.
