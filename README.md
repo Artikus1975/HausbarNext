@@ -1,47 +1,23 @@
-# Hausbar Next v0.14
+# Hausbar Next v0.15
 
-Home Heading Cleanup fuer Murat's Hausbar.
+Saubere Neubau-Basis fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
-- Detailansichten fuer Flaschen und Rezepte ruhiger und nutzerfreundlicher machen
-- interne/technische Informationen im Hintergrund behalten, aber nicht mehr prominent anzeigen
-- doppelte Informationen reduzieren
-- leere Felder nicht anzeigen
-- keine Daten loeschen
-
-## Geaendert
-
-- Flaschendetail reduziert auf kuratierte Nutzerinformationen
-- Barrolle/Profil/Einsatz-Kacheln aus der normalen Frontendansicht entfernt
-- technische Hilfstexte aus Flaschendetails entfernt
-- Status wird nicht mehr angezeigt, wenn er keinen Mehrwert bietet
-- Rezeptdetail zeigt keine leeren Pflegefelder mehr
-- Fallback-/Audit-Informationen bleiben in den Daten, werden aber nicht mehr in der normalen Ansicht gezeigt
-- Rezeptbeschreibungen klingen weniger technisch und nicht mehr wie Datenbanktexte
+- Flaschendetailansicht weiter reduziert
+- Doppelte sichtbare Informationen entfernt
+- Technische Systemformulierungen werden im Frontend ausgeblendet
+- Geschmack und Verwendung bleiben als kompakte Profil-Chips erhalten
+- Herkunft und Servieren bleiben sichtbar
+- Interne Daten bleiben erhalten
 
 ## Nicht geaendert
 
 - Inventarfilter
-- Rauchig-/Self-Excluding-Facets
-- Rezeptsuche und Rezeptfilter
+- Rauchig-Logik
+- Rezeptdaten und Rezeptlogik
 - Tagescocktail
 - Heute-passend-Menue
-- Datenbestand
-- keine Runtime-Hooks
-- keine Wrapper
-- kein Service Worker
-
-## Dateien
-
-- index.html
-- style.css
-- app.js
-- data.js
-- README.md
-
-
-## v0.14
-- Home-Bereich Heute passend bereinigt.
-- Untertext Drei Drinks fuer den Abend entfernt.
-- Keine Logik- oder Datenänderungen.
+- Keine Runtime-Hooks
+- Keine Wrapper
+- Kein Service Worker

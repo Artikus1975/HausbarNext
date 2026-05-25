@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.14';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.15';
 
 const state = {
   view: 'home',
@@ -236,32 +236,56 @@ function openItem(id){
   const item = inventory.find(i => i.id === id);
   if(!item) return;
   els.detailName.textContent = item.name;
-  els.detailCategory.textContent = [item.category, item.subcategory].filter(Boolean).join(' · ');
+  els.detailCategory.textContent = item.category || ''; // reduzierte Kopfzeile: keine doppelte Unterkategorie im Hero
   const desc = item.description || {};
-  const leadingTags = [...item.flavorTags.slice(0,3), ...item.usageTags.slice(0,2)].filter(Boolean).slice(0,5);
-  const visibleMeta = [
-    metaTile('Kategorie', item.category),
-    item.subcategory ? metaTile('Unterkategorie', item.subcategory) : '',
-    item.originTags.length ? metaTile('Herkunft', item.originTags.join(' · ')) : ''
-  ].filter(Boolean).join('');
+  const descriptionText = cleanBottleDisplayText(desc.short || desc.long || bottlePublicDescription(item));
+  const leadingTags = uniqueList([...item.flavorTags.slice(0,4), ...item.usageTags.slice(0,2)]).filter(Boolean).slice(0,6);
+  const originText = item.originTags.length ? item.originTags.join(' · ') : '';
+  const servingText = cleanBottleDisplayText(desc.serving || servingSuggestionFor(item));
 
   els.detailBody.innerHTML = `
-    <div class="bottle-hero-detail premium-bottle-hero clean-public-hero">
+    <div class="bottle-hero-detail premium-bottle-hero clean-public-hero bottle-public-card">
       <div class="bottle-hero-copy">
         <p class="eyebrow">Flaschenprofil</p>
         <h3>${escapeHtml(item.name)}</h3>
-        <p>${escapeHtml(desc.short || bottlePublicDescription(item))}</p>
+        <p>${escapeHtml(descriptionText)}</p>
         ${leadingTags.length ? `<div class="signature-strip">${leadingTags.map(tag => `<span>${escapeHtml(tag)}</span>`).join('')}</div>` : ''}
       </div>
-      ${visibleMeta ? `<div class="bottle-meta-grid premium-meta-grid">${visibleMeta}</div>` : ''}
+      ${originText ? `<div class="quiet-meta"><span>Herkunft</span><strong>${escapeHtml(originText)}</strong></div>` : ''}
     </div>
 
-    ${detailTags('Geschmack', item.flavorTags)}
-    ${detailTags('Beste Verwendung', item.usageTags)}
-    ${desc.serving || item.usageTags.length ? `<div class="detail-section"><h3>Servieren</h3><p>${escapeHtml(desc.serving || servingSuggestionFor(item))}</p></div>` : ''}
-    ${item.notes ? `<div class="detail-section"><h3>Notizen</h3><p>${escapeHtml(item.notes)}</p></div>` : ''}
+    ${servingText ? `<div class="detail-section"><h3>Servieren</h3><p>${escapeHtml(servingText)}</p></div>` : ''}
+    ${item.notes ? `<div class="detail-section"><h3>Notizen</h3><p>${escapeHtml(cleanBottleDisplayText(item.notes))}</p></div>` : ''}
   `;
   els.dialog.showModal();
+}
+
+
+function cleanBottleDisplayText(text){
+  let value = String(text || '').trim();
+  if(!value) return '';
+  const removePatterns = [
+    /\s*;?\s*nicht als [^.?!]*(?:[.?!]|$)/gi,
+    /\s*;?\s*keine? [^.?!]*klassifiziert(?:[.?!]|$)/gi,
+    /\s*;?\s*als [^.?!]*eingestuft(?:[.?!]|$)/gi,
+    /\s*;?\s*für spätere [^.?!]*(?:[.?!]|$)/gi,
+    /\s*;?\s*eine ausführliche[^.?!]*(?:[.?!]|$)/gi,
+    /\s*;?\s*noch offen[^.?!]*(?:[.?!]|$)/gi
+  ];
+  removePatterns.forEach(pattern => { value = value.replace(pattern, ''); });
+  value = value.replace(/\s+([,.;:!?])/g, '$1').replace(/\s{2,}/g, ' ').trim();
+  if(value && !/[.!?]$/.test(value)) value += '.';
+  return value || 'Eine kuratierte Beschreibung wird ergänzt.';
+}
+
+function uniqueList(values){
+  const seen = new Set();
+  return arrayOf(values).filter(value => {
+    const key = String(value || '').toLowerCase().trim();
+    if(!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function bottlePublicDescription(item){

@@ -867,3 +867,43 @@ body{
 .today-menu-head{
   align-items:center;
 }
+
+/* v0.15 Clean Bottle Detail View */
+.bottle-public-card{
+  display:block;
+}
+.bottle-public-card .bottle-hero-copy{
+  max-width:100%;
+}
+.quiet-meta{
+  margin-top:16px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;
+  padding:13px 14px;
+  background:rgba(255,255,255,.025);
+}
+.quiet-meta span{
+  display:block;
+  color:var(--label);
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.quiet-meta strong{
+  display:block;
+  color:var(--text-strong);
+  font-size:1rem;
+  line-height:1.35;
+  overflow-wrap:anywhere;
+}
+#detailBody .clean-public-hero{
+  margin-bottom:16px;
+}
+#detailBody .detail-section h3{
+  margin-bottom:12px;
+}
+#detailBody .detail-section{
+  margin-bottom:14px;
+}
