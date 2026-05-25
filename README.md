@@ -1,45 +1,25 @@
-# Hausbar Next v0.21
+# Hausbar Next v0.22
 
-Korrektur nach v0.18: Die Datenanreicherung bleibt erhalten, aber die sichtbaren Inventar-Filter werden wieder auf kontrollierte, nutzerfreundliche Facetten begrenzt.
+Saubere Neubau-Basis fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
-- keine ausufernden Geschmacksfilter wie einzelne Botanicals, Früchte oder Detailnoten
-- keine ausufernden Nutzungs- und Stilfilter
-- Herkunftsfilter zeigt nur noch die Haupt-Herkunft, nicht Regionen/Orte/Dörfer
-- detaillierte Tags bleiben intern für Suche, Beschreibung und spätere Intelligenz erhalten
-- Inventar bleibt übersichtlich für den Nutzer
+v0.22 raeumt die Rezept-Detailansicht auf.
 
-## Nicht geändert
-
-- keine Änderung an der Grundlogik der App
-- keine Änderung am Rauchig-Prinzip
-- keine UI-Experimente
-- keine neuen Daten-Enrichment-Batches
-- keine Runtime-Hooks, keine Wrapper, kein Service Worker
+- Beschreibung zeigt jetzt nur noch Charakter, Geschmack und Anlass des Drinks.
+- Mengen und Arbeitsschritte stehen nicht mehr in der Beschreibung.
+- Reihenfolge im Rezeptdetail: Beschreibung, Zutaten, Zubereitung, Kurzdetails.
+- Servierhinweis als eigener doppelter Block wurde entfernt.
+- Glas, Eis, Garnish und Staerke bleiben kompakt als Kurzdetails sichtbar.
+- Obere Meta-Zeile wurde reduziert.
+- Keine Aenderung an Inventar, Filtern, Datenstruktur oder Rauchig-Logik.
 
 ## Upload
 
-Die fünf App-Dateien ersetzen:
+Diese Dateien ersetzen:
 
 - index.html
 - style.css
 - app.js
 - data.js
 - README.md
-
-Testlink:
-
-https://artikus1975.github.io/HausbarNext/?v=019
-
-
-## v0.21
-
-Controlled Inventory Filter Taxonomy: sichtbare Inventarfilter sind auf kuratierte Hauptwerte begrenzt. Interne Detailtags bleiben erhalten, erscheinen aber nicht als Filteroptionen. Herkunftsfilter zeigt nur Länder.
-
-
-## v0.21
-
-- Inventar-Flaschendetails zeigen den Bereich „Servieren“ nicht mehr an.
-- Servierdaten bleiben intern in den Daten erhalten.
-- Keine Änderung an Filtern, Rezepten, Tagescocktail oder Datenanreicherung.

@@ -907,3 +907,19 @@ body{
 #detailBody .detail-section{
   margin-bottom:14px;
 }
+
+/* v0.22: Clean Recipe Detail View */
+#recipeDetailBody .recipe-description p{
+  font-size:1.02rem;
+  line-height:1.62;
+}
+.recipe-quick-facts{
+  margin-top:0;
+  margin-bottom:0;
+}
+.recipe-quick-facts .recipe-meta-tile{
+  background:rgba(255,255,255,.032);
+}
+@media (max-width:420px){
+  #recipeDetailBody .recipe-description p{font-size:1rem;}
+}

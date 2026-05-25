@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.21';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.22';
 
 const state = {
   view: 'home',
@@ -659,23 +659,20 @@ function openRecipe(id){
   const recipe = recipes.find(r => r.id === id);
   if(!recipe) return;
   els.recipeDetailName.textContent = recipe.name;
-  els.recipeDetailCategory.textContent = [recipe.category, recipe.style, ...arrayOf(recipe.season).slice(0,2), recipe.strength].filter(Boolean).join(' · ');
+  els.recipeDetailCategory.textContent = unique([recipe.category, recipe.style]).filter(Boolean).slice(0,2).join(' · ');
   const ingredients = arrayOf(recipe.ingredients);
   const instructions = arrayOf(recipe.instructions);
   const serving = recipeServingMeta(recipe);
   els.recipeDetailBody.innerHTML = `
-    <div class="detail-section highlight-section"><h3>Beschreibung</h3><p>${escapeHtml(recipeLongDescription(recipe))}</p></div>
-    <div class="recipe-meta-grid">
+    <div class="detail-section highlight-section recipe-description"><h3>Beschreibung</h3><p>${escapeHtml(recipeLongDescription(recipe))}</p></div>
+    <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list ingredient-list">${ingredients.map(i => `<li><span>${escapeHtml(i)}</span></li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
+    <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list step-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
+    <div class="recipe-meta-grid recipe-quick-facts">
       ${recipeMetaTile('Stärke', recipeStrengthLabel(recipe.strength))}
       ${recipeMetaTile('Glas', serving.glass)}
       ${recipeMetaTile('Eis', serving.ice)}
       ${recipeMetaTile('Garnish', serving.garnish)}
     </div>
-    <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list ingredient-list">${ingredients.map(i => `<li><span>${escapeHtml(i)}</span></li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
-    <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list step-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
-    <div class="detail-section"><h3>Servierhinweis</h3><p>${escapeHtml(serving.note)}</p></div>
-    ${detailTags('Geschmack', recipe.flavorTags || [])}
-    ${recipe.style ? `<div class="detail-section"><h3>Stilrichtung</h3><div class="tag-row"><span class="tag">${escapeHtml(recipe.style)}</span></div></div>` : ''}
   `;
   els.recipeDialog.showModal();
 }
@@ -693,15 +690,45 @@ function recipeShortDescription(recipe){
 }
 
 function recipeLongDescription(recipe){
+  const name = String(recipe.name || '').toLowerCase();
   const style = recipe.style || recipe.category || 'Cocktail';
   const strength = recipeStrengthLabel(recipe.strength);
-  const flavors = arrayOf(recipe.flavorTags);
-  const ingredients = arrayOf(recipe.ingredients).slice(0,3);
-  const parts = [];
-  parts.push(`${style}${strength ? `, ${strength.toLowerCase()}` : ''}`);
-  if(flavors.length) parts.push(`mit ${joinHuman(flavors)}em Profil`);
-  if(ingredients.length) parts.push(`auf Basis von ${joinHuman(ingredients)}`);
-  return `${parts.join(' – ')}. Klar strukturiert, balanciert serviert und für die jeweilige Trink-Situation kuratiert.`;
+  const flavors = arrayOf(recipe.flavorTags).map(v => String(v).toLowerCase());
+
+  const knownDescriptions = [
+    ['negroni', 'Ein kräftiger, bitter-süßer Aperitif mit Gin, Campari und rotem Vermouth. Klar, herb und elegant – ideal für den frühen Abend.'],
+    ['old fashioned', 'Ein reduzierter, spirit-forward Klassiker mit Tiefe, Würze und feiner Süße. Ruhig, kräftig und perfekt für einen langsamen Abend.'],
+    ['sazerac', 'Ein intensiver, würziger Klassiker mit trockenem Charakter, Anis-Anklang und viel Tiefe. Ein Drink für Liebhaber kräftiger, klarer Aromen.'],
+    ['manhattan', 'Ein eleganter, kräftiger Cocktail mit warmer Würze, feiner Süße und klassischer Bar-DNA. Ideal als ruhiger Hauptdrink.'],
+    ['martini', 'Ein klarer, trockener und sehr eleganter Klassiker. Kühl, präzise und minimalistisch im Auftritt.'],
+    ['daiquiri', 'Ein frischer, klarer Sour mit Rum, Limette und feiner Süße. Leicht, direkt und perfekt balanciert.'],
+    ['margarita', 'Ein zitrischer, lebendiger Klassiker mit Tequila-Charakter, frischer Säure und feiner Süße. Frisch, klar und animierend.'],
+    ['whiskey sour', 'Ein kräftiger Sour mit würziger Whiskey-Basis, frischer Zitrusspannung und weicher Süße. Klassisch, lebendig und gut ausbalanciert.'],
+    ['rye whiskey sour', 'Ein würziger Sour mit markanter Rye-Note, frischer Zitrone und feiner Süße. Kräftig, klar und lebendig.'],
+    ['dark', 'Ein würziger Highball mit dunklem Rum, Ginger Beer und frischer Limette. Einfach, aromatisch und sehr trinkfreudig.'],
+    ['mojito', 'Ein frischer Longdrink mit Minze, Limette und leichter Süße. Kühl, hell und sommerlich.'],
+    ['americano', 'Ein leichter, bitter-süßer Aperitif mit spritzigem Charakter. Frisch, herb und ideal vor dem Essen.'],
+    ['spritz', 'Ein leichter Aperitif-Drink mit Frische, Bitterkeit und prickelndem Charakter. Unkompliziert, hell und sommerlich.']
+  ];
+  const hit = knownDescriptions.find(([key]) => name.includes(key));
+  if(hit) return hit[1];
+
+  const mood = [];
+  const lowerStyle = String(style).toLowerCase();
+  if(lowerStyle.includes('aperitif')) mood.push('aperitifartig', 'herb');
+  if(lowerStyle.includes('digestif') || lowerStyle.includes('dessert')) mood.push('rund', 'nach dem Essen');
+  if(lowerStyle.includes('sour')) mood.push('frisch', 'lebendig');
+  if(lowerStyle.includes('longdrink') || lowerStyle.includes('highball')) mood.push('leicht', 'erfrischend');
+  if(lowerStyle.includes('kräftig') || lowerStyle.includes('spirit')) mood.push('kräftig', 'spirit-forward');
+  if(flavors.includes('bitter')) mood.push('bitter');
+  if(flavors.includes('zitrisch') || flavors.includes('frisch')) mood.push('zitrisch');
+  if(flavors.includes('cremig & dessert') || flavors.includes('süß')) mood.push('weich');
+
+  const cleanMood = unique(mood).slice(0,3);
+  if(cleanMood.length){
+    return `Ein ${strength ? recipeStrengthLabel(strength).toLowerCase() + 'er ' : ''}${style.toLowerCase()} mit ${joinHuman(cleanMood)}em Charakter. Ausgewogen, klar und passend für einen stilvollen Bar-Moment.`;
+  }
+  return `Ein ${style.toLowerCase()} mit klarem Profil und ausgewogener Struktur. Stilvoll, gut nachvollziehbar und für die Hausbar sauber kuratiert.`;
 }
 
 function recipeStrengthLabel(value){
