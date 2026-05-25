@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.20';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.21';
 
 const state = {
   view: 'home',
@@ -336,7 +336,6 @@ function openItem(id){
   const descriptionText = cleanBottleDisplayText(desc.short || desc.long || bottlePublicDescription(item));
   const leadingTags = uniqueList([...displayFacetValues(item, 'flavor').slice(0,4), ...displayFacetValues(item, 'usage').slice(0,2)]).filter(Boolean).slice(0,6);
   const originText = countryFacet(item);
-  const servingText = cleanBottleDisplayText(desc.serving || servingSuggestionFor(item));
 
   els.detailBody.innerHTML = `
     <div class="bottle-hero-detail premium-bottle-hero clean-public-hero bottle-public-card">
@@ -349,7 +348,6 @@ function openItem(id){
       ${originText ? `<div class="quiet-meta"><span>Herkunft</span><strong>${escapeHtml(originText)}</strong></div>` : ''}
     </div>
 
-    ${servingText ? `<div class="detail-section"><h3>Servieren</h3><p>${escapeHtml(servingText)}</p></div>` : ''}
     ${item.notes ? `<div class="detail-section"><h3>Notizen</h3><p>${escapeHtml(cleanBottleDisplayText(item.notes))}</p></div>` : ''}
   `;
   els.dialog.showModal();
