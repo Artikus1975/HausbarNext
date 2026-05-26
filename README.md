@@ -1,13 +1,7 @@
-# Hausbar Next v0.25
+# Hausbar Next v0.26
 
-Zweck dieser Version:
+Bottle Enrichment Batch 1 Clean Rebuild.
 
-- Ruhigere Typografie.
-- Zu fette Schriftgewichte reduziert.
-- Home-Titel weniger fett.
-- Detailwerte in Rezept- und Flaschendialogen weniger schwer.
-- Keine Änderung an Daten, Filtern, Rezeptlinks oder App-Logik.
+Basis: v0.25.
 
-Für GitHub Pages nur den Inhalt aus `app/` hochladen.
-
-`archive/` ist nur Dokumentation und muss nicht hochgeladen werden.
+Geändert wurden nur Daten für Aperitif / Bitter, Bitters, Rakı / Anis und Vermouth / Fortified. Sichtbare Filter bleiben kontrolliert und übersichtlich. Interne Detaildaten bleiben erhalten, erscheinen aber nicht als zusätzliche Filteroptionen.
