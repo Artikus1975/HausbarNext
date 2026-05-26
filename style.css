@@ -908,7 +908,7 @@ body{
   margin-bottom:14px;
 }
 
-/* v0.22: Clean Recipe Detail View */
+/* v0.23: Recipe Load Repair */
 #recipeDetailBody .recipe-description p{
   font-size:1.02rem;
   line-height:1.62;

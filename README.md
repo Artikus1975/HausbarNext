@@ -1,10 +1,10 @@
-# Hausbar Next v0.22
+# Hausbar Next v0.23
 
 Saubere Neubau-Basis fuer Murat's Hausbar.
 
 ## Zweck dieser Version
 
-v0.22 raeumt die Rezept-Detailansicht auf.
+v0.23 raeumt die Rezept-Detailansicht auf.
 
 - Beschreibung zeigt jetzt nur noch Charakter, Geschmack und Anlass des Drinks.
 - Mengen und Arbeitsschritte stehen nicht mehr in der Beschreibung.

@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.22';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.23';
 
 const state = {
   view: 'home',
@@ -659,7 +659,7 @@ function openRecipe(id){
   const recipe = recipes.find(r => r.id === id);
   if(!recipe) return;
   els.recipeDetailName.textContent = recipe.name;
-  els.recipeDetailCategory.textContent = unique([recipe.category, recipe.style]).filter(Boolean).slice(0,2).join(' · ');
+  els.recipeDetailCategory.textContent = uniqueList([recipe.category, recipe.style]).filter(Boolean).slice(0,2).join(' · ');
   const ingredients = arrayOf(recipe.ingredients);
   const instructions = arrayOf(recipe.instructions);
   const serving = recipeServingMeta(recipe);
