@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.23';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.24';
 
 const state = {
   view: 'home',
@@ -116,7 +116,7 @@ function cacheElements(){
 
 function bindEvents(){
   els.navButtons.forEach(btn => btn.addEventListener('click', () => setView(btn.dataset.view)));
-  if(els.dailyDrinkCard) els.dailyDrinkCard.addEventListener('click', () => { const drink = getDailyDrink(); if(drink) openRecipe(drink.id); });
+  bindHomeRecipeDelegation();
   if(els.rerollTodayMenu) els.rerollTodayMenu.addEventListener('click', () => { saveTodayMenu(generateTodayMenu({ reroll: true })); renderHome(); });
   els.searchInput.addEventListener('input', e => { state.search = e.target.value.trim().toLowerCase(); renderInventory(); });
   els.categoryFilter.addEventListener('change', e => setFilter('category', e.target.value));
@@ -131,6 +131,22 @@ function bindEvents(){
   els.resetRecipeFilters.addEventListener('click', resetRecipeFilters);
   els.closeDialog.addEventListener('click', () => els.dialog.close());
   els.closeRecipeDialog.addEventListener('click', () => els.recipeDialog.close());
+}
+
+
+function bindHomeRecipeDelegation(){
+  document.addEventListener('click', event => {
+    const target = event.target.closest('[data-home-recipe-id], #dailyDrinkCard');
+    if(!target) return;
+    if(target.id === 'dailyDrinkCard' || target.classList.contains('home-menu-item')){
+      event.preventDefault();
+      event.stopPropagation();
+      const id = target.dataset.homeRecipeId;
+      if(id){
+        openRecipe(id);
+      }
+    }
+  });
 }
 
 function renderAll(){
@@ -496,12 +512,13 @@ function renderHome(){
 
   const daily = getDailyDrink();
   if(daily){
+    els.dailyDrinkCard.dataset.homeRecipeId = daily.id || '';
     els.dailyDrinkName.textContent = daily.name;
     els.dailyDrinkStyle.textContent = [daily.style, ...arrayOf(daily.season).slice(0,1)].filter(Boolean).join(' · ');
   }
   const menu = getTodayMenu();
   els.todayMenuGrid.innerHTML = menu.map(renderHomeMenuItem).join('') || '<p class="empty">Noch keine Empfehlungen vorhanden.</p>';
-  els.todayMenuGrid.querySelectorAll('[data-home-recipe-id]').forEach(btn => btn.addEventListener('click', () => openRecipe(btn.dataset.homeRecipeId)));
+  // Home recipe clicks are handled by delegated listener so dynamically rendered cards stay clickable.
 }
 
 function berlinDateKey(){
