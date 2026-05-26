@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.21';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.24';
 
 const state = {
   view: 'home',
@@ -116,7 +116,6 @@ function cacheElements(){
 
 function bindEvents(){
   els.navButtons.forEach(btn => btn.addEventListener('click', () => setView(btn.dataset.view)));
-  if(els.dailyDrinkCard) els.dailyDrinkCard.addEventListener('click', () => { const drink = getDailyDrink(); if(drink) openRecipe(drink.id); });
   if(els.rerollTodayMenu) els.rerollTodayMenu.addEventListener('click', () => { saveTodayMenu(generateTodayMenu({ reroll: true })); renderHome(); });
   els.searchInput.addEventListener('input', e => { state.search = e.target.value.trim().toLowerCase(); renderInventory(); });
   els.categoryFilter.addEventListener('change', e => setFilter('category', e.target.value));
@@ -131,6 +130,14 @@ function bindEvents(){
   els.resetRecipeFilters.addEventListener('click', resetRecipeFilters);
   els.closeDialog.addEventListener('click', () => els.dialog.close());
   els.closeRecipeDialog.addEventListener('click', () => els.recipeDialog.close());
+
+  document.addEventListener('click', event => {
+    const trigger = event.target.closest('[data-open-recipe-id]');
+    if(!trigger) return;
+    event.preventDefault();
+    event.stopPropagation();
+    openRecipe(trigger.dataset.openRecipeId);
+  });
 }
 
 function renderAll(){
@@ -498,10 +505,10 @@ function renderHome(){
   if(daily){
     els.dailyDrinkName.textContent = daily.name;
     els.dailyDrinkStyle.textContent = [daily.style, ...arrayOf(daily.season).slice(0,1)].filter(Boolean).join(' · ');
+    els.dailyDrinkCard.dataset.openRecipeId = daily.id;
   }
   const menu = getTodayMenu();
   els.todayMenuGrid.innerHTML = menu.map(renderHomeMenuItem).join('') || '<p class="empty">Noch keine Empfehlungen vorhanden.</p>';
-  els.todayMenuGrid.querySelectorAll('[data-home-recipe-id]').forEach(btn => btn.addEventListener('click', () => openRecipe(btn.dataset.homeRecipeId)));
 }
 
 function berlinDateKey(){
@@ -598,7 +605,7 @@ function getTodayMenu(){
 function renderHomeMenuItem(entry){
   const recipe = entry.recipe;
   const subtitle = [recipe.style, ...arrayOf(recipe.season).slice(0,1)].filter(Boolean).join(' · ');
-  return `<button class="home-menu-item" data-home-recipe-id="${escapeHtml(recipe.id)}" type="button">
+  return `<button class="home-menu-item" data-open-recipe-id="${escapeHtml(recipe.id)}" type="button">
     <span>${escapeHtml(entry.slot)}</span>
     <strong>${escapeHtml(recipe.name)}</strong>
     <small>${escapeHtml(subtitle || recipe.category || 'Rezept')}</small>
@@ -616,7 +623,6 @@ function renderRecipes(){
   });
   els.recipeCount.textContent = `${list.length} von ${recipes.length} Rezepten`;
   els.recipeGrid.innerHTML = list.map(renderRecipeCard).join('') || '<p class="empty">Keine Rezepte gefunden.</p>';
-  els.recipeGrid.querySelectorAll('[data-recipe-id]').forEach(btn => btn.addEventListener('click', () => openRecipe(btn.dataset.recipeId)));
 }
 
 function populateRecipeFilters(){
@@ -647,7 +653,7 @@ function renderRecipeCard(recipe){
   const seasonPreview = arrayOf(recipe.season).slice(0,1);
   const tags = [recipe.category, recipe.style, ...seasonPreview, recipe.strength].filter(Boolean).slice(0,4);
   const subtitle = [recipe.category, recipe.style, ...seasonPreview, recipe.strength].filter(Boolean).join(' · ');
-  return `<button class="item-card recipe-card" data-recipe-id="${escapeHtml(recipe.id)}">
+  return `<button class="item-card recipe-card" data-recipe-id="${escapeHtml(recipe.id)}" data-open-recipe-id="${escapeHtml(recipe.id)}">
     <h3>${escapeHtml(recipe.name)}</h3>
     <p class="meta">${escapeHtml(subtitle || (recipe.ingredients || []).slice(0,3).join(' · '))}</p>
     <p class="recipe-preview">${escapeHtml(recipeShortDescription(recipe))}</p>
@@ -659,25 +665,27 @@ function openRecipe(id){
   const recipe = recipes.find(r => r.id === id);
   if(!recipe) return;
   els.recipeDetailName.textContent = recipe.name;
-  els.recipeDetailCategory.textContent = [recipe.category, recipe.style, ...arrayOf(recipe.season).slice(0,2), recipe.strength].filter(Boolean).join(' · ');
+  els.recipeDetailCategory.textContent = compactRecipeMeta(recipe);
   const ingredients = arrayOf(recipe.ingredients);
   const instructions = arrayOf(recipe.instructions);
   const serving = recipeServingMeta(recipe);
   els.recipeDetailBody.innerHTML = `
     <div class="detail-section highlight-section"><h3>Beschreibung</h3><p>${escapeHtml(recipeLongDescription(recipe))}</p></div>
-    <div class="recipe-meta-grid">
+    <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list ingredient-list">${ingredients.map(i => `<li><span>${escapeHtml(i)}</span></li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
+    <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list step-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
+    <div class="recipe-meta-grid compact-recipe-meta">
       ${recipeMetaTile('Stärke', recipeStrengthLabel(recipe.strength))}
       ${recipeMetaTile('Glas', serving.glass)}
       ${recipeMetaTile('Eis', serving.ice)}
       ${recipeMetaTile('Garnish', serving.garnish)}
     </div>
-    <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list ingredient-list">${ingredients.map(i => `<li><span>${escapeHtml(i)}</span></li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
-    <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list step-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
-    <div class="detail-section"><h3>Servierhinweis</h3><p>${escapeHtml(serving.note)}</p></div>
-    ${detailTags('Geschmack', recipe.flavorTags || [])}
-    ${recipe.style ? `<div class="detail-section"><h3>Stilrichtung</h3><div class="tag-row"><span class="tag">${escapeHtml(recipe.style)}</span></div></div>` : ''}
   `;
   els.recipeDialog.showModal();
+}
+
+function compactRecipeMeta(recipe){
+  const values = [recipe.category, recipe.style].filter(Boolean);
+  return Array.from(new Set(values)).slice(0,2).join(' · ');
 }
 
 function recipeMetaTile(label, value){
@@ -693,15 +701,20 @@ function recipeShortDescription(recipe){
 }
 
 function recipeLongDescription(recipe){
-  const style = recipe.style || recipe.category || 'Cocktail';
-  const strength = recipeStrengthLabel(recipe.strength);
-  const flavors = arrayOf(recipe.flavorTags);
-  const ingredients = arrayOf(recipe.ingredients).slice(0,3);
-  const parts = [];
-  parts.push(`${style}${strength ? `, ${strength.toLowerCase()}` : ''}`);
-  if(flavors.length) parts.push(`mit ${joinHuman(flavors)}em Profil`);
-  if(ingredients.length) parts.push(`auf Basis von ${joinHuman(ingredients)}`);
-  return `${parts.join(' – ')}. Klar strukturiert, balanciert serviert und für die jeweilige Trink-Situation kuratiert.`;
+  const name = String(recipe.name || '').toLowerCase();
+  const style = String(recipe.style || recipe.category || 'Cocktail');
+  const flavors = arrayOf(recipe.flavorTags).map(v => String(v).toLowerCase());
+  const profile = flavors.slice(0,2).join(' und ');
+
+  if(name.includes('negroni')) return 'Ein kräftiger, bitter-süßer Aperitif mit Gin, Campari und rotem Vermouth. Klar, herb und elegant – ein Klassiker für den frühen Abend.';
+  if(name.includes('old fashioned')) return 'Ein ruhiger, spirituoser Klassiker mit Tiefe, feiner Süße und aromatischer Bitterkeit. Ideal für langsames Trinken und klare Bar-Momente.';
+  if(name.includes('sour')) return 'Ein frischer, balancierter Sour mit lebendiger Säure, feiner Süße und klarer Struktur.';
+  if(name.includes('spritz')) return 'Ein leichter, prickelnder Aperitif mit frischer Bitterkeit und sommerlicher Leichtigkeit.';
+  if(name.includes('martini')) return 'Ein klarer, eleganter Drink mit trockener Struktur und präzisem, kühlem Charakter.';
+  if(name.includes('sazerac')) return 'Ein intensiver, würziger Klassiker mit Tiefe, Kräuteranklang und trockenem Finish.';
+
+  if(profile) return `Ein ${style.toLowerCase()} mit ${profile}em Charakter. Ausgewogen, klar und passend für einen stilvollen Bar-Moment.`;
+  return `Ein ${style.toLowerCase()} mit klarer Struktur und ausgewogenem Charakter.`;
 }
 
 function recipeStrengthLabel(value){

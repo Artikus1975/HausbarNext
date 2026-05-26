@@ -1,4 +1,4 @@
-# Hausbar Next v0.21
+# Hausbar Next v0.24
 
 Korrektur nach v0.18: Die Datenanreicherung bleibt erhalten, aber die sichtbaren Inventar-Filter werden wieder auf kontrollierte, nutzerfreundliche Facetten begrenzt.
 
@@ -43,3 +43,9 @@ Controlled Inventory Filter Taxonomy: sichtbare Inventarfilter sind auf kuratier
 - Inventar-Flaschendetails zeigen den Bereich „Servieren“ nicht mehr an.
 - Servierdaten bleiben intern in den Daten erhalten.
 - Keine Änderung an Filtern, Rezepten, Tagescocktail oder Datenanreicherung.
+
+## v0.24
+
+Basis: v0.21. Repariert Home-Rezeptlinks robust und bereinigt die Rezeptdetailansicht ohne Inventar-, Filter- oder Datenmigration.
+
+Für GitHub Pages nur den Inhalt aus `app/` hochladen. `archive/` ist reine Dokumentation.
