@@ -1,6 +1,6 @@
-// Hausbar Next v0.23 - Bottle Detail Serving Hidden
+// Hausbar Next v0.21 - Bottle Detail Serving Hidden
 const HB_DATA = {
-  "version": "v0.23",
+  "version": "v0.21",
   "inventory": [
     {
       "id": "csv-001-aperol",
