@@ -5577,7 +5577,7 @@ const HB_DATA = {
     },
     {
       "id": "csv-087-tekirda-no-10-rak",
-      "name": "Tekirda? No.10 Rak?",
+      "name": "Tekirdağ No.10 Rakı",
       "producer": "Tekirdağ",
       "category": "Rakı / Anis",
       "subcategory": "Rakı",
@@ -5633,7 +5633,7 @@ const HB_DATA = {
         "trocken",
         "bottle"
       ],
-      "searchText": "tekirda? no.10 rak? tekirdağ rakı / anis rakı kräuterig trocken aperitif pur klassisch herb kräftig türkei türkischer rakı mit ausgeprägter anisnote und trockenem, klarem profil. traditionell mit wasser und eis als begleiter zu mezze und langen abenden. anis traubendestillat trocken rakı mit wasser mezze aperitif",
+      "searchText": "tekirdağ no.10 rakı tekirdağ rakı / anis rakı kräuterig trocken aperitif pur klassisch herb kräftig türkei türkischer rakı mit ausgeprägter anisnote und trockenem, klarem profil. traditionell mit wasser und eis als begleiter zu mezze und langen abenden. anis traubendestillat trocken rakı mit wasser mezze aperitif",
       "tags": [
         "Kräuterig",
         "Trocken",
@@ -5650,7 +5650,7 @@ const HB_DATA = {
     },
     {
       "id": "csv-088-yeni-rak-ala",
-      "name": "Yeni Rak? Ala",
+      "name": "Yeni Rakı Ala",
       "producer": "Yeni Rakı",
       "category": "Rakı / Anis",
       "subcategory": "Rakı",
@@ -5706,7 +5706,7 @@ const HB_DATA = {
         "mediterran",
         "bottle"
       ],
-      "searchText": "yeni rak? ala yeni rakı rakı / anis rakı kräuterig trocken aperitif pur klassisch komplex herb türkei türkischer rakı mit anis, trockener würze und klassischem mediterranem aperitif-charakter. am besten mit wasser und eis zu herzhaften speisen und mezze. anis trocken mediterran rakı mit wasser mezze aperitif",
+      "searchText": "yeni rakı ala yeni rakı rakı / anis rakı kräuterig trocken aperitif pur klassisch komplex herb türkei türkischer rakı mit anis, trockener würze und klassischem mediterranem aperitif-charakter. am besten mit wasser und eis zu herzhaften speisen und mezze. anis trocken mediterran rakı mit wasser mezze aperitif",
       "tags": [
         "Kräuterig",
         "Trocken",
@@ -7694,7 +7694,7 @@ const HB_DATA = {
     },
     {
       "id": "csv-124-veuve-monsigny-brut-reserve-champagner",
-      "name": "Veuve ?Monsigny Brut Réserve Champagner",
+      "name": "Veuve Monsigny Brut Réserve Champagner",
       "producer": "Veuve Monsigny",
       "category": "Wein",
       "subcategory": "Champagner",
@@ -7718,7 +7718,7 @@ const HB_DATA = {
         "Frankreich"
       ],
       "description": {
-        "short": "Veuve ?Monsigny Brut Réserve Champagner ist als Wein / Champagner eingeordnet. Geschmack: Trocken, Zitrisch, Fruchtig. Nutzung: Pur, Aperitif.",
+        "short": "Veuve Monsigny Brut Réserve Champagner ist als Wein / Champagner eingeordnet. Geschmack: Trocken, Zitrisch, Fruchtig. Nutzung: Pur, Aperitif.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
@@ -7735,7 +7735,7 @@ const HB_DATA = {
         "Aperitif",
         "Frankreich"
       ],
-      "searchText": "veuve ?monsigny brut réserve champagner veuve monsigny wein champagner trocken zitrisch fruchtig pur aperitif wine frankreich veuve ?monsigny brut réserve champagner ist als wein / champagner eingeordnet. geschmack: trocken, zitrisch, fruchtig. nutzung: pur, aperitif. ",
+      "searchText": "veuve monsigny brut réserve champagner veuve monsigny wein champagner trocken zitrisch fruchtig pur aperitif wine frankreich veuve monsigny brut réserve champagner ist als wein / champagner eingeordnet. geschmack: trocken, zitrisch, fruchtig. nutzung: pur, aperitif. ",
       "tags": [
         "Trocken",
         "Zitrisch",
