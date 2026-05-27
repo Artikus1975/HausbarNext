@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.25';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.24';
 
 const state = {
   view: 'home',
@@ -116,7 +116,6 @@ function cacheElements(){
 
 function bindEvents(){
   els.navButtons.forEach(btn => btn.addEventListener('click', () => setView(btn.dataset.view)));
-  bindHomeRecipeDelegation();
   if(els.rerollTodayMenu) els.rerollTodayMenu.addEventListener('click', () => { saveTodayMenu(generateTodayMenu({ reroll: true })); renderHome(); });
   els.searchInput.addEventListener('input', e => { state.search = e.target.value.trim().toLowerCase(); renderInventory(); });
   els.categoryFilter.addEventListener('change', e => setFilter('category', e.target.value));
@@ -131,21 +130,13 @@ function bindEvents(){
   els.resetRecipeFilters.addEventListener('click', resetRecipeFilters);
   els.closeDialog.addEventListener('click', () => els.dialog.close());
   els.closeRecipeDialog.addEventListener('click', () => els.recipeDialog.close());
-}
 
-
-function bindHomeRecipeDelegation(){
   document.addEventListener('click', event => {
-    const target = event.target.closest('[data-home-recipe-id], #dailyDrinkCard');
-    if(!target) return;
-    if(target.id === 'dailyDrinkCard' || target.classList.contains('home-menu-item')){
-      event.preventDefault();
-      event.stopPropagation();
-      const id = target.dataset.homeRecipeId;
-      if(id){
-        openRecipe(id);
-      }
-    }
+    const trigger = event.target.closest('[data-open-recipe-id]');
+    if(!trigger) return;
+    event.preventDefault();
+    event.stopPropagation();
+    openRecipe(trigger.dataset.openRecipeId);
   });
 }
 
@@ -512,13 +503,12 @@ function renderHome(){
 
   const daily = getDailyDrink();
   if(daily){
-    els.dailyDrinkCard.dataset.homeRecipeId = daily.id || '';
     els.dailyDrinkName.textContent = daily.name;
     els.dailyDrinkStyle.textContent = [daily.style, ...arrayOf(daily.season).slice(0,1)].filter(Boolean).join(' · ');
+    els.dailyDrinkCard.dataset.openRecipeId = daily.id;
   }
   const menu = getTodayMenu();
   els.todayMenuGrid.innerHTML = menu.map(renderHomeMenuItem).join('') || '<p class="empty">Noch keine Empfehlungen vorhanden.</p>';
-  // Home recipe clicks are handled by delegated listener so dynamically rendered cards stay clickable.
 }
 
 function berlinDateKey(){
@@ -615,7 +605,7 @@ function getTodayMenu(){
 function renderHomeMenuItem(entry){
   const recipe = entry.recipe;
   const subtitle = [recipe.style, ...arrayOf(recipe.season).slice(0,1)].filter(Boolean).join(' · ');
-  return `<button class="home-menu-item" data-home-recipe-id="${escapeHtml(recipe.id)}" type="button">
+  return `<button class="home-menu-item" data-open-recipe-id="${escapeHtml(recipe.id)}" type="button">
     <span>${escapeHtml(entry.slot)}</span>
     <strong>${escapeHtml(recipe.name)}</strong>
     <small>${escapeHtml(subtitle || recipe.category || 'Rezept')}</small>
@@ -633,7 +623,6 @@ function renderRecipes(){
   });
   els.recipeCount.textContent = `${list.length} von ${recipes.length} Rezepten`;
   els.recipeGrid.innerHTML = list.map(renderRecipeCard).join('') || '<p class="empty">Keine Rezepte gefunden.</p>';
-  els.recipeGrid.querySelectorAll('[data-recipe-id]').forEach(btn => btn.addEventListener('click', () => openRecipe(btn.dataset.recipeId)));
 }
 
 function populateRecipeFilters(){
@@ -664,7 +653,7 @@ function renderRecipeCard(recipe){
   const seasonPreview = arrayOf(recipe.season).slice(0,1);
   const tags = [recipe.category, recipe.style, ...seasonPreview, recipe.strength].filter(Boolean).slice(0,4);
   const subtitle = [recipe.category, recipe.style, ...seasonPreview, recipe.strength].filter(Boolean).join(' · ');
-  return `<button class="item-card recipe-card" data-recipe-id="${escapeHtml(recipe.id)}">
+  return `<button class="item-card recipe-card" data-recipe-id="${escapeHtml(recipe.id)}" data-open-recipe-id="${escapeHtml(recipe.id)}">
     <h3>${escapeHtml(recipe.name)}</h3>
     <p class="meta">${escapeHtml(subtitle || (recipe.ingredients || []).slice(0,3).join(' · '))}</p>
     <p class="recipe-preview">${escapeHtml(recipeShortDescription(recipe))}</p>
@@ -676,15 +665,15 @@ function openRecipe(id){
   const recipe = recipes.find(r => r.id === id);
   if(!recipe) return;
   els.recipeDetailName.textContent = recipe.name;
-  els.recipeDetailCategory.textContent = uniqueList([recipe.category, recipe.style]).filter(Boolean).slice(0,2).join(' · ');
+  els.recipeDetailCategory.textContent = compactRecipeMeta(recipe);
   const ingredients = arrayOf(recipe.ingredients);
   const instructions = arrayOf(recipe.instructions);
   const serving = recipeServingMeta(recipe);
   els.recipeDetailBody.innerHTML = `
-    <div class="detail-section highlight-section recipe-description"><h3>Beschreibung</h3><p>${escapeHtml(recipeLongDescription(recipe))}</p></div>
+    <div class="detail-section highlight-section"><h3>Beschreibung</h3><p>${escapeHtml(recipeLongDescription(recipe))}</p></div>
     <div class="detail-section"><h3>Zutaten</h3>${ingredients.length ? `<ul class="clean-list ingredient-list">${ingredients.map(i => `<li><span>${escapeHtml(i)}</span></li>`).join('')}</ul>` : '<p class="empty">Keine Zutaten hinterlegt.</p>'}</div>
     <div class="detail-section"><h3>Zubereitung</h3>${instructions.length ? `<ol class="clean-list step-list">${instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>` : '<p class="empty">Keine Zubereitung hinterlegt.</p>'}</div>
-    <div class="recipe-meta-grid recipe-quick-facts">
+    <div class="recipe-meta-grid compact-recipe-meta">
       ${recipeMetaTile('Stärke', recipeStrengthLabel(recipe.strength))}
       ${recipeMetaTile('Glas', serving.glass)}
       ${recipeMetaTile('Eis', serving.ice)}
@@ -692,6 +681,11 @@ function openRecipe(id){
     </div>
   `;
   els.recipeDialog.showModal();
+}
+
+function compactRecipeMeta(recipe){
+  const values = [recipe.category, recipe.style].filter(Boolean);
+  return Array.from(new Set(values)).slice(0,2).join(' · ');
 }
 
 function recipeMetaTile(label, value){
@@ -708,44 +702,19 @@ function recipeShortDescription(recipe){
 
 function recipeLongDescription(recipe){
   const name = String(recipe.name || '').toLowerCase();
-  const style = recipe.style || recipe.category || 'Cocktail';
-  const strength = recipeStrengthLabel(recipe.strength);
+  const style = String(recipe.style || recipe.category || 'Cocktail');
   const flavors = arrayOf(recipe.flavorTags).map(v => String(v).toLowerCase());
+  const profile = flavors.slice(0,2).join(' und ');
 
-  const knownDescriptions = [
-    ['negroni', 'Ein kräftiger, bitter-süßer Aperitif mit Gin, Campari und rotem Vermouth. Klar, herb und elegant – ideal für den frühen Abend.'],
-    ['old fashioned', 'Ein reduzierter, spirit-forward Klassiker mit Tiefe, Würze und feiner Süße. Ruhig, kräftig und perfekt für einen langsamen Abend.'],
-    ['sazerac', 'Ein intensiver, würziger Klassiker mit trockenem Charakter, Anis-Anklang und viel Tiefe. Ein Drink für Liebhaber kräftiger, klarer Aromen.'],
-    ['manhattan', 'Ein eleganter, kräftiger Cocktail mit warmer Würze, feiner Süße und klassischer Bar-DNA. Ideal als ruhiger Hauptdrink.'],
-    ['martini', 'Ein klarer, trockener und sehr eleganter Klassiker. Kühl, präzise und minimalistisch im Auftritt.'],
-    ['daiquiri', 'Ein frischer, klarer Sour mit Rum, Limette und feiner Süße. Leicht, direkt und perfekt balanciert.'],
-    ['margarita', 'Ein zitrischer, lebendiger Klassiker mit Tequila-Charakter, frischer Säure und feiner Süße. Frisch, klar und animierend.'],
-    ['whiskey sour', 'Ein kräftiger Sour mit würziger Whiskey-Basis, frischer Zitrusspannung und weicher Süße. Klassisch, lebendig und gut ausbalanciert.'],
-    ['rye whiskey sour', 'Ein würziger Sour mit markanter Rye-Note, frischer Zitrone und feiner Süße. Kräftig, klar und lebendig.'],
-    ['dark', 'Ein würziger Highball mit dunklem Rum, Ginger Beer und frischer Limette. Einfach, aromatisch und sehr trinkfreudig.'],
-    ['mojito', 'Ein frischer Longdrink mit Minze, Limette und leichter Süße. Kühl, hell und sommerlich.'],
-    ['americano', 'Ein leichter, bitter-süßer Aperitif mit spritzigem Charakter. Frisch, herb und ideal vor dem Essen.'],
-    ['spritz', 'Ein leichter Aperitif-Drink mit Frische, Bitterkeit und prickelndem Charakter. Unkompliziert, hell und sommerlich.']
-  ];
-  const hit = knownDescriptions.find(([key]) => name.includes(key));
-  if(hit) return hit[1];
+  if(name.includes('negroni')) return 'Ein kräftiger, bitter-süßer Aperitif mit Gin, Campari und rotem Vermouth. Klar, herb und elegant – ein Klassiker für den frühen Abend.';
+  if(name.includes('old fashioned')) return 'Ein ruhiger, spirituoser Klassiker mit Tiefe, feiner Süße und aromatischer Bitterkeit. Ideal für langsames Trinken und klare Bar-Momente.';
+  if(name.includes('sour')) return 'Ein frischer, balancierter Sour mit lebendiger Säure, feiner Süße und klarer Struktur.';
+  if(name.includes('spritz')) return 'Ein leichter, prickelnder Aperitif mit frischer Bitterkeit und sommerlicher Leichtigkeit.';
+  if(name.includes('martini')) return 'Ein klarer, eleganter Drink mit trockener Struktur und präzisem, kühlem Charakter.';
+  if(name.includes('sazerac')) return 'Ein intensiver, würziger Klassiker mit Tiefe, Kräuteranklang und trockenem Finish.';
 
-  const mood = [];
-  const lowerStyle = String(style).toLowerCase();
-  if(lowerStyle.includes('aperitif')) mood.push('aperitifartig', 'herb');
-  if(lowerStyle.includes('digestif') || lowerStyle.includes('dessert')) mood.push('rund', 'nach dem Essen');
-  if(lowerStyle.includes('sour')) mood.push('frisch', 'lebendig');
-  if(lowerStyle.includes('longdrink') || lowerStyle.includes('highball')) mood.push('leicht', 'erfrischend');
-  if(lowerStyle.includes('kräftig') || lowerStyle.includes('spirit')) mood.push('kräftig', 'spirit-forward');
-  if(flavors.includes('bitter')) mood.push('bitter');
-  if(flavors.includes('zitrisch') || flavors.includes('frisch')) mood.push('zitrisch');
-  if(flavors.includes('cremig & dessert') || flavors.includes('süß')) mood.push('weich');
-
-  const cleanMood = unique(mood).slice(0,3);
-  if(cleanMood.length){
-    return `Ein ${strength ? recipeStrengthLabel(strength).toLowerCase() + 'er ' : ''}${style.toLowerCase()} mit ${joinHuman(cleanMood)}em Charakter. Ausgewogen, klar und passend für einen stilvollen Bar-Moment.`;
-  }
-  return `Ein ${style.toLowerCase()} mit klarem Profil und ausgewogener Struktur. Stilvoll, gut nachvollziehbar und für die Hausbar sauber kuratiert.`;
+  if(profile) return `Ein ${style.toLowerCase()} mit ${profile}em Charakter. Ausgewogen, klar und passend für einen stilvollen Bar-Moment.`;
+  return `Ein ${style.toLowerCase()} mit klarer Struktur und ausgewogenem Charakter.`;
 }
 
 function recipeStrengthLabel(value){
