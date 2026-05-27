@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.26';
+const APP_VERSION = (window.HB_DATA && HB_DATA.version) || 'v0.25';
 
 const state = {
   view: 'home',
@@ -11,7 +11,7 @@ const state = {
 };
 
 const CATEGORY_FACETS = [
-  'Aperitif / Bitter','Bitters','Brandy','Cognac','Edelbrand / Geist','Garnish','Gin','Likör','Pisco','Rakı / Anis','Rum / Cachaça','Saft','Sirup / Mixer','Tequila','Vermouth / Fortified','Wein / Champagner','Vodka','Whisky'
+  'Aperitif / Bitter','Bitters','Brandy','Cognac','Edelbrand / Geist','Garnish','Gin','Likör','Pisco','Rakı / Anis','Rum / Cachaça','Saft','Sirup / Mixer','Tequila','Vermouth / Fortified Wine','Wein / Champagner','Vodka','Whisky'
 ];
 
 const FILTER_FACETS = {
@@ -263,10 +263,9 @@ function canonicalCategory(item){
     const detail = `${subcategory} ${name}`.toLowerCase();
     return detail.includes('cognac') ? 'Cognac' : 'Brandy';
   }
-  if(category === 'Vermouth / Fortified') return 'Vermouth / Fortified';
+  if(category === 'Vermouth / Fortified Wine') return 'Vermouth / Fortified Wine';
   if(category === 'Wein' || category === 'Wine') return 'Wein / Champagner';
   if(category === 'Tequila / Mezcal') return 'Tequila';
-  if(sameValue(category, 'Vermouth / Fortified Wine')) return 'Vermouth / Fortified';
   if(CATEGORY_FACETS.some(value => sameValue(value, category))) return CATEGORY_FACETS.find(value => sameValue(value, category));
   return category || 'Unkategorisiert';
 }
