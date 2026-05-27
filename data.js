@@ -1,6 +1,6 @@
-// Hausbar Next v0.24 - Stable Home Links and Clean Recipe Detail
+// Hausbar Next v0.25 - Typography Weight Cleanup
 const HB_DATA = {
-  "version": "v0.24",
+  "version": "v0.25",
   "inventory": [
     {
       "id": "csv-001-aperol",
