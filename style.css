@@ -989,3 +989,15 @@ h1,h2,h3,
 @media (max-width:420px){
   .home-title h2{font-size:3rem;}
 }
+
+/* v0.26.1 CSS-only: hide duplicate bottle name inside the public bottle profile.
+   Keep the bottle name only in the dialog header. */
+#detailBody .bottle-public-card .bottle-hero-copy > h3,
+#detailBody .clean-public-hero .bottle-hero-copy > h3 {
+  display: none !important;
+}
+
+#detailBody .bottle-public-card .bottle-hero-copy > .eyebrow + h3 + p,
+#detailBody .clean-public-hero .bottle-hero-copy > .eyebrow + h3 + p {
+  margin-top: 0;
+}
