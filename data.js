@@ -1,6 +1,6 @@
-// Hausbar Next v0.26 - Data-only Bottle Enrichment Batch 1
+// Hausbar Next v0.26-review5 - Data-only approved first 5 bottle descriptions
 const HB_DATA = {
-  "version": "v0.26",
+  "version": "v0.26-review5",
   "inventory": [
     {
       "id": "csv-001-aperol",
@@ -15,13 +15,11 @@ const HB_DATA = {
         "Bitter",
         "Fruchtig",
         "Zitrisch",
-        "Süß",
-        "Kräuterig"
+        "Süß"
       ],
       "usageTags": [
         "Aperitif",
-        "Spritz",
-        "Modifier"
+        "Spritz"
       ],
       "styleTags": [
         "Leicht",
@@ -33,7 +31,7 @@ const HB_DATA = {
         "Italien"
       ],
       "description": {
-        "short": "Leuchtend orangefarbener italienischer Aperitif mit sanfter Bitterkeit, Zitrusfrische und feiner Kräuterwürze. Wirkt leicht, zugänglich und elegant in spritzigen Aperitif-Drinks.",
+        "short": "Leuchtend orangefarbener italienischer Aperitif mit sanfter Bitterkeit, Zitrusfrische und feiner Kräuterwürze. Wirkt leicht, zugänglich und besonders elegant in spritzigen Aperitif-Drinks.",
         "long": "",
         "tastingNotes": [
           "Orange",
@@ -101,15 +99,14 @@ const HB_DATA = {
       "status": "Ungeöffnet",
       "fillLevel": "100%",
       "flavorTags": [
-        "Süß",
-        "Kräuterig",
         "Bitter",
+        "Kräuterig",
+        "Süß",
         "Zitrisch"
       ],
       "usageTags": [
         "Digestif",
-        "Modifier",
-        "Pur"
+        "Modifier"
       ],
       "styleTags": [
         "Komplex",
@@ -121,7 +118,7 @@ const HB_DATA = {
         "Italien"
       ],
       "description": {
-        "short": "Sizilianischer Amaro mit samtiger Süße, mediterranen Kräutern, Zitrus, Lakritz und einer weichen Bitterkeit. Vollmundig, rund und besonders stark als Digestif oder dunkler Cocktail-Akzent.",
+        "short": "Sizilianischer Amaro mit samtiger Süße, mediterranen Kräutern, Zitrus, Lakritz und runder Bitterkeit. Vollmundig, weich und besonders stark als Digestif oder dunkler Cocktail-Akzent.",
         "long": "",
         "tastingNotes": [
           "Kräuter",
@@ -195,14 +192,11 @@ const HB_DATA = {
         "Bitter",
         "Kräuterig",
         "Zitrisch",
-        "Fruchtig",
         "Trocken"
       ],
       "usageTags": [
         "Aperitif",
-        "Spritz",
-        "Modifier",
-        "Spirit-Forward"
+        "Modifier"
       ],
       "styleTags": [
         "Klassisch",
@@ -214,7 +208,7 @@ const HB_DATA = {
         "Italien"
       ],
       "description": {
-        "short": "Intensiver italienischer Bitter mit markanter Kräuterbitterkeit, roter Frucht, Orange und trockenem Nachhall. Gibt Negroni, Americano und Boulevardier ihre klare Struktur und ikonische Tiefe.",
+        "short": "Italienischer Bitter-Aperitif mit intensiver Kräuterwürze, markanter Bitterkeit und fruchtig-zitrischer Tiefe. Kraftvoll, klar und unverzichtbar für Negroni, Americano und andere klassische Aperitif-Drinks.",
         "long": "",
         "tastingNotes": [
           "Bitterorange",
@@ -378,13 +372,11 @@ const HB_DATA = {
       "flavorTags": [
         "Bitter",
         "Kräuterig",
-        "Süß",
         "Trocken"
       ],
       "usageTags": [
         "Aperitif",
         "Digestif",
-        "Spritz",
         "Modifier"
       ],
       "styleTags": [
@@ -397,7 +389,7 @@ const HB_DATA = {
         "Italien"
       ],
       "description": {
-        "short": "Italienischer Amaro auf Artischockenbasis mit bittersüßem, kräutrigem und leicht erdigem Profil. Bringt Tiefe und erwachsene Bitterkeit in Spritzes, Highballs und dunkle Cocktail-Twists.",
+        "short": "Dunkler italienischer Amaro mit erdiger Kräuterwürze, sanfter Süße und trockener Bitterkeit. Komplex, herb und vielseitig – pur, mit Soda oder als charaktervoller Bitter-Baustein in Cocktails.",
         "long": "",
         "tastingNotes": [
           "Kräuter",
@@ -463,14 +455,13 @@ const HB_DATA = {
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Kräuterig",
         "Bitter",
+        "Kräuterig",
         "Süß",
         "Zitrisch"
       ],
       "usageTags": [
         "Digestif",
-        "Pur",
         "Modifier"
       ],
       "styleTags": [
@@ -483,7 +474,7 @@ const HB_DATA = {
         "Italien"
       ],
       "description": {
-        "short": "Klassischer italienischer Amaro mit dichter Kräuterwürze, Orangennoten und ausgewogener Süße. Rund, aromatisch und als Digestif ebenso überzeugend wie als würziger Modifier in kräftigen Drinks.",
+        "short": "Italienischer Amaro mit kräftiger Kräuterwürze, Orangennoten, Gewürzen und ausgewogener Süße. Rund, aromatisch und ideal als Digestif oder als würziger Akzent in dunkleren Drinks.",
         "long": "",
         "tastingNotes": [
           "Orange",
