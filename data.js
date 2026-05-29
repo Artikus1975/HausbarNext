@@ -1,6 +1,6 @@
-// Hausbar Next v0.26-review5 - Data-only approved first 5 bottle descriptions
+// Hausbar Next v0.26-review10 - Data-only approved bottle descriptions batch 2
 const HB_DATA = {
-  "version": "v0.26-review5",
+  "version": "v0.26-review10",
   "inventory": [
     {
       "id": "csv-001-aperol",
@@ -283,12 +283,11 @@ const HB_DATA = {
       "flavorTags": [
         "Bitter",
         "Fruchtig",
-        "Zitrisch",
-        "Kräuterig"
+        "Kräuterig",
+        "Floral"
       ],
       "usageTags": [
         "Aperitif",
-        "Spritz",
         "Modifier"
       ],
       "styleTags": [
@@ -301,22 +300,23 @@ const HB_DATA = {
         "Deutschland"
       ],
       "description": {
-        "short": "Bayerischer Aperitivo im italienischen Stil mit frischer Zitrusnote, milder Bitterkeit und kräutrig-fruchtiger Balance. Ein leichter, moderner Akzent für Spritz-Drinks und helle Aperitifs.",
+        "short": "Bayerischer Bitter-Aperitif mit Wacholder, Bergamotte, Kräutern und frischer Zitrusnote. Modern, grün und spritzig – ideal für Aperitif-Drinks, Hugo-Varianten und leichte Sommer-Serves.",
         "long": "",
         "tastingNotes": [
-          "Zitrus",
           "Wacholder",
+          "Bergamotte",
           "Kräuter",
-          "florale Noten",
-          "sanfte Bitterkeit"
+          "Zitrus",
+          "florale Noten"
         ],
         "bestUse": [
+          "Aperitif-Drinks",
           "Spritz",
-          "Hugo-Twist",
-          "leichte Aperitif-Drinks"
+          "Hugo-Varianten",
+          "Sommer-Serves"
         ],
-        "serving": "Gut gekühlt auf Eis mit Prosecco oder Soda servieren; eine Zitruszeste oder frische Kräuter passen besonders gut.",
-        "sourceStatus": "web-curated-v0.26-data-only",
+        "serving": "",
+        "sourceStatus": "review-approved-batch2",
         "sourceLinks": [
           "https://www.weinundbar.de/de/alle-spirituosen/likore/404423/chilla-bitter-aperitivo-bavarese-das-original",
           "https://www.rumpiraten.de/chilla-bitter-aperitivo-bavarese"
@@ -342,14 +342,13 @@ const HB_DATA = {
         "Sommerlich",
         "Bayern"
       ],
-      "searchText": "aperitivo bavarese lantenhammer / chilla aperitif / bitter aperitif bitter fruchtig zitrisch kräuterig aperitif spritz modifier modern frisch leicht deutschland bayerischer aperitivo im italienischen stil mit frischer zitrusnote, milder bitterkeit und kräutrig-fruchtiger balance. ein leichter, moderner akzent für spritz-drinks und helle aperitifs.",
+      "searchText": "aperitivo bavarese lantenhammer / chilla aperitif / bitter aperitif bitter fruchtig kräuterig floral aperitif modifier modern frisch leicht deutschland bayerischer bitter-aperitif mit wacholder, bergamotte, kräutern und frischer zitrusnote. modern, grün und spritzig – ideal für aperitif-drinks, hugo-varianten und leichte sommer-serves.",
       "tags": [
         "Bitter",
         "Fruchtig",
-        "Zitrisch",
         "Kräuterig",
+        "Floral",
         "Aperitif",
-        "Spritz",
         "Modifier",
         "Modern",
         "Frisch",
@@ -873,36 +872,36 @@ const HB_DATA = {
         "Trocken"
       ],
       "usageTags": [
-        "Modifier",
-        "Cocktailbasis"
+        "Cocktailbasis",
+        "Modifier"
       ],
       "styleTags": [
         "Klassisch",
         "Komplex",
-        "Herb"
+        "Würzig"
       ],
       "guestTags": [],
       "originTags": [
         "Deutschland"
       ],
       "description": {
-        "short": "Klassisch ausgerichtete Aromatic Bitters mit trockener Kräuterbitterkeit und würziger Tiefe. Ein vielseitiger Akzent für Old Fashioned, Manhattans und kräftige Rührdrinks.",
+        "short": "Aromatische Cocktailbitters mit warmer Gewürztiefe, Kräutern und trockener Bitterkeit. Ein konzentrierter Akzent für Old Fashioned, Manhattan, Sours und kräftige Rührdrinks.",
         "long": "",
         "tastingNotes": [
-          "Zitrus",
-          "getrocknete Früchte",
-          "Nelke",
           "Zimt",
-          "Angosturarinde"
+          "Kardamom",
+          "Anis",
+          "Nelke",
+          "Kräuter"
         ],
         "bestUse": [
           "Old Fashioned",
           "Manhattan",
-          "Rum Old Fashioned",
-          "dunkle Stirred Drinks"
+          "Sours",
+          "Kräftige Rührdrinks"
         ],
-        "serving": "Sehr sparsam dosieren; ideal für kräftige Spirituosen, dunkle Drinks und Gewürznoten.",
-        "sourceStatus": "web-curated-v0.26-data-only",
+        "serving": "",
+        "sourceStatus": "review-approved-batch2",
         "sourceLinks": []
       },
       "notes": "",
@@ -923,16 +922,16 @@ const HB_DATA = {
         "Aromatisch",
         "Deutschland"
       ],
-      "searchText": "old town decanter bitters the bitter truth bitters bitters bitter kräuterig trocken modifier cocktailbasis klassisch komplex herb deutschland klassisch ausgerichtete aromatic bitters mit trockener kräuterbitterkeit und würziger tiefe. ein vielseitiger akzent für old fashioned, manhattans und kräftige rührdrinks.",
+      "searchText": "old town decanter bitters the bitter truth bitters bitters bitter kräuterig trocken cocktailbasis modifier klassisch komplex würzig deutschland aromatische cocktailbitters mit warmer gewürztiefe, kräutern und trockener bitterkeit. ein konzentrierter akzent für old fashioned, manhattan, sours und kräftige rührdrinks.",
       "tags": [
         "Bitter",
         "Kräuterig",
         "Trocken",
-        "Modifier",
         "Cocktailbasis",
+        "Modifier",
         "Klassisch",
         "Komplex",
-        "Herb",
+        "Würzig",
         "Deutschland"
       ]
     },
@@ -948,38 +947,39 @@ const HB_DATA = {
       "flavorTags": [
         "Bitter",
         "Kräuterig",
-        "Süß",
         "Trocken"
       ],
       "usageTags": [
-        "Modifier",
-        "Cocktailbasis"
+        "Cocktailbasis",
+        "Modifier"
       ],
       "styleTags": [
         "Klassisch",
-        "Würzig",
-        "Komplex"
+        "Komplex",
+        "Würzig"
       ],
       "guestTags": [],
       "originTags": [
         "Deutschland"
       ],
       "description": {
-        "short": "Aromatische Bitters mit klassischer Gewürz- und Kräutertiefe. Verleiht Spirit-Forward-Drinks Struktur, Länge und einen barreifen, runden Abschluss.",
+        "short": "Klassisch inspirierte Aromatic Bitters mit Zimt, Kardamom, Anis, Nelke und dunkler Gewürzwärme. Gibt gereiften Spirituosen, Old Fashioned und Manhattan-Varianten Struktur und Tiefe.",
         "long": "",
         "tastingNotes": [
-          "warme Gewürze",
-          "Kräuter",
-          "Bitterkeit",
-          "aromatische Tiefe"
+          "Zimt",
+          "Kardamom",
+          "Anis",
+          "Nelke",
+          "Gewürzwärme"
         ],
         "bestUse": [
           "Old Fashioned",
           "Manhattan",
+          "Gereifte Spirituosen",
           "Cocktail-Klassiker"
         ],
-        "serving": "Tropfenweise dosieren; als strukturierender Bitter-Akzent in klassischen Cocktails verwenden.",
-        "sourceStatus": "web-curated-v0.26-data-only",
+        "serving": "",
+        "sourceStatus": "review-approved-batch2",
         "sourceLinks": []
       },
       "notes": "",
@@ -1000,17 +1000,16 @@ const HB_DATA = {
         "Klassisch",
         "Deutschland"
       ],
-      "searchText": "old time aromatic bitters the bitter truth bitters bitters bitter kräuterig süß trocken modifier cocktailbasis klassisch würzig komplex deutschland aromatische bitters mit klassischer gewürz- und kräutertiefe. verleiht spirit-forward-drinks struktur, länge und einen barreifen, runden abschluss.",
+      "searchText": "old time aromatic bitters the bitter truth bitters bitters bitter kräuterig trocken cocktailbasis modifier klassisch komplex würzig deutschland klassisch inspirierte aromatic bitters mit zimt, kardamom, anis, nelke und dunkler gewürzwärme. gibt gereiften spirituosen, old fashioned und manhattan-varianten struktur und tiefe.",
       "tags": [
         "Bitter",
         "Kräuterig",
-        "Süß",
         "Trocken",
-        "Modifier",
         "Cocktailbasis",
+        "Modifier",
         "Klassisch",
-        "Würzig",
         "Komplex",
+        "Würzig",
         "Deutschland"
       ]
     },
@@ -5292,13 +5291,12 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Kräuterig",
-        "Süß",
         "Trocken"
       ],
       "usageTags": [
         "Aperitif",
-        "Modifier",
-        "Longdrink & Highball"
+        "Pur",
+        "Modifier"
       ],
       "styleTags": [
         "Klassisch",
@@ -5310,7 +5308,7 @@ const HB_DATA = {
         "Frankreich"
       ],
       "description": {
-        "short": "Französischer Anis-Aperitif mit klarer Kräuterfrische und weichem Süßholzcharakter. Klassisch mit Wasser verlängert oder sparsam als aromatischer Akzent in Cocktails.",
+        "short": "Französischer Anis-Aperitif mit klarer Anisnote, Fenchel, Kräutern und frischer Würze. Klassisch mit Wasser und Eis, aber auch als aromatischer Akzent in Drinks mit mediterranem Charakter.",
         "long": "",
         "tastingNotes": [
           "Sternanis",
@@ -5321,11 +5319,11 @@ const HB_DATA = {
         ],
         "bestUse": [
           "Pernod mit Wasser",
-          "Anis-Highball",
-          "Aromatischer Modifier"
+          "Aperitif",
+          "Aromatischer Cocktail-Akzent"
         ],
-        "serving": "Klassisch mit kaltem Wasser verlängern; als Cocktailzutat sehr sparsam einsetzen, weil Anis schnell dominant wird.",
-        "sourceStatus": "web-curated-v0.26-data-only",
+        "serving": "",
+        "sourceStatus": "review-approved-batch2",
         "sourceLinks": [
           "https://www.pernod-ricard.com/en/brands/pernod"
         ]
@@ -5346,14 +5344,13 @@ const HB_DATA = {
         "Französisch",
         "Klassisch"
       ],
-      "searchText": "pernod pernod rakı / anis anis aperitif kräuterig süß trocken aperitif modifier longdrink & highball klassisch frisch herb frankreich französischer anis-aperitif mit klarer kräuterfrische und weichem süßholzcharakter. klassisch mit wasser verlängert oder sparsam als aromatischer akzent in cocktails.",
+      "searchText": "pernod pernod rakı / anis anis aperitif kräuterig trocken aperitif pur modifier klassisch frisch herb frankreich französischer anis-aperitif mit klarer anisnote, fenchel, kräutern und frischer würze. klassisch mit wasser und eis, aber auch als aromatischer akzent in drinks mit mediterranem charakter.",
       "tags": [
         "Kräuterig",
-        "Süß",
         "Trocken",
         "Aperitif",
+        "Pur",
         "Modifier",
-        "Longdrink & Highball",
         "Klassisch",
         "Frisch",
         "Herb",
@@ -6985,8 +6982,7 @@ const HB_DATA = {
       ],
       "usageTags": [
         "Aperitif",
-        "Modifier",
-        "Spirit-Forward"
+        "Modifier"
       ],
       "styleTags": [
         "Elegant",
@@ -6998,22 +6994,23 @@ const HB_DATA = {
         "Frankreich"
       ],
       "description": {
-        "short": "Trockener französischer Vermouth mit Kräutern, heller Würze und saliner Frische. Besonders elegant in Martini-Varianten, leichten Aperitifs und feinen Rührdrinks.",
+        "short": "Trockener französischer Vermouth mit feiner Kräuterwürze, heller Weinigkeit und elegant-herbem Finish. Besonders stark in Martini-Varianten, Aperitif-Drinks und klaren, trockenen Cocktailklassikern.",
         "long": "",
         "tastingNotes": [
+          "Wermutkraut",
           "Kamille",
+          "Muskat",
+          "Enzian",
           "Koriander",
-          "Bitterorange",
-          "Holunderblüte",
-          "trockene Kräuter"
+          "Bitterorange"
         ],
         "bestUse": [
           "Dry Martini",
-          "Aperitif",
-          "Vermouth & Soda"
+          "Aperitif-Drinks",
+          "Klassische Rührdrinks"
         ],
-        "serving": "Gut gekühlt als Aperitif, mit Soda oder im Dry Martini verwenden; angebrochene Flasche gekühlt lagern.",
-        "sourceStatus": "web-curated-v0.26-data-only",
+        "serving": "",
+        "sourceStatus": "review-approved-batch2",
         "sourceLinks": [
           "https://www.noillyprat.com/original-dry-vermouth/"
         ]
@@ -7037,14 +7034,13 @@ const HB_DATA = {
         "Frankreich",
         "Marseillan"
       ],
-      "searchText": "noilly prat dry noilly prat vermouth / fortified wine dry vermouth trocken kräuterig zitrisch aperitif modifier spirit-forward elegant klassisch herb frankreich trockener französischer vermouth mit kräutern, heller würze und saliner frische. besonders elegant in martini-varianten, leichten aperitifs und feinen rührdrinks.",
+      "searchText": "noilly prat dry noilly prat vermouth / fortified wine dry vermouth trocken kräuterig zitrisch aperitif modifier elegant klassisch herb frankreich trockener französischer vermouth mit feiner kräuterwürze, heller weinigkeit und elegant-herbem finish. besonders stark in martini-varianten, aperitif-drinks und klaren, trockenen cocktailklassikern.",
       "tags": [
         "Trocken",
         "Kräuterig",
         "Zitrisch",
         "Aperitif",
         "Modifier",
-        "Spirit-Forward",
         "Elegant",
         "Klassisch",
         "Herb",
