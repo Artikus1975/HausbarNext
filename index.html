@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#15110d">
+  <title>Hausbar Next v0.24</title>
+  <link rel="stylesheet" href="style.css?v=0.24">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Hausbar Next</p>
+      <h1>Murats Hausbar</h1>
+    </div>
+    <span class="version" data-app-version>v0.24</span>
+  </header>
+
+  <main>
+    <section id="view-home" class="view active">
+      <div class="home-title">
+        <p class="eyebrow">Private Cocktailbibliothek</p>
+        <h2>Murat's Hausbar</h2>
+      </div>
+
+      <button id="dailyDrinkCard" class="daily-card card" type="button">
+        <p class="eyebrow">Tagescocktail</p>
+        <h3 id="dailyDrinkName">Wird geladen...</h3>
+        <p id="dailyDrinkStyle" class="daily-style"></p>
+        <span class="primary-pill">Rezept öffnen</span>
+      </button>
+
+      <div class="stats-grid compact-stats" id="homeStats"></div>
+
+      <div class="card today-menu-card">
+        <div class="today-menu-head">
+          <h3 class="today-menu-title">Heute passend</h3>
+          <button id="rerollTodayMenu" class="ghost-button" type="button">Neu wählen</button>
+        </div>
+        <div id="todayMenuGrid" class="todayMenuGrid today-menu-grid"></div>
+      </div>
+    </section>
+
+    <section id="view-inventory" class="view">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Inventar</p>
+          <h2>Flaschen</h2>
+        </div>
+        <button id="resetFilters" class="ghost-button">Filter löschen</button>
+      </div>
+
+      <div class="filter-panel card">
+        <input id="searchInput" class="search" type="search" placeholder="Suche nach Flasche, Kategorie, Tag...">
+        <div class="filters">
+          <label>Kategorie<select id="categoryFilter"></select></label>
+          <label>Geschmack<select id="flavorFilter"></select></label>
+          <label>Nutzung<select id="usageFilter"></select></label>
+          <label>Stil<select id="styleFilter"></select></label>
+          <label>Herkunft<select id="originFilter"></select></label>
+        </div>
+      </div>
+
+      <p id="inventoryCount" class="count-line"></p>
+      <div id="inventoryGrid" class="grid"></div>
+    </section>
+
+    <section id="view-recipes" class="view">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Rezepte</p>
+          <h2>Rezepte</h2>
+        </div>
+        <button id="resetRecipeFilters" class="ghost-button">Filter löschen</button>
+      </div>
+
+      <div class="filter-panel card recipe-filter-panel">
+        <input id="recipeSearch" class="search" type="search" placeholder="Rezepte suchen...">
+        <div class="filters recipe-filters">
+          <label>Jahreszeit<select id="recipeSeasonFilter"></select></label>
+          <label>Stilrichtung<select id="recipeStyleFilter"></select></label>
+        </div>
+      </div>
+
+      <p id="recipeCount" class="count-line"></p>
+      <div id="recipeGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Hauptnavigation">
+    <button data-view="home" class="active">Home</button>
+    <button data-view="inventory">Inventar</button>
+    <button data-view="recipes">Rezepte</button>
+  </nav>
+
+  <dialog id="itemDialog" class="detail-dialog">
+    <div class="dialog-header">
+      <div>
+        <p id="detailCategory" class="eyebrow"></p>
+        <h2 id="detailName"></h2>
+      </div>
+      <button id="closeDialog" class="ghost-button">Schließen</button>
+    </div>
+    <div id="detailBody"></div>
+  </dialog>
+
+
+
+  <dialog id="recipeDialog" class="detail-dialog">
+    <div class="dialog-header">
+      <div>
+        <p id="recipeDetailCategory" class="eyebrow"></p>
+        <h2 id="recipeDetailName"></h2>
+      </div>
+      <button id="closeRecipeDialog" class="ghost-button">Schließen</button>
+    </div>
+    <div id="recipeDetailBody"></div>
+  </dialog>
+
+  <script src="data.js?v=0.24"></script>
+  <script src="app.js?v=0.24"></script>
+</body>
+</html>
