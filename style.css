@@ -907,3 +907,85 @@ body{
 #detailBody .detail-section{
   margin-bottom:14px;
 }
+
+/* v0.23: Recipe Load Repair */
+#recipeDetailBody .recipe-description p{
+  font-size:1.02rem;
+  line-height:1.62;
+}
+.recipe-quick-facts{
+  margin-top:0;
+  margin-bottom:0;
+}
+.recipe-quick-facts .recipe-meta-tile{
+  background:rgba(255,255,255,.032);
+}
+@media (max-width:420px){
+  #recipeDetailBody .recipe-description p{font-size:1rem;}
+}
+
+/* v0.25 CSS-only: calmer typography weights. No JavaScript, data, or HTML changes. */
+:root{
+  --weight-heading:700;
+  --weight-title:650;
+  --weight-strong:600;
+  --weight-label:650;
+  --weight-chip:560;
+}
+h1,h2,h3,
+.item-card h3,
+.dialog-header h2,
+.daily-card h3,
+.today-menu-title,
+.home-menu-item strong{
+  font-weight:var(--weight-heading) !important;
+}
+.home-title h2{
+  font-weight:var(--weight-title) !important;
+  letter-spacing:-.04em;
+}
+.stat strong,
+.compact-stats .stat strong{
+  font-weight:var(--weight-title) !important;
+}
+.detail-section p,
+.bottle-description-card p,
+.ingredient-list li,
+.step-list li,
+.polished-list li{
+  font-weight:400 !important;
+}
+.detail-section strong,
+.snapshot-tile strong,
+.meta-tile strong,
+.recipe-meta-tile strong,
+.quiet-meta strong{
+  font-weight:var(--weight-strong) !important;
+}
+.detail-section h3,
+.snapshot-tile span,
+.meta-tile span,
+.recipe-meta-tile span,
+.filters label,
+.home-menu-item span,
+.quiet-meta span,
+.eyebrow{
+  font-weight:var(--weight-label) !important;
+}
+.tag,
+.signature-strip span{
+  font-weight:var(--weight-chip) !important;
+}
+.primary-pill,
+.ghost-button,
+.version,
+.bottom-nav button{
+  font-weight:600 !important;
+}
+.recipe-quick-facts .recipe-meta-tile strong,
+#recipeDetailBody .recipe-meta-tile strong{
+  font-weight:580 !important;
+}
+@media (max-width:420px){
+  .home-title h2{font-size:3rem;}
+}
