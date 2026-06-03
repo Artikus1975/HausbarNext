@@ -1,6 +1,6 @@
-// Hausbar Next v0.26 - Inventory Curation Integration Candidate
+// Hausbar Next v0.24 - Stable Home Links and Clean Recipe Detail
 const HB_DATA = {
-  "version": "v0.26",
+  "version": "v0.24",
   "inventory": [
     {
       "id": "csv-001-aperol",
@@ -21,6 +21,7 @@ const HB_DATA = {
       "usageTags": [
         "Aperitif",
         "Spritz",
+        "Sour",
         "Modifier"
       ],
       "styleTags": [
@@ -50,26 +51,31 @@ const HB_DATA = {
           "leichte Aperitif-Drinks"
         ],
         "serving": "Gut gekühlt mit Prosecco, Soda und Orangenscheibe als Aperol Spritz servieren; alternativ in leichten Sours oder als milder Bitter-Akzent.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.aperol.com/de-de/aperol-spritz-rezept/",
+          "https://en.wikipedia.org/wiki/Aperol"
+        ]
       },
       "notes": "",
       "legacyTags": [
         "Aperitif",
         "Bitter Aperitif",
-        "Leicht",
-        "Sommerlich",
         "Bitter",
         "Fruchtig",
         "Zitrisch",
         "Süß",
-        "Kräuterig",
         "Spritz",
         "Modifier",
         "Italien",
-        "Padua",
-        "bottle"
+        "bottle",
+        "Kräuterig",
+        "Sour",
+        "Leicht",
+        "Sommerlich",
+        "Padua"
       ],
-      "searchText": "aperol aperol aperitif / bitter aperitif bitter fruchtig zitrisch süß kräuterig aperitif spritz modifier bitter aperitif leicht sommerlich italien padua leuchtend orangefarbener italienischer aperitif mit milder bitterkeit, orange, kräutern, rhabarber, chinarinde und enzian. aperol wirkt leichter und zugänglicher als klassische bitter und ist ideal für spritz, aperitif-drinks und frische sommerdrinks.",
+      "searchText": "aperol aperol aperitif / bitter aperitif bitter fruchtig zitrisch süß kräuterig aperitif spritz sour modifier bitter aperitif leicht sommerlich italien padua leuchtend orangefarbener italienischer aperitif mit milder bitterkeit, orange, kräutern, rhabarber, chinarinde und enzian. aperol wirkt leichter und zugänglicher als klassische bitter und ist ideal für spritz, aperitif-drinks und frische sommerdrinks. gut gekühlt mit prosecco, soda und orangenscheibe als aperol spritz servieren; alternativ in leichten sours oder als milder bitter-akzent.",
       "tags": [
         "Bitter",
         "Fruchtig",
@@ -78,6 +84,7 @@ const HB_DATA = {
         "Kräuterig",
         "Aperitif",
         "Spritz",
+        "Sour",
         "Modifier",
         "Bitter Aperitif",
         "Leicht",
@@ -99,11 +106,15 @@ const HB_DATA = {
         "Süß",
         "Kräuterig",
         "Bitter",
-        "Zitrisch"
+        "Zitrisch",
+        "Würzig",
+        "Karamell"
       ],
       "usageTags": [
         "Digestif",
-        "Modifier"
+        "Modifier",
+        "Sipping",
+        "Amaro-Cocktails"
       ],
       "styleTags": [
         "Amaro",
@@ -132,31 +143,46 @@ const HB_DATA = {
           "Black Manhattan Varianten"
         ],
         "serving": "Pur, leicht gekühlt oder auf Eis servieren; in Cocktails sparsam als runder, bittersüßer Modifier einsetzen.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.amaroaverna.com/product/",
+          "https://www.tasteatlas.com/casa-averna-averna-amaro-siciliano"
+        ]
       },
       "notes": "",
       "legacyTags": [
         "Amaro",
-        "Digestif",
-        "Rund",
-        "Kräftig",
+        "Herbal Liqueur",
         "Süß",
         "Kräuterig",
         "Bitter",
         "Zitrisch",
+        "Digestif",
+        "Pur",
         "Modifier",
+        "Aperitif",
         "Italien",
-        "Sizilien",
-        "bottle"
+        "bottle",
+        "Würzig",
+        "Karamell",
+        "Sipping",
+        "Amaro-Cocktails",
+        "Rund",
+        "Kräftig",
+        "Sizilien"
       ],
-      "searchText": "averna averna aperitif / bitter amaro süß kräuterig bitter zitrisch digestif modifier amaro rund kräftig italien sizilien sizilianischer amaro mit weicher süße, kräutern, gewürzen, mediterranen aromen und feiner zitrusnote. averna ist vollmundig, harmonisch und eignet sich pur auf eis ebenso wie als dunkler, runder amaro-akzent in cocktails.",
+      "searchText": "averna averna aperitif / bitter amaro süß kräuterig bitter zitrisch würzig karamell digestif modifier sipping amaro-cocktails amaro rund kräftig italien sizilien sizilianischer amaro mit weicher süße, kräutern, gewürzen, mediterranen aromen und feiner zitrusnote. averna ist vollmundig, harmonisch und eignet sich pur auf eis ebenso wie als dunkler, runder amaro-akzent in cocktails. pur, leicht gekühlt oder auf eis servieren; in cocktails sparsam als runder, bittersüßer modifier einsetzen.",
       "tags": [
         "Süß",
         "Kräuterig",
         "Bitter",
         "Zitrisch",
+        "Würzig",
+        "Karamell",
         "Digestif",
         "Modifier",
+        "Sipping",
+        "Amaro-Cocktails",
         "Amaro",
         "Rund",
         "Kräftig",
@@ -177,9 +203,12 @@ const HB_DATA = {
         "Bitter",
         "Kräuterig",
         "Zitrisch",
-        "Fruchtig"
+        "Fruchtig",
+        "Würzig"
       ],
       "usageTags": [
+        "Negroni",
+        "Americano",
         "Spritz",
         "Aperitif",
         "Modifier"
@@ -212,31 +241,42 @@ const HB_DATA = {
           "Campari Spritz"
         ],
         "serving": "Für klassische Aperitif-Drinks auf Eis verwenden; im Negroni zu gleichen Teilen mit Gin und rotem Vermouth kombinieren.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.campari.com/de-de/",
+          "https://en.wikipedia.org/wiki/Campari"
+        ]
       },
       "notes": "",
       "legacyTags": [
+        "Aperitif",
         "Bitter Aperitif",
-        "Klassisch",
-        "Kräftig",
-        "Spirit-Forward",
         "Bitter",
         "Kräuterig",
         "Zitrisch",
-        "Fruchtig",
+        "Trocken",
         "Spritz",
-        "Aperitif",
         "Modifier",
+        "Spirit-Forward",
         "Italien",
-        "Mailand",
-        "bottle"
+        "bottle",
+        "Fruchtig",
+        "Würzig",
+        "Negroni",
+        "Americano",
+        "Klassisch",
+        "Kräftig",
+        "Mailand"
       ],
-      "searchText": "campari campari aperitif / bitter bitter aperitif bitter kräuterig zitrisch fruchtig spritz aperitif modifier bitter aperitif klassisch kräftig spirit-forward italien mailand ikonischer roter bitter-aperitif aus italien mit markanter bitterkeit, kräutern, gewürzen und orangennoten. campari bringt struktur, farbe und tiefe in klassiker wie negroni, americano, boulevardier und campari spritz.",
+      "searchText": "campari campari aperitif / bitter bitter aperitif bitter kräuterig zitrisch fruchtig würzig negroni americano spritz aperitif modifier bitter aperitif klassisch kräftig spirit-forward italien mailand ikonischer roter bitter-aperitif aus italien mit markanter bitterkeit, kräutern, gewürzen und orangennoten. campari bringt struktur, farbe und tiefe in klassiker wie negroni, americano, boulevardier und campari spritz. für klassische aperitif-drinks auf eis verwenden; im negroni zu gleichen teilen mit gin und rotem vermouth kombinieren.",
       "tags": [
         "Bitter",
         "Kräuterig",
         "Zitrisch",
         "Fruchtig",
+        "Würzig",
+        "Negroni",
+        "Americano",
         "Spritz",
         "Aperitif",
         "Modifier",
@@ -262,11 +302,13 @@ const HB_DATA = {
         "Zitrisch",
         "Fruchtig",
         "Kräuterig",
+        "Wacholder",
         "Floral"
       ],
       "usageTags": [
         "Aperitif",
         "Spritz",
+        "Hugo-Twist",
         "Modifier"
       ],
       "styleTags": [
@@ -296,34 +338,43 @@ const HB_DATA = {
           "leichte Aperitif-Drinks"
         ],
         "serving": "Gut gekühlt auf Eis mit Prosecco oder Soda servieren; eine Zitruszeste oder frische Kräuter passen besonders gut.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.weinundbar.de/de/alle-spirituosen/likore/404423/chilla-bitter-aperitivo-bavarese-das-original",
+          "https://www.rumpiraten.de/chilla-bitter-aperitivo-bavarese"
+        ]
       },
       "notes": "",
       "legacyTags": [
         "Aperitif",
         "Bitter Aperitif",
-        "Modern",
-        "Sommerlich",
-        "Bitter",
-        "Zitrisch",
         "Fruchtig",
-        "Kräuterig",
-        "Floral",
+        "Zitrisch",
+        "Bitter",
+        "Süß",
         "Spritz",
         "Modifier",
         "Deutschland",
-        "Bayern",
-        "bottle"
+        "bottle",
+        "Kräuterig",
+        "Wacholder",
+        "Floral",
+        "Hugo-Twist",
+        "Modern",
+        "Sommerlich",
+        "Bayern"
       ],
-      "searchText": "aperitivo bavarese lantenhammer / chilla aperitif / bitter aperitif bitter zitrisch fruchtig kräuterig floral aperitif spritz modifier bitter aperitif modern sommerlich deutschland bayern bayerischer aperitivo mit frischer zitrusnote, wacholder, kräutern und floralen akzenten. er funktioniert als moderne, grüne alternative für spritz-drinks, hugo-varianten und leichte aperitif-serves.",
+      "searchText": "aperitivo bavarese lantenhammer / chilla aperitif / bitter aperitif bitter zitrisch fruchtig kräuterig wacholder floral aperitif spritz hugo-twist modifier bitter aperitif modern sommerlich deutschland bayern bayerischer aperitivo mit frischer zitrusnote, wacholder, kräutern und floralen akzenten. er funktioniert als moderne, grüne alternative für spritz-drinks, hugo-varianten und leichte aperitif-serves. gut gekühlt auf eis mit prosecco oder soda servieren; eine zitruszeste oder frische kräuter passen besonders gut.",
       "tags": [
         "Bitter",
         "Zitrisch",
         "Fruchtig",
         "Kräuterig",
+        "Wacholder",
         "Floral",
         "Aperitif",
         "Spritz",
+        "Hugo-Twist",
         "Modifier",
         "Bitter Aperitif",
         "Modern",
@@ -344,13 +395,16 @@ const HB_DATA = {
       "flavorTags": [
         "Bitter",
         "Kräuterig",
-        "Süß"
+        "Süß",
+        "Vegetal",
+        "Erdig"
       ],
       "usageTags": [
         "Aperitif",
         "Digestif",
         "Spritz",
-        "Modifier"
+        "Modifier",
+        "Amaro-Cocktails"
       ],
       "styleTags": [
         "Amaro",
@@ -378,33 +432,43 @@ const HB_DATA = {
           "Bitter-Modifier"
         ],
         "serving": "Auf Eis mit Soda oder Tonic als Aperitif servieren; in Cocktails als komplexer, erdiger Bitter-Akzent einsetzen.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.camparigroup.com/en/spiritheque/cynar",
+          "https://en.wikipedia.org/wiki/Cynar"
+        ]
       },
       "notes": "",
       "legacyTags": [
         "Amaro",
         "Bitter Aperitif",
-        "Komplex",
-        "Herb",
         "Bitter",
         "Kräuterig",
         "Süß",
         "Aperitif",
         "Digestif",
-        "Spritz",
         "Modifier",
+        "Spritz",
         "Italien",
-        "bottle"
+        "bottle",
+        "Vegetal",
+        "Erdig",
+        "Amaro-Cocktails",
+        "Komplex",
+        "Herb"
       ],
-      "searchText": "cynar cynar aperitif / bitter amaro / bitter bitter kräuterig süß aperitif digestif spritz modifier amaro bitter aperitif komplex herb italien italienischer amaro auf basis von artischocke und weiteren botanicals. cynar schmeckt nicht dominant nach artischocke, sondern bittersüß, kräutrig, leicht vegetal und bringt tiefe in spritzes, amaro-drinks und dunkle cocktail-twists.",
+      "searchText": "cynar cynar aperitif / bitter amaro / bitter bitter kräuterig süß vegetal erdig aperitif digestif spritz modifier amaro-cocktails amaro bitter aperitif komplex herb italien italienischer amaro auf basis von artischocke und weiteren botanicals. cynar schmeckt nicht dominant nach artischocke, sondern bittersüß, kräutrig, leicht vegetal und bringt tiefe in spritzes, amaro-drinks und dunkle cocktail-twists. auf eis mit soda oder tonic als aperitif servieren; in cocktails als komplexer, erdiger bitter-akzent einsetzen.",
       "tags": [
         "Bitter",
         "Kräuterig",
         "Süß",
+        "Vegetal",
+        "Erdig",
         "Aperitif",
         "Digestif",
         "Spritz",
         "Modifier",
+        "Amaro-Cocktails",
         "Amaro",
         "Bitter Aperitif",
         "Komplex",
@@ -423,13 +487,17 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Kräuterig",
+        "Würzig",
         "Süß",
         "Bitter",
-        "Zitrisch"
+        "Zitrisch",
+        "Orange"
       ],
       "usageTags": [
         "Digestif",
-        "Modifier"
+        "Sipping",
+        "Modifier",
+        "Amaro-Cocktails"
       ],
       "styleTags": [
         "Amaro",
@@ -458,34 +526,46 @@ const HB_DATA = {
           "dunkle Cocktail-Twists"
         ],
         "serving": "Pur, auf Eis oder mit Zitruszeste servieren; in Cocktails als runder, würziger Amaro-Baustein nutzen.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.ramazzotti1815.com/en-us/products/amaro/"
+        ]
       },
       "notes": "",
       "legacyTags": [
         "Amaro",
-        "Digestif",
-        "Rund",
-        "Würzig",
-        "Kräuterig",
+        "Herbal Liqueur",
         "Süß",
+        "Kräuterig",
         "Bitter",
         "Zitrisch",
+        "Digestif",
+        "Pur",
         "Modifier",
+        "Aperitif",
         "Italien",
-        "Mailand",
-        "bottle"
+        "bottle",
+        "Würzig",
+        "Orange",
+        "Sipping",
+        "Amaro-Cocktails",
+        "Rund",
+        "Mailand"
       ],
-      "searchText": "ramazzotti ramazzotti aperitif / bitter amaro kräuterig süß bitter zitrisch digestif modifier amaro rund würzig italien mailand klassischer italienischer amaro mit 33 kräutern, gewürzen, blüten und früchten. ramazzotti verbindet orange, kräuterwürze und bittersüße tiefe zu einem zugänglichen digestif und vielseitigen amaro-modifier.",
+      "searchText": "ramazzotti ramazzotti aperitif / bitter amaro kräuterig würzig süß bitter zitrisch orange digestif sipping modifier amaro-cocktails amaro rund italien mailand klassischer italienischer amaro mit 33 kräutern, gewürzen, blüten und früchten. ramazzotti verbindet orange, kräuterwürze und bittersüße tiefe zu einem zugänglichen digestif und vielseitigen amaro-modifier. pur, auf eis oder mit zitruszeste servieren; in cocktails als runder, würziger amaro-baustein nutzen.",
       "tags": [
         "Kräuterig",
+        "Würzig",
         "Süß",
         "Bitter",
         "Zitrisch",
+        "Orange",
         "Digestif",
+        "Sipping",
         "Modifier",
+        "Amaro-Cocktails",
         "Amaro",
         "Rund",
-        "Würzig",
         "Italien",
         "Mailand"
       ]
@@ -509,7 +589,9 @@ const HB_DATA = {
       ],
       "usageTags": [
         "Aperitif",
-        "Spritz"
+        "Tonic",
+        "Spritz",
+        "Highball"
       ],
       "styleTags": [
         "Aperitif",
@@ -537,25 +619,33 @@ const HB_DATA = {
           "leichte Aperitif-Highballs"
         ],
         "serving": "Auf Eis im Verhältnis 1:3 mit Tonic und Zitronenscheibe servieren; alternativ mit Prosecco oder Champagner als Spritz.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://brennerei-ziegler.de/products/avionic",
+          "https://www.worldshop.eu/de/ziegler-avionic-lufthansa-aperitif-0-7-l-18-0-vol-deutschland-1771066/"
+        ]
       },
       "notes": "",
       "legacyTags": [
         "Aperitif",
-        "Modern",
-        "Fruchtig-Floral",
-        "Sommerlich",
         "Fruchtig",
         "Zitrisch",
-        "Floral",
         "Kräuterig",
+        "Spritz",
+        "Modifier",
+        "Longdrink & Highball",
+        "Deutschland",
+        "bottle",
+        "Floral",
         "Süß",
         "Bitter",
-        "Spritz",
-        "Deutschland",
-        "bottle"
+        "Tonic",
+        "Highball",
+        "Modern",
+        "Fruchtig-Floral",
+        "Sommerlich"
       ],
-      "searchText": "avionic lufthansa aperitif brennerei ziegler aperitif / bitter aperitif fruchtig zitrisch floral kräuterig süß bitter aperitif spritz modern fruchtig-floral sommerlich deutschland moderner deutscher aperitif von ziegler mit pfirsich, frischer zitrusnote, floralen wildwiesenkräutern und feiner bitternote. avionic ist frisch, duftig und besonders stark in tonic- und spritz-serves.",
+      "searchText": "avionic lufthansa aperitif brennerei ziegler aperitif / bitter aperitif fruchtig zitrisch floral kräuterig süß bitter aperitif tonic spritz highball modern fruchtig-floral sommerlich deutschland moderner deutscher aperitif von ziegler mit pfirsich, frischer zitrusnote, floralen wildwiesenkräutern und feiner bitternote. avionic ist frisch, duftig und besonders stark in tonic- und spritz-serves. auf eis im verhältnis 1:3 mit tonic und zitronenscheibe servieren; alternativ mit prosecco oder champagner als spritz.",
       "tags": [
         "Fruchtig",
         "Zitrisch",
@@ -564,7 +654,9 @@ const HB_DATA = {
         "Süß",
         "Bitter",
         "Aperitif",
+        "Tonic",
         "Spritz",
+        "Highball",
         "Modern",
         "Fruchtig-Floral",
         "Sommerlich",
@@ -582,10 +674,16 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Bitter",
+        "Herb",
+        "Würzig",
+        "Vegetal",
         "Zitrisch"
       ],
       "usageTags": [
-        "Modifier"
+        "Modifier",
+        "Bloody Mary",
+        "Martini-Twist",
+        "Highball-Akzent"
       ],
       "styleTags": [
         "Cocktail Bitters",
@@ -612,24 +710,40 @@ const HB_DATA = {
           "Gin- und Vodka-Highballs"
         ],
         "serving": "Tropfenweise dosieren; besonders passend zu klaren Spirituosen, Tomate, Zitrus und trockenen Highballs.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://the-bitter-truth.com/bitters/original-celery-bitters/"
+        ]
       },
       "notes": "",
       "legacyTags": [
+        "Bitters",
+        "Bitter",
+        "Modifier",
+        "bottle",
+        "Herb",
+        "Würzig",
+        "Vegetal",
+        "Zitrisch",
+        "Bloody Mary",
+        "Martini-Twist",
+        "Highball-Akzent",
         "Cocktail Bitters",
         "Savory",
         "Komplex",
-        "Bitter",
-        "Zitrisch",
-        "Modifier",
-        "Deutschland",
-        "bottle"
+        "Deutschland"
       ],
-      "searchText": "celery bitters the bitter truth bitters bitters bitter zitrisch modifier cocktail bitters savory komplex deutschland würzig-vegetale cocktail bitters mit sellerie, zitronengras, ingwer, koriander und einer feinen herben tiefe. sie setzen in klaren drinks, martinis, bloody marys und highballs einen eleganten, trockenen savory-akzent.",
+      "searchText": "celery bitters the bitter truth bitters bitters bitter herb würzig vegetal zitrisch modifier bloody mary martini-twist highball-akzent cocktail bitters savory komplex deutschland würzig-vegetale cocktail bitters mit sellerie, zitronengras, ingwer, koriander und einer feinen herben tiefe. sie setzen in klaren drinks, martinis, bloody marys und highballs einen eleganten, trockenen savory-akzent. tropfenweise dosieren; besonders passend zu klaren spirituosen, tomate, zitrus und trockenen highballs.",
       "tags": [
         "Bitter",
+        "Herb",
+        "Würzig",
+        "Vegetal",
         "Zitrisch",
         "Modifier",
+        "Bloody Mary",
+        "Martini-Twist",
+        "Highball-Akzent",
         "Cocktail Bitters",
         "Savory",
         "Komplex",
@@ -647,11 +761,17 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Bitter",
+        "Würzig",
         "Fruchtig",
+        "Anis",
+        "Pfeffrig",
         "Süß"
       ],
       "usageTags": [
-        "Modifier"
+        "Modifier",
+        "Manhattan",
+        "Old Fashioned",
+        "Brandy Cocktail"
       ],
       "styleTags": [
         "Cocktail Bitters",
@@ -680,30 +800,45 @@ const HB_DATA = {
           "Sazerac-Twists"
         ],
         "serving": "Sehr sparsam in kräftigen Cocktails einsetzen; besonders gut zu Whiskey, Brandy, Rum und aromatischen Vermouth-Drinks.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://the-bitter-truth.com/bitters/creole-bitters/"
+        ]
       },
       "notes": "",
       "legacyTags": [
+        "Bitters",
+        "Bitter",
+        "Kräuterig",
+        "Modifier",
+        "bottle",
+        "Würzig",
+        "Fruchtig",
+        "Anis",
+        "Pfeffrig",
+        "Süß",
+        "Manhattan",
+        "Old Fashioned",
+        "Brandy Cocktail",
         "Cocktail Bitters",
         "Creole",
-        "Würzig",
         "Kräftig",
-        "Bitter",
-        "Fruchtig",
-        "Süß",
-        "Modifier",
-        "Deutschland",
-        "bottle"
+        "Deutschland"
       ],
-      "searchText": "creole bitters the bitter truth bitters bitters bitter fruchtig süß modifier cocktail bitters creole würzig kräftig deutschland creole bitters mit cayenne, rosa pfeffer, anis, zimt, kümmel, fenchel und dunkler frucht. sie geben klassischen stirred drinks eine würzige, warme und leicht fruchtige tiefe.",
+      "searchText": "creole bitters the bitter truth bitters bitters bitter würzig fruchtig anis pfeffrig süß modifier manhattan old fashioned brandy cocktail cocktail bitters creole kräftig deutschland creole bitters mit cayenne, rosa pfeffer, anis, zimt, kümmel, fenchel und dunkler frucht. sie geben klassischen stirred drinks eine würzige, warme und leicht fruchtige tiefe. sehr sparsam in kräftigen cocktails einsetzen; besonders gut zu whiskey, brandy, rum und aromatischen vermouth-drinks.",
       "tags": [
         "Bitter",
+        "Würzig",
         "Fruchtig",
+        "Anis",
+        "Pfeffrig",
         "Süß",
         "Modifier",
+        "Manhattan",
+        "Old Fashioned",
+        "Brandy Cocktail",
         "Cocktail Bitters",
         "Creole",
-        "Würzig",
         "Kräftig",
         "Deutschland"
       ]
@@ -720,10 +855,15 @@ const HB_DATA = {
       "flavorTags": [
         "Bitter",
         "Fruchtig",
+        "Pfirsich",
+        "Steinfrucht",
         "Süß"
       ],
       "usageTags": [
-        "Modifier"
+        "Modifier",
+        "Sour",
+        "Highball-Akzent",
+        "Champagner-Cocktails"
       ],
       "styleTags": [
         "Cocktail Bitters",
@@ -750,25 +890,37 @@ const HB_DATA = {
           "helle Highballs"
         ],
         "serving": "Tropfenweise einsetzen; besonders passend zu Gin, Vodka, Rum, Schaumwein und frischen Zitrusdrinks.",
-        "sourceStatus": "curated-v0.17"
+        "sourceStatus": "curated-v0.17",
+        "sourceLinks": []
       },
       "notes": "",
       "legacyTags": [
-        "Cocktail Bitters",
-        "Fruchtig",
-        "Aromatisch",
+        "Bitters",
         "Bitter",
-        "Süß",
+        "Fruchtig",
         "Modifier",
-        "Deutschland",
-        "bottle"
+        "bottle",
+        "Pfirsich",
+        "Steinfrucht",
+        "Süß",
+        "Sour",
+        "Highball-Akzent",
+        "Champagner-Cocktails",
+        "Cocktail Bitters",
+        "Aromatisch",
+        "Deutschland"
       ],
-      "searchText": "peach bitters the bitter truth bitters fruit bitters bitter fruchtig süß modifier cocktail bitters aromatisch deutschland fruchtige cocktail bitters mit pfirsich- und steinfruchtcharakter. sie eignen sich als feiner akzent für sours, spritzes, champagner-drinks und helle spirituosen, wenn ein dezenter fruchtbogen gewünscht ist.",
+      "searchText": "peach bitters the bitter truth bitters fruit bitters bitter fruchtig pfirsich steinfrucht süß modifier sour highball-akzent champagner-cocktails cocktail bitters aromatisch deutschland fruchtige cocktail bitters mit pfirsich- und steinfruchtcharakter. sie eignen sich als feiner akzent für sours, spritzes, champagner-drinks und helle spirituosen, wenn ein dezenter fruchtbogen gewünscht ist. tropfenweise einsetzen; besonders passend zu gin, vodka, rum, schaumwein und frischen zitrusdrinks.",
       "tags": [
         "Bitter",
         "Fruchtig",
+        "Pfirsich",
+        "Steinfrucht",
         "Süß",
         "Modifier",
+        "Sour",
+        "Highball-Akzent",
+        "Champagner-Cocktails",
         "Cocktail Bitters",
         "Aromatisch",
         "Deutschland"
@@ -786,10 +938,16 @@ const HB_DATA = {
       "flavorTags": [
         "Bitter",
         "Fruchtig",
-        "Zitrisch"
+        "Zitrisch",
+        "Würzig",
+        "Nelke",
+        "Zimt"
       ],
       "usageTags": [
-        "Modifier"
+        "Modifier",
+        "Old Fashioned",
+        "Manhattan",
+        "Rum-Drinks"
       ],
       "styleTags": [
         "Cocktail Bitters",
@@ -817,29 +975,41 @@ const HB_DATA = {
           "dunkle Stirred Drinks"
         ],
         "serving": "Sehr sparsam dosieren; ideal für kräftige Spirituosen, dunkle Drinks und Gewürznoten.",
-        "sourceStatus": "curated-existing-refined-v0.17"
+        "sourceStatus": "curated-existing-refined-v0.17",
+        "sourceLinks": []
       },
       "notes": "",
       "legacyTags": [
+        "Bitters",
+        "Bitter",
+        "Zitrisch",
+        "Fruchtig",
+        "Modifier",
+        "bottle",
+        "Würzig",
+        "Nelke",
+        "Zimt",
+        "Old Fashioned",
+        "Manhattan",
+        "Rum-Drinks",
         "Cocktail Bitters",
         "Aromatisch",
-        "Würzig",
-        "Bitter",
-        "Fruchtig",
-        "Zitrisch",
-        "Modifier",
-        "Deutschland",
-        "bottle"
+        "Deutschland"
       ],
-      "searchText": "old town decanter bitters the bitter truth bitters bitters bitter fruchtig zitrisch modifier cocktail bitters aromatisch würzig deutschland aromatische bitters mit kräftiger bitterkeit, zitrus, getrockneten früchten, nelke, zimt und dunkler würze. sie geben klassischen drinks mehr tiefe, struktur und einen warmen gewürzakzent.",
+      "searchText": "old town decanter bitters the bitter truth bitters bitters bitter fruchtig zitrisch würzig nelke zimt modifier old fashioned manhattan rum-drinks cocktail bitters aromatisch deutschland aromatische bitters mit kräftiger bitterkeit, zitrus, getrockneten früchten, nelke, zimt und dunkler würze. sie geben klassischen drinks mehr tiefe, struktur und einen warmen gewürzakzent. sehr sparsam dosieren; ideal für kräftige spirituosen, dunkle drinks und gewürznoten.",
       "tags": [
         "Bitter",
         "Fruchtig",
         "Zitrisch",
+        "Würzig",
+        "Nelke",
+        "Zimt",
         "Modifier",
+        "Old Fashioned",
+        "Manhattan",
+        "Rum-Drinks",
         "Cocktail Bitters",
         "Aromatisch",
-        "Würzig",
         "Deutschland"
       ]
     },
@@ -854,10 +1024,16 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Bitter",
-        "Kräuterig"
+        "Würzig",
+        "Warm",
+        "Kräuterig",
+        "Aromatisch"
       ],
       "usageTags": [
-        "Modifier"
+        "Modifier",
+        "Old Fashioned",
+        "Manhattan",
+        "Cocktail-Klassiker"
       ],
       "styleTags": [
         "Cocktail Bitters",
@@ -883,24 +1059,38 @@ const HB_DATA = {
           "Cocktail-Klassiker"
         ],
         "serving": "Tropfenweise dosieren; als strukturierender Bitter-Akzent in klassischen Cocktails verwenden.",
-        "sourceStatus": "curated-existing-refined-v0.17"
+        "sourceStatus": "curated-existing-refined-v0.17",
+        "sourceLinks": []
       },
       "notes": "",
       "legacyTags": [
+        "Bitters",
+        "Bitter",
+        "Modifier",
+        "bottle",
+        "Würzig",
+        "Warm",
+        "Kräuterig",
+        "Aromatisch",
+        "Old Fashioned",
+        "Manhattan",
+        "Cocktail-Klassiker",
         "Cocktail Bitters",
         "Aromatic",
         "Klassisch",
-        "Bitter",
-        "Kräuterig",
-        "Modifier",
-        "Deutschland",
-        "bottle"
+        "Deutschland"
       ],
-      "searchText": "old time aromatic bitters the bitter truth bitters bitters bitter kräuterig modifier cocktail bitters aromatic klassisch deutschland klassische aromatische bitters mit warmer würze und trockener bitterkeit. sie sind ein universeller bar-akzent für old fashioned, manhattan und viele klassische cocktails.",
+      "searchText": "old time aromatic bitters the bitter truth bitters bitters bitter würzig warm kräuterig aromatisch modifier old fashioned manhattan cocktail-klassiker cocktail bitters aromatic klassisch deutschland klassische aromatische bitters mit warmer würze und trockener bitterkeit. sie sind ein universeller bar-akzent für old fashioned, manhattan und viele klassische cocktails. tropfenweise dosieren; als strukturierender bitter-akzent in klassischen cocktails verwenden.",
       "tags": [
         "Bitter",
+        "Würzig",
+        "Warm",
         "Kräuterig",
+        "Aromatisch",
         "Modifier",
+        "Old Fashioned",
+        "Manhattan",
+        "Cocktail-Klassiker",
         "Cocktail Bitters",
         "Aromatic",
         "Klassisch",
@@ -919,10 +1109,15 @@ const HB_DATA = {
       "flavorTags": [
         "Bitter",
         "Zitrisch",
-        "Fruchtig"
+        "Orange",
+        "Fruchtig",
+        "Würzig"
       ],
       "usageTags": [
-        "Modifier"
+        "Modifier",
+        "Martini",
+        "Old Fashioned",
+        "Gin-Cocktails"
       ],
       "styleTags": [
         "Cocktail Bitters",
@@ -949,25 +1144,37 @@ const HB_DATA = {
           "Spritz-Akzent"
         ],
         "serving": "In kleinen Mengen verwenden; besonders passend zu Gin, Whiskey, Rum und Vermouth-Drinks.",
-        "sourceStatus": "curated-v0.17"
+        "sourceStatus": "curated-v0.17",
+        "sourceLinks": []
       },
       "notes": "",
       "legacyTags": [
-        "Cocktail Bitters",
-        "Zitrisch",
-        "Klassisch",
+        "Bitters",
         "Bitter",
+        "Zitrisch",
         "Fruchtig",
         "Modifier",
-        "Deutschland",
-        "bottle"
+        "bottle",
+        "Orange",
+        "Würzig",
+        "Martini",
+        "Old Fashioned",
+        "Gin-Cocktails",
+        "Cocktail Bitters",
+        "Klassisch",
+        "Deutschland"
       ],
-      "searchText": "orange bitters the bitter truth bitters bitters bitter zitrisch fruchtig modifier cocktail bitters klassisch deutschland zitrische bitters mit orange, feiner würze und trockener bitterkeit. sie hellen martinis, old fashioneds, gin-drinks und spritzige cocktails auf, ohne sie süßer zu machen.",
+      "searchText": "orange bitters the bitter truth bitters bitters bitter zitrisch orange fruchtig würzig modifier martini old fashioned gin-cocktails cocktail bitters klassisch deutschland zitrische bitters mit orange, feiner würze und trockener bitterkeit. sie hellen martinis, old fashioneds, gin-drinks und spritzige cocktails auf, ohne sie süßer zu machen. in kleinen mengen verwenden; besonders passend zu gin, whiskey, rum und vermouth-drinks.",
       "tags": [
         "Bitter",
         "Zitrisch",
+        "Orange",
         "Fruchtig",
+        "Würzig",
         "Modifier",
+        "Martini",
+        "Old Fashioned",
+        "Gin-Cocktails",
         "Cocktail Bitters",
         "Klassisch",
         "Deutschland"
@@ -984,10 +1191,18 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Bitter",
-        "Kräuterig"
+        "Würzig",
+        "Kräuterig",
+        "Aromatisch",
+        "Nelke",
+        "Zimt"
       ],
       "usageTags": [
-        "Modifier"
+        "Modifier",
+        "Old Fashioned",
+        "Manhattan",
+        "Sour",
+        "Tiki"
       ],
       "styleTags": [
         "Aromatic Bitters",
@@ -1015,24 +1230,42 @@ const HB_DATA = {
           "Tiki-Drinks"
         ],
         "serving": "Nur wenige Dashes verwenden; Angostura wirkt intensiv und strukturiert Drinks schon in kleiner Menge.",
-        "sourceStatus": "curated-v0.17"
+        "sourceStatus": "curated-v0.17",
+        "sourceLinks": []
       },
       "notes": "",
       "legacyTags": [
+        "Bitters",
+        "Bitter",
+        "Modifier",
+        "bottle",
+        "Würzig",
+        "Kräuterig",
+        "Aromatisch",
+        "Nelke",
+        "Zimt",
+        "Old Fashioned",
+        "Manhattan",
+        "Sour",
+        "Tiki",
         "Aromatic Bitters",
         "Klassisch",
         "Universal",
-        "Bitter",
-        "Kräuterig",
-        "Modifier",
-        "Trinidad und Tobago",
-        "bottle"
+        "Trinidad und Tobago"
       ],
-      "searchText": "angobitter angostura bitters aromatic bitters bitter kräuterig modifier aromatic bitters klassisch universal trinidad und tobago klassische aromatische bitters mit konzentrierter kräuter- und gewürzwürze. angostura ist ein universeller cocktail-akzent und bringt struktur in old fashioned, manhattan, sours, tiki-drinks und highballs.",
+      "searchText": "angobitter angostura bitters aromatic bitters bitter würzig kräuterig aromatisch nelke zimt modifier old fashioned manhattan sour tiki aromatic bitters klassisch universal trinidad und tobago klassische aromatische bitters mit konzentrierter kräuter- und gewürzwürze. angostura ist ein universeller cocktail-akzent und bringt struktur in old fashioned, manhattan, sours, tiki-drinks und highballs. nur wenige dashes verwenden; angostura wirkt intensiv und strukturiert drinks schon in kleiner menge.",
       "tags": [
         "Bitter",
+        "Würzig",
         "Kräuterig",
+        "Aromatisch",
+        "Nelke",
+        "Zimt",
         "Modifier",
+        "Old Fashioned",
+        "Manhattan",
+        "Sour",
+        "Tiki",
         "Aromatic Bitters",
         "Klassisch",
         "Universal",
@@ -1084,7 +1317,7 @@ const HB_DATA = {
         "Cocktailbasis",
         "bottle"
       ],
-      "searchText": "1866 brandy de jerez solero grand reserva sánchez romate cognac / brandy brandy fruchtig süß trocken pur digestif spirit-forward cocktailbasis brandy kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails.",
+      "searchText": "1866 brandy de jerez solero grand reserva sánchez romate cognac / brandy brandy fruchtig süß trocken pur digestif spirit-forward cocktailbasis brandy kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails. ",
       "tags": [
         "Fruchtig",
         "Süß",
@@ -1146,7 +1379,7 @@ const HB_DATA = {
         "Frankreich",
         "bottle"
       ],
-      "searchText": "cognac vsop prince hubert de polignac cognac / brandy cognac fruchtig süß trocken pur digestif spirit-forward cocktailbasis cognac brandy frankreich kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails.",
+      "searchText": "cognac vsop prince hubert de polignac cognac / brandy cognac fruchtig süß trocken pur digestif spirit-forward cocktailbasis cognac brandy frankreich kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails. ",
       "tags": [
         "Fruchtig",
         "Süß",
@@ -1197,7 +1430,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "kastaniengeist willi peter edelbrand / geist geist nussig trocken digestif edelbrand / geist kastaniengeist ist als edelbrand / geist / geist eingeordnet. geschmack: nussig, trocken. nutzung: digestif.",
+      "searchText": "kastaniengeist willi peter edelbrand / geist geist nussig trocken digestif edelbrand / geist kastaniengeist ist als edelbrand / geist / geist eingeordnet. geschmack: nussig, trocken. nutzung: digestif. ",
       "tags": [
         "Nussig",
         "Trocken",
@@ -1244,7 +1477,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "edles fass nussler aus wallnüssen scheibel edelbrand / geist geist nussig trocken digestif edelbrand / geist nut liqueur edles fass nussler aus wallnüssen ist als edelbrand / geist / geist eingeordnet. geschmack: nussig, trocken. nutzung: digestif.",
+      "searchText": "edles fass nussler aus wallnüssen scheibel edelbrand / geist geist nussig trocken digestif edelbrand / geist nut liqueur edles fass nussler aus wallnüssen ist als edelbrand / geist / geist eingeordnet. geschmack: nussig, trocken. nutzung: digestif. ",
       "tags": [
         "Nussig",
         "Trocken",
@@ -1292,7 +1525,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "walnussgeist liebl edelbrand / geist geist nussig trocken digestif edelbrand / geist nut liqueur walnussgeist ist als edelbrand / geist / geist eingeordnet. geschmack: nussig, trocken. nutzung: digestif.",
+      "searchText": "walnussgeist liebl edelbrand / geist geist nussig trocken digestif edelbrand / geist nut liqueur walnussgeist ist als edelbrand / geist / geist eingeordnet. geschmack: nussig, trocken. nutzung: digestif. ",
       "tags": [
         "Nussig",
         "Trocken",
@@ -1340,7 +1573,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "pistaziengeist nustler edelbrand / geist geist nussig trocken digestif edelbrand / geist nut liqueur pistaziengeist ist als edelbrand / geist / geist eingeordnet. geschmack: nussig, trocken. nutzung: digestif.",
+      "searchText": "pistaziengeist nustler edelbrand / geist geist nussig trocken digestif edelbrand / geist nut liqueur pistaziengeist ist als edelbrand / geist / geist eingeordnet. geschmack: nussig, trocken. nutzung: digestif. ",
       "tags": [
         "Nussig",
         "Trocken",
@@ -1388,7 +1621,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "haselnuss prinz edelbrand / geist prinz alte sorte nussig trocken digestif edelbrand / geist nut liqueur haselnuss ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: nussig, trocken. nutzung: digestif.",
+      "searchText": "haselnuss prinz edelbrand / geist prinz alte sorte nussig trocken digestif edelbrand / geist nut liqueur haselnuss ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: nussig, trocken. nutzung: digestif. ",
       "tags": [
         "Nussig",
         "Trocken",
@@ -1432,7 +1665,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "hauszwetschke prinz edelbrand / geist prinz alte sorte trocken digestif edelbrand / geist hauszwetschke ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: trocken. nutzung: digestif.",
+      "searchText": "hauszwetschke prinz edelbrand / geist prinz alte sorte trocken digestif edelbrand / geist hauszwetschke ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: trocken. nutzung: digestif. ",
       "tags": [
         "Trocken",
         "Digestif",
@@ -1476,7 +1709,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "kirsche prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist kirsche ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif.",
+      "searchText": "kirsche prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist kirsche ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif. ",
       "tags": [
         "Fruchtig",
         "Trocken",
@@ -1521,7 +1754,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "marille prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist marille ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif.",
+      "searchText": "marille prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist marille ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif. ",
       "tags": [
         "Fruchtig",
         "Trocken",
@@ -1566,7 +1799,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "alte waldhimbeere prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist alte waldhimbeere ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif.",
+      "searchText": "alte waldhimbeere prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist alte waldhimbeere ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif. ",
       "tags": [
         "Fruchtig",
         "Trocken",
@@ -1611,7 +1844,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "alte williams-christ-birne prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist alte williams-christ-birne ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif.",
+      "searchText": "alte williams-christ-birne prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist alte williams-christ-birne ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif. ",
       "tags": [
         "Fruchtig",
         "Trocken",
@@ -1656,7 +1889,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "alter bodensee-apfel prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist alter bodensee-apfel ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif.",
+      "searchText": "alter bodensee-apfel prinz edelbrand / geist prinz alte sorte fruchtig trocken digestif edelbrand / geist alter bodensee-apfel ist als edelbrand / geist / prinz alte sorte eingeordnet. geschmack: fruchtig, trocken. nutzung: digestif. ",
       "tags": [
         "Fruchtig",
         "Trocken",
@@ -1699,7 +1932,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "spätburgunder trester edelbrand / geist grappa trocken digestif edelbrand / geist 6 jahre im barrique gereift",
+      "searchText": "spätburgunder trester  edelbrand / geist grappa trocken digestif edelbrand / geist 6 jahre im barrique gereift ",
       "tags": [
         "Trocken",
         "Digestif",
@@ -1740,10 +1973,9 @@ const HB_DATA = {
         "Garnish",
         "Süß",
         "Fruchtig",
-        "Modifier",
-        "bottle"
+        "Modifier"
       ],
-      "searchText": "maraschino cherries starlino garnish cocktailkirschen süß fruchtig modifier garnish maraschino cherries ist als garnish / cocktailkirschen eingeordnet. geschmack: süß, fruchtig. nutzung: modifier.",
+      "searchText": "maraschino cherries starlino garnish cocktailkirschen süß fruchtig modifier garnish maraschino cherries ist als garnish / cocktailkirschen eingeordnet. geschmack: süß, fruchtig. nutzung: modifier. ",
       "tags": [
         "Süß",
         "Fruchtig",
@@ -1763,10 +1995,15 @@ const HB_DATA = {
       "flavorTags": [
         "Trocken",
         "Zitrisch",
+        "Wacholder",
         "Fruchtig",
         "Kräuterig"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Martini",
+        "French 75",
+        "Highball",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -1802,23 +2039,36 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
+        "Trocken",
+        "Kräuterig",
+        "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Wacholder",
+        "Fruchtig",
+        "Gin & Tonic",
+        "Martini",
+        "French 75",
+        "Highball",
         "London Dry",
         "Citrus Gin",
-        "Trocken",
-        "Zitrisch",
-        "Fruchtig",
-        "Kräuterig",
-        "Cocktailbasis",
         "England",
-        "Murcia",
-        "bottle"
+        "Murcia"
       ],
-      "searchText": "sapphire premier cru bombay sapphire gin citrus london dry gin trocken zitrisch fruchtig kräuterig cocktailbasis gin london dry citrus gin england murcia zitrusbetonter london dry gin mit murcian-zitrone, mandarine und süßer orange. frisch, klar und elegant für gin & tonic, martini-varianten oder einen french 75.",
+      "searchText": "sapphire premier cru bombay sapphire gin citrus london dry gin trocken zitrisch wacholder fruchtig kräuterig gin & tonic martini french 75 highball cocktailbasis gin london dry citrus gin england murcia zitrusbetonter london dry gin mit murcian-zitrone, mandarine und süßer orange. frisch, klar und elegant für gin & tonic, martini-varianten oder einen french 75. mit viel eis und einem trockenen tonic servieren; für cocktails besonders schön in martini-varianten oder einem french 75.",
       "tags": [
         "Trocken",
         "Zitrisch",
+        "Wacholder",
         "Fruchtig",
         "Kräuterig",
+        "Gin & Tonic",
+        "Martini",
+        "French 75",
+        "Highball",
         "Cocktailbasis",
         "Gin",
         "London Dry",
@@ -1842,10 +2092,15 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
+        "Wacholder",
         "Kräuterig",
-        "Zitrisch"
+        "Zitrisch",
+        "Würzig"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -1880,21 +2135,34 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
-        "London Dry",
-        "Klassisch",
         "Trocken",
         "Kräuterig",
         "Zitrisch",
         "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Wacholder",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
+        "London Dry",
+        "Klassisch",
         "England",
-        "London",
-        "bottle"
+        "London"
       ],
-      "searchText": "fifty pounds gin fifty pounds gin gin london dry gin trocken kräuterig zitrisch cocktailbasis gin london dry klassisch england london klassischer london dry gin mit trockenem wacholderprofil, zitrus und feiner würze. eine geradlinige, elegante basis für gin & tonic, martini und negroni.",
+      "searchText": "fifty pounds gin fifty pounds gin gin london dry gin trocken wacholder kräuterig zitrisch würzig gin & tonic martini negroni cocktailbasis gin london dry klassisch england london klassischer london dry gin mit trockenem wacholderprofil, zitrus und feiner würze. eine geradlinige, elegante basis für gin & tonic, martini und negroni. sehr gut mit trockenem tonic und zitronenzeste; für klassische drinks wie martini oder negroni verwenden.",
       "tags": [
         "Trocken",
+        "Wacholder",
         "Kräuterig",
         "Zitrisch",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
         "Cocktailbasis",
         "Gin",
         "London Dry",
@@ -1918,10 +2186,16 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Floral",
+        "Gurke",
+        "Rose",
+        "Wacholder",
         "Zitrisch",
         "Kräuterig"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Collins",
+        "Highball",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -1957,18 +2231,33 @@ const HB_DATA = {
       "legacyTags": [
         "Gin",
         "Botanical Gin",
+        "Trocken",
+        "Kräuterig",
         "Floral",
         "Zitrisch",
-        "Kräuterig",
         "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
         "Schottland",
-        "bottle"
+        "bottle",
+        "Gurke",
+        "Rose",
+        "Wacholder",
+        "Gin & Tonic",
+        "Collins",
+        "Highball"
       ],
-      "searchText": "hendrick’s gin hendrick's gin scottish botanical gin floral zitrisch kräuterig cocktailbasis gin botanical gin schottland floraler schottischer gin mit der typischen hendrick’s-signatur aus gurke und rose. weich, frisch und besonders charmant in gin & tonic oder collins-drinks.",
+      "searchText": "hendrick’s gin hendrick's gin scottish botanical gin floral gurke rose wacholder zitrisch kräuterig gin & tonic collins highball cocktailbasis gin botanical gin floral schottland floraler schottischer gin mit der typischen hendrick’s-signatur aus gurke und rose. weich, frisch und besonders charmant in gin & tonic oder collins-drinks. mit tonic, viel eis und gurkenscheibe servieren; auch passend für leichte collins-varianten.",
       "tags": [
         "Floral",
+        "Gurke",
+        "Rose",
+        "Wacholder",
         "Zitrisch",
         "Kräuterig",
+        "Gin & Tonic",
+        "Collins",
+        "Highball",
         "Cocktailbasis",
         "Gin",
         "Botanical Gin",
@@ -1991,9 +2280,13 @@ const HB_DATA = {
       "flavorTags": [
         "Trocken",
         "Kräuterig",
-        "Zitrisch"
+        "Würzig",
+        "Zitrisch",
+        "Wacholder"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2026,20 +2319,31 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
-        "Nordic Gin",
-        "Rye Gin",
         "Trocken",
         "Kräuterig",
         "Zitrisch",
         "Cocktailbasis",
-        "Finnland",
-        "bottle"
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Würzig",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Nordic Gin",
+        "Rye Gin",
+        "Finnland"
       ],
-      "searchText": "kyrö gin kyrö distillery gin finnish rye gin trocken kräuterig zitrisch cocktailbasis gin nordic gin rye gin finnland finnischer rye gin mit roggenbasis und nordischen wildkräutern. kräuterig, frisch und leicht würzig – sehr schön für aromatische gin & tonics.",
+      "searchText": "kyrö gin kyrö distillery gin finnish rye gin trocken kräuterig würzig zitrisch wacholder gin & tonic highball cocktailbasis gin nordic gin rye gin finnland finnischer rye gin mit roggenbasis und nordischen wildkräutern. kräuterig, frisch und leicht würzig – sehr schön für aromatische gin & tonics. mit trockenem tonic, viel eis, cranberries und einem zweig rosmarin servieren.",
       "tags": [
         "Trocken",
         "Kräuterig",
+        "Würzig",
         "Zitrisch",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis",
         "Gin",
         "Nordic Gin",
@@ -2063,9 +2367,14 @@ const HB_DATA = {
       "flavorTags": [
         "Trocken",
         "Zitrisch",
+        "Wacholder",
+        "Frisch",
         "Kräuterig"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2099,20 +2408,33 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
+        "Trocken",
+        "Kräuterig",
+        "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Wacholder",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Mediterran",
         "Citrus Gin",
-        "Trocken",
-        "Zitrisch",
-        "Kräuterig",
-        "Cocktailbasis",
-        "Spanien",
-        "bottle"
+        "Spanien"
       ],
-      "searchText": "le tribute gin mg destilerías gin mediterranean citrus gin trocken zitrisch kräuterig cocktailbasis gin mediterran citrus gin spanien mediterraner gin mit markanter zitrusfrische, lemongrass, wacholder und mediterranen früchten. klar, trocken und ideal für elegante gin & tonics.",
+      "searchText": "le tribute gin mg destilerías gin mediterranean citrus gin trocken zitrisch wacholder frisch kräuterig gin & tonic highball fizz cocktailbasis gin mediterran citrus gin spanien mediterraner gin mit markanter zitrusfrische, lemongrass, wacholder und mediterranen früchten. klar, trocken und ideal für elegante gin & tonics. mit premium-tonic, viel eis und einer zitruszeste servieren; auch passend für frische fizz-varianten.",
       "tags": [
         "Trocken",
         "Zitrisch",
+        "Wacholder",
+        "Frisch",
         "Kräuterig",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis",
         "Gin",
         "Mediterran",
@@ -2135,9 +2457,14 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
-        "Kräuterig"
+        "Wacholder",
+        "Kräuterig",
+        "Harzig",
+        "Würzig"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2171,19 +2498,33 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
+        "Trocken",
+        "Kräuterig",
+        "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Wacholder",
+        "Harzig",
+        "Würzig",
+        "Gin & Tonic",
+        "Highball",
         "Dry Gin",
         "Herbal Gin",
-        "Trocken",
-        "Kräuterig",
-        "Cocktailbasis",
         "Deutschland",
-        "Schwarzwald",
-        "bottle"
+        "Schwarzwald"
       ],
-      "searchText": "needle gin bimmerle / needle gin black forest dry gin trocken kräuterig cocktailbasis gin dry gin herbal gin deutschland schwarzwald schwarzwald dry gin mit wacholder und fichtennadeln. trocken, kräuterig und harzig-frisch – ein guter kandidat für herbe gin & tonics.",
+      "searchText": "needle gin bimmerle / needle gin black forest dry gin trocken wacholder kräuterig harzig würzig gin & tonic highball cocktailbasis gin dry gin herbal gin deutschland schwarzwald schwarzwald dry gin mit wacholder und fichtennadeln. trocken, kräuterig und harzig-frisch – ein guter kandidat für herbe gin & tonics. mit trockenem tonic und grapefruit- oder zitronenzeste servieren.",
       "tags": [
         "Trocken",
+        "Wacholder",
         "Kräuterig",
+        "Harzig",
+        "Würzig",
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis",
         "Gin",
         "Dry Gin",
@@ -2207,10 +2548,15 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
+        "Wacholder",
         "Zitrisch",
+        "Würzig",
         "Kräuterig"
       ],
       "usageTags": [
+        "Martini",
+        "Gin & Tonic",
+        "Negroni",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2245,21 +2591,34 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
+        "Trocken",
+        "Kräuterig",
+        "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Wacholder",
+        "Würzig",
+        "Martini",
+        "Gin & Tonic",
+        "Negroni",
         "London Dry",
         "Klassisch",
-        "Trocken",
-        "Zitrisch",
-        "Kräuterig",
-        "Cocktailbasis",
         "England",
-        "Niederlande",
-        "bottle"
+        "Niederlande"
       ],
-      "searchText": "no.3 london dry gin berry bros. & rudd gin london dry gin trocken zitrisch kräuterig cocktailbasis gin london dry klassisch england niederlande geradliniger london dry gin mit wacholder, zitrus und gewürzstruktur. präzise, trocken und besonders stark in martini, gin & tonic und klassischen gin-cocktails.",
+      "searchText": "no.3 london dry gin berry bros. & rudd gin london dry gin trocken wacholder zitrisch würzig kräuterig martini gin & tonic negroni cocktailbasis gin london dry klassisch england niederlande geradliniger london dry gin mit wacholder, zitrus und gewürzstruktur. präzise, trocken und besonders stark in martini, gin & tonic und klassischen gin-cocktails. für einen klaren martini gut kühlen; im gin & tonic mit neutralem tonic und zitronenzeste servieren.",
       "tags": [
         "Trocken",
+        "Wacholder",
         "Zitrisch",
+        "Würzig",
         "Kräuterig",
+        "Martini",
+        "Gin & Tonic",
+        "Negroni",
         "Cocktailbasis",
         "Gin",
         "London Dry",
@@ -2284,9 +2643,15 @@ const HB_DATA = {
       "flavorTags": [
         "Trocken",
         "Zitrisch",
-        "Floral"
+        "Floral",
+        "Tee",
+        "Würzig",
+        "Wacholder"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2321,20 +2686,36 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
-        "Japanese Gin",
-        "Botanical Gin",
         "Trocken",
+        "Kräuterig",
         "Zitrisch",
-        "Floral",
         "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Floral",
+        "Tee",
+        "Würzig",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Japanese Gin",
+        "Botanical Gin"
       ],
-      "searchText": "roku japanese craft gin house of suntory gin japanese craft gin trocken zitrisch floral cocktailbasis gin japanese gin botanical gin japan japanischer craft gin mit sechs japanischen botanicals wie sakura, tee, sansho und yuzu. ausbalanciert, feinwürzig und elegant frisch.",
+      "searchText": "roku japanese craft gin house of suntory gin japanese craft gin trocken zitrisch floral tee würzig wacholder gin & tonic highball fizz cocktailbasis gin japanese gin botanical gin japan japanischer craft gin mit sechs japanischen botanicals wie sakura, tee, sansho und yuzu. ausbalanciert, feinwürzig und elegant frisch. mit tonic und einer dünnen ingwer- oder zitruszeste servieren; auch schön in leichten highballs.",
       "tags": [
         "Trocken",
         "Zitrisch",
         "Floral",
+        "Tee",
+        "Würzig",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis",
         "Gin",
         "Japanese Gin",
@@ -2357,10 +2738,15 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
+        "Wacholder",
         "Zitrisch",
-        "Kräuterig"
+        "Kräuterig",
+        "Würzig"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2395,21 +2781,34 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
+        "Trocken",
+        "Kräuterig",
+        "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Wacholder",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
         "London Dry",
         "Klassisch",
-        "Trocken",
-        "Zitrisch",
-        "Kräuterig",
-        "Cocktailbasis",
         "Schottland",
-        "England",
-        "bottle"
+        "England"
       ],
-      "searchText": "tanqueray london dry gin tanqueray gin london dry gin trocken zitrisch kräuterig cocktailbasis gin london dry klassisch schottland england klassischer london dry gin mit trockenem wacholder, leichter zitrusfrische und klarer struktur. vielseitig für gin & tonic, martini und negroni.",
+      "searchText": "tanqueray london dry gin tanqueray gin london dry gin trocken wacholder zitrisch kräuterig würzig gin & tonic martini negroni cocktailbasis gin london dry klassisch schottland england klassischer london dry gin mit trockenem wacholder, leichter zitrusfrische und klarer struktur. vielseitig für gin & tonic, martini und negroni. mit trockenem tonic, viel eis und limettenspalte servieren; für klassische gin-cocktails universell einsetzbar.",
       "tags": [
         "Trocken",
+        "Wacholder",
         "Zitrisch",
         "Kräuterig",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Negroni",
         "Cocktailbasis",
         "Gin",
         "London Dry",
@@ -2434,9 +2833,15 @@ const HB_DATA = {
       "flavorTags": [
         "Trocken",
         "Zitrisch",
+        "Grapefruit",
+        "Wacholder",
         "Floral"
       ],
       "usageTags": [
+        "Martini",
+        "Gin & Tonic",
+        "White Lady",
+        "Gimlet",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2472,21 +2877,38 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
-        "Citrus Gin",
-        "Premium Gin",
+        "Citrus-forward Gin",
         "Trocken",
         "Zitrisch",
-        "Floral",
+        "Kräuterig",
         "Cocktailbasis",
-        "Schottland",
+        "Spirit-Forward",
+        "Longdrink & Highball",
+        "Frisch & Sour",
         "England",
-        "bottle"
+        "bottle",
+        "Grapefruit",
+        "Wacholder",
+        "Floral",
+        "Martini",
+        "Gin & Tonic",
+        "White Lady",
+        "Gimlet",
+        "Citrus Gin",
+        "Premium Gin",
+        "Schottland"
       ],
-      "searchText": "tanqueray no. ten tanqueray gin citrus gin trocken zitrisch floral cocktailbasis gin citrus gin premium gin schottland england zitrusbetonter premium-gin mit grapefruit, orange, limette, wacholder und kamille. sehr elegant für martini, gimlet, white lady und feine gin & tonics.",
+      "searchText": "tanqueray no. ten tanqueray gin citrus gin trocken zitrisch grapefruit wacholder floral martini gin & tonic white lady gimlet cocktailbasis gin citrus gin premium gin schottland england zitrusbetonter premium-gin mit grapefruit, orange, limette, wacholder und kamille. sehr elegant für martini, gimlet, white lady und feine gin & tonics. gut gekühlt in martinis oder mit trockenem tonic und grapefruitzeste servieren.",
       "tags": [
         "Trocken",
         "Zitrisch",
+        "Grapefruit",
+        "Wacholder",
         "Floral",
+        "Martini",
+        "Gin & Tonic",
+        "White Lady",
+        "Gimlet",
         "Cocktailbasis",
         "Gin",
         "Citrus Gin",
@@ -2510,9 +2932,14 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Floral",
-        "Zitrisch"
+        "Sakura",
+        "Zitrisch",
+        "Wacholder",
+        "Frisch"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Highball",
         "Spritz",
         "Cocktailbasis"
       ],
@@ -2547,18 +2974,33 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
-        "Japanese Gin",
-        "Floral",
+        "Trocken",
+        "Kräuterig",
         "Zitrisch",
-        "Spritz",
         "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Floral",
+        "Sakura",
+        "Wacholder",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Spritz",
+        "Japanese Gin"
       ],
-      "searchText": "ukiyo blossom gin ukiyo spirits gin japanese blossom gin floral zitrisch spritz cocktailbasis gin japanese gin japan floraler japanischer gin mit sakura-blüte und sakura-blatt. zart, frisch und leicht parfümiert – schön für elegante gin & tonics und leichte highballs.",
+      "searchText": "ukiyo blossom gin ukiyo spirits gin japanese blossom gin floral sakura zitrisch wacholder frisch gin & tonic highball spritz cocktailbasis gin japanese gin floral japan floraler japanischer gin mit sakura-blüte und sakura-blatt. zart, frisch und leicht parfümiert – schön für elegante gin & tonics und leichte highballs. mit premium-tonic und einer dezenten zitruszeste servieren; nicht zu stark übergarnieren.",
       "tags": [
         "Floral",
+        "Sakura",
         "Zitrisch",
+        "Wacholder",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
         "Spritz",
         "Cocktailbasis",
         "Gin",
@@ -2581,10 +3023,15 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Fruchtig",
+        "Birne",
         "Zitrisch",
-        "Floral"
+        "Floral",
+        "Wacholder"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2618,20 +3065,35 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
-        "Japanese Gin",
-        "Fruit-forward Gin",
-        "Fruchtig",
+        "Trocken",
+        "Kräuterig",
         "Zitrisch",
-        "Floral",
         "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Fruchtig",
+        "Birne",
+        "Floral",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Japanese Gin",
+        "Fruit-forward Gin"
       ],
-      "searchText": "ukiyo nashi pear gin ukiyo spirits gin japanese nashi pear gin fruchtig zitrisch floral cocktailbasis gin japanese gin fruit-forward gin japan japanischer gin mit frischer nashi-birne, feiner frucht und leichter floraler frische. zugänglich, saftig und gut für helle, frische highballs.",
+      "searchText": "ukiyo nashi pear gin ukiyo spirits gin japanese nashi pear gin fruchtig birne zitrisch floral wacholder gin & tonic highball fizz cocktailbasis gin japanese gin fruit-forward gin japan japanischer gin mit frischer nashi-birne, feiner frucht und leichter floraler frische. zugänglich, saftig und gut für helle, frische highballs. mit tonic oder soda und einer birnen- oder zitronenzeste servieren; auch passend für fruchtige gin-fizzes.",
       "tags": [
         "Fruchtig",
+        "Birne",
         "Zitrisch",
         "Floral",
+        "Wacholder",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis",
         "Gin",
         "Japanese Gin",
@@ -2654,10 +3116,15 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Trocken",
+        "Wacholder",
         "Zitrisch",
-        "Kräuterig"
+        "Kräuterig",
+        "Würzig"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Martini",
+        "Highball",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2692,21 +3159,34 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
+        "Trocken",
+        "Kräuterig",
+        "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "Japan",
+        "bottle",
+        "Wacholder",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Highball",
         "Japanese Gin",
         "Dry Gin",
-        "Trocken",
-        "Zitrisch",
-        "Kräuterig",
-        "Cocktailbasis",
-        "Japan",
-        "Chiba",
-        "bottle"
+        "Chiba"
       ],
-      "searchText": "ukiyo tokyo dry gin ukiyo spirits gin tokyo dry gin trocken zitrisch kräuterig cocktailbasis gin japanese gin dry gin japan chiba trockener japanischer gin mit yuzu, mikan, sakura und sansho. klar, würzig und zitrisch – eine gute japanische basis für g&t, martini und highballs.",
+      "searchText": "ukiyo tokyo dry gin ukiyo spirits gin tokyo dry gin trocken wacholder zitrisch kräuterig würzig gin & tonic martini highball cocktailbasis gin japanese gin dry gin japan chiba trockener japanischer gin mit yuzu, mikan, sakura und sansho. klar, würzig und zitrisch – eine gute japanische basis für g&t, martini und highballs. mit trockenem tonic und yuzu- oder zitronenzeste servieren; für einen trockenen martini gut kühlen.",
       "tags": [
         "Trocken",
+        "Wacholder",
         "Zitrisch",
         "Kräuterig",
+        "Würzig",
+        "Gin & Tonic",
+        "Martini",
+        "Highball",
         "Cocktailbasis",
         "Gin",
         "Japanese Gin",
@@ -2730,9 +3210,15 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Zitrisch",
-        "Kräuterig"
+        "Yuzu",
+        "Wacholder",
+        "Kräuterig",
+        "Frisch"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2766,18 +3252,34 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
-        "Japanese Gin",
-        "Citrus Gin",
-        "Zitrisch",
+        "Trocken",
         "Kräuterig",
+        "Zitrisch",
         "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
         "Japan",
-        "bottle"
+        "bottle",
+        "Yuzu",
+        "Wacholder",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
+        "Japanese Gin",
+        "Citrus Gin"
       ],
-      "searchText": "ukiyo yuzu gin ukiyo spirits gin japanese yuzu gin zitrisch kräuterig cocktailbasis gin japanese gin citrus gin japan japanischer yuzu gin mit klarer zitrusfrische, feiner bitterkeit und kräuterigen noten. hell, lebendig und ideal für erfrischende highballs.",
+      "searchText": "ukiyo yuzu gin ukiyo spirits gin japanese yuzu gin zitrisch yuzu wacholder kräuterig frisch gin & tonic highball fizz cocktailbasis gin japanese gin citrus gin japan japanischer yuzu gin mit klarer zitrusfrische, feiner bitterkeit und kräuterigen noten. hell, lebendig und ideal für erfrischende highballs. mit tonic oder soda, viel eis und einer zitruszeste servieren; sehr passend für spritzige sommerdrinks.",
       "tags": [
         "Zitrisch",
+        "Yuzu",
+        "Wacholder",
         "Kräuterig",
+        "Frisch",
+        "Gin & Tonic",
+        "Highball",
+        "Fizz",
         "Cocktailbasis",
         "Gin",
         "Japanese Gin",
@@ -2800,10 +3302,14 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Kräuterig",
+        "Wacholder",
         "Fruchtig",
-        "Floral"
+        "Floral",
+        "Würzig"
       ],
       "usageTags": [
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis"
       ],
       "styleTags": [
@@ -2837,21 +3343,34 @@ const HB_DATA = {
       "notes": "",
       "legacyTags": [
         "Gin",
+        "Trocken",
+        "Kräuterig",
+        "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Wacholder",
+        "Fruchtig",
+        "Floral",
+        "Würzig",
+        "Gin & Tonic",
+        "Highball",
         "Canadian Gin",
         "Botanical Gin",
-        "Kräuterig",
-        "Fruchtig",
-        "Floral",
-        "Cocktailbasis",
         "Kanada",
-        "Québec",
-        "bottle"
+        "Québec"
       ],
-      "searchText": "ungava canadian premium gin ungava spirits gin canadian arctic gin kräuterig fruchtig floral cocktailbasis gin canadian gin botanical gin kanada québec kanadischer gin mit arktischen botanicals aus nord-québec. kräuterig, wildfruchtig und floral mit markanter natürlicher farbe und eigenständigem charakter.",
+      "searchText": "ungava canadian premium gin ungava spirits gin canadian arctic gin kräuterig wacholder fruchtig floral würzig gin & tonic highball cocktailbasis gin canadian gin botanical gin kanada québec kanadischer gin mit arktischen botanicals aus nord-québec. kräuterig, wildfruchtig und floral mit markanter natürlicher farbe und eigenständigem charakter. mit trockenem tonic und einer grapefruit- oder zitronenzeste servieren; für einfache highballs bewusst schlank halten.",
       "tags": [
         "Kräuterig",
+        "Wacholder",
         "Fruchtig",
         "Floral",
+        "Würzig",
+        "Gin & Tonic",
+        "Highball",
         "Cocktailbasis",
         "Gin",
         "Canadian Gin",
@@ -2903,7 +3422,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "amarula amarula likör cream liqueur süß modifier digestif liqueur cream liqueur amarula ist als likör / cream liqueur eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "amarula amarula likör cream liqueur süß modifier digestif liqueur cream liqueur amarula ist als likör / cream liqueur eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -2951,7 +3470,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "baileys diageo likör cream liqueur süß modifier digestif liqueur cream liqueur baileys ist als likör / cream liqueur eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "baileys diageo likör cream liqueur süß modifier digestif liqueur cream liqueur baileys ist als likör / cream liqueur eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -3001,7 +3520,7 @@ const HB_DATA = {
         "Tiki & Tropical",
         "bottle"
       ],
-      "searchText": "batida de coco mangaroca likör kokos süß modifier digestif tiki & tropical liqueur tropical modifier batida de coco ist als likör / kokos eingeordnet. geschmack: süß. nutzung: modifier, digestif, tiki & tropical.",
+      "searchText": "batida de coco mangaroca likör kokos süß modifier digestif tiki & tropical liqueur tropical modifier batida de coco ist als likör / kokos eingeordnet. geschmack: süß. nutzung: modifier, digestif, tiki & tropical. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -3056,7 +3575,7 @@ const HB_DATA = {
         "Cocktailbasis",
         "bottle"
       ],
-      "searchText": "apricot brandy bols cognac / brandy brandy fruchtig süß trocken pur digestif spirit-forward cocktailbasis brandy kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails.",
+      "searchText": "apricot brandy bols cognac / brandy brandy fruchtig süß trocken pur digestif spirit-forward cocktailbasis brandy kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails. ",
       "tags": [
         "Fruchtig",
         "Süß",
@@ -3113,7 +3632,7 @@ const HB_DATA = {
         "Cocktailbasis",
         "bottle"
       ],
-      "searchText": "cherry brandy bols cognac / brandy brandy fruchtig süß trocken pur digestif spirit-forward cocktailbasis brandy kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails.",
+      "searchText": "cherry brandy bols cognac / brandy brandy fruchtig süß trocken pur digestif spirit-forward cocktailbasis brandy kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails. ",
       "tags": [
         "Fruchtig",
         "Süß",
@@ -3164,7 +3683,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "crème de cacao brown bols likör kakao süß modifier digestif liqueur chocolate liqueur crème de cacao brown ist als likör / kakao eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "crème de cacao brown bols likör kakao süß modifier digestif liqueur chocolate liqueur crème de cacao brown ist als likör / kakao eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -3212,7 +3731,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "crème de cacao white bols likör kakao süß modifier digestif liqueur chocolate liqueur crème de cacao white ist als likör / kakao eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "crème de cacao white bols likör kakao süß modifier digestif liqueur chocolate liqueur crème de cacao white ist als likör / kakao eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -3258,7 +3777,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "maraschino bols likör maraschino süß modifier digestif liqueur maraschino ist als likör / maraschino eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "maraschino bols likör maraschino süß modifier digestif liqueur maraschino ist als likör / maraschino eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -3305,7 +3824,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "peach bols likör fruchtlikör süß fruchtig modifier digestif liqueur peach ist als likör / fruchtlikör eingeordnet. geschmack: süß, fruchtig. nutzung: modifier, digestif.",
+      "searchText": "peach bols likör fruchtlikör süß fruchtig modifier digestif liqueur peach ist als likör / fruchtlikör eingeordnet. geschmack: süß, fruchtig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Fruchtig",
@@ -3353,7 +3872,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "sour apple bols likör fruchtlikör süß fruchtig modifier digestif liqueur sour apple ist als likör / fruchtlikör eingeordnet. geschmack: süß, fruchtig. nutzung: modifier, digestif.",
+      "searchText": "sour apple bols likör fruchtlikör süß fruchtig modifier digestif liqueur sour apple ist als likör / fruchtlikör eingeordnet. geschmack: süß, fruchtig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Fruchtig",
@@ -3409,7 +3928,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "triple sec bols likör triple sec süß zitrisch fruchtig trocken modifier digestif frisch & sour liqueur orange liqueur triple sec ist als likör / triple sec eingeordnet. geschmack: süß, zitrisch, fruchtig, trocken. nutzung: modifier, digestif, frisch & sour.",
+      "searchText": "triple sec bols likör triple sec süß zitrisch fruchtig trocken modifier digestif frisch & sour liqueur orange liqueur triple sec ist als likör / triple sec eingeordnet. geschmack: süß, zitrisch, fruchtig, trocken. nutzung: modifier, digestif, frisch & sour. ",
       "tags": [
         "Süß",
         "Zitrisch",
@@ -3461,7 +3980,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "chartreuse verte chartreuse likör kräuterlikör süß kräuterig modifier digestif liqueur chartreuse verte ist als likör / kräuterlikör eingeordnet. geschmack: süß, kräuterig. nutzung: modifier, digestif.",
+      "searchText": "chartreuse verte chartreuse likör kräuterlikör süß kräuterig modifier digestif liqueur chartreuse verte ist als likör / kräuterlikör eingeordnet. geschmack: süß, kräuterig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Kräuterig",
@@ -3515,7 +4034,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "cointreau rémy cointreau likör orange liqueur süß zitrisch fruchtig modifier digestif frisch & sour liqueur orange liqueur cointreau ist als likör / orange liqueur eingeordnet. geschmack: süß, zitrisch, fruchtig. nutzung: modifier, digestif, frisch & sour.",
+      "searchText": "cointreau rémy cointreau likör orange liqueur süß zitrisch fruchtig modifier digestif frisch & sour liqueur orange liqueur cointreau ist als likör / orange liqueur eingeordnet. geschmack: süß, zitrisch, fruchtig. nutzung: modifier, digestif, frisch & sour. ",
       "tags": [
         "Süß",
         "Zitrisch",
@@ -3568,7 +4087,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "mandellikör illva saronno likör amaretto süß nussig modifier digestif liqueur nut liqueur mandellikör ist als likör / amaretto eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif.",
+      "searchText": "mandellikör illva saronno likör amaretto süß nussig modifier digestif liqueur nut liqueur mandellikör ist als likör / amaretto eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Nussig",
@@ -3617,7 +4136,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "dom bénédictine bacardi likör kräuterlikör süß kräuterig modifier digestif liqueur dom bénédictine ist als likör / kräuterlikör eingeordnet. geschmack: süß, kräuterig. nutzung: modifier, digestif.",
+      "searchText": "dom bénédictine bacardi likör kräuterlikör süß kräuterig modifier digestif liqueur dom bénédictine ist als likör / kräuterlikör eingeordnet. geschmack: süß, kräuterig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Kräuterig",
@@ -3665,7 +4184,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "galliano l’autentico lucas bols likör kräuterlikör süß kräuterig modifier digestif liqueur galliano l’autentico ist als likör / kräuterlikör eingeordnet. geschmack: süß, kräuterig. nutzung: modifier, digestif.",
+      "searchText": "galliano l’autentico lucas bols likör kräuterlikör süß kräuterig modifier digestif liqueur galliano l’autentico ist als likör / kräuterlikör eingeordnet. geschmack: süß, kräuterig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Kräuterig",
@@ -3713,7 +4232,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "galliano vanilla lucas bols likör kräuter/vanille süß kräuterig modifier digestif liqueur galliano vanilla ist als likör / kräuter/vanille eingeordnet. geschmack: süß, kräuterig. nutzung: modifier, digestif.",
+      "searchText": "galliano vanilla lucas bols likör kräuter/vanille süß kräuterig modifier digestif liqueur galliano vanilla ist als likör / kräuter/vanille eingeordnet. geschmack: süß, kräuterig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Kräuterig",
@@ -3761,7 +4280,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "crème de violette giffard likör floral süß floral modifier digestif liqueur crème de violette ist als likör / floral eingeordnet. geschmack: süß, floral. nutzung: modifier, digestif.",
+      "searchText": "crème de violette giffard likör floral süß floral modifier digestif liqueur crème de violette ist als likör / floral eingeordnet. geschmack: süß, floral. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Floral",
@@ -3820,7 +4339,7 @@ const HB_DATA = {
         "Frankreich",
         "bottle"
       ],
-      "searchText": "grand marnier marnier lapostolle cognac / brandy cognac fruchtig süß trocken pur digestif spirit-forward cocktailbasis cognac brandy frankreich kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails.",
+      "searchText": "grand marnier marnier lapostolle cognac / brandy cognac fruchtig süß trocken pur digestif spirit-forward cocktailbasis cognac brandy frankreich kuratierter cognac-/brandy-eintrag für digestif, pur und klassische brandy-cocktails. ",
       "tags": [
         "Fruchtig",
         "Süß",
@@ -3877,7 +4396,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "kahlúa pernod ricard likör kaffee süß kräuterig kaffee modifier digestif liqueur coffee liqueur kahlúa ist als likör / kaffee eingeordnet. geschmack: süß, kräuterig, kaffee. nutzung: modifier, digestif.",
+      "searchText": "kahlúa pernod ricard likör kaffee süß kräuterig kaffee modifier digestif liqueur coffee liqueur kahlúa ist als likör / kaffee eingeordnet. geschmack: süß, kräuterig, kaffee. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Kräuterig",
@@ -3929,7 +4448,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "kaffee likör lantenhammer likör kaffee süß kaffee modifier digestif liqueur coffee liqueur kaffee likör ist als likör / kaffee eingeordnet. geschmack: süß, kaffee. nutzung: modifier, digestif.",
+      "searchText": "kaffee likör lantenhammer likör kaffee süß kaffee modifier digestif liqueur coffee liqueur kaffee likör ist als likör / kaffee eingeordnet. geschmack: süß, kaffee. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Kaffee",
@@ -3980,7 +4499,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "walnusslikör lantenhammer likör nusslikör süß nussig modifier digestif liqueur nut liqueur walnusslikör ist als likör / nusslikör eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif.",
+      "searchText": "walnusslikör lantenhammer likör nusslikör süß nussig modifier digestif liqueur nut liqueur walnusslikör ist als likör / nusslikör eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Nussig",
@@ -4030,7 +4549,7 @@ const HB_DATA = {
         "Spanien",
         "bottle"
       ],
-      "searchText": "licor 43 zamora company likör vanillelikör süß modifier digestif liqueur spanien licor 43 ist als likör / vanillelikör eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "licor 43 zamora company likör vanillelikör süß modifier digestif liqueur spanien licor 43 ist als likör / vanillelikör eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -4078,7 +4597,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "maraschino luxardo likör maraschino süß floral modifier digestif liqueur maraschino ist als likör / maraschino eingeordnet. geschmack: süß, floral. nutzung: modifier, digestif.",
+      "searchText": "maraschino luxardo likör maraschino süß floral modifier digestif liqueur maraschino ist als likör / maraschino eingeordnet. geschmack: süß, floral. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Floral",
@@ -4129,7 +4648,7 @@ const HB_DATA = {
         "Italien",
         "bottle"
       ],
-      "searchText": "marcati limoncello marcati likör zitronenlikör süß zitrisch modifier digestif liqueur italien marcati limoncello ist als likör / zitronenlikör eingeordnet. geschmack: süß, zitrisch. nutzung: modifier, digestif.",
+      "searchText": "marcati limoncello marcati likör zitronenlikör süß zitrisch modifier digestif liqueur italien marcati limoncello ist als likör / zitronenlikör eingeordnet. geschmack: süß, zitrisch. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Zitrisch",
@@ -4183,7 +4702,7 @@ const HB_DATA = {
         "Italien",
         "bottle"
       ],
-      "searchText": "molinari caffè molinari likör kaffee / sambuca süß kaffee modifier digestif liqueur coffee liqueur italien molinari caffè ist als likör / kaffee / sambuca eingeordnet. geschmack: süß, kaffee. nutzung: modifier, digestif.",
+      "searchText": "molinari caffè molinari likör kaffee / sambuca süß kaffee modifier digestif liqueur coffee liqueur italien molinari caffè ist als likör / kaffee / sambuca eingeordnet. geschmack: süß, kaffee. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Kaffee",
@@ -4235,7 +4754,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "pistazienlikör likör nusslikör süß nussig modifier digestif liqueur nut liqueur pistazienlikör ist als likör / nusslikör eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif.",
+      "searchText": "pistazienlikör  likör nusslikör süß nussig modifier digestif liqueur nut liqueur pistazienlikör ist als likör / nusslikör eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Nussig",
@@ -4262,6 +4781,7 @@ const HB_DATA = {
       "usageTags": [
         "Digestif",
         "Spritz",
+        "Dessertdrink",
         "Modifier"
       ],
       "styleTags": [
@@ -4291,24 +4811,33 @@ const HB_DATA = {
       },
       "notes": "",
       "legacyTags": [
-        "Likör",
-        "Zitronenlikör",
-        "Süß",
+        "Gin",
+        "Trocken",
+        "Kräuterig",
         "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "Italien",
+        "bottle",
+        "Süß",
         "Fruchtig",
         "Digestif",
         "Spritz",
+        "Dessertdrink",
         "Modifier",
-        "Italien",
-        "bottle"
+        "Likör",
+        "Zitronenlikör"
       ],
-      "searchText": "licellino limoncello ricetta originale likör zitronenlikör süß zitrisch fruchtig digestif spritz modifier likör zitronenlikör italien italienisch inspirierter zitronenlikör mit heller zitrusfrische und süßer likörstruktur. geeignet als digestif, für spritz-varianten oder als zitrischer akzent in dessertdrinks.",
+      "searchText": "licellino limoncello ricetta originale likör zitronenlikör süß zitrisch fruchtig digestif spritz dessertdrink modifier likör zitronenlikör italien italienisch inspirierter zitronenlikör mit heller zitrusfrische und süßer likörstruktur. geeignet als digestif, für spritz-varianten oder als zitrischer akzent in dessertdrinks. gut gekühlt pur, auf eis oder mit prosecco/soda als leichter spritz servieren.",
       "tags": [
         "Süß",
         "Zitrisch",
         "Fruchtig",
         "Digestif",
         "Spritz",
+        "Dessertdrink",
         "Modifier",
         "Likör",
         "Zitronenlikör",
@@ -4353,7 +4882,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "salmari salmari likör salmiak/lakritz süß modifier digestif liqueur salmari ist als likör / salmiak/lakritz eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "salmari salmari likör salmiak/lakritz süß modifier digestif liqueur salmari ist als likör / salmiak/lakritz eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -4402,7 +4931,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "kastanienlikör unterthurner likör nuss/spezialität süß nussig modifier digestif liqueur nut liqueur kastanienlikör ist als likör / nuss/spezialität eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif.",
+      "searchText": "kastanienlikör unterthurner likör nuss/spezialität süß nussig modifier digestif liqueur nut liqueur kastanienlikör ist als likör / nuss/spezialität eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Nussig",
@@ -4449,7 +4978,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "crème de cassis vedrenne likör beerenlikör süß modifier digestif liqueur crème de cassis ist als likör / beerenlikör eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "crème de cassis vedrenne likör beerenlikör süß modifier digestif liqueur crème de cassis ist als likör / beerenlikör eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -4494,7 +5023,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "bombardino walcher likör eierlikör/creme süß modifier digestif liqueur bombardino ist als likör / eierlikör/creme eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "bombardino walcher likör eierlikör/creme süß modifier digestif liqueur bombardino ist als likör / eierlikör/creme eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -4543,7 +5072,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "cappuccino walcher likör kaffee/creme süß kaffee modifier digestif liqueur coffee liqueur cappuccino ist als likör / kaffee/creme eingeordnet. geschmack: süß, kaffee. nutzung: modifier, digestif.",
+      "searchText": "cappuccino walcher likör kaffee/creme süß kaffee modifier digestif liqueur coffee liqueur cappuccino ist als likör / kaffee/creme eingeordnet. geschmack: süß, kaffee. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Kaffee",
@@ -4594,7 +5123,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "noisetto walcher likör haselnuss/rum süß nussig modifier digestif liqueur nut liqueur noisetto ist als likör / haselnuss/rum eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif.",
+      "searchText": "noisetto walcher likör haselnuss/rum süß nussig modifier digestif liqueur nut liqueur noisetto ist als likör / haselnuss/rum eingeordnet. geschmack: süß, nussig. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Nussig",
@@ -4641,7 +5170,7 @@ const HB_DATA = {
         "Digestif",
         "bottle"
       ],
-      "searchText": "tartuffetto walcher likör kakao/rum süß modifier digestif liqueur tartuffetto ist als likör / kakao/rum eingeordnet. geschmack: süß. nutzung: modifier, digestif.",
+      "searchText": "tartuffetto walcher likör kakao/rum süß modifier digestif liqueur tartuffetto ist als likör / kakao/rum eingeordnet. geschmack: süß. nutzung: modifier, digestif. ",
       "tags": [
         "Süß",
         "Modifier",
@@ -4688,7 +5217,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "moscatel pisco barsol pisco moscatel trocken cocktailbasis pur frisch & sour moscatel moscatel pisco ist als pisco / moscatel eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, frisch & sour.",
+      "searchText": "moscatel pisco barsol pisco moscatel trocken cocktailbasis pur frisch & sour moscatel moscatel pisco ist als pisco / moscatel eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, frisch & sour. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -4736,7 +5265,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "quebranta pisco barsol pisco quebranta trocken cocktailbasis pur frisch & sour quebranta quebranta pisco ist als pisco / quebranta eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, frisch & sour.",
+      "searchText": "quebranta pisco barsol pisco quebranta trocken cocktailbasis pur frisch & sour quebranta quebranta pisco ist als pisco / quebranta eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, frisch & sour. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -4787,7 +5316,7 @@ const HB_DATA = {
         "Peru",
         "bottle"
       ],
-      "searchText": "pisco puro 2021 tierra nueva pisco pisco puro trocken cocktailbasis pur frisch & sour pisco puro peru pisco puro 2021 ist als pisco / pisco puro eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, frisch & sour.",
+      "searchText": "pisco puro 2021 tierra nueva pisco pisco puro trocken cocktailbasis pur frisch & sour pisco puro peru pisco puro 2021 ist als pisco / pisco puro eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, frisch & sour. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -4832,7 +5361,7 @@ const HB_DATA = {
         "Pur",
         "bottle"
       ],
-      "searchText": "absinthe mansinthe rakı / anis absinthe kräuterig pur absinthe absinthe ist als rak? / anis / absinthe eingeordnet. geschmack: kräuterig. nutzung: pur.",
+      "searchText": "absinthe mansinthe rak? / anis absinthe kräuterig pur absinthe absinthe ist als rak? / anis / absinthe eingeordnet. geschmack: kräuterig. nutzung: pur. ",
       "tags": [
         "Kräuterig",
         "Pur",
@@ -4849,11 +5378,16 @@ const HB_DATA = {
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Kräuterig"
+        "Kräuterig",
+        "Anis",
+        "Würzig",
+        "Frisch"
       ],
       "usageTags": [
         "Aperitif",
-        "Modifier"
+        "Anis-Serve",
+        "Modifier",
+        "Highball"
       ],
       "styleTags": [
         "Anis Aperitif",
@@ -4880,24 +5414,37 @@ const HB_DATA = {
           "Aromatischer Modifier"
         ],
         "serving": "Klassisch mit kaltem Wasser verlängern; als Cocktailzutat sehr sparsam einsetzen, weil Anis schnell dominant wird.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.pernod-ricard.com/en/brands/pernod"
+        ]
       },
       "notes": "",
       "legacyTags": [
         "Anis Aperitif",
-        "Französisch",
-        "Klassisch",
         "Kräuterig",
         "Aperitif",
-        "Modifier",
         "Frankreich",
-        "bottle"
+        "bottle",
+        "Anis",
+        "Würzig",
+        "Frisch",
+        "Anis-Serve",
+        "Modifier",
+        "Highball",
+        "Französisch",
+        "Klassisch"
       ],
-      "searchText": "pernod pernod rakı / anis anis aperitif kräuterig aperitif modifier anis aperitif französisch klassisch frankreich französischer anis-aperitif mit sternanis, fenchel, koriander, minze und weiteren aromapflanzen. pernod ist klar, intensiv und frisch und wird klassisch mit wasser verlängert oder in kleinen mengen als anis-akzent verwendet.",
+      "searchText": "pernod pernod rakı / anis anis aperitif kräuterig anis würzig frisch aperitif anis-serve modifier highball anis aperitif französisch klassisch frankreich französischer anis-aperitif mit sternanis, fenchel, koriander, minze und weiteren aromapflanzen. pernod ist klar, intensiv und frisch und wird klassisch mit wasser verlängert oder in kleinen mengen als anis-akzent verwendet. klassisch mit kaltem wasser verlängern; als cocktailzutat sehr sparsam einsetzen, weil anis schnell dominant wird.",
       "tags": [
         "Kräuterig",
+        "Anis",
+        "Würzig",
+        "Frisch",
         "Aperitif",
+        "Anis-Serve",
         "Modifier",
+        "Highball",
         "Anis Aperitif",
         "Französisch",
         "Klassisch",
@@ -4939,7 +5486,7 @@ const HB_DATA = {
         "Pur",
         "bottle"
       ],
-      "searchText": "pastis of marseille pernod ricard rakı / anis pastis kräuterig pur pastis pastis of marseille ist als rak? / anis / pastis eingeordnet. geschmack: kräuterig. nutzung: pur.",
+      "searchText": "pastis of marseille pernod ricard rak? / anis pastis kräuterig pur pastis pastis of marseille ist als rak? / anis / pastis eingeordnet. geschmack: kräuterig. nutzung: pur. ",
       "tags": [
         "Kräuterig",
         "Pur",
@@ -4984,7 +5531,7 @@ const HB_DATA = {
         "Italien",
         "bottle"
       ],
-      "searchText": "sambuca molinari rakı / anis sambuca kräuterig pur sambuca italien sambuca ist als rak? / anis / sambuca eingeordnet. geschmack: kräuterig. nutzung: pur.",
+      "searchText": "sambuca molinari rak? / anis sambuca kräuterig pur sambuca italien sambuca ist als rak? / anis / sambuca eingeordnet. geschmack: kräuterig. nutzung: pur. ",
       "tags": [
         "Kräuterig",
         "Pur",
@@ -5030,7 +5577,7 @@ const HB_DATA = {
         "Türkei",
         "bottle"
       ],
-      "searchText": "tekirda? no.10 rak? tekirda? rakı / anis rak? kräuterig pur rak? türkei tekirda? no.10 rak? ist als rak? / anis / rak? eingeordnet. geschmack: kräuterig. nutzung: pur.",
+      "searchText": "tekirda? no.10 rak? tekirda? rak? / anis rak? kräuterig pur rak? türkei tekirda? no.10 rak? ist als rak? / anis / rak? eingeordnet. geschmack: kräuterig. nutzung: pur. ",
       "tags": [
         "Kräuterig",
         "Pur",
@@ -5076,7 +5623,7 @@ const HB_DATA = {
         "Türkei",
         "bottle"
       ],
-      "searchText": "yeni rak? ala yeni rak? rakı / anis rak? kräuterig pur rak? türkei yeni rak? ala ist als rak? / anis / rak? eingeordnet. geschmack: kräuterig. nutzung: pur.",
+      "searchText": "yeni rak? ala yeni rak? rak? / anis rak? kräuterig pur rak? türkei yeni rak? ala ist als rak? / anis / rak? eingeordnet. geschmack: kräuterig. nutzung: pur. ",
       "tags": [
         "Kräuterig",
         "Pur",
@@ -5128,7 +5675,7 @@ const HB_DATA = {
         "Barbados",
         "bottle"
       ],
-      "searchText": "barbados rum 8 years foursquare / barbados distillers rum aged rum trocken fruchtig cocktailbasis tiki & tropical longdrink & highball rum barbados kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks.",
+      "searchText": "barbados rum 8 years foursquare / barbados distillers rum aged rum trocken fruchtig cocktailbasis tiki & tropical longdrink & highball rum barbados kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks. ",
       "tags": [
         "Trocken",
         "Fruchtig",
@@ -5184,7 +5731,7 @@ const HB_DATA = {
         "Tiki & Tropical",
         "bottle"
       ],
-      "searchText": "el dorado 3 years demerara distillers rum white rum trocken fruchtig cocktailbasis frisch & sour longdrink & highball tiki & tropical rum white rum kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks.",
+      "searchText": "el dorado 3 years demerara distillers rum white rum trocken fruchtig cocktailbasis frisch & sour longdrink & highball tiki & tropical rum white rum kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks. ",
       "tags": [
         "Trocken",
         "Fruchtig",
@@ -5237,7 +5784,7 @@ const HB_DATA = {
         "Longdrink & Highball",
         "bottle"
       ],
-      "searchText": "lebkuchen-rum bar seibert's rum homemade infusion trocken fruchtig cocktailbasis tiki & tropical longdrink & highball rum kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks.",
+      "searchText": "lebkuchen-rum bar seibert's rum homemade infusion trocken fruchtig cocktailbasis tiki & tropical longdrink & highball rum kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks. ",
       "tags": [
         "Trocken",
         "Fruchtig",
@@ -5293,7 +5840,7 @@ const HB_DATA = {
         "Jamaika",
         "bottle"
       ],
-      "searchText": "old pascas jamaica dark rum borco rum dark rum süß fruchtig cocktailbasis tiki & tropical modifier rum dark rum jamaika kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks.",
+      "searchText": "old pascas jamaica dark rum borco rum dark rum süß fruchtig cocktailbasis tiki & tropical modifier rum dark rum jamaika kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks. ",
       "tags": [
         "Süß",
         "Fruchtig",
@@ -5346,7 +5893,7 @@ const HB_DATA = {
         "Longdrink & Highball",
         "bottle"
       ],
-      "searchText": "plantation xo 20th anniversary maison ferrand rum premium rum trocken fruchtig cocktailbasis tiki & tropical longdrink & highball rum kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks.",
+      "searchText": "plantation xo 20th anniversary maison ferrand rum premium rum trocken fruchtig cocktailbasis tiki & tropical longdrink & highball rum kuratierter rum-eintrag für cocktailbasis, tiki-/tropical-anwendungen und rum-drinks. ",
       "tags": [
         "Trocken",
         "Fruchtig",
@@ -5404,7 +5951,7 @@ const HB_DATA = {
         "Brasilien",
         "bottle"
       ],
-      "searchText": "cachaça magnífica cachaça cachaça trocken fruchtig cocktailbasis frisch & sour tiki & tropical longdrink & highball cachaça sugarcane spirit brasilien cachaça als zuckerrohrspirituose für caipirinha, frische sours und tropische drinks.",
+      "searchText": "cachaça magnífica cachaça cachaça trocken fruchtig cocktailbasis frisch & sour tiki & tropical longdrink & highball cachaça sugarcane spirit brasilien cachaça als zuckerrohrspirituose für caipirinha, frische sours und tropische drinks. ",
       "tags": [
         "Trocken",
         "Fruchtig",
@@ -5455,10 +6002,9 @@ const HB_DATA = {
         "Süß",
         "Fruchtig",
         "Longdrink & Highball",
-        "Modifier",
-        "bottle"
+        "Modifier"
       ],
-      "searchText": "grenadine bols sirup / mixer sirup trocken süß fruchtig longdrink & highball modifier mixer grenadine ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß, fruchtig. nutzung: longdrink & highball, modifier.",
+      "searchText": "grenadine bols sirup / mixer sirup trocken süß fruchtig longdrink & highball modifier mixer grenadine ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß, fruchtig. nutzung: longdrink & highball, modifier. ",
       "tags": [
         "Trocken",
         "Süß",
@@ -5504,10 +6050,9 @@ const HB_DATA = {
         "Trocken",
         "Süß",
         "Longdrink & Highball",
-        "Modifier",
-        "bottle"
+        "Modifier"
       ],
-      "searchText": "rohrzucker sirup giffard sirup / mixer sirup trocken süß longdrink & highball modifier mixer rohrzucker sirup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier.",
+      "searchText": "rohrzucker sirup giffard sirup / mixer sirup trocken süß longdrink & highball modifier mixer rohrzucker sirup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier. ",
       "tags": [
         "Trocken",
         "Süß",
@@ -5526,10 +6071,16 @@ const HB_DATA = {
       "status": "Ungeöffnet",
       "fillLevel": "100%",
       "flavorTags": [
+        "Scharf",
+        "Würzig",
+        "Ingwer",
         "Süß"
       ],
       "usageTags": [
-        "Longdrink & Highball"
+        "Filler",
+        "Longdrink & Highball",
+        "Mule",
+        "Tiki"
       ],
       "styleTags": [
         "Mixer",
@@ -5557,16 +6108,35 @@ const HB_DATA = {
       },
       "notes": "",
       "legacyTags": [
+        "Gin",
+        "Trocken",
+        "Kräuterig",
+        "Zitrisch",
+        "Cocktailbasis",
+        "Longdrink & Highball",
+        "Frisch & Sour",
+        "Spirit-Forward",
+        "bottle",
+        "Scharf",
+        "Würzig",
+        "Ingwer",
+        "Süß",
+        "Filler",
+        "Mule",
+        "Tiki",
         "Mixer",
-        "Ginger Beer",
-        "Süß",
-        "Longdrink & Highball",
-        "bottle"
+        "Ginger Beer"
       ],
-      "searchText": "ginger beer rewe sirup / mixer filler süß longdrink & highball mixer ginger beer würziger ingwer-filler für highballs, mules und tiki-drinks. bringt schärfe, frische und süße in lange drinks.",
+      "searchText": "ginger beer rewe sirup / mixer filler scharf würzig ingwer süß filler longdrink & highball mule tiki mixer ginger beer würziger ingwer-filler für highballs, mules und tiki-drinks. bringt schärfe, frische und süße in lange drinks. gut gekühlt als filler verwenden; besonders passend für moscow mule, dark & stormy und frische highballs.",
       "tags": [
+        "Scharf",
+        "Würzig",
+        "Ingwer",
         "Süß",
+        "Filler",
         "Longdrink & Highball",
+        "Mule",
+        "Tiki",
         "Mixer",
         "Ginger Beer"
       ],
@@ -5608,10 +6178,9 @@ const HB_DATA = {
         "Zitrisch",
         "Trocken",
         "Modifier",
-        "Frisch & Sour",
-        "bottle"
+        "Frisch & Sour"
       ],
-      "searchText": "limettensaft rewe saft saft zitrisch trocken modifier frisch & sour juice limettensaft ist als saft / saft eingeordnet. geschmack: zitrisch, trocken. nutzung: modifier, frisch & sour.",
+      "searchText": "limettensaft rewe saft saft zitrisch trocken modifier frisch & sour juice limettensaft ist als saft / saft eingeordnet. geschmack: zitrisch, trocken. nutzung: modifier, frisch & sour. ",
       "tags": [
         "Zitrisch",
         "Trocken",
@@ -5622,7 +6191,7 @@ const HB_DATA = {
     },
     {
       "id": "csv-099-blue-curacao",
-      "name": "Monin Blue Curaçao",
+      "name": "Blue Curaçao",
       "producer": "Monin",
       "category": "Sirup / Mixer",
       "subcategory": "Sirup",
@@ -5660,10 +6229,9 @@ const HB_DATA = {
         "Süß",
         "Zitrisch",
         "Longdrink & Highball",
-        "Modifier",
-        "bottle"
+        "Modifier"
       ],
-      "searchText": "monin blue curaçao monin sirup / mixer sirup trocken süß zitrisch longdrink & highball modifier mixer orange liqueur blue curaçao ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß, zitrisch. nutzung: longdrink & highball, modifier.",
+      "searchText": "blue curaçao monin sirup / mixer sirup trocken süß zitrisch longdrink & highball modifier mixer orange liqueur blue curaçao ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß, zitrisch. nutzung: longdrink & highball, modifier. ",
       "tags": [
         "Trocken",
         "Süß",
@@ -5676,7 +6244,7 @@ const HB_DATA = {
     },
     {
       "id": "csv-100-creme-de-menthe-verte",
-      "name": "Monin Crème de Menthe Verte",
+      "name": "Crème de Menthe Verte",
       "producer": "Monin",
       "category": "Sirup / Mixer",
       "subcategory": "Sirup",
@@ -5712,10 +6280,9 @@ const HB_DATA = {
         "Süß",
         "Kräuterig",
         "Longdrink & Highball",
-        "Modifier",
-        "bottle"
+        "Modifier"
       ],
-      "searchText": "monin crème de menthe verte monin sirup / mixer sirup trocken süß kräuterig longdrink & highball modifier mixer crème de menthe verte ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß, kräuterig. nutzung: longdrink & highball, modifier.",
+      "searchText": "crème de menthe verte monin sirup / mixer sirup trocken süß kräuterig longdrink & highball modifier mixer crème de menthe verte ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß, kräuterig. nutzung: longdrink & highball, modifier. ",
       "tags": [
         "Trocken",
         "Süß",
@@ -5727,7 +6294,7 @@ const HB_DATA = {
     },
     {
       "id": "csv-101-gomme-syrup",
-      "name": "Monin Gomme Syrup",
+      "name": "Gomme Syrup",
       "producer": "Monin",
       "category": "Sirup / Mixer",
       "subcategory": "Sirup",
@@ -5761,10 +6328,56 @@ const HB_DATA = {
         "Trocken",
         "Süß",
         "Longdrink & Highball",
-        "Modifier",
-        "bottle"
+        "Modifier"
       ],
-      "searchText": "monin gomme syrup monin sirup / mixer sirup trocken süß longdrink & highball modifier mixer gomme syrup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier.",
+      "searchText": "gomme syrup monin sirup / mixer sirup trocken süß longdrink & highball modifier mixer gomme syrup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier. ",
+      "tags": [
+        "Trocken",
+        "Süß",
+        "Longdrink & Highball",
+        "Modifier",
+        "Mixer"
+      ]
+    },
+    {
+      "id": "csv-102-rohrzucker-sirup",
+      "name": "Rohrzucker Sirup",
+      "producer": "Monin",
+      "category": "Sirup / Mixer",
+      "subcategory": "Sirup",
+      "amount": "1 Flasche",
+      "status": "Unbekannt",
+      "fillLevel": "100%",
+      "flavorTags": [
+        "Trocken",
+        "Süß"
+      ],
+      "usageTags": [
+        "Longdrink & Highball",
+        "Modifier"
+      ],
+      "styleTags": [
+        "Mixer"
+      ],
+      "guestTags": [],
+      "originTags": [],
+      "description": {
+        "short": "Rohrzucker Sirup ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß. Nutzung: Longdrink & Highball, Modifier.",
+        "long": "",
+        "tastingNotes": [],
+        "bestUse": [],
+        "serving": "",
+        "sourceStatus": "curated-existing"
+      },
+      "notes": "",
+      "legacyTags": [
+        "Mixer",
+        "Trocken",
+        "Süß",
+        "Longdrink & Highball",
+        "Modifier"
+      ],
+      "searchText": "rohrzucker sirup monin sirup / mixer sirup trocken süß longdrink & highball modifier mixer rohrzucker sirup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier. ",
       "tags": [
         "Trocken",
         "Süß",
@@ -5775,139 +6388,105 @@ const HB_DATA = {
     },
     {
       "id": "csv-103-weisserrohrzucker-sirup",
-      "name": "Monin Weißer Rohrzucker Sirup",
+      "name": "Weißerrohrzucker Sirup",
       "producer": "Monin",
       "category": "Sirup / Mixer",
       "subcategory": "Sirup",
-      "amount": "2 Flaschen",
+      "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
+        "Trocken",
         "Süß"
       ],
       "usageTags": [
-        "Modifier",
-        "Frisch & Sour",
         "Longdrink & Highball",
-        "Cocktailbasis"
+        "Modifier"
       ],
       "styleTags": [
-        "Sirup",
-        "Rohrzucker",
-        "Zuckersirup",
-        "Monin"
+        "Mixer"
       ],
       "guestTags": [],
-      "originTags": [
-        "Frankreich"
-      ],
+      "originTags": [],
       "description": {
-        "short": "Klarer Rohrzuckersirup für ausgewogene Süße in Sours, Highballs und klassischen Cocktails. Neutral, sauber und vielseitig, wenn ein Drink Struktur braucht, ohne zusätzliche Frucht- oder Gewürznoten einzubringen.",
+        "short": "Weißerrohrzucker Sirup ist als Sirup / Mixer / Sirup eingeordnet. Geschmack: Trocken, Süß. Nutzung: Longdrink & Highball, Modifier.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
-      "notes": "Menge korrigiert: 2 Flaschen Monin Weißer Rohrzucker vorhanden.",
+      "notes": "",
       "legacyTags": [
-        "Sirup",
-        "Rohrzucker",
-        "Zuckersirup",
-        "Monin",
+        "Mixer",
+        "Trocken",
         "Süß",
-        "Modifier",
-        "Frisch & Sour",
         "Longdrink & Highball",
-        "Cocktailbasis",
-        "Frankreich",
-        "bottle"
+        "Modifier"
       ],
-      "searchText": "monin weißer rohrzucker sirup monin sirup / mixer sirup süß modifier frisch & sour longdrink & highball cocktailbasis sirup rohrzucker zuckersirup monin frankreich klarer rohrzuckersirup für ausgewogene süße in sours, highballs und klassischen cocktails. neutral, sauber und vielseitig, wenn ein drink struktur braucht, ohne zusätzliche frucht- oder gewürznoten einzubringen. menge korrigiert: 2 flaschen monin weißer rohrzucker vorhanden.",
+      "searchText": "weißerrohrzucker sirup monin sirup / mixer sirup trocken süß longdrink & highball modifier mixer weißerrohrzucker sirup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier. ",
       "tags": [
+        "Trocken",
         "Süß",
-        "Modifier",
-        "Frisch & Sour",
         "Longdrink & Highball",
-        "Cocktailbasis",
-        "Sirup",
-        "Rohrzucker",
-        "Zuckersirup",
-        "Monin",
-        "Frankreich"
+        "Modifier",
+        "Mixer"
       ]
     },
     {
       "id": "csv-104-pircher-holunderblutensirup",
-      "name": "Pircher Holunderblüten Likör",
+      "name": "Pircher Holunderblütensirup",
       "producer": "Pircher",
-      "category": "Likör",
-      "subcategory": "Holunderblütenlikör",
+      "category": "Sirup / Mixer",
+      "subcategory": "Sirup",
       "amount": "1 Flasche",
       "status": "Ungeöffnet",
       "fillLevel": "100%",
       "flavorTags": [
-        "Floral",
+        "Trocken",
         "Süß",
-        "Fruchtig"
+        "Floral"
       ],
       "usageTags": [
-        "Modifier",
-        "Spritz",
-        "Frisch & Sour",
-        "Aperitif"
+        "Longdrink & Highball",
+        "Modifier"
       ],
       "styleTags": [
-        "Holunderblütenlikör",
-        "Blütenlikör",
-        "Sommerdrinks"
+        "Mixer"
       ],
       "guestTags": [],
-      "originTags": [
-        "Italien"
-      ],
+      "originTags": [],
       "description": {
-        "short": "Floraler Holunderblütenlikör mit feiner Süße und frischem Blütenaroma. Elegant als Modifier für Spritz-Varianten, Sours und leichte Sommerdrinks, wenn Holunder nicht nur süßen, sondern auch aromatisch tragen soll.",
+        "short": "premium",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Holunderblütenlikör",
-        "Blütenlikör",
-        "Sommerdrinks",
-        "Floral",
+        "Mixer",
+        "Trocken",
         "Süß",
-        "Fruchtig",
-        "Modifier",
-        "Spritz",
-        "Frisch & Sour",
-        "Aperitif",
-        "Italien",
-        "bottle"
+        "Floral",
+        "Longdrink & Highball",
+        "Modifier"
       ],
-      "searchText": "pircher holunderblüten likör pircher likör holunderblütenlikör floral süß fruchtig modifier spritz frisch & sour aperitif holunderblütenlikör blütenlikör sommerdrinks italien floraler holunderblütenlikör mit feiner süße und frischem blütenaroma. elegant als modifier für spritz-varianten, sours und leichte sommerdrinks, wenn holunder nicht nur süßen, sondern auch aromatisch tragen soll.",
+      "searchText": "pircher holunderblütensirup pircher sirup / mixer sirup trocken süß floral longdrink & highball modifier mixer premium ",
       "tags": [
-        "Floral",
+        "Trocken",
         "Süß",
-        "Fruchtig",
+        "Floral",
+        "Longdrink & Highball",
         "Modifier",
-        "Spritz",
-        "Frisch & Sour",
-        "Aperitif",
-        "Holunderblütenlikör",
-        "Blütenlikör",
-        "Sommerdrinks",
-        "Italien"
+        "Mixer"
       ]
     },
     {
       "id": "csv-105-mandelsirup",
-      "name": "Riemerschmid Mandelsirup",
-      "producer": "Riemerschmid",
+      "name": "Mandelsirup",
+      "producer": "Riemerschnid",
       "category": "Sirup / Mixer",
       "subcategory": "Sirup",
       "amount": "1 Flasche",
@@ -5944,10 +6523,9 @@ const HB_DATA = {
         "Süß",
         "Longdrink & Highball",
         "Modifier",
-        "Tiki & Tropical",
-        "bottle"
+        "Tiki & Tropical"
       ],
-      "searchText": "riemerschmid mandelsirup riemerschmid sirup / mixer sirup trocken süß longdrink & highball modifier tiki & tropical mixer tropical modifier mandelsirup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier, tiki & tropical.",
+      "searchText": "mandelsirup riemerschnid sirup / mixer sirup trocken süß longdrink & highball modifier tiki & tropical mixer tropical modifier mandelsirup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier, tiki & tropical. ",
       "tags": [
         "Trocken",
         "Süß",
@@ -5959,9 +6537,62 @@ const HB_DATA = {
       ]
     },
     {
+      "id": "csv-106-tonic-water",
+      "name": "Tonic Water",
+      "producer": "Rewe",
+      "category": "Sirup / Mixer",
+      "subcategory": "Filler",
+      "amount": "1 Flasche",
+      "status": "Geöffnet",
+      "fillLevel": "100%",
+      "flavorTags": [
+        "Bitter",
+        "Zitrisch",
+        "Trocken",
+        "Süß"
+      ],
+      "usageTags": [
+        "Longdrink & Highball",
+        "Modifier"
+      ],
+      "styleTags": [
+        "Mixer"
+      ],
+      "guestTags": [],
+      "originTags": [],
+      "description": {
+        "short": "Tonic Water ist als Sirup / Mixer / Filler eingeordnet. Geschmack: Bitter, Zitrisch, Trocken, Süß. Nutzung: Longdrink & Highball, Modifier.",
+        "long": "",
+        "tastingNotes": [],
+        "bestUse": [],
+        "serving": "",
+        "sourceStatus": "curated-existing"
+      },
+      "notes": "",
+      "legacyTags": [
+        "Mixer",
+        "Bitter",
+        "Zitrisch",
+        "Trocken",
+        "Süß",
+        "Longdrink & Highball",
+        "Modifier"
+      ],
+      "searchText": "tonic water rewe sirup / mixer filler bitter zitrisch trocken süß longdrink & highball modifier mixer tonic water ist als sirup / mixer / filler eingeordnet. geschmack: bitter, zitrisch, trocken, süß. nutzung: longdrink & highball, modifier. ",
+      "tags": [
+        "Bitter",
+        "Zitrisch",
+        "Trocken",
+        "Süß",
+        "Longdrink & Highball",
+        "Modifier",
+        "Mixer"
+      ]
+    },
+    {
       "id": "csv-107-vanillesirup",
-      "name": "Riemerschmid Vanille Bar-Sirup",
-      "producer": "Riemerschmid",
+      "name": "Vanillesirup",
+      "producer": "Rewe",
       "category": "Sirup / Mixer",
       "subcategory": "Sirup",
       "amount": "1 Flasche",
@@ -5994,10 +6625,9 @@ const HB_DATA = {
         "Trocken",
         "Süß",
         "Longdrink & Highball",
-        "Modifier",
-        "bottle"
+        "Modifier"
       ],
-      "searchText": "riemerschmid vanille bar-sirup riemerschmid sirup / mixer sirup trocken süß longdrink & highball modifier mixer vanillesirup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier.",
+      "searchText": "vanillesirup rewe sirup / mixer sirup trocken süß longdrink & highball modifier mixer vanillesirup ist als sirup / mixer / sirup eingeordnet. geschmack: trocken, süß. nutzung: longdrink & highball, modifier. ",
       "tags": [
         "Trocken",
         "Süß",
@@ -6012,7 +6642,7 @@ const HB_DATA = {
       "producer": "Rewe",
       "category": "Saft",
       "subcategory": "Saft",
-      "amount": "2 Flaschen",
+      "amount": "1 Flasche",
       "status": "Ungeöffnet",
       "fillLevel": "100%",
       "flavorTags": [
@@ -6036,16 +6666,15 @@ const HB_DATA = {
         "serving": "",
         "sourceStatus": "curated-existing"
       },
-      "notes": "Menge korrigiert: REWE Bio Zitronensaft und Hitchcock Zitrone Pur vorhanden.",
+      "notes": "",
       "legacyTags": [
         "Juice",
         "Zitrisch",
         "Trocken",
         "Modifier",
-        "Frisch & Sour",
-        "bottle"
+        "Frisch & Sour"
       ],
-      "searchText": "zitronensaft rewe saft saft zitrisch trocken modifier frisch & sour juice zitronensaft ist als saft / saft eingeordnet. geschmack: zitrisch, trocken. nutzung: modifier, frisch & sour. menge korrigiert: rewe bio zitronensaft und hitchcock zitrone pur vorhanden.",
+      "searchText": "zitronensaft rewe saft saft zitrisch trocken modifier frisch & sour juice zitronensaft ist als saft / saft eingeordnet. geschmack: zitrisch, trocken. nutzung: modifier, frisch & sour. ",
       "tags": [
         "Zitrisch",
         "Trocken",
@@ -6095,7 +6724,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "especial reposado jose cuervo tequila reposado trocken cocktailbasis pur spirit-forward frisch & sour tequila especial reposado ist als tequila / reposado eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, spirit-forward, frisch & sour.",
+      "searchText": "especial reposado jose cuervo tequila reposado trocken cocktailbasis pur spirit-forward frisch & sour tequila especial reposado ist als tequila / reposado eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, spirit-forward, frisch & sour. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -6146,7 +6775,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "cuervo silver jose cuervo tequila blanco/silver trocken cocktailbasis pur spirit-forward frisch & sour tequila cuervo silver ist als tequila / blanco/silver eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, spirit-forward, frisch & sour.",
+      "searchText": "cuervo silver jose cuervo tequila blanco/silver trocken cocktailbasis pur spirit-forward frisch & sour tequila cuervo silver ist als tequila / blanco/silver eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, spirit-forward, frisch & sour. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -6197,7 +6826,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "patrón añejo patrón spirits tequila añejo trocken cocktailbasis pur spirit-forward frisch & sour tequila patrón añejo ist als tequila / añejo eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, spirit-forward, frisch & sour.",
+      "searchText": "patrón añejo patrón spirits tequila añejo trocken cocktailbasis pur spirit-forward frisch & sour tequila patrón añejo ist als tequila / añejo eingeordnet. geschmack: trocken. nutzung: cocktailbasis, pur, spirit-forward, frisch & sour. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -6219,11 +6848,16 @@ const HB_DATA = {
       "flavorTags": [
         "Süß",
         "Nussig",
-        "Fruchtig"
+        "Fruchtig",
+        "Orange",
+        "Trockenfrucht",
+        "Karamell"
       ],
       "usageTags": [
         "Digestif",
-        "Modifier"
+        "Dessert",
+        "Modifier",
+        "Port-Cocktails"
       ],
       "styleTags": [
         "Fortified Wine",
@@ -6252,34 +6886,47 @@ const HB_DATA = {
           "Port-Modifier"
         ],
         "serving": "Leicht gekühlt als Digestif oder Dessertbegleiter servieren; in kleinen Mengen auch als nussig-süßer Modifier in dunklen Drinks einsetzen.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.grahams-port.com/files/wine/11_20-year-old-tawny-port_file.pdf"
+        ]
       },
       "notes": "",
       "legacyTags": [
+        "Vermouth",
         "Fortified Wine",
-        "Tawny Port",
-        "Elegant",
-        "Dessert",
         "Süß",
         "Nussig",
         "Fruchtig",
-        "Digestif",
         "Modifier",
+        "Digestif",
+        "Spirit-Forward",
+        "bottle",
+        "Orange",
+        "Trockenfrucht",
+        "Karamell",
+        "Dessert",
+        "Port-Cocktails",
+        "Tawny Port",
+        "Elegant",
         "Portugal",
-        "Douro",
-        "bottle"
+        "Douro"
       ],
-      "searchText": "graham’s 20 year tawny port graham's vermouth / fortified wine port süß nussig fruchtig digestif modifier fortified wine tawny port elegant dessert portugal douro gereifter tawny port aus dem douro mit nussigem charakter, reifer frucht, orangenschale, weicher süße und langem, elegantem finish. er passt besonders gut zu desserts, nüssen, trockenfrüchten und dunklen cocktail-twists.",
+      "searchText": "graham’s 20 year tawny port graham's vermouth / fortified wine port süß nussig fruchtig orange trockenfrucht karamell digestif dessert modifier port-cocktails fortified wine tawny port elegant portugal douro gereifter tawny port aus dem douro mit nussigem charakter, reifer frucht, orangenschale, weicher süße und langem, elegantem finish. er passt besonders gut zu desserts, nüssen, trockenfrüchten und dunklen cocktail-twists. leicht gekühlt als digestif oder dessertbegleiter servieren; in kleinen mengen auch als nussig-süßer modifier in dunklen drinks einsetzen.",
       "tags": [
         "Süß",
         "Nussig",
         "Fruchtig",
+        "Orange",
+        "Trockenfrucht",
+        "Karamell",
         "Digestif",
+        "Dessert",
         "Modifier",
+        "Port-Cocktails",
         "Fortified Wine",
         "Tawny Port",
         "Elegant",
-        "Dessert",
         "Portugal",
         "Douro"
       ]
@@ -6296,11 +6943,16 @@ const HB_DATA = {
       "flavorTags": [
         "Süß",
         "Fruchtig",
-        "Kaffee"
+        "Trockenfrucht",
+        "Schokolade",
+        "Kaffee",
+        "Dunkel"
       ],
       "usageTags": [
         "Digestif",
-        "Modifier"
+        "Dessert",
+        "Modifier",
+        "Sherry-Cocktails"
       ],
       "styleTags": [
         "Fortified Wine",
@@ -6330,33 +6982,46 @@ const HB_DATA = {
           "Sherry-Modifier"
         ],
         "serving": "Leicht gekühlt in kleinen Mengen servieren; hervorragend zu Vanilleeis, Schokolade, Blauschimmelkäse oder als süßer Akzent in Cocktails.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.sherry.wine/sherry-wine/naturally-sweet-sherry-wine/pedro-ximenez"
+        ]
       },
       "notes": "",
       "legacyTags": [
+        "Vermouth",
         "Fortified Wine",
-        "PX Sherry",
-        "Dessert",
-        "Intensiv",
         "Süß",
         "Fruchtig",
-        "Kaffee",
-        "Digestif",
         "Modifier",
+        "Digestif",
+        "Spirit-Forward",
+        "bottle",
+        "Trockenfrucht",
+        "Schokolade",
+        "Kaffee",
+        "Dunkel",
+        "Dessert",
+        "Sherry-Cocktails",
+        "PX Sherry",
+        "Intensiv",
         "Spanien",
-        "Jerez",
-        "bottle"
+        "Jerez"
       ],
-      "searchText": "px sherry lustau vermouth / fortified wine px sherry süß fruchtig kaffee digestif modifier fortified wine px sherry dessert intensiv spanien jerez sehr süßer pedro-ximénez-sherry mit rosinen, feigen, datteln, honig, dunkler schokolade, kaffee und lakritz. px bringt tiefe, dessertcharakter und eine samtige süße in drinks oder wird pur zu dessert serviert.",
+      "searchText": "px sherry lustau vermouth / fortified wine px sherry süß fruchtig trockenfrucht schokolade kaffee dunkel digestif dessert modifier sherry-cocktails fortified wine px sherry intensiv spanien jerez sehr süßer pedro-ximénez-sherry mit rosinen, feigen, datteln, honig, dunkler schokolade, kaffee und lakritz. px bringt tiefe, dessertcharakter und eine samtige süße in drinks oder wird pur zu dessert serviert. leicht gekühlt in kleinen mengen servieren; hervorragend zu vanilleeis, schokolade, blauschimmelkäse oder als süßer akzent in cocktails.",
       "tags": [
         "Süß",
         "Fruchtig",
+        "Trockenfrucht",
+        "Schokolade",
         "Kaffee",
+        "Dunkel",
         "Digestif",
+        "Dessert",
         "Modifier",
+        "Sherry-Cocktails",
         "Fortified Wine",
         "PX Sherry",
-        "Dessert",
         "Intensiv",
         "Spanien",
         "Jerez"
@@ -6379,6 +7044,7 @@ const HB_DATA = {
         "Floral"
       ],
       "usageTags": [
+        "Martini",
         "Aperitif",
         "Modifier",
         "Spirit-Forward"
@@ -6410,32 +7076,38 @@ const HB_DATA = {
           "Vermouth & Soda"
         ],
         "serving": "Gut gekühlt als Aperitif, mit Soda oder im Dry Martini verwenden; angebrochene Flasche gekühlt lagern.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.noillyprat.com/original-dry-vermouth/"
+        ]
       },
       "notes": "",
       "legacyTags": [
-        "Dry Vermouth",
-        "Fortified Wine",
-        "Klassisch",
-        "Trocken",
+        "Vermouth",
         "Fruchtig",
+        "Trocken",
+        "Modifier",
+        "Spirit-Forward",
+        "bottle",
         "Kräuterig",
         "Zitrisch",
         "Floral",
+        "Martini",
         "Aperitif",
-        "Modifier",
-        "Spirit-Forward",
+        "Dry Vermouth",
+        "Fortified Wine",
+        "Klassisch",
         "Frankreich",
-        "Marseillan",
-        "bottle"
+        "Marseillan"
       ],
-      "searchText": "noilly prat dry noilly prat vermouth / fortified wine dry vermouth trocken fruchtig kräuterig zitrisch floral aperitif modifier spirit-forward dry vermouth fortified wine klassisch frankreich marseillan französischer dry vermouth aus marseillan mit trockener weinbasis, kräutern, kamille, koriander, bitterorange und holunderblüte. noilly prat dry ist ein klassischer baustein für martinis, aperitifs und fein strukturierte stirred drinks.",
+      "searchText": "noilly prat dry noilly prat vermouth / fortified wine dry vermouth trocken fruchtig kräuterig zitrisch floral martini aperitif modifier spirit-forward dry vermouth fortified wine klassisch frankreich marseillan französischer dry vermouth aus marseillan mit trockener weinbasis, kräutern, kamille, koriander, bitterorange und holunderblüte. noilly prat dry ist ein klassischer baustein für martinis, aperitifs und fein strukturierte stirred drinks. gut gekühlt als aperitif, mit soda oder im dry martini verwenden; angebrochene flasche gekühlt lagern.",
       "tags": [
         "Trocken",
         "Fruchtig",
         "Kräuterig",
         "Zitrisch",
         "Floral",
+        "Martini",
         "Aperitif",
         "Modifier",
         "Spirit-Forward",
@@ -6457,14 +7129,17 @@ const HB_DATA = {
       "fillLevel": "100%",
       "flavorTags": [
         "Fruchtig",
+        "Würzig",
         "Süß",
         "Bitter",
-        "Kräuterig"
+        "Kräuterig",
+        "Kakao"
       ],
       "usageTags": [
         "Aperitif",
         "Modifier",
-        "Spirit-Forward"
+        "Spirit-Forward",
+        "Vermouth-Cocktails"
       ],
       "styleTags": [
         "Red Vermouth",
@@ -6493,37 +7168,45 @@ const HB_DATA = {
           "Aperitif"
         ],
         "serving": "Gut gekühlt pur, mit Eis oder Soda servieren; in Cocktails als würzig-runder roter Vermouth einsetzen.",
-        "sourceStatus": "web-curated-v0.17"
+        "sourceStatus": "web-curated-v0.17",
+        "sourceLinks": [
+          "https://www.noillyprat.com/rouge-vermouth/"
+        ]
       },
       "notes": "",
       "legacyTags": [
-        "Red Vermouth",
-        "Fortified Wine",
-        "Würzig",
-        "Elegant",
+        "Vermouth",
         "Fruchtig",
+        "Modifier",
+        "Spirit-Forward",
+        "bottle",
+        "Würzig",
         "Süß",
         "Bitter",
         "Kräuterig",
+        "Kakao",
         "Aperitif",
-        "Modifier",
-        "Spirit-Forward",
+        "Vermouth-Cocktails",
+        "Red Vermouth",
+        "Fortified Wine",
+        "Elegant",
         "Frankreich",
-        "Marseillan",
-        "bottle"
+        "Marseillan"
       ],
-      "searchText": "noilly prat rouge noilly prat vermouth / fortified wine red vermouth fruchtig süß bitter kräuterig aperitif modifier spirit-forward red vermouth fortified wine würzig elegant frankreich marseillan roter französischer vermouth mit süßer orange, zimt, chinarinde, nelke und kakao. noilly prat rouge wirkt würzig, rund und aromatisch und passt als aperitif, zu dunkleren stirred drinks oder als begleiter zu charcuterie und dessert.",
+      "searchText": "noilly prat rouge noilly prat vermouth / fortified wine red vermouth fruchtig würzig süß bitter kräuterig kakao aperitif modifier spirit-forward vermouth-cocktails red vermouth fortified wine elegant frankreich marseillan roter französischer vermouth mit süßer orange, zimt, chinarinde, nelke und kakao. noilly prat rouge wirkt würzig, rund und aromatisch und passt als aperitif, zu dunkleren stirred drinks oder als begleiter zu charcuterie und dessert. gut gekühlt pur, mit eis oder soda servieren; in cocktails als würzig-runder roter vermouth einsetzen.",
       "tags": [
         "Fruchtig",
+        "Würzig",
         "Süß",
         "Bitter",
         "Kräuterig",
+        "Kakao",
         "Aperitif",
         "Modifier",
         "Spirit-Forward",
+        "Vermouth-Cocktails",
         "Red Vermouth",
         "Fortified Wine",
-        "Würzig",
         "Elegant",
         "Frankreich",
         "Marseillan"
@@ -6568,7 +7251,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "absolut 100 absolut vodka vodka trocken cocktailbasis longdrink & highball frisch & sour vodka neutraler vodka als vielseitige basis für highballs, sours und klare cocktails.",
+      "searchText": "absolut 100 absolut vodka vodka trocken cocktailbasis longdrink & highball frisch & sour vodka neutraler vodka als vielseitige basis für highballs, sours und klare cocktails. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -6616,7 +7299,7 @@ const HB_DATA = {
         "Frisch & Sour",
         "bottle"
       ],
-      "searchText": "absolut elyx absolut vodka vodka trocken cocktailbasis longdrink & highball frisch & sour vodka neutraler vodka als vielseitige basis für highballs, sours und klare cocktails.",
+      "searchText": "absolut elyx absolut vodka vodka trocken cocktailbasis longdrink & highball frisch & sour vodka neutraler vodka als vielseitige basis für highballs, sours und klare cocktails. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -6667,7 +7350,7 @@ const HB_DATA = {
         "Japan",
         "bottle"
       ],
-      "searchText": "ukiyo rice vodka ukiyo spirits vodka vodka trocken cocktailbasis longdrink & highball frisch & sour vodka japan neutraler vodka als vielseitige basis für highballs, sours und klare cocktails.",
+      "searchText": "ukiyo rice vodka ukiyo spirits vodka vodka trocken cocktailbasis longdrink & highball frisch & sour vodka japan neutraler vodka als vielseitige basis für highballs, sours und klare cocktails. ",
       "tags": [
         "Trocken",
         "Cocktailbasis",
@@ -6681,7 +7364,7 @@ const HB_DATA = {
       "id": "csv-119-beyerskloof-synergy-cape-blend",
       "name": "Beyerskloof Synergy Cape Blend",
       "producer": "Beyerskloof",
-      "category": "Wein / Champagner",
+      "category": "Wein",
       "subcategory": "Rotwein Südafrika",
       "amount": "1 Flasche",
       "status": "Ungeöffnet",
@@ -6713,10 +7396,9 @@ const HB_DATA = {
         "Trocken",
         "Fruchtig",
         "Pur",
-        "Digestif",
-        "bottle"
+        "Digestif"
       ],
-      "searchText": "beyerskloof synergy cape blend beyerskloof wein / champagner rotwein südafrika trocken fruchtig pur digestif wine beyerskloof synergy cape blend ist als wein / rotwein südafrika eingeordnet. geschmack: trocken, fruchtig. nutzung: pur, digestif.",
+      "searchText": "beyerskloof synergy cape blend beyerskloof wein rotwein südafrika trocken fruchtig pur digestif wine beyerskloof synergy cape blend ist als wein / rotwein südafrika eingeordnet. geschmack: trocken, fruchtig. nutzung: pur, digestif. ",
       "tags": [
         "Trocken",
         "Fruchtig",
@@ -6727,9 +7409,9 @@ const HB_DATA = {
     },
     {
       "id": "csv-120-les-grandes-des-domains-edmond-de-rothsc",
-      "name": "Les Granges des Domaines Edmond de Rothschild 2014",
+      "name": "Les Grandes Des Domains Edmond de Rothschild 2014",
       "producer": "Edmond de Rothschild",
-      "category": "Wein / Champagner",
+      "category": "Wein",
       "subcategory": "Rotwein Bordeaux",
       "amount": "1 Flasche",
       "status": "Ungeöffnet",
@@ -6764,10 +7446,9 @@ const HB_DATA = {
         "Fruchtig",
         "Pur",
         "Digestif",
-        "Frankreich",
-        "bottle"
+        "Frankreich"
       ],
-      "searchText": "les granges des domaines edmond de rothschild 2014 edmond de rothschild wein / champagner rotwein bordeaux trocken fruchtig pur digestif wine frankreich les grandes des domains edmond de rothschild 2014 ist als wein / rotwein bordeaux eingeordnet. geschmack: trocken, fruchtig. nutzung: pur, digestif.",
+      "searchText": "les grandes des domains edmond de rothschild 2014 edmond de rothschild wein rotwein bordeaux trocken fruchtig pur digestif wine frankreich les grandes des domains edmond de rothschild 2014 ist als wein / rotwein bordeaux eingeordnet. geschmack: trocken, fruchtig. nutzung: pur, digestif. ",
       "tags": [
         "Trocken",
         "Fruchtig",
@@ -6781,7 +7462,7 @@ const HB_DATA = {
       "id": "csv-121-chateau-bonalgue-pomerol-2018",
       "name": "Château Bonalgue Pomerol 2018",
       "producer": "Château Bonalgue",
-      "category": "Wein / Champagner",
+      "category": "Wein",
       "subcategory": "Rotwein Bordeaux",
       "amount": "1 Flasche",
       "status": "Ungeöffnet",
@@ -6816,10 +7497,9 @@ const HB_DATA = {
         "Fruchtig",
         "Pur",
         "Digestif",
-        "Frankreich",
-        "bottle"
+        "Frankreich"
       ],
-      "searchText": "château bonalgue pomerol 2018 château bonalgue wein / champagner rotwein bordeaux trocken fruchtig pur digestif wine frankreich château bonalgue pomerol 2018 ist als wein / rotwein bordeaux eingeordnet. geschmack: trocken, fruchtig. nutzung: pur, digestif.",
+      "searchText": "château bonalgue pomerol 2018 château bonalgue wein rotwein bordeaux trocken fruchtig pur digestif wine frankreich château bonalgue pomerol 2018 ist als wein / rotwein bordeaux eingeordnet. geschmack: trocken, fruchtig. nutzung: pur, digestif. ",
       "tags": [
         "Trocken",
         "Fruchtig",
@@ -6833,7 +7513,7 @@ const HB_DATA = {
       "id": "csv-122-la-monetta-gavi-2023",
       "name": "La Monetta Gavi 2023",
       "producer": "La Monetta",
-      "category": "Wein / Champagner",
+      "category": "Wein",
       "subcategory": "Weißwein",
       "amount": "1 Flasche",
       "status": "Unbekannt",
@@ -6872,10 +7552,9 @@ const HB_DATA = {
         "Floral",
         "Pur",
         "Aperitif",
-        "Italien",
-        "bottle"
+        "Italien"
       ],
-      "searchText": "la monetta gavi 2023 la monetta wein / champagner weißwein trocken zitrisch fruchtig floral pur aperitif wine italien la monetta gavi 2023 ist als wein / weißwein eingeordnet. geschmack: trocken, zitrisch, fruchtig, floral. nutzung: pur, aperitif.",
+      "searchText": "la monetta gavi 2023 la monetta wein weißwein trocken zitrisch fruchtig floral pur aperitif wine italien la monetta gavi 2023 ist als wein / weißwein eingeordnet. geschmack: trocken, zitrisch, fruchtig, floral. nutzung: pur, aperitif. ",
       "tags": [
         "Trocken",
         "Zitrisch",
@@ -6891,7 +7570,7 @@ const HB_DATA = {
       "id": "csv-123-silvaner-juliusspital-iphofer-julius-ech",
       "name": "Silvaner Juliusspital Iphöfer Julius-Echter-Berg 2022",
       "producer": "Juliusspital",
-      "category": "Wein / Champagner",
+      "category": "Wein",
       "subcategory": "Weißwein",
       "amount": "1 Flasche",
       "status": "Ungeöffnet",
@@ -6928,10 +7607,9 @@ const HB_DATA = {
         "Fruchtig",
         "Pur",
         "Aperitif",
-        "Deutschland",
-        "bottle"
+        "Deutschland"
       ],
-      "searchText": "silvaner juliusspital iphöfer julius-echter-berg 2022 juliusspital wein / champagner weißwein trocken zitrisch fruchtig pur aperitif wine deutschland silvaner juliusspital iphöfer julius-echter-berg 2022 ist als wein / weißwein eingeordnet. geschmack: trocken, zitrisch, fruchtig. nutzung: pur, aperitif.",
+      "searchText": "silvaner juliusspital iphöfer julius-echter-berg 2022 juliusspital wein weißwein trocken zitrisch fruchtig pur aperitif wine deutschland silvaner juliusspital iphöfer julius-echter-berg 2022 ist als wein / weißwein eingeordnet. geschmack: trocken, zitrisch, fruchtig. nutzung: pur, aperitif. ",
       "tags": [
         "Trocken",
         "Zitrisch",
@@ -6944,9 +7622,9 @@ const HB_DATA = {
     },
     {
       "id": "csv-124-veuve-monsigny-brut-reserve-champagner",
-      "name": "Champagne Vive Monsigny Brut Réserve",
+      "name": "Veuve ?Monsigny Brut Réserve Champagner",
       "producer": "Veuve Monsigny",
-      "category": "Wein / Champagner",
+      "category": "Wein",
       "subcategory": "Champagner",
       "amount": "1 Flasche",
       "status": "Ungeöffnet",
@@ -6983,10 +7661,9 @@ const HB_DATA = {
         "Fruchtig",
         "Pur",
         "Aperitif",
-        "Frankreich",
-        "bottle"
+        "Frankreich"
       ],
-      "searchText": "champagne vive monsigny brut réserve veuve monsigny wein / champagner champagner trocken zitrisch fruchtig pur aperitif wine frankreich veuve ?monsigny brut réserve champagner ist als wein / champagner eingeordnet. geschmack: trocken, zitrisch, fruchtig. nutzung: pur, aperitif.",
+      "searchText": "veuve ?monsigny brut réserve champagner veuve monsigny wein champagner trocken zitrisch fruchtig pur aperitif wine frankreich veuve ?monsigny brut réserve champagner ist als wein / champagner eingeordnet. geschmack: trocken, zitrisch, fruchtig. nutzung: pur, aperitif. ",
       "tags": [
         "Trocken",
         "Zitrisch",
@@ -7000,83 +7677,59 @@ const HB_DATA = {
     {
       "id": "csv-125-bulleit-bourbon-10-years",
       "name": "Bulleit Bourbon 10 Years",
-      "producer": "Bulleit",
+      "producer": "Diageo",
       "category": "Whisky",
       "subcategory": "Bourbon",
       "amount": "2 Flaschen",
       "status": "Geöffnet",
       "fillLevel": "100%",
       "flavorTags": [
-        "Süß",
-        "Rauchig",
-        "Trocken"
+        "Trocken",
+        "Süß"
       ],
       "usageTags": [
         "Pur",
-        "Cocktailbasis",
         "Spirit-Forward",
-        "Frisch & Sour"
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "10 Jahre",
-        "Eiche",
-        "Vanille",
-        "Old Fashioned",
-        "Whiskey Sour"
+        "Whiskey",
+        "Bourbon"
       ],
       "guestTags": [],
       "originTags": [
-        "USA",
-        "Kentucky"
+        "USA"
       ],
       "description": {
-        "short": "Gereifter Bourbon mit viel Eiche, Vanille, Trockenfrucht und einem langen, leicht rauchigen Abgang. Kräftig, rund und sehr gut für puren Genuss, Old Fashioned oder Whiskey Sour mit mehr Tiefe.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
-      "notes": "Menge korrigiert: 2 Flaschen vorhanden.",
+      "notes": "",
       "legacyTags": [
+        "Whiskey",
         "Bourbon",
-        "Kentucky Straight Bourbon",
-        "10 Jahre",
-        "Eiche",
-        "Vanille",
-        "Old Fashioned",
-        "Whiskey Sour",
-        "Süß",
-        "Rauchig",
         "Trocken",
+        "Süß",
         "Pur",
-        "Cocktailbasis",
         "Spirit-Forward",
-        "Frisch & Sour",
+        "Cocktailbasis",
         "USA",
-        "Kentucky",
         "bottle"
       ],
-      "searchText": "bulleit bourbon 10 years bulleit whisky bourbon süß rauchig trocken pur cocktailbasis spirit-forward frisch & sour bourbon kentucky straight bourbon 10 jahre eiche vanille old fashioned whiskey sour usa kentucky gereifter bourbon mit viel eiche, vanille, trockenfrucht und einem langen, leicht rauchigen abgang. kräftig, rund und sehr gut für puren genuss, old fashioned oder whiskey sour mit mehr tiefe. menge korrigiert: 2 flaschen vorhanden.",
+      "searchText": "bulleit bourbon 10 years diageo whisky bourbon trocken süß pur spirit-forward cocktailbasis whiskey bourbon usa kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
-        "Süß",
-        "Rauchig",
         "Trocken",
+        "Süß",
         "Pur",
-        "Cocktailbasis",
         "Spirit-Forward",
-        "Frisch & Sour",
+        "Cocktailbasis",
+        "Whiskey",
         "Bourbon",
-        "Kentucky Straight Bourbon",
-        "10 Jahre",
-        "Eiche",
-        "Vanille",
-        "Old Fashioned",
-        "Whiskey Sour",
-        "USA",
-        "Kentucky"
+        "USA"
       ]
     },
     {
@@ -7098,72 +7751,106 @@ const HB_DATA = {
         "Pur"
       ],
       "styleTags": [
-        "Rye Whiskey",
-        "American Rye",
-        "95% Rye",
-        "würzig",
-        "kräftig",
-        "Manhattan",
-        "Old Fashioned",
-        "Sazerac"
+        "Whiskey",
+        "Rye Whiskey"
       ],
       "guestTags": [],
       "originTags": [
-        "USA",
-        "Kentucky"
+        "USA"
       ],
       "description": {
-        "short": "Würziger Rye Whiskey mit Vanille, Honig, Eiche und klarer Roggenwürze. Trocken, griffig und cocktailstark — besonders passend für kräftige Klassiker wie Manhattan, Old Fashioned oder Sazerac.",
+        "short": "Rye Whiskey mit würzig-trockenem Profil für Manhattan, Old Fashioned, Sazerac-Varianten und Spirit-Forward-Drinks.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
+        "Whiskey",
         "Rye Whiskey",
-        "American Rye",
-        "95% Rye",
-        "würzig",
-        "kräftig",
-        "Manhattan",
-        "Old Fashioned",
-        "Sazerac",
         "Trocken",
         "Süß",
         "Cocktailbasis",
         "Spirit-Forward",
         "Pur",
         "USA",
-        "Kentucky",
         "bottle"
       ],
-      "searchText": "bulleit rye bulleit whisky rye whiskey trocken süß cocktailbasis spirit-forward pur rye whiskey american rye 95% rye würzig kräftig manhattan old fashioned sazerac usa kentucky würziger rye whiskey mit vanille, honig, eiche und klarer roggenwürze. trocken, griffig und cocktailstark — besonders passend für kräftige klassiker wie manhattan, old fashioned oder sazerac.",
+      "searchText": "bulleit rye bulleit whisky rye whiskey trocken süß cocktailbasis spirit-forward pur whiskey rye whiskey usa rye whiskey mit würzig-trockenem profil für manhattan, old fashioned, sazerac-varianten und spirit-forward-drinks. ",
       "tags": [
         "Trocken",
         "Süß",
         "Cocktailbasis",
         "Spirit-Forward",
         "Pur",
+        "Whiskey",
         "Rye Whiskey",
-        "American Rye",
-        "95% Rye",
-        "würzig",
-        "kräftig",
-        "Manhattan",
-        "Old Fashioned",
-        "Sazerac",
-        "USA",
-        "Kentucky"
+        "USA"
       ]
     },
     {
       "id": "csv-127-glenfiddich-15-solera-reserve",
       "name": "Glenfiddich 15 Solera Reserve",
-      "producer": "Glenfiddich",
+      "producer": "William Grant & Sons",
       "category": "Whisky",
-      "subcategory": "Scotch Single Malt",
+      "subcategory": "Scotch",
+      "amount": "1 Flasche",
+      "status": "Unbekannt",
+      "fillLevel": "100%",
+      "flavorTags": [
+        "Trocken"
+      ],
+      "usageTags": [
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis"
+      ],
+      "styleTags": [
+        "Whiskey",
+        "Scotch"
+      ],
+      "guestTags": [],
+      "originTags": [
+        "Schottland"
+      ],
+      "description": {
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
+        "long": "",
+        "tastingNotes": [],
+        "bestUse": [],
+        "serving": "",
+        "sourceStatus": "curated-existing"
+      },
+      "notes": "",
+      "legacyTags": [
+        "Whiskey",
+        "Scotch",
+        "Trocken",
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis",
+        "Schottland",
+        "bottle"
+      ],
+      "searchText": "glenfiddich 15 solera reserve william grant & sons whisky scotch trocken pur spirit-forward cocktailbasis whiskey scotch schottland kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
+      "tags": [
+        "Trocken",
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis",
+        "Whiskey",
+        "Scotch",
+        "Schottland"
+      ]
+    },
+    {
+      "id": "csv-128-glenmorangie-quinta-ruban-14",
+      "name": "Glenmorangie Quinta Ruban 14",
+      "producer": "Glenmorangie",
+      "category": "Whisky",
+      "subcategory": "Highland Single Malt",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
@@ -7178,601 +7865,223 @@ const HB_DATA = {
         "Spirit-Forward"
       ],
       "styleTags": [
-        "Single Malt Scotch",
-        "Speyside",
-        "15 Jahre",
-        "Solera",
-        "Honig",
-        "Vanille",
-        "Sherry-Eiche",
-        "Zimt"
+        "Whiskey",
+        "Scotch",
+        "Single Malt"
       ],
       "guestTags": [],
       "originTags": [
-        "Schottland",
-        "Speyside"
-      ],
-      "description": {
-        "short": "Runder Single Malt mit Honig, Vanille, dunkler Frucht und sanfter Würze. Zugänglich und weich, ideal für Gäste, die Scotch kennenlernen möchten, ohne Rauch oder Schwere im Glas zu haben.",
-        "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "user-approved-curated"
-      },
-      "notes": "",
-      "legacyTags": [
-        "Single Malt Scotch",
-        "Speyside",
-        "15 Jahre",
-        "Solera",
-        "Honig",
-        "Vanille",
-        "Sherry-Eiche",
-        "Zimt",
-        "Süß",
-        "Fruchtig",
-        "Nussig",
-        "Pur",
-        "Digestif",
-        "Spirit-Forward",
-        "Schottland",
-        "bottle"
-      ],
-      "searchText": "glenfiddich 15 solera reserve glenfiddich whisky scotch single malt süß fruchtig nussig pur digestif spirit-forward single malt scotch speyside 15 jahre solera honig vanille sherry-eiche zimt schottland runder single malt mit honig, vanille, dunkler frucht und sanfter würze. zugänglich und weich, ideal für gäste, die scotch kennenlernen möchten, ohne rauch oder schwere im glas zu haben.",
-      "tags": [
-        "Süß",
-        "Fruchtig",
-        "Nussig",
-        "Pur",
-        "Digestif",
-        "Spirit-Forward",
-        "Single Malt Scotch",
-        "Speyside",
-        "15 Jahre",
-        "Solera",
-        "Honig",
-        "Vanille",
-        "Sherry-Eiche",
-        "Zimt",
         "Schottland"
-      ]
-    },
-    {
-      "id": "csv-128-glenmorangie-quinta-ruban-14",
-      "name": "Glenmorangie Quinta Ruban 14",
-      "producer": "Glenmorangie",
-      "category": "Whisky",
-      "subcategory": "Scotch Single Malt",
-      "amount": "1 Flasche",
-      "status": "Unbekannt",
-      "fillLevel": "100%",
-      "flavorTags": [
-        "Süß",
-        "Nussig",
-        "Zitrisch",
-        "Fruchtig"
-      ],
-      "usageTags": [
-        "Pur",
-        "Digestif",
-        "Spirit-Forward"
-      ],
-      "styleTags": [
-        "Single Malt Scotch",
-        "Highland",
-        "14 Jahre",
-        "Port Cask Finish",
-        "Schokolade",
-        "Orange",
-        "Walnuss"
-      ],
-      "guestTags": [],
-      "originTags": [
-        "Schottland",
-        "Highlands"
       ],
       "description": {
-        "short": "Highland Single Malt mit Portwein-Einfluss, dunkler Schokolade, Orange, Nuss und warmer Süße. Elegant, dessertnah und sehr passend als ruhiger Digestif.",
+        "short": "Portfass-gereifter Highland Single Malt mit fruchtig-nussiger Süße. Ideal pur, als Digestif und für elegante Spirit-Forward-Twists.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Single Malt Scotch",
-        "Highland",
-        "14 Jahre",
-        "Port Cask Finish",
-        "Schokolade",
-        "Orange",
-        "Walnuss",
+        "Whiskey",
+        "Scotch",
+        "Single Malt",
         "Süß",
-        "Nussig",
-        "Zitrisch",
         "Fruchtig",
+        "Nussig",
         "Pur",
         "Digestif",
         "Spirit-Forward",
         "Schottland",
-        "Highlands",
         "bottle"
       ],
-      "searchText": "glenmorangie quinta ruban 14 glenmorangie whisky scotch single malt süß nussig zitrisch fruchtig pur digestif spirit-forward single malt scotch highland 14 jahre port cask finish schokolade orange walnuss schottland highlands highland single malt mit portwein-einfluss, dunkler schokolade, orange, nuss und warmer süße. elegant, dessertnah und sehr passend als ruhiger digestif.",
+      "searchText": "glenmorangie quinta ruban 14 glenmorangie whisky highland single malt süß fruchtig nussig pur digestif spirit-forward whiskey scotch single malt schottland portfass-gereifter highland single malt mit fruchtig-nussiger süße. ideal pur, als digestif und für elegante spirit-forward-twists. ",
       "tags": [
         "Süß",
-        "Nussig",
-        "Zitrisch",
         "Fruchtig",
+        "Nussig",
         "Pur",
         "Digestif",
         "Spirit-Forward",
-        "Single Malt Scotch",
-        "Highland",
-        "14 Jahre",
-        "Port Cask Finish",
-        "Schokolade",
-        "Orange",
-        "Walnuss",
-        "Schottland",
-        "Highlands"
+        "Whiskey",
+        "Scotch",
+        "Single Malt",
+        "Schottland"
       ]
     },
     {
       "id": "csv-129-jack-daniel-s-honey",
       "name": "Jack Daniel’s Honey",
-      "producer": "Jack Daniel’s",
+      "producer": "Brown-Forman",
       "category": "Whisky",
-      "subcategory": "Flavored Whiskey",
+      "subcategory": "Whiskey",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Süß"
+        "Trocken"
       ],
       "usageTags": [
-        "Longdrink & Highball",
-        "Modifier",
+        "Pur",
+        "Spirit-Forward",
         "Cocktailbasis"
       ],
       "styleTags": [
-        "Flavored Whiskey",
-        "Whiskey-Likör",
-        "Tennessee Honey",
-        "Honig",
-        "Vanille"
+        "Whiskey"
       ],
       "guestTags": [],
       "originTags": [
-        "USA",
-        "Tennessee"
+        "USA"
       ],
       "description": {
-        "short": "Süßer Whiskey-Likör auf Tennessee-Whiskey-Basis mit Honig, Vanille und weicher Würze. Am besten für einfache Highballs, Dessertdrinks oder Gäste, die Whiskey milder und süßer mögen.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Flavored Whiskey",
-        "Whiskey-Likör",
-        "Tennessee Honey",
-        "Honig",
-        "Vanille",
-        "Süß",
-        "Longdrink & Highball",
-        "Modifier",
+        "Whiskey",
+        "Trocken",
+        "Pur",
+        "Spirit-Forward",
         "Cocktailbasis",
         "USA",
-        "Tennessee",
         "bottle"
       ],
-      "searchText": "jack daniel’s honey jack daniel’s whisky flavored whiskey süß longdrink & highball modifier cocktailbasis flavored whiskey whiskey-likör tennessee honey honig vanille usa tennessee süßer whiskey-likör auf tennessee-whiskey-basis mit honig, vanille und weicher würze. am besten für einfache highballs, dessertdrinks oder gäste, die whiskey milder und süßer mögen.",
+      "searchText": "jack daniel’s honey brown-forman whisky whiskey trocken pur spirit-forward cocktailbasis whiskey usa kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
-        "Süß",
-        "Longdrink & Highball",
-        "Modifier",
+        "Trocken",
+        "Pur",
+        "Spirit-Forward",
         "Cocktailbasis",
-        "Flavored Whiskey",
-        "Whiskey-Likör",
-        "Tennessee Honey",
-        "Honig",
-        "Vanille",
-        "USA",
-        "Tennessee"
+        "Whiskey",
+        "USA"
       ]
     },
     {
       "id": "csv-130-jack-daniel-s-tennessee-apple",
       "name": "Jack Daniel’s Tennessee Apple",
-      "producer": "Jack Daniel’s",
+      "producer": "Brown-Forman",
       "category": "Whisky",
-      "subcategory": "Flavored Whiskey",
+      "subcategory": "Whiskey",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Fruchtig",
+        "Trocken",
         "Süß"
       ],
       "usageTags": [
-        "Longdrink & Highball",
-        "Modifier",
+        "Pur",
+        "Spirit-Forward",
         "Cocktailbasis"
       ],
       "styleTags": [
-        "Flavored Whiskey",
-        "Whiskey-Likör",
-        "Tennessee Apple",
-        "Apfel",
-        "Vanille"
+        "Whiskey"
       ],
       "guestTags": [],
       "originTags": [
-        "USA",
-        "Tennessee"
+        "USA"
       ],
       "description": {
-        "short": "Fruchtiger Whiskey-Likör mit grünem Apfel, Vanille und sanfter Tennessee-Whiskey-Wärme. Unkompliziert für Highballs, Apple-Whiskey-Drinks und süß-frische Gästedrinks.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Flavored Whiskey",
-        "Whiskey-Likör",
-        "Tennessee Apple",
-        "Apfel",
-        "Vanille",
-        "Fruchtig",
+        "Whiskey",
+        "Trocken",
         "Süß",
-        "Longdrink & Highball",
-        "Modifier",
+        "Pur",
+        "Spirit-Forward",
         "Cocktailbasis",
         "USA",
-        "Tennessee",
         "bottle"
       ],
-      "searchText": "jack daniel’s tennessee apple jack daniel’s whisky flavored whiskey fruchtig süß longdrink & highball modifier cocktailbasis flavored whiskey whiskey-likör tennessee apple apfel vanille usa tennessee fruchtiger whiskey-likör mit grünem apfel, vanille und sanfter tennessee-whiskey-wärme. unkompliziert für highballs, apple-whiskey-drinks und süß-frische gästedrinks.",
+      "searchText": "jack daniel’s tennessee apple brown-forman whisky whiskey trocken süß pur spirit-forward cocktailbasis whiskey usa kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
-        "Fruchtig",
+        "Trocken",
         "Süß",
-        "Longdrink & Highball",
-        "Modifier",
+        "Pur",
+        "Spirit-Forward",
         "Cocktailbasis",
-        "Flavored Whiskey",
-        "Whiskey-Likör",
-        "Tennessee Apple",
-        "Apfel",
-        "Vanille",
-        "USA",
-        "Tennessee"
+        "Whiskey",
+        "USA"
       ]
     },
     {
       "id": "csv-131-johnnie-walker-18-years",
       "name": "Johnnie Walker 18 Years",
-      "producer": "Johnnie Walker",
+      "producer": "Diageo",
       "category": "Whisky",
-      "subcategory": "Blended Scotch",
+      "subcategory": "Scotch",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Zitrisch",
-        "Nussig",
-        "Süß",
-        "Rauchig"
+        "Trocken"
       ],
       "usageTags": [
         "Pur",
-        "Digestif",
-        "Spirit-Forward"
+        "Spirit-Forward",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Blended Scotch",
-        "18 Jahre",
-        "Vanille",
-        "Mandel",
-        "Mandarine",
-        "dezenter Rauch"
+        "Whiskey",
+        "Scotch"
       ],
       "guestTags": [],
       "originTags": [
         "Schottland"
       ],
       "description": {
-        "short": "Eleganter Blended Scotch mit Zitrusfrucht, Mandeln, warmer Vanille und dezenter Rauchigkeit. Ausgewogen, weich und lang im Abgang — ein sehr guter Whisky für Gäste, die Tiefe ohne Härte suchen.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Blended Scotch",
-        "18 Jahre",
-        "Vanille",
-        "Mandel",
-        "Mandarine",
-        "dezenter Rauch",
-        "Zitrisch",
-        "Nussig",
-        "Süß",
-        "Rauchig",
+        "Whiskey",
+        "Scotch",
+        "Trocken",
         "Pur",
-        "Digestif",
         "Spirit-Forward",
+        "Cocktailbasis",
         "Schottland",
         "bottle"
       ],
-      "searchText": "johnnie walker 18 years johnnie walker whisky blended scotch zitrisch nussig süß rauchig pur digestif spirit-forward blended scotch 18 jahre vanille mandel mandarine dezenter rauch schottland eleganter blended scotch mit zitrusfrucht, mandeln, warmer vanille und dezenter rauchigkeit. ausgewogen, weich und lang im abgang — ein sehr guter whisky für gäste, die tiefe ohne härte suchen.",
+      "searchText": "johnnie walker 18 years diageo whisky scotch trocken pur spirit-forward cocktailbasis whiskey scotch schottland kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
-        "Zitrisch",
-        "Nussig",
-        "Süß",
-        "Rauchig",
+        "Trocken",
         "Pur",
-        "Digestif",
         "Spirit-Forward",
-        "Blended Scotch",
-        "18 Jahre",
-        "Vanille",
-        "Mandel",
-        "Mandarine",
-        "dezenter Rauch",
+        "Cocktailbasis",
+        "Whiskey",
+        "Scotch",
         "Schottland"
       ]
     },
     {
       "id": "csv-132-johnnie-walker-blue-label",
       "name": "Johnnie Walker Blue Label",
-      "producer": "Johnnie Walker",
+      "producer": "Diageo",
       "category": "Whisky",
-      "subcategory": "Blended Scotch",
+      "subcategory": "Scotch",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Süß",
-        "Floral",
-        "Rauchig"
-      ],
-      "usageTags": [
-        "Pur",
-        "Digestif",
-        "Spirit-Forward"
-      ],
-      "styleTags": [
-        "Blended Scotch",
-        "Premium Whisky",
-        "Sipping Whisky",
-        "Vanille",
-        "Honig",
-        "feiner Rauch"
-      ],
-      "guestTags": [],
-      "originTags": [
-        "Schottland"
-      ],
-      "description": {
-        "short": "Luxuriöser Blended Scotch mit Vanille, Honig, floraler Eleganz und feinem Rauch. Weich, tief und rund — ein Whisky für ruhige, besondere Momente und puren Genuss.",
-        "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "user-approved-curated"
-      },
-      "notes": "",
-      "legacyTags": [
-        "Blended Scotch",
-        "Premium Whisky",
-        "Sipping Whisky",
-        "Vanille",
-        "Honig",
-        "feiner Rauch",
-        "Süß",
-        "Floral",
-        "Rauchig",
-        "Pur",
-        "Digestif",
-        "Spirit-Forward",
-        "Schottland",
-        "bottle"
-      ],
-      "searchText": "johnnie walker blue label johnnie walker whisky blended scotch süß floral rauchig pur digestif spirit-forward blended scotch premium whisky sipping whisky vanille honig feiner rauch schottland luxuriöser blended scotch mit vanille, honig, floraler eleganz und feinem rauch. weich, tief und rund — ein whisky für ruhige, besondere momente und puren genuss.",
-      "tags": [
-        "Süß",
-        "Floral",
-        "Rauchig",
-        "Pur",
-        "Digestif",
-        "Spirit-Forward",
-        "Blended Scotch",
-        "Premium Whisky",
-        "Sipping Whisky",
-        "Vanille",
-        "Honig",
-        "feiner Rauch",
-        "Schottland"
-      ]
-    },
-    {
-      "id": "csv-133-johnnie-walker-gold-label-reserve",
-      "name": "Johnnie Walker Gold Label Reserve",
-      "producer": "Johnnie Walker",
-      "category": "Whisky",
-      "subcategory": "Blended Scotch",
-      "amount": "1 Flasche",
-      "status": "Unbekannt",
-      "fillLevel": "100%",
-      "flavorTags": [
-        "Süß",
-        "Fruchtig",
-        "Rauchig"
-      ],
-      "usageTags": [
-        "Pur",
-        "Longdrink & Highball",
-        "Spirit-Forward"
-      ],
-      "styleTags": [
-        "Blended Scotch",
-        "Highball",
-        "Vanille",
-        "Honig",
-        "tropische Frucht",
-        "leichter Rauch"
-      ],
-      "guestTags": [],
-      "originTags": [
-        "Schottland"
-      ],
-      "description": {
-        "short": "Runder Blended Scotch mit Honig, Vanille, tropischer Frucht und einem sanften Rauchhauch. Weich, zugänglich und festlich — ideal pur, auf Eis oder als gehobener Whisky-Highball.",
-        "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "user-approved-curated"
-      },
-      "notes": "",
-      "legacyTags": [
-        "Blended Scotch",
-        "Highball",
-        "Vanille",
-        "Honig",
-        "tropische Frucht",
-        "leichter Rauch",
-        "Süß",
-        "Fruchtig",
-        "Rauchig",
-        "Pur",
-        "Longdrink & Highball",
-        "Spirit-Forward",
-        "Schottland",
-        "bottle"
-      ],
-      "searchText": "johnnie walker gold label reserve johnnie walker whisky blended scotch süß fruchtig rauchig pur longdrink & highball spirit-forward blended scotch highball vanille honig tropische frucht leichter rauch schottland runder blended scotch mit honig, vanille, tropischer frucht und einem sanften rauchhauch. weich, zugänglich und festlich — ideal pur, auf eis oder als gehobener whisky-highball.",
-      "tags": [
-        "Süß",
-        "Fruchtig",
-        "Rauchig",
-        "Pur",
-        "Longdrink & Highball",
-        "Spirit-Forward",
-        "Blended Scotch",
-        "Highball",
-        "Vanille",
-        "Honig",
-        "tropische Frucht",
-        "leichter Rauch",
-        "Schottland"
-      ]
-    },
-    {
-      "id": "csv-134-knob-creek-9",
-      "name": "Knob Creek 9",
-      "producer": "Knob Creek",
-      "category": "Whisky",
-      "subcategory": "Bourbon",
-      "amount": "1 Flasche",
-      "status": "Unbekannt",
-      "fillLevel": "100%",
-      "flavorTags": [
-        "Süß",
-        "Nussig",
         "Trocken"
-      ],
-      "usageTags": [
-        "Pur",
-        "Cocktailbasis",
-        "Spirit-Forward",
-        "Frisch & Sour"
-      ],
-      "styleTags": [
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "9 Jahre",
-        "100 Proof",
-        "Small Batch",
-        "Old Fashioned",
-        "Whiskey Sour"
-      ],
-      "guestTags": [],
-      "originTags": [
-        "USA",
-        "Kentucky"
-      ],
-      "description": {
-        "short": "Kräftiger Kentucky Bourbon mit Vanille, Karamell, gerösteter Eiche und nussiger Tiefe. Voll, würzig und trocken genug für klassische Bourbon-Drinks, aber auch pur ein sehr charaktervoller Hausbar-Whiskey.",
-        "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "user-approved-curated"
-      },
-      "notes": "",
-      "legacyTags": [
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "9 Jahre",
-        "100 Proof",
-        "Small Batch",
-        "Old Fashioned",
-        "Whiskey Sour",
-        "Süß",
-        "Nussig",
-        "Trocken",
-        "Pur",
-        "Cocktailbasis",
-        "Spirit-Forward",
-        "Frisch & Sour",
-        "USA",
-        "Kentucky",
-        "bottle"
-      ],
-      "searchText": "knob creek 9 knob creek whisky bourbon süß nussig trocken pur cocktailbasis spirit-forward frisch & sour bourbon kentucky straight bourbon 9 jahre 100 proof small batch old fashioned whiskey sour usa kentucky kräftiger kentucky bourbon mit vanille, karamell, gerösteter eiche und nussiger tiefe. voll, würzig und trocken genug für klassische bourbon-drinks, aber auch pur ein sehr charaktervoller hausbar-whiskey.",
-      "tags": [
-        "Süß",
-        "Nussig",
-        "Trocken",
-        "Pur",
-        "Cocktailbasis",
-        "Spirit-Forward",
-        "Frisch & Sour",
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "9 Jahre",
-        "100 Proof",
-        "Small Batch",
-        "Old Fashioned",
-        "Whiskey Sour",
-        "USA",
-        "Kentucky"
-      ]
-    },
-    {
-      "id": "csv-135-legent-bourbon",
-      "name": "Legent Bourbon",
-      "producer": "Legent",
-      "category": "Whisky",
-      "subcategory": "Bourbon",
-      "amount": "1 Flasche",
-      "status": "Geöffnet",
-      "fillLevel": "100%",
-      "flavorTags": [
-        "Süß",
-        "Fruchtig"
       ],
       "usageTags": [
         "Pur",
@@ -7780,61 +8089,218 @@ const HB_DATA = {
         "Cocktailbasis"
       ],
       "styleTags": [
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Wine Cask Finish",
-        "Sherry Cask Finish",
-        "Vanille",
-        "Karamell",
-        "Trockenfrucht"
+        "Whiskey",
+        "Scotch"
       ],
       "guestTags": [],
       "originTags": [
-        "USA",
-        "Kentucky"
+        "Schottland"
       ],
       "description": {
-        "short": "Eleganter Kentucky Bourbon mit Vanille, Karamell, Trockenfrucht und warmer Eiche. Durch Wein- und Sherryfass-Einflüsse wirkt er fruchtiger und runder als klassische Bourbons, ohne seine kräftige Bourbon-Basis zu verlieren.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Wine Cask Finish",
-        "Sherry Cask Finish",
-        "Vanille",
-        "Karamell",
-        "Trockenfrucht",
-        "Süß",
-        "Fruchtig",
+        "Whiskey",
+        "Scotch",
+        "Trocken",
         "Pur",
         "Spirit-Forward",
         "Cocktailbasis",
-        "USA",
-        "Kentucky",
+        "Schottland",
         "bottle"
       ],
-      "searchText": "legent bourbon legent whisky bourbon süß fruchtig pur spirit-forward cocktailbasis bourbon kentucky straight bourbon wine cask finish sherry cask finish vanille karamell trockenfrucht usa kentucky eleganter kentucky bourbon mit vanille, karamell, trockenfrucht und warmer eiche. durch wein- und sherryfass-einflüsse wirkt er fruchtiger und runder als klassische bourbons, ohne seine kräftige bourbon-basis zu verlieren.",
+      "searchText": "johnnie walker blue label diageo whisky scotch trocken pur spirit-forward cocktailbasis whiskey scotch schottland kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
-        "Süß",
-        "Fruchtig",
+        "Trocken",
         "Pur",
         "Spirit-Forward",
         "Cocktailbasis",
+        "Whiskey",
+        "Scotch",
+        "Schottland"
+      ]
+    },
+    {
+      "id": "csv-133-johnnie-walker-gold-label-reserve",
+      "name": "Johnnie Walker Gold Label Reserve",
+      "producer": "Diageo",
+      "category": "Whisky",
+      "subcategory": "Scotch",
+      "amount": "1 Flasche",
+      "status": "Unbekannt",
+      "fillLevel": "100%",
+      "flavorTags": [
+        "Trocken"
+      ],
+      "usageTags": [
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis"
+      ],
+      "styleTags": [
+        "Whiskey",
+        "Scotch"
+      ],
+      "guestTags": [],
+      "originTags": [
+        "Schottland"
+      ],
+      "description": {
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
+        "long": "",
+        "tastingNotes": [],
+        "bestUse": [],
+        "serving": "",
+        "sourceStatus": "curated-existing"
+      },
+      "notes": "",
+      "legacyTags": [
+        "Whiskey",
+        "Scotch",
+        "Trocken",
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis",
+        "Schottland",
+        "bottle"
+      ],
+      "searchText": "johnnie walker gold label reserve diageo whisky scotch trocken pur spirit-forward cocktailbasis whiskey scotch schottland kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
+      "tags": [
+        "Trocken",
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis",
+        "Whiskey",
+        "Scotch",
+        "Schottland"
+      ]
+    },
+    {
+      "id": "csv-134-knob-creek-9",
+      "name": "Knob Creek 9",
+      "producer": "Beam Suntory",
+      "category": "Whisky",
+      "subcategory": "Japanese Whisky",
+      "amount": "1 Flasche",
+      "status": "Unbekannt",
+      "fillLevel": "100%",
+      "flavorTags": [
+        "Trocken",
+        "Süß"
+      ],
+      "usageTags": [
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis"
+      ],
+      "styleTags": [
+        "Whiskey",
         "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Wine Cask Finish",
-        "Sherry Cask Finish",
-        "Vanille",
-        "Karamell",
-        "Trockenfrucht",
-        "USA",
-        "Kentucky"
+        "Japanese Whisky"
+      ],
+      "guestTags": [],
+      "originTags": [
+        "Japan"
+      ],
+      "description": {
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
+        "long": "",
+        "tastingNotes": [],
+        "bestUse": [],
+        "serving": "",
+        "sourceStatus": "curated-existing"
+      },
+      "notes": "",
+      "legacyTags": [
+        "Whiskey",
+        "Bourbon",
+        "Japanese Whisky",
+        "Trocken",
+        "Süß",
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis",
+        "Japan",
+        "bottle"
+      ],
+      "searchText": "knob creek 9 beam suntory whisky japanese whisky trocken süß pur spirit-forward cocktailbasis whiskey bourbon japanese whisky japan kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
+      "tags": [
+        "Trocken",
+        "Süß",
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis",
+        "Whiskey",
+        "Bourbon",
+        "Japanese Whisky",
+        "Japan"
+      ]
+    },
+    {
+      "id": "csv-135-legent-bourbon",
+      "name": "Legent Bourbon",
+      "producer": "Beam Suntory",
+      "category": "Whisky",
+      "subcategory": "Japanese Whisky",
+      "amount": "1 Flasche",
+      "status": "Geöffnet",
+      "fillLevel": "100%",
+      "flavorTags": [
+        "Trocken",
+        "Süß"
+      ],
+      "usageTags": [
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis"
+      ],
+      "styleTags": [
+        "Whiskey",
+        "Bourbon",
+        "Japanese Whisky"
+      ],
+      "guestTags": [],
+      "originTags": [
+        "Japan"
+      ],
+      "description": {
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
+        "long": "",
+        "tastingNotes": [],
+        "bestUse": [],
+        "serving": "",
+        "sourceStatus": "curated-existing"
+      },
+      "notes": "",
+      "legacyTags": [
+        "Whiskey",
+        "Bourbon",
+        "Japanese Whisky",
+        "Trocken",
+        "Süß",
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis",
+        "Japan",
+        "bottle"
+      ],
+      "searchText": "legent bourbon beam suntory whisky japanese whisky trocken süß pur spirit-forward cocktailbasis whiskey bourbon japanese whisky japan kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
+      "tags": [
+        "Trocken",
+        "Süß",
+        "Pur",
+        "Spirit-Forward",
+        "Cocktailbasis",
+        "Whiskey",
+        "Bourbon",
+        "Japanese Whisky",
+        "Japan"
       ]
     },
     {
@@ -7847,70 +8313,52 @@ const HB_DATA = {
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Süß",
-        "Nussig"
+        "Trocken",
+        "Süß"
       ],
       "usageTags": [
         "Pur",
-        "Cocktailbasis",
-        "Spirit-Forward"
+        "Spirit-Forward",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Wheated Bourbon",
-        "French Oak Staves",
-        "Vanille",
-        "Karamell",
-        "Zimt"
+        "Whiskey",
+        "Bourbon"
       ],
       "guestTags": [],
       "originTags": [
-        "USA",
-        "Kentucky"
+        "USA"
       ],
       "description": {
-        "short": "Weicher Bourbon mit Vanille, Karamell, gerösteter Eiche und warmer Zimtwürze. Runder und komplexer als der klassische Maker’s Mark, aber immer noch zugänglich und sehr angenehm pur oder in kräftigen Bourbon-Drinks.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
+        "Whiskey",
         "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Wheated Bourbon",
-        "French Oak Staves",
-        "Vanille",
-        "Karamell",
-        "Zimt",
+        "Trocken",
         "Süß",
-        "Nussig",
         "Pur",
-        "Cocktailbasis",
         "Spirit-Forward",
+        "Cocktailbasis",
         "USA",
-        "Kentucky",
         "bottle"
       ],
-      "searchText": "maker’s mark 46 maker’s mark whisky bourbon süß nussig pur cocktailbasis spirit-forward bourbon kentucky straight bourbon wheated bourbon french oak staves vanille karamell zimt usa kentucky weicher bourbon mit vanille, karamell, gerösteter eiche und warmer zimtwürze. runder und komplexer als der klassische maker’s mark, aber immer noch zugänglich und sehr angenehm pur oder in kräftigen bourbon-drinks.",
+      "searchText": "maker’s mark 46 maker’s mark whisky bourbon trocken süß pur spirit-forward cocktailbasis whiskey bourbon usa kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
+        "Trocken",
         "Süß",
-        "Nussig",
         "Pur",
-        "Cocktailbasis",
         "Spirit-Forward",
+        "Cocktailbasis",
+        "Whiskey",
         "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Wheated Bourbon",
-        "French Oak Staves",
-        "Vanille",
-        "Karamell",
-        "Zimt",
-        "USA",
-        "Kentucky"
+        "USA"
       ]
     },
     {
@@ -7923,69 +8371,54 @@ const HB_DATA = {
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
+        "Trocken",
         "Süß",
-        "Zitrisch",
         "Fruchtig"
       ],
       "usageTags": [
         "Pur",
         "Spirit-Forward",
-        "Longdrink & Highball"
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Japanese Whisky",
-        "Blended Whisky",
-        "51,4%",
-        "High Proof",
-        "Orange",
-        "Vanille",
-        "Karamell"
+        "Whiskey",
+        "Japanese Whisky"
       ],
       "guestTags": [],
       "originTags": [
         "Japan"
       ],
       "description": {
-        "short": "Kraftvoller japanischer Whisky mit dichter Struktur, Orange, Vanille, Karamell und würziger Tiefe. Intensiv, konzentriert und elegant — besonders gut für puren Genuss, auf Eis oder sehr klare Spirit-Forward-Drinks.",
+        "short": "Kräftiger japanischer Whisky mit trocken-süßem Profil für High-End-Highballs, Old Fashioned-Varianten und pur.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
+        "Whiskey",
         "Japanese Whisky",
-        "Blended Whisky",
-        "51,4%",
-        "High Proof",
-        "Orange",
-        "Vanille",
-        "Karamell",
+        "Trocken",
         "Süß",
-        "Zitrisch",
         "Fruchtig",
         "Pur",
         "Spirit-Forward",
-        "Longdrink & Highball",
+        "Cocktailbasis",
         "Japan",
         "bottle"
       ],
-      "searchText": "nikka from the barrel nikka whisky japanese whisky süß zitrisch fruchtig pur spirit-forward longdrink & highball japanese whisky blended whisky 51,4% high proof orange vanille karamell japan kraftvoller japanischer whisky mit dichter struktur, orange, vanille, karamell und würziger tiefe. intensiv, konzentriert und elegant — besonders gut für puren genuss, auf eis oder sehr klare spirit-forward-drinks.",
+      "searchText": "nikka from the barrel nikka whisky japanese whisky trocken süß fruchtig pur spirit-forward cocktailbasis whiskey japanese whisky japan kräftiger japanischer whisky mit trocken-süßem profil für high-end-highballs, old fashioned-varianten und pur. ",
       "tags": [
+        "Trocken",
         "Süß",
-        "Zitrisch",
         "Fruchtig",
         "Pur",
         "Spirit-Forward",
-        "Longdrink & Highball",
+        "Cocktailbasis",
+        "Whiskey",
         "Japanese Whisky",
-        "Blended Whisky",
-        "51,4%",
-        "High Proof",
-        "Orange",
-        "Vanille",
-        "Karamell",
         "Japan"
       ]
     },
@@ -7994,514 +8427,237 @@ const HB_DATA = {
       "name": "Nikka Miyagikyo Single Malt",
       "producer": "Nikka",
       "category": "Whisky",
-      "subcategory": "Japanese Single Malt",
+      "subcategory": "Japanese Whisky",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Fruchtig",
-        "Floral",
-        "Süß"
+        "Trocken",
+        "Fruchtig"
       ],
       "usageTags": [
         "Pur",
-        "Digestif",
-        "Spirit-Forward"
+        "Spirit-Forward",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Japanese Single Malt",
-        "Miyagikyo",
-        "Apfel",
-        "Birne",
-        "Pfirsich",
-        "Sherry-Anklänge",
-        "feine Würze"
+        "Whiskey",
+        "Scotch",
+        "Japanese Whisky"
       ],
       "guestTags": [],
       "originTags": [
         "Japan"
       ],
       "description": {
-        "short": "Eleganter japanischer Single Malt mit Apfel, floraler Frische, sanfter Süße und feiner Würze. Leichter und filigraner als viele kräftige Whiskys — ideal für Gäste, die einen ruhigen, fruchtigen und eleganten Whisky suchen.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Japanese Single Malt",
-        "Miyagikyo",
-        "Apfel",
-        "Birne",
-        "Pfirsich",
-        "Sherry-Anklänge",
-        "feine Würze",
+        "Whiskey",
+        "Scotch",
+        "Japanese Whisky",
+        "Trocken",
         "Fruchtig",
-        "Floral",
-        "Süß",
         "Pur",
-        "Digestif",
         "Spirit-Forward",
+        "Cocktailbasis",
         "Japan",
         "bottle"
       ],
-      "searchText": "nikka miyagikyo single malt nikka whisky japanese single malt fruchtig floral süß pur digestif spirit-forward japanese single malt miyagikyo apfel birne pfirsich sherry-anklänge feine würze japan eleganter japanischer single malt mit apfel, floraler frische, sanfter süße und feiner würze. leichter und filigraner als viele kräftige whiskys — ideal für gäste, die einen ruhigen, fruchtigen und eleganten whisky suchen.",
+      "searchText": "nikka miyagikyo single malt nikka whisky japanese whisky trocken fruchtig pur spirit-forward cocktailbasis whiskey scotch japanese whisky japan kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
+        "Trocken",
         "Fruchtig",
-        "Floral",
-        "Süß",
         "Pur",
-        "Digestif",
         "Spirit-Forward",
-        "Japanese Single Malt",
-        "Miyagikyo",
-        "Apfel",
-        "Birne",
-        "Pfirsich",
-        "Sherry-Anklänge",
-        "feine Würze",
+        "Cocktailbasis",
+        "Whiskey",
+        "Scotch",
+        "Japanese Whisky",
         "Japan"
       ]
     },
     {
       "id": "csv-139-the-balvenie-caribbean-cask-14",
       "name": "The Balvenie Caribbean Cask 14",
-      "producer": "The Balvenie",
+      "producer": "William Grant & Sons",
       "category": "Whisky",
-      "subcategory": "Scotch Single Malt",
+      "subcategory": "Scotch",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Süß",
-        "Fruchtig"
+        "Trocken"
       ],
       "usageTags": [
         "Pur",
-        "Digestif",
-        "Spirit-Forward"
+        "Spirit-Forward",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Single Malt Scotch",
-        "Speyside",
-        "14 Jahre",
-        "Rum Cask Finish",
-        "Honig",
-        "Toffee",
-        "Vanille",
-        "tropische Frucht"
+        "Whiskey",
+        "Scotch"
       ],
       "guestTags": [],
       "originTags": [
-        "Schottland",
-        "Speyside"
+        "Schottland"
       ],
       "description": {
-        "short": "Weicher Single Malt mit Honig, Toffee, Vanille und einem Hauch tropischer Frucht. Das Rumfass-Finish macht ihn rund, warm und sehr zugänglich — ein schöner Whisky für Gäste, die milde, süßere Stile mögen.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Single Malt Scotch",
-        "Speyside",
-        "14 Jahre",
-        "Rum Cask Finish",
-        "Honig",
-        "Toffee",
-        "Vanille",
-        "tropische Frucht",
-        "Süß",
-        "Fruchtig",
+        "Whiskey",
+        "Scotch",
+        "Trocken",
         "Pur",
-        "Digestif",
         "Spirit-Forward",
+        "Cocktailbasis",
         "Schottland",
         "bottle"
       ],
-      "searchText": "the balvenie caribbean cask 14 the balvenie whisky scotch single malt süß fruchtig pur digestif spirit-forward single malt scotch speyside 14 jahre rum cask finish honig toffee vanille tropische frucht schottland weicher single malt mit honig, toffee, vanille und einem hauch tropischer frucht. das rumfass-finish macht ihn rund, warm und sehr zugänglich — ein schöner whisky für gäste, die milde, süßere stile mögen.",
+      "searchText": "the balvenie caribbean cask 14 william grant & sons whisky scotch trocken pur spirit-forward cocktailbasis whiskey scotch schottland kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
-        "Süß",
-        "Fruchtig",
+        "Trocken",
         "Pur",
-        "Digestif",
         "Spirit-Forward",
-        "Single Malt Scotch",
-        "Speyside",
-        "14 Jahre",
-        "Rum Cask Finish",
-        "Honig",
-        "Toffee",
-        "Vanille",
-        "tropische Frucht",
+        "Cocktailbasis",
+        "Whiskey",
+        "Scotch",
         "Schottland"
       ]
     },
     {
       "id": "csv-140-the-dalmore-port-wood-reserve",
       "name": "The Dalmore Port Wood Reserve",
-      "producer": "The Dalmore",
+      "producer": "Whyte & Mackay",
       "category": "Whisky",
-      "subcategory": "Scotch Single Malt",
+      "subcategory": "Scotch",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
-        "Fruchtig",
+        "Trocken",
         "Süß",
-        "Nussig",
-        "Zitrisch"
+        "Nussig"
       ],
       "usageTags": [
         "Pur",
-        "Digestif",
-        "Spirit-Forward"
+        "Spirit-Forward",
+        "Cocktailbasis"
       ],
       "styleTags": [
-        "Single Malt Scotch",
-        "Highland",
-        "Port Wood Reserve",
-        "Tawny Port Pipes",
-        "rote Beeren",
-        "Orange",
-        "Karamell",
-        "Kastanie"
+        "Whiskey",
+        "Scotch"
       ],
       "guestTags": [],
       "originTags": [
-        "Schottland",
-        "Highlands"
+        "Schottland"
       ],
       "description": {
-        "short": "Opulenter Single Malt mit roter Frucht, Orange, Karamell und dunkler Süße. Voll, elegant und genussorientiert — ein Whisky für den ruhigen Moment nach dem Essen.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
       "notes": "",
       "legacyTags": [
-        "Single Malt Scotch",
-        "Highland",
-        "Port Wood Reserve",
-        "Tawny Port Pipes",
-        "rote Beeren",
-        "Orange",
-        "Karamell",
-        "Kastanie",
-        "Fruchtig",
+        "Whiskey",
+        "Scotch",
+        "Trocken",
         "Süß",
         "Nussig",
-        "Zitrisch",
         "Pur",
-        "Digestif",
         "Spirit-Forward",
+        "Cocktailbasis",
         "Schottland",
-        "Highlands",
         "bottle"
       ],
-      "searchText": "the dalmore port wood reserve the dalmore whisky scotch single malt fruchtig süß nussig zitrisch pur digestif spirit-forward single malt scotch highland port wood reserve tawny port pipes rote beeren orange karamell kastanie schottland highlands opulenter single malt mit roter frucht, orange, karamell und dunkler süße. voll, elegant und genussorientiert — ein whisky für den ruhigen moment nach dem essen.",
+      "searchText": "the dalmore port wood reserve whyte & mackay whisky scotch trocken süß nussig pur spirit-forward cocktailbasis whiskey scotch schottland kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
-        "Fruchtig",
+        "Trocken",
         "Süß",
         "Nussig",
-        "Zitrisch",
         "Pur",
-        "Digestif",
         "Spirit-Forward",
-        "Single Malt Scotch",
-        "Highland",
-        "Port Wood Reserve",
-        "Tawny Port Pipes",
-        "rote Beeren",
-        "Orange",
-        "Karamell",
-        "Kastanie",
-        "Schottland",
-        "Highlands"
+        "Cocktailbasis",
+        "Whiskey",
+        "Scotch",
+        "Schottland"
       ]
     },
     {
       "id": "csv-141-woodford-reserve",
       "name": "Woodford Reserve",
-      "producer": "Woodford Reserve",
+      "producer": "Brown-Forman",
       "category": "Whisky",
       "subcategory": "Bourbon",
       "amount": "1 Flasche",
       "status": "Unbekannt",
       "fillLevel": "100%",
       "flavorTags": [
+        "Trocken",
         "Süß",
-        "Nussig",
-        "Zitrisch"
+        "Nussig"
       ],
       "usageTags": [
         "Pur",
-        "Cocktailbasis",
         "Spirit-Forward",
-        "Frisch & Sour"
-      ],
-      "styleTags": [
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Distiller’s Select",
-        "Vanille",
-        "Karamell",
-        "Orange",
-        "Old Fashioned",
-        "Whiskey Sour"
-      ],
-      "guestTags": [],
-      "originTags": [
-        "USA",
-        "Kentucky"
-      ],
-      "description": {
-        "short": "Klassischer Kentucky Bourbon mit Vanille, Karamell, Orange, gerösteter Eiche und nussiger Würze. Rund, balanciert und vielseitig — stark genug für Old Fashioned und Whiskey Sour, aber weich genug für den puren Einstieg.",
-        "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "user-approved-curated"
-      },
-      "notes": "",
-      "legacyTags": [
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Distiller’s Select",
-        "Vanille",
-        "Karamell",
-        "Orange",
-        "Old Fashioned",
-        "Whiskey Sour",
-        "Süß",
-        "Nussig",
-        "Zitrisch",
-        "Pur",
-        "Cocktailbasis",
-        "Spirit-Forward",
-        "Frisch & Sour",
-        "USA",
-        "Kentucky",
-        "bottle"
-      ],
-      "searchText": "woodford reserve woodford reserve whisky bourbon süß nussig zitrisch pur cocktailbasis spirit-forward frisch & sour bourbon kentucky straight bourbon distiller’s select vanille karamell orange old fashioned whiskey sour usa kentucky klassischer kentucky bourbon mit vanille, karamell, orange, gerösteter eiche und nussiger würze. rund, balanciert und vielseitig — stark genug für old fashioned und whiskey sour, aber weich genug für den puren einstieg.",
-      "tags": [
-        "Süß",
-        "Nussig",
-        "Zitrisch",
-        "Pur",
-        "Cocktailbasis",
-        "Spirit-Forward",
-        "Frisch & Sour",
-        "Bourbon",
-        "Kentucky Straight Bourbon",
-        "Distiller’s Select",
-        "Vanille",
-        "Karamell",
-        "Orange",
-        "Old Fashioned",
-        "Whiskey Sour",
-        "USA",
-        "Kentucky"
-      ]
-    },
-    {
-      "id": "csv-rewe-beste-wahl-holunderbluete-getraenkesirup",
-      "name": "REWE Beste Wahl Holunderblüte Getränkesirup",
-      "producer": "REWE Beste Wahl",
-      "category": "Sirup / Mixer",
-      "subcategory": "Sirup",
-      "amount": "1 Flasche",
-      "status": "Unbekannt",
-      "fillLevel": "100%",
-      "flavorTags": [
-        "Floral",
-        "Süß"
-      ],
-      "usageTags": [
-        "Modifier",
-        "Spritz",
-        "Longdrink & Highball"
-      ],
-      "styleTags": [
-        "Holunderblütensirup",
-        "alkoholfrei",
-        "Sirup",
-        "Sommerdrinks"
-      ],
-      "guestTags": [],
-      "originTags": [
-        "Deutschland"
-      ],
-      "description": {
-        "short": "Alkoholfreier Holunderblütensirup mit floraler Süße für Spritz-Drinks, Limonaden und leichte Highballs. Er bringt schnell Frische und Blütenaroma ins Glas, ohne die Spirituose zu dominieren.",
-        "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "user-approved-curated"
-      },
-      "notes": "Neu aufgenommen aus Bildabgleich; getrennt von Pircher Holunderblüten Likör führen.",
-      "legacyTags": [
-        "Holunderblütensirup",
-        "alkoholfrei",
-        "Sirup",
-        "Sommerdrinks",
-        "Floral",
-        "Süß",
-        "Modifier",
-        "Spritz",
-        "Longdrink & Highball",
-        "Deutschland",
-        "bottle"
-      ],
-      "searchText": "rewe beste wahl holunderblüte getränkesirup rewe beste wahl sirup / mixer sirup floral süß modifier spritz longdrink & highball holunderblütensirup alkoholfrei sirup sommerdrinks deutschland alkoholfreier holunderblütensirup mit floraler süße für spritz-drinks, limonaden und leichte highballs. er bringt schnell frische und blütenaroma ins glas, ohne die spirituose zu dominieren. neu aufgenommen aus bildabgleich; getrennt von pircher holunderblüten likör führen.",
-      "tags": [
-        "Floral",
-        "Süß",
-        "Modifier",
-        "Spritz",
-        "Longdrink & Highball",
-        "Holunderblütensirup",
-        "alkoholfrei",
-        "Sirup",
-        "Sommerdrinks",
-        "Deutschland"
-      ]
-    },
-    {
-      "id": "csv-riemerschmid-rohrzucker-bar-sirup",
-      "name": "Riemerschmid Rohrzucker Bar-Sirup",
-      "producer": "Riemerschmid",
-      "category": "Sirup / Mixer",
-      "subcategory": "Sirup",
-      "amount": "1 Flasche",
-      "status": "Unbekannt",
-      "fillLevel": "100%",
-      "flavorTags": [
-        "Süß"
-      ],
-      "usageTags": [
-        "Modifier",
-        "Frisch & Sour",
-        "Longdrink & Highball",
         "Cocktailbasis"
       ],
       "styleTags": [
-        "Rohrzuckersirup",
-        "Cane Sugar",
-        "Barsirup",
-        "Riemerschmid"
+        "Whiskey",
+        "Bourbon"
       ],
       "guestTags": [],
       "originTags": [
-        "Deutschland"
+        "USA"
       ],
       "description": {
-        "short": "Klassischer Rohrzuckersirup für saubere, neutrale Süße in Cocktails. Besonders praktisch für Sours, Daiquiris, Highballs und Drinks, bei denen Zucker Struktur geben soll, ohne eigene Aromatik vorzudrängen.",
+        "short": "Kuratierter Whiskey-/Whisky-Eintrag für Pur-Genuss, Spirit-Forward-Drinks und klassische Whiskey-Cocktails.",
         "long": "",
         "tastingNotes": [],
         "bestUse": [],
         "serving": "",
-        "sourceStatus": "user-approved-curated"
+        "sourceStatus": "curated-existing"
       },
-      "notes": "Neu aufgenommen aus Bildabgleich; getrennt von Monin und Giffard führen.",
+      "notes": "",
       "legacyTags": [
-        "Rohrzuckersirup",
-        "Cane Sugar",
-        "Barsirup",
-        "Riemerschmid",
+        "Whiskey",
+        "Bourbon",
+        "Trocken",
         "Süß",
-        "Modifier",
-        "Frisch & Sour",
-        "Longdrink & Highball",
+        "Nussig",
+        "Pur",
+        "Spirit-Forward",
         "Cocktailbasis",
-        "Deutschland",
+        "USA",
         "bottle"
       ],
-      "searchText": "riemerschmid rohrzucker bar-sirup riemerschmid sirup / mixer sirup süß modifier frisch & sour longdrink & highball cocktailbasis rohrzuckersirup cane sugar barsirup riemerschmid deutschland klassischer rohrzuckersirup für saubere, neutrale süße in cocktails. besonders praktisch für sours, daiquiris, highballs und drinks, bei denen zucker struktur geben soll, ohne eigene aromatik vorzudrängen. neu aufgenommen aus bildabgleich; getrennt von monin und giffard führen.",
+      "searchText": "woodford reserve brown-forman whisky bourbon trocken süß nussig pur spirit-forward cocktailbasis whiskey bourbon usa kuratierter whiskey-/whisky-eintrag für pur-genuss, spirit-forward-drinks und klassische whiskey-cocktails. ",
       "tags": [
+        "Trocken",
         "Süß",
-        "Modifier",
-        "Frisch & Sour",
-        "Longdrink & Highball",
-        "Cocktailbasis",
-        "Rohrzuckersirup",
-        "Cane Sugar",
-        "Barsirup",
-        "Riemerschmid",
-        "Deutschland"
-      ]
-    },
-    {
-      "id": "csv-western-gold-kentucky-bourbon-whiskey",
-      "name": "Western Gold Kentucky Bourbon Whiskey",
-      "producer": "Western Gold",
-      "category": "Whisky",
-      "subcategory": "Bourbon",
-      "amount": "1 Flasche",
-      "status": "Unbekannt",
-      "fillLevel": "100%",
-      "flavorTags": [
-        "Süß"
-      ],
-      "usageTags": [
-        "Cocktailbasis",
-        "Spirit-Forward",
-        "Pur"
-      ],
-      "styleTags": [
-        "Bourbon",
-        "Kentucky Bourbon",
-        "American Whiskey",
-        "Mixing Bourbon"
-      ],
-      "guestTags": [],
-      "originTags": [
-        "USA",
-        "Kentucky"
-      ],
-      "description": {
-        "short": "Geradliniger Kentucky Bourbon mit Vanille, Karamell und leichter Eichenwürze. Ein unkomplizierter Hausbar-Bourbon für einfache Whiskey-Drinks, Longdrinks und klassische Bourbon-Cocktails.",
-        "long": "",
-        "tastingNotes": [],
-        "bestUse": [],
-        "serving": "",
-        "sourceStatus": "user-approved-curated"
-      },
-      "notes": "Neu aufgenommen aus Bildabgleich.",
-      "legacyTags": [
-        "Bourbon",
-        "Kentucky Bourbon",
-        "American Whiskey",
-        "Mixing Bourbon",
-        "Süß",
-        "Cocktailbasis",
-        "Spirit-Forward",
+        "Nussig",
         "Pur",
-        "USA",
-        "Kentucky",
-        "bottle"
-      ],
-      "searchText": "western gold kentucky bourbon whiskey western gold whisky bourbon süß cocktailbasis spirit-forward pur bourbon kentucky bourbon american whiskey mixing bourbon usa kentucky geradliniger kentucky bourbon mit vanille, karamell und leichter eichenwürze. ein unkomplizierter hausbar-bourbon für einfache whiskey-drinks, longdrinks und klassische bourbon-cocktails. neu aufgenommen aus bildabgleich.",
-      "tags": [
-        "Süß",
-        "Cocktailbasis",
         "Spirit-Forward",
-        "Pur",
+        "Cocktailbasis",
+        "Whiskey",
         "Bourbon",
-        "Kentucky Bourbon",
-        "American Whiskey",
-        "Mixing Bourbon",
-        "USA",
-        "Kentucky"
+        "USA"
       ]
     }
   ],
@@ -11555,15 +11711,15 @@ const HB_DATA = {
   "taxonomies": {
     "flavorTags": [
       "Bitter",
-      "Fruchtig",
-      "Kräuterig",
       "Floral",
+      "Fruchtig",
+      "Kaffee",
+      "Kräuterig",
+      "Nussig",
       "Rauchig",
       "Süß",
       "Trocken",
-      "Zitrisch",
-      "Nussig",
-      "Kaffee"
+      "Zitrisch"
     ],
     "usageTags": [
       "Aperitif",
